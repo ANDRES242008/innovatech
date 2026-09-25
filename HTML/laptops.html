@@ -1,0 +1,822 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Nova Tech Gaming</title> 
+ <link rel="stylesheet" href="../CSS/compartido.css" />
+    <link rel="stylesheet" href="../CSS/cartcompartido.css" />
+     <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body> 
+    
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Banner grande con anuncios destacados --> 
+<div class="cards-container">
+            <div class="card">
+                <div class="shape purple"></div>
+                <img src="../img/SILLAS/ThunderX3- Mesa gaming con iluminación RGB y.jpeg" alt="Muebles Gaming" />
+                <div class="card-content">
+                    <h3 class="card-title">Muebles Gaming de alta calidad</h3>
+                    <p class="card-subtitle">Comodidad y estilo para tus sesiones de juego</p>
+                    <a href="gaming.html" class="btn" role="button" tabindex="0">Compra ya</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="shape red"></div>
+                <img src="../img/lAPS/asus.jpeg" alt="Laptops Gamer" />
+                <div class="card-content">
+                    <h3 class="card-title">Laptops Gamer de calidad</h3>
+                    <p class="card-subtitle">Rendimiento excepcional para tus juegos favoritos</p>
+                    <a href="laptops.html" class="btn" role="button" tabindex="0">Compra ya</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="shape orange"></div>
+                <img src="../img/Acessorios/audifonos rojos.jpeg" alt="Accesorios Gamer" />
+                <div class="card-content">
+                    <h3 class="card-title">Accesorios Gamer </h3>
+                    <p class="card-subtitle">Todo lo que necesitas para jugar como un profesional</p>
+                    <a href="accesorios.html" class="btn" role="button" tabindex="0">Compra ya</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="shape green"></div>
+                <img src="../img/VIDEOJUEGOS/control ps5.jpeg" alt="Consolas y Videojuegos" />
+                <div class="card-content">
+                    <h3 class="card-title">Consolas y Videojuegos </h3>
+                    <p class="card-subtitle">Diversión asegurada para todos</p>
+                    <a href="videojuegos.html" class="btn" role="button" tabindex="0">Compra ya</a>
+                </div>
+            </div>
+        </div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+
+  <div class="productos">
+
+  <article class="producto">
+    <div class="descuento">-20%</div>
+    <a href="productslaptops.html?id=200">
+      <img src="../img/LAPS/ASUS A15.jpeg" alt="ASUS TUF Gaming Laptop" />
+    </a>
+    <p class="nombre-producto">ASUS TUF GAMING A15</p>
+    <p class="precio-original">$950.00</p>
+    <p class="precio-descuento">$760.00</p>
+    <a href="productslaptops.html?id=200">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="200"
+      data-nombre="ASUS TUF GAMING A15"
+      data-precio="760.00"
+      data-descuento="20%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/ASUS A15.jpeg"
+      data-ram="16 GB DDR5"
+      data-almacenamiento="512 GB / 1 TB SSD"
+      data-bateria="90 Wh"
+      data-pantalla="15.6'' FHD (1920x1080) 144Hz"
+      data-camara="720p HD"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-15%</div>
+    <a href="productslaptops.html?id=201">
+      <img src="../img/LAPS/4gen.jpeg" alt="Lenovo ThinkPad Windows 11" />
+    </a>
+    <p class="nombre-producto">Lenovo ThinkPad X13 Yoga Gen 4</p>
+    <p class="precio-original">$880.00</p>
+    <p class="precio-descuento">$748.00</p>
+    <a href="productslaptops.html?id=201">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="201"
+      data-nombre="Lenovo ThinkPad X13 Yoga Gen 4"
+      data-precio="748.00"
+      data-descuento="15%"
+      data-tipo="Laptop 2-en-1"
+      data-img="../img/LAPS/4gen.jpeg"
+      data-ram="16 GB / 32 GB LPDDR5"
+      data-almacenamiento="512 GB / 1 TB SSD"
+      data-bateria="54.7 Wh"
+      data-pantalla="13.3'' WUXGA (1920x1200) IPS Táctil"
+      data-camara="1080p FHD + IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-18%</div>
+    <a href="productslaptops.html?id=202">
+      <img src="../img/LAPS/16X.jpeg" alt="ASUS ROG Strix Gaming Laptop" />
+    </a>
+    <p class="nombre-producto">Alienware x16 R2</p>
+    <p class="precio-original">$1,400.00</p>
+    <p class="precio-descuento">$1,148.00</p>
+    <a href="productslaptops.html?id=202">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="202"
+      data-nombre="Alienware x16 R2"
+      data-precio="1148.00"
+      data-descuento="18%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/16X.jpeg"
+      data-ram="16 GB / 32 GB DDR5"
+      data-almacenamiento="1 TB / 2 TB SSD"
+      data-bateria="90 Wh"
+      data-pantalla="16'' QHD+ (2560x1600) 240Hz"
+      data-camara="1080p FHD IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-22%</div>
+    <a href="productslaptops.html?id=203">
+      <img
+        src="../img/LAPS/Lenovo Legion 5 15 Gaming Laptop.jpeg"
+        alt="Lenovo Legion Gaming Laptop"
+      />
+    </a>
+    <p class="nombre-producto">Lenovo Legion 5 15</p>
+    <p class="precio-original">$1,250.00</p>
+    <p class="precio-descuento">$975.00</p>
+    <a href="productslaptops.html?id=203">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="203"
+      data-nombre="Lenovo Legion 5 15"
+      data-precio="975.00"
+      data-descuento="22%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/Lenovo Legion 5 15 Gaming Laptop.jpeg"
+      data-ram="16 GB DDR5"
+      data-almacenamiento="512 GB / 1 TB SSD"
+      data-bateria="80 Wh"
+      data-pantalla="15.6'' WQHD (2560x1440) 165Hz"
+      data-camara="1080p FHD"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-20%</div>
+    <a href="productslaptops.html?id=204">
+      <img
+        src="../img/LAPS/Notebook Acer Gamer Nitro V15 ANV15-51-7837.jpeg"
+        alt="Acer Nitro Gaming Laptop"
+      />
+    </a>
+    <p class="nombre-producto">Acer Nitro V 15</p>
+    <p class="precio-original">$1,100.00</p>
+    <p class="precio-descuento">$880.00</p>
+    <a href="productslaptops.html?id=204">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="204"
+      data-nombre="Acer Nitro V 15"
+      data-precio="880.00"
+      data-descuento="20%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/Notebook Acer Gamer Nitro V15 ANV15-51-7837.jpeg"
+      data-ram="8 GB / 16 GB DDR5"
+      data-almacenamiento="512 GB SSD"
+      data-bateria="57 Wh"
+      data-pantalla="15.6'' FHD (1920x1080) 144Hz"
+      data-camara="720p HD"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-17%</div>
+    <a href="productslaptops.html?id=205">
+      <img
+        src="../img/LAPS/MSI Titan 18 HX AI A2XWJG-614US Gaming Laptop.jpeg"
+        alt="MSI Gaming Laptop RGB"
+      />
+    </a>
+    <p class="nombre-producto">MSI Titan 18 HX</p>
+    <p class="precio-original">$1,350.00</p>
+    <p class="precio-descuento">$1,120.50</p>
+    <a href="productslaptops.html?id=205">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="205"
+      data-nombre="MSI Titan 18 HX"
+      data-precio="1120.50"
+      data-descuento="17%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/MSI Titan 18 HX AI A2XWJG-614US Gaming Laptop.jpeg"
+      data-ram="32 GB / 64 GB DDR5"
+      data-almacenamiento="2 TB / 4 TB SSD"
+      data-bateria="99.9 Wh"
+      data-pantalla="18'' UHD+ (3840x2400) Mini LED 120Hz"
+      data-camara="1080p FHD IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-19%</div>
+    <a href="productslaptops.html?id=206">
+      <img
+        src="../img/LAPS/Alienware M18 R2 Gaming Laptop.jpeg"
+        alt="Alienware M18 R2"
+      />
+    </a>
+    <p class="nombre-producto">Alienware M18 R2</p>
+    <p class="precio-original">$1,050.00</p>
+    <p class="precio-descuento">$850.50</p>
+    <a href="productslaptops.html?id=206">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="206"
+      data-nombre="Alienware M18 R2"
+      data-precio="850.50"
+      data-descuento="19%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/Alienware M18 R2 Gaming Laptop.jpeg"
+      data-ram="32 GB / 64 GB DDR5"
+      data-almacenamiento="1 TB / 2 TB SSD"
+      data-bateria="97 Wh"
+      data-pantalla="18'' QHD+ (2560x1600) 165Hz"
+      data-camara="1080p FHD IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-21%</div>
+    <a href="productslaptops.html?id=207">
+      <img
+        src="../img/LAPS/Limited-time deal_ ACEMAGIC Laptop Computer, 16GB.jpeg"
+        alt="ACEMAGIC Metal Series Laptop"
+      />
+    </a>
+    <p class="nombre-producto">ACEMAGIC AX15 Laptop</p>
+    <p class="precio-original">$780.00</p>
+    <p class="precio-descuento">$616.20</p>
+    <a href="productslaptops.html?id=207">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="207"
+      data-nombre="ACEMAGIC AX15 Laptop"
+      data-precio="616.20"
+      data-descuento="21%"
+      data-tipo="Laptop"
+      data-img="../img/LAPS/Limited-time deal_ ACEMAGIC Laptop Computer, 16GB.jpeg"
+      data-ram="16 GB DDR4"
+      data-almacenamiento="512 GB SSD"
+      data-bateria="38 Wh"
+      data-pantalla="15.6'' FHD (1920x1080) IPS"
+      data-camara="720p HD"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-16%</div>
+    <a href="productslaptops.html?id=208">
+      <img
+        src="../img/LAPS/Latest LENOVO LOQ 15IRH8 GAMING LAPTOP gives you a.jpeg"
+        alt="Lenovo LOQ Gaming Laptop"
+      />
+    </a>
+    <p class="nombre-producto">Lenovo LOQ 15</p>
+    <p class="precio-original">$1,000.00</p>
+    <p class="precio-descuento">$840.00</p>
+    <a href="productslaptops.html?id=208">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="208"
+      data-nombre="Lenovo LOQ 15"
+      data-precio="840.00"
+      data-descuento="16%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/Latest LENOVO LOQ 15IRH8 GAMING LAPTOP gives you a.jpeg"
+      data-ram="8 GB / 16 GB DDR5"
+      data-almacenamiento="512 GB / 1 TB SSD"
+      data-bateria="60 Wh"
+      data-pantalla="15.6'' FHD (1920x1080) 144Hz"
+      data-camara="1080p FHD"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-15%</div>
+    <a href="productslaptops.html?id=209">
+      <img src="../img/LAPS/MSI Vector 16 HX.jpeg" alt="MSI Gaming Laptop" />
+    </a>
+    <p class="nombre-producto">MSI Vector 16 HX</p>
+    <p class="precio-original">$1,200.00</p>
+    <p class="precio-descuento">$1,020.00</p>
+    <a href="productslaptops.html?id=209">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="209"
+      data-nombre="MSI Vector 16 HX"
+      data-precio="1020.00"
+      data-descuento="15%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/MSI Vector 16 HX.jpeg"
+      data-ram="16 GB / 32 GB DDR5"
+      data-almacenamiento="1 TB SSD"
+      data-bateria="90 Wh"
+      data-pantalla="16'' QHD+ (2560x1600) 240Hz"
+      data-camara="720p HD IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-14%</div>
+    <a href="productslaptops.html?id=210">
+      <img
+        src="../img/LAPS/Laptop mit 18_ QWUXGA Display, Intel Core.jpeg"
+        alt="MSI Vector Gaming Laptop"
+      />
+    </a>
+    <p class="nombre-producto">MSI Raider GE78 HX</p>
+    <p class="precio-original">$1,500.00</p>
+    <p class="precio-descuento">$1,290.00</p>
+    <a href="productslaptops.html?id=210">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="210"
+      data-nombre="MSI Raider GE78 HX"
+      data-precio="1290.00"
+      data-descuento="14%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/Laptop mit 18_ QWUXGA Display, Intel Core.jpeg"
+      data-ram="32 GB DDR5"
+      data-almacenamiento="2 TB SSD"
+      data-bateria="99.9 Wh"
+      data-pantalla="17'' QHD+ (2560x1600) 240Hz"
+      data-camara="1080p FHD IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-13%</div>
+    <a href="productslaptops.html?id=211">
+      <img
+        src="../img/LAPS/NOW is the time to score the hottest holiday deals.jpeg"
+        alt="MSI Raider GE Gaming Laptop"
+      />
+    </a>
+    <p class="nombre-producto">MSI Raider GE68 HX</p>
+    <p class="precio-original">$2,000.00</p>
+    <p class="precio-descuento">$1,740.00</p>
+    <a href="productslaptops.html?id=211">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="211"
+      data-nombre="MSI Raider GE68 HX"
+      data-precio="1740.00"
+      data-descuento="13%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/NOW is the time to score the hottest holiday deals.jpeg"
+      data-ram="32 GB / 64 GB DDR5"
+      data-almacenamiento="2 TB SSD"
+      data-bateria="99.9 Wh"
+      data-pantalla="16'' UHD+ (3840x2400) 120Hz"
+      data-camara="1080p FHD IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-20%</div>
+    <a href="productslaptops.html?id=212">
+      <img src="../img/LAPS/tracend 14.jpeg" alt="HP Omen Gaming Laptop RTX 4060" />
+    </a>
+    <p class="nombre-producto">HP Omen Transcend 14</p>
+    <p class="precio-original">$2,200.00</p>
+    <p class="precio-descuento">$1,760.00</p>
+    <a href="productslaptops.html?id=212">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="212"
+      data-nombre="HP Omen Transcend 14"
+      data-precio="1760.00"
+      data-descuento="20%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/tracend 14.jpeg"
+      data-ram="16 GB / 32 GB LPDDR5x"
+      data-almacenamiento="1 TB / 2 TB SSD"
+      data-bateria="71 Wh"
+      data-pantalla="14'' 2.8K (2880x1800) OLED 120Hz"
+      data-camara="1080p FHD IR"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-15%</div>
+    <a href="productslaptops.html?id=213">
+      <img
+        src="../img/LAPS/Latest AMD Ryzen 5 7430U Processors is here_ The.jpeg"
+        alt="MSI Gaming Laptop 144Hz RTX"
+      />
+    </a>
+    <p class="nombre-producto">MSI Modern 14</p>
+    <p class="precio-original">$1,800.00</p>
+    <p class="precio-descuento">$1,530.00</p>
+    <a href="productslaptops.html?id=213">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="213"
+      data-nombre="MSI Modern 14"
+      data-precio="1530.00"
+      data-descuento="15%"
+      data-tipo="Laptop"
+      data-img="../img/LAPS/Latest AMD Ryzen 5 7430U Processors is here_ The.jpeg"
+      data-ram="8 GB / 16 GB DDR4"
+      data-almacenamiento="512 GB SSD"
+      data-bateria="39.3 Wh"
+      data-pantalla="14'' FHD (1920x1080) IPS"
+      data-camara="720p HD"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-18%</div>
+    <a href="productslaptops.html?id=214">
+      <img src="../img/LAPS/ROG 18.jpeg" alt="ROG Strix G18" />
+    </a>
+    <p class="nombre-producto">ROG Strix G18</p>
+    <p class="precio-original">$1,600.00</p>
+    <p class="precio-descuento">$1,312.00</p>
+    <a href="productslaptops.html?id=214">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="214"
+      data-nombre="ROG Strix G18"
+      data-precio="1312.00"
+      data-descuento="18%"
+      data-tipo="Laptop gamer"
+      data-img="../img/LAPS/ROG 18.jpeg"
+      data-ram="16 GB / 32 GB DDR5"
+      data-almacenamiento="1 TB / 2 TB SSD"
+      data-bateria="90 Wh"
+      data-pantalla="18'' QHD+ (2560x1600) 240Hz"
+      data-camara="720p HD"
+    >
+      Comparar
+    </button>
+  </article>
+
+</div>
+  <nav class="paginacion" aria-label="Paginación de resultados"> 
+    <a class="pagina-btn" href="gaming.html" aria-label="Página 1">1</a> 
+    <a class="pagina-btn pagina-activa" href="laptops.html" aria-label="Página 2">2</a> 
+    <a class="pagina-btn" href="accesorios.html" aria-label="Página 3">3</a>
+    <a class="pagina-btn" href="videojuegos.html" aria-label="Página 4">4</a> 
+</nav>
+  </section> 
+
+<br>
+<br>
+
+
+  <script src="../JS/compartido.js"></script>
+    <script src="../JS/cartcompartido.js"></script>
+<script>
+  // Products array for cart reference (should match product.html)
+
+    const products = [
+     { id: 200, name: "ASUS TUF Gaming Laptop", priceDescuento: "$760.00" },
+{ id: 201, name: "Lenovo ThinkPad T14s Gen 3", priceDescuento: "$748.00" },
+{ id: 202, name: "ASUS ZenBook / ROG Strix", priceDescuento: "$1,148.00" },
+{ id: 203, name: "Lenovo Legion Gaming Laptop", priceDescuento: "$975.00" },
+{ id: 204, name: "Acer Nitro Gaming Laptop", priceDescuento: "$880.00" },
+{ id: 205, name: "MSI GE62VR Apache Pro", priceDescuento: "$1,120.50" },
+{ id: 206, name: "Laptop Gaming Metal Series", priceDescuento: "$850.50" },
+{ id: 207, name: "ACEMAGIC Metal Series Laptop", priceDescuento: "$616.20" },
+{ id: 208, name: "Lenovo LOQ Gaming Laptop", priceDescuento: "$840.00" },
+{ id: 209, name: "MSI Gaming Laptop", priceDescuento: "$1,020.00" },
+{ id: 210, name: "MSI Vector Gaming Laptop", priceDescuento: "$1,290.00" },
+{ id: 211, name: "MSI Raider GE Gaming Laptop", priceDescuento: "$1,740.00" },
+{ id: 212, name: "HP Omen Gaming Laptop", priceDescuento: "$1,760.00" },
+{ id: 213, name: "MSI Gaming Laptop (Ryzen)", priceDescuento: "$1,530.00" },
+{ id: 214, name: "ASUS TUF Gaming Laptop (144Hz)", priceDescuento: "$1,312.00" }
+
+];
+
+
+  // Setup add to cart buttons using cart.js helper
+  window.cart.setupAddToCartButtons(products);
+</script>
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+<script>
+document.querySelectorAll('.btn-comparar').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const producto = {};
+    Array.from(btn.attributes).forEach(attr => {
+      if (attr.name.startsWith('data-')) {
+        producto[attr.name.replace('data-', '')] = attr.value;
+      }
+    });
+    let comparar = JSON.parse(localStorage.getItem('compararProductos') || '[]');
+    if (!comparar.find(p => p.id === producto.id && p.tipo === producto.tipo)) {
+      comparar.push(producto);
+      localStorage.setItem('compararProductos', JSON.stringify(comparar));
+      alert('¡Producto agregado para comparar!');
+    } else {
+      alert('Este producto ya está en la comparación.');
+    }
+  });
+});
+</script>
+</body> 
+</html>

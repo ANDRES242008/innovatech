@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="../CSS/compartido2.css" />
+ <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+ 
+  <script src="../JS/cartcompartido.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="almacenamiento.html">almacenamiento</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+   const products = [
+    // ---
+    // *** ALMACENAMIENTO (ID 261 - 276) ***
+    {
+        id: 261,
+        name: "Samsung T7 Portable SSD 500GB (USB 3.2)",
+        image: "../img/almacenamiento/Portable SSD T7 1 TB USB 3_2 Gen 2 (Gray).jpeg",
+        priceOriginal: "$89.99",
+        priceDescuento: "$76.49", // -15%
+        specs: {
+            "Tipo": "SSD Externo Portátil",
+            "Interfaz": "USB 3.2 Gen 2 (USB-C)",
+            "Velocidad": "Hasta 1,050 MB/s de lectura",
+            "Seguridad": "Protección con contraseña y cifrado AES de 256 bits"
+        }
+    },
+    {
+        id: 262,
+        name: "SanDisk Extreme Portable SSD 1TB (V2)",
+        image: "../img/almacenamiento/Sandisk 1tb Extreme Portable Ssd V2.jpeg",
+        priceOriginal: "$145.00",
+        priceDescuento: "$116.00", // -20%
+        specs: {
+            "Tipo": "SSD Externo Rugerizado",
+            "Interfaz": "USB 3.2 Gen 2 (USB-C)",
+            "Resistencia": "Resistencia al agua y al polvo IP55",
+            "Diseño": "Diseño compacto con mosquetón para viajes"
+        }
+    },
+    {
+        id: 263,
+        name: "Western Digital My Passport 5TB (Portable HDD)",
+        image: "../img/almacenamiento/Western Digital 4TB WD My Passport Ultra for Mac Usb-c and USB 3_2 Gen 1, Portable External Hard Drive Hdd, Silver - Wdbpmv0040bsl-wesn.jpeg",
+        priceOriginal: "$150.00",
+        priceDescuento: "$135.00", // -10%
+        specs: {
+            "Tipo": "Disco Duro Externo (HDD)",
+            "Interfaz": "USB 3.0",
+            "Software": "Incluye software WD Discovery para copia de seguridad",
+            "Diseño": "Diseño elegante y disponible en varios colores"
+        }
+    },
+    {
+        id: 264,
+        name: "Crucial X8 Portable SSD 1TB (USB 3.2 Gen2)",
+        image: "../img/almacenamiento/Crucial X8 1TB USB 3_2 Gen 2 Portable SSD Review.jpeg",
+        priceOriginal: "$115.00",
+        priceDescuento: "$86.25", // -25%
+        specs: {
+            "Tipo": "SSD Externo",
+            "Interfaz": "USB 3.2 Gen 2 (USB-C)",
+            "Velocidad": "Hasta 1,050 MB/s de lectura",
+            "Uso": "Ideal para juegos, fotos y videos 4K"
+        }
+    },
+    {
+        id: 265,
+        name: "Kingston DataTraveler Exodia USB 3.2 64GB",
+        image: "../img/almacenamiento/Kingston DataTraveler Exodia M USB Flash Drive - 64GB USB 3_2 Gen 1 - with Moving Cap [DTXM_64GB].jpeg",
+        priceOriginal: "$19.99",
+        priceDescuento: "$13.99", // -30%
+        specs: {
+            "Tipo": "Memoria Flash USB",
+            "Interfaz": "USB 3.2 Gen 1",
+            "Diseño": "Capuchón móvil para proteger el conector",
+            "Compatibilidad": "Amplia compatibilidad con puertos USB 2.0 y 3.0"
+        }
+    },
+    {
+        id: 266,
+        name: "Seagate Expansion Portable HDD 4TB (USB 3.0)",
+        image: "../img/almacenamiento/Seagate Expansion 4Tb - Hdd _ Hd _ Hardisk _ Harddisk External 2_5_.jpeg",
+        priceOriginal: "$119.90",
+        priceDescuento: "$107.91", // -10%
+        specs: {
+            "Tipo": "Disco Duro Externo (HDD)",
+            "Interfaz": "USB 3.0",
+            "Uso": "Almacenamiento masivo para archivos grandes",
+            "Instalación": "Plug-and-play, no requiere fuente de alimentación externa"
+        }
+    },
+    {
+        id: 267,
+        name: "SanDisk Ultra MicroSDXC 128GB (Clase 10/U1)",
+        image: "../img/almacenamiento/SanDisk 128GB U1 microSDXC Memory Card Ultra Class 10 UHS-I with SD Adapter $23_88.jpeg",
+        priceOriginal: "$24.99",
+        priceDescuento: "$21.24", // -15%
+        specs: {
+            "Tipo": "Tarjeta MicroSDXC",
+            "Velocidad": "Clase 10 y U1 (para grabación Full HD)",
+            "Uso": "Smartphones Android, tabletas y cámaras de acción",
+            "Incluye": "Adaptador SD para usar en laptops y cámaras réflex"
+        }
+    },
+    {
+        id: 268,
+        name: "Western Digital Elements Portable HDD 2TB",
+        image: "../img/almacenamiento/Western Digital Elements Portable - Externe harde schijf - 2TB _ bol_com.jpeg",
+        priceOriginal: "$75.00",
+        priceDescuento: "$60.00", // -20%
+        specs: {
+            "Tipo": "Disco Duro Externo (HDD)",
+            "Interfaz": "USB 3.0",
+            "Diseño": "Diseño ligero y compacto para llevar fácilmente",
+            "Compatibilidad": "Compatible con USB 3.0 y USB 2.0"
+        }
+    },
+    {
+        id: 269,
+        name: "Samsung FIT Plus USB 3.1 128GB (Low Profile)",
+        image: "../img/almacenamiento/Samsung Usb 3_1 Memory Stick Flash Drive Plus Muf-128ab_apc With Keyring.jpeg",
+        priceOriginal: "$29.99",
+        priceDescuento: "$26.99", // -10%
+        specs: {
+            "Tipo": "Memoria Flash USB (Perfil Bajo)",
+            "Interfaz": "USB 3.1",
+            "Diseño": "Extremadamente pequeño, ideal para puertos de difícil acceso (TV, coche)",
+            "Velocidad": "Rendimiento rápido para transferencia de archivos"
+        }
+    },
+    {
+        id: 270,
+        name: "Kingston Canvas Go! Plus SD Card 256GB (U3/V30)",
+        image: "../img/almacenamiento/Kingston Technology Canvas Go! Plus UHS-I SDXC Memory Card 256GB.jpeg",
+        priceOriginal: "$45.00",
+        priceDescuento: "$33.75", // -25%
+        specs: {
+            "Tipo": "Tarjeta SDXC",
+            "Velocidad": "UHS-I U3 y V30 (para video 4K UHD)",
+            "Uso": "Cámaras DSLR, sin espejo y videocámaras",
+            "Durabilidad": "Resistente al agua, temperatura, golpes y rayos X"
+        }
+    },
+    {
+        id: 271,
+        name: "SanDisk Ultra Dual Drive Luxe USB-C 64GB",
+        image: "../img/almacenamiento/SanDisk SDDDC4 Ultra Dual Drive Luxe USB 3_2 Flash Drive 64GB Type C 128GB 256GB 512GB Metaal Type A.jpeg",
+        priceOriginal: "$19.95",
+        priceDescuento: "$15.96", // -20%
+        specs: {
+            "Tipo": "Memoria Flash Dual",
+            "Conectores": "USB Tipo C y USB Tipo A",
+            "Uso": "Transfiere archivos entre smartphones, tabletas y computadoras",
+            "Diseño": "Carcasa de metal elegante y giratoria"
+        }
+    },
+    {
+        id: 272,
+        name: "Seagate One Touch Portable SSD 1TB (USB 3.0)",
+        image: "../img/almacenamiento/Seagate One Touch Ssd, 1tb, External Ssd, Usb 3_0, Blue, 1 Year Myliocreate, 4 M.jpeg",
+        priceOriginal: "$135.00",
+        priceDescuento: "$114.75", // -15%
+        specs: {
+            "Tipo": "SSD Externo Portátil",
+            "Interfaz": "USB 3.0",
+            "Diseño": "Acabado en tela, elegante y texturizado",
+            "Uso": "Copia de seguridad rápida y acceso a archivos en movimiento"
+        }
+    },
+    {
+        id: 273,
+        name: "PNY Attaché 4 USB Flash Drive 128GB (Retráctil)",
+        image: "../img/almacenamiento/Pny _ 128GB Attaché 4 USB 2_0 Type A Flash Drive _ Black _ Best Buy.jpeg",
+        priceOriginal: "$29.99",
+        priceDescuento: "$20.99", // -30%
+        specs: {
+            "Tipo": "Memoria Flash USB",
+            "Interfaz": "USB 2.0 (Compatible con 3.0)",
+            "Diseño": "Diseño sin tapa, con conector deslizable",
+            "Uso": "Almacenamiento diario de documentos y música"
+        }
+    },
+    {
+        id: 274,
+        name: "ADATA HD710 Pro 2TB (Resistente al agua/polvo)",
+        image: "../img/almacenamiento/adata_hd710_pro_2tb.jpeg",
+        priceOriginal: "$99.99",
+        priceDescuento: "$89.99", // -10%
+        specs: {
+            "Tipo": "Disco Duro Externo Rugerizado (HDD)",
+            "Resistencia": "Certificación IP68 (agua y polvo), a prueba de golpes",
+            "Interfaz": "USB 3.1",
+            "Uso": "Ideal para ambientes exteriores o de trabajo rudo"
+        }
+    },
+    {
+        id: 275,
+        name: "Samsung EVO Select MicroSDXC 64GB (U3/Clase 10)",
+        image: "../img/almacenamiento/Samsung EVO Select 64 GB micro SDXC Card UHS-I + Adapter (MB-ME64KA_AM).jpeg",
+        priceOriginal: "$15.99",
+        priceDescuento: "$11.99", // -25%
+        specs: {
+            "Tipo": "Tarjeta MicroSDXC",
+            "Velocidad": "UHS-I U3 (ideal para grabación 4K)",
+            "Uso": "Grabación continua en cámaras de seguridad y drones",
+            "Durabilidad": "Resistente a imanes, rayos X y temperatura"
+        }
+    },
+    {
+        id: 276,
+        name: "Lexar JumpDrive S47 USB 3.1 256GB (Ultra Compacto)",
+        image: "../img/almacenamiento/Lexar S80 256GB JumpDrive USB 3_1 Flash Drive, up to 150MB_s read quickly transfer a 3GB 4K movie clip in less than 1 minute, compared to the 4 minu LJDS080256G-BNBNG.jpeg",
+        priceOriginal: "$39.00",
+        priceDescuento: "$31.20", // -20%
+        specs: {
+            "Tipo": "Memoria Flash USB (Ultra Compacta)",
+            "Interfaz": "USB 3.1",
+            "Diseño": "Tamaño miniatura (plug-in), ideal para dejar conectada permanentemente",
+            "Velocidad": "Transferencias rápidas para mover archivos grandes"
+        }
+    }
+];
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

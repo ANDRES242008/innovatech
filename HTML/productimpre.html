@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="../CSS/compartido2.css" />
+ <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="../JS/cartcompartido.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="impre.html">impresoras y tintas</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+const products = [
+    // *** IMPRESORAS Y TINTAS (ID 292 - 306) ***
+    {
+        id: 292,
+        name: "Epson EcoTank L3250 (Inalámbrica/Multifuncional)",
+        image: "../img/impresoras/Impressora Multifuncional Epson EcoTank L3250 Wi-fi _ Shopee Brasil.jpeg",
+        priceOriginal: "$199.99",
+        priceDescuento: "$169.99", // -15%
+        specs: {
+            "Tipo": "Inyección de tinta, Multifuncional (Imprime, Copia, Escanea)",
+            "Conectividad": "Wi-Fi, Wi-Fi Direct, USB",
+            "Sistema": "Tanques de tinta recargables de alta capacidad (EcoTank)",
+            "Velocidad": "Hasta 33 ppm Negro / 15 ppm Color"
+        }
+    },
+    {
+        id: 293,
+        name: "HP Smart Tank 515 (Inalámbrica/Tanque de Tinta)",
+        image: "../img/impresoras/HP PRINTER SMART TANK 515.jpeg",
+        priceOriginal: "$249.00",
+        priceDescuento: "$224.10", // -10%
+        specs: {
+            "Tipo": "Inyección de tinta, Multifuncional",
+            "Conectividad": "Wi-Fi, Bluetooth LE, USB",
+            "Sistema": "Tanques de tinta recargables con sensores de nivel",
+            "Característica": "Impresión móvil con aplicación HP Smart"
+        }
+    },
+    {
+        id: 294,
+        name: "Canon PIXMA G3110 (WiFi/Tanques Recargables)",
+        image: "../img/impresoras/Impresora multifunción a color Canon Pixma G3110 con wifi.jpeg",
+        priceOriginal: "$175.00",
+        priceDescuento: "$131.25", // -25%
+        specs: {
+            "Tipo": "Inyección de tinta, Multifuncional",
+            "Conectividad": "Wi-Fi, USB de alta velocidad",
+            "Sistema": "Tanques de tinta integrados (Sistema de Tinta Híbrida)",
+            "Resolución": "Hasta 4800 x 1200 dpi"
+        }
+    },
+    {
+        id: 295,
+        name: "Brother HL-L2370DW (Láser Monocromo)",
+        image: "../img/impresoras/Brother HL L2460DW Wireless Black and White Refresh Subscription Eligible Laser Printer, Great for Home Offices Gray HL-L2460DW.jpeg",
+        priceOriginal: "$149.99",
+        priceDescuento: "$119.99", // -20%
+        specs: {
+            "Tipo": "Láser Monocromo (solo Negro)",
+            "Conectividad": "Wi-Fi, Ethernet, USB",
+            "Dúplex": "Impresión Dúplex Automática (dos caras)",
+            "Velocidad": "Hasta 36 páginas por minuto"
+        }
+    },
+    {
+        id: 296,
+        name: "HP LaserJet M110w (Láser Monocromo Compacta)",
+        image: "../img/impresoras/HP LaserJet M140we Wireless Laser Multifunction Printer.jpeg",
+        priceOriginal: "$120.00",
+        priceDescuento: "$84.00", // -30%
+        specs: {
+            "Tipo": "Láser Monocromo",
+            "Tamaño": "Diseño ultra-compacto, la más pequeña de su clase",
+            "Conectividad": "Wi-Fi, USB",
+            "Eficiencia": "Bajo consumo de energía"
+        }
+    },
+    {
+        id: 297,
+        name: "Cartucho Original HP 664 Negro",
+        image: "../img/impresoras/Combo Cartucho Hp 664 Original Negro+color 3635 2135 4675.jpeg",
+        priceOriginal: "$15.99",
+        priceDescuento: "$13.59", // -15%
+        specs: {
+            "Tipo": "Cartucho de Tinta (Negro)",
+            "Uso": "Impresoras HP DeskJet Advantage (como 2135, 3635, 4675)",
+            "Rendimiento": "Estándar (aprox. 120 páginas)",
+            "Calidad": "Tintas originales HP para resultados consistentes"
+        }
+    },
+    {
+        id: 298,
+        name: "Botella de Tinta Epson T504 (Negro)",
+        image: "../img/impresoras/Tinta Epson 554 Negro.jpeg",
+        priceOriginal: "$18.50",
+        priceDescuento: "$16.65", // -10%
+        specs: {
+            "Tipo": "Botella de Tinta para EcoTank",
+            "Uso": "Impresoras Epson EcoTank de la serie L",
+            "Contenido": "70 ml (Alto rendimiento)",
+            "Color": "Negro Pigmentado"
+        }
+    },
+    {
+        id: 299,
+        name: "Cartucho Original Canon CL-211XL (Color)",
+        image: "../img/impresoras/Canon 211XL Single Ink Cartridge - Tri-color (2975B005AA)_ High Yield, 210_211 Series.jpeg",
+        priceOriginal: "$35.00",
+        priceDescuento: "$28.00", // -20%
+        specs: {
+            "Tipo": "Cartucho de Tinta (Tricolor)",
+            "Uso": "Impresoras Canon PIXMA de la serie 210/211",
+            "Rendimiento": "XL (Alto Rendimiento)",
+            "Colores": "Cian, Magenta y Amarillo"
+        }
+    },
+    {
+        id: 300,
+        name: "Unidad de Tambor Original Brother DR-2400",
+        image: "../img/impresoras/Skydo DR2400 Tamburo DR-2400 Compatibile per Brother DR 2400 tamburo TN-2420 Compatibile per Brother MFC-L2710DW MFC-L2750DW HL-L2310D HL-L2370DN.jpeg",
+        priceOriginal: "$59.99",
+        priceDescuento: "$44.99", // -25%
+        specs: {
+            "Componente": "Unidad de Tambor (Drum Unit)",
+            "Uso": "Impresoras Láser Brother (p. ej. HL-L2370DW, MFC-L2710DW)",
+            "Rendimiento": "Aprox. 12,000 páginas",
+            "Nota": "Se vende por separado del tóner"
+        }
+    },
+    {
+        id: 301,
+        name: "Botella de Tinta Canon GI-190 (Cian)",
+        image: "../img/impresoras/Botella Canon Gi-190 Cyan.jpeg",
+        priceOriginal: "$12.90",
+        priceDescuento: "$11.61", // -10%
+        specs: {
+            "Tipo": "Botella de Tinta para MegaTank",
+            "Uso": "Impresoras Canon PIXMA G-Series",
+            "Contenido": "Tinta a base de colorante (70 ml)",
+            "Color": "Cian"
+        }
+    },
+    {
+        id: 302,
+        name: "HP DeskJet 2755e (Inalámbrica/Económica)",
+        image: "../img/impresoras/Hp _ DeskJet 2855e Wireless AI-Enabled All-in-One Inkjet Printer with 3 Months of Instant Ink _ White _ Best Buy.jpeg",
+        priceOriginal: "$69.99",
+        priceDescuento: "$59.49", // -15%
+        specs: {
+            "Tipo": "Inyección de tinta, Multifuncional",
+            "Conectividad": "Wi-Fi de banda dual, USB",
+            "Uso": "Ideal para el hogar y uso ocasional",
+            "Servicio": "Compatible con el servicio de suscripción HP Instant Ink"
+        }
+    },
+    {
+        id: 303,
+        name: "Botella de Tinta Epson T664 (Magenta)",
+        image: "../img/impresoras/Tinta Epson 664 T664320 T664320AL Magenta Original para Ecotank L310 L365 L375 L110 L355 L606 L1455 Refil de 70ml.jpeg",
+        priceOriginal: "$11.50",
+        priceDescuento: "$9.20", // -20%
+        specs: {
+            "Tipo": "Botella de Tinta para EcoTank",
+            "Uso": "Impresoras Epson EcoTank (T664 series)",
+            "Contenido": "70 ml",
+            "Color": "Magenta"
+        }
+    },
+    {
+        id: 304,
+        name: "Tóner Original HP 105A (Negro)",
+        image: "../img/impresoras/Toner Original Hp 105a W1105a P_ 107a 107w 135a 135w 137fnw.jpeg",
+        priceOriginal: "$55.00",
+        priceDescuento: "$41.25", // -25%
+        specs: {
+            "Tipo": "Cartucho de Tóner Láser (Monocromo)",
+            "Uso": "Impresoras HP Laser 107, MFP 135, MFP 137 series",
+            "Rendimiento": "Aprox. 1,000 páginas",
+            "Calidad": "Tóner de precisión HP original"
+        }
+    },
+    {
+        id: 305,
+        name: "Tóner Original Brother TN-2410 (Negro)",
+        image: "../img/impresoras/GPC Image TN2420 TN-2420 Compatible Toner Cartridges for Brother TN2410 TN-2410 for DCP-L2510D L2530DW L2550DN HL-L2310D L2350DW L2357DW L2370DN.jpeg",
+        priceOriginal: "$65.00",
+        priceDescuento: "$58.50", // -10%
+        specs: {
+            "Tipo": "Cartucho de Tóner Láser (Monocromo)",
+            "Uso": "Impresoras Brother HL-L2300 y DCP-L2500 series",
+            "Rendimiento": "Estándar (Aprox. 1,200 páginas)",
+            "Componentes": "Diseñado para funcionar con la unidad de tambor Brother"
+        }
+    },
+    {
+        id: 306,
+        name: "Paquete Papel Fotográfico Brillo (4x6, 100 hojas)",
+        image: "../img/impresoras/Papel Fotografico 200gr A4 100hjs Glossy Brillante Candy Bar.jpeg",
+        priceOriginal: "$19.99",
+        priceDescuento: "$13.99", // -30%
+        specs: {
+            "Tipo": "Papel Fotográfico Brillante (Glossy)",
+            "Tamaño": "4x6 pulgadas (10x15 cm)",
+            "Gramaje": "Alto gramaje (ideal para fotos de alta calidad)",
+            "Cantidad": "100 hojas por paquete"
+        }
+    }
+];
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

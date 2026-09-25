@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <link rel="stylesheet" href="../CSS/registro.css" />
+</head>
+<body>
+
+<section class="register-section">
+  <div class="register-box">
+    <h2>Crea tu cuenta</h2>
+
+    <form id="registerForm">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" placeholder="Nombre completo..." required />
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" placeholder="tu@email.com" required />
+
+      <label for="reg-password">Contraseña</label>
+      <div class="password-wrapper">
+        <input type="password" id="reg-password" placeholder="Crea una contraseña..." required />
+        <span id="toggleRegPassword" class="toggle-icon">👁️</span>
+      </div>
+
+      <button type="submit" class="register-btn">Registrarse</button>
+    </form>
+
+    <div class="extra-option">
+      <span>¿Ya tienes cuenta?</span>
+      <a href="inicio.html">Volver al inicio de sesión</a>
+    </div>
+  </div>
+</section>
+
+<script src="../JS/registro.js"></script>
+</body>
+</html>

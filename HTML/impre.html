@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Nova Tech Gaming</title> 
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+ <link rel="stylesheet" href="../CSS/compartido2.css" />
+  .
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body>     
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+
+
+ <div class="cards-container">
+    <div class="card">
+        <div class="shape purple"></div>
+        <img src="../img/mouses/M185.jpeg" alt="Mouses y Teclados" />
+        <div class="card-content">
+            <h3 class="card-title">Mouses y Teclados</h3>
+            <p class="card-subtitle">Encuentra la precisión y ergonomía ideal para tu trabajo diario.</p>
+            <a href="mouses.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape red"></div>
+        <img src="../img/almacenamiento/Western Digital 4TB WD My Passport Ultra for Mac Usb-c and USB 3_2 Gen 1, Portable External Hard Drive Hdd, Silver - Wdbpmv0040bsl-wesn.jpeg" alt="Almacenamiento" />
+        <div class="card-content">
+            <h3 class="card-title">Almacenamiento y USB etc.</h3>
+            <p class="card-subtitle">Discos SSD y externos de alta capacidad para guardar tu información.</p>
+            <a href="almacenamiento.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape orange"></div>
+        <img src="../img/accesorios/Hub USB-C vers HDMI _ USB _ USB-C Belkin.jpeg" alt="Accesorios para Computadoras" />
+        <div class="card-content">
+            <h3 class="card-title">Accesorios para Computadoras</h3>
+            <p class="card-subtitle">Mejora tu productividad con cámaras web, hubs y más esenciales.</p>
+            <a href="compusaccesorios.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape green"></div>
+        <img src="../img/impresoras/HP PRINTER SMART TANK 515.jpeg" alt="Impresoras" />
+        <div class="card-content">
+            <h3 class="card-title">Impresoras y tintas</h3>
+            <p class="card-subtitle">Equipos de impresión eficientes para el hogar y la oficina.</p>
+            <a href="impre.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+</div>
+
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+
+<div class="productos">
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productimpre.html?id=292">
+            <img src="../img/impresoras/Impressora Multifuncional Epson EcoTank L3250 Wi-fi _ Shopee Brasil.jpeg" alt="Epson EcoTank L3250" />
+        </a>
+        <p class="nombre-producto">Epson EcoTank L3250 (Inalámbrica/Multifuncional)</p>
+        <p class="precio-original">$199.99</p>
+        <p class="precio-descuento">$169.99</p>
+        <a href="productimpre.html?id=292">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productimpre.html?id=293">
+            <img src="../img/impresoras/HP PRINTER SMART TANK 515.jpeg" alt="HP Smart Tank 515" />
+        </a>
+        <p class="nombre-producto">HP Smart Tank 515 (Inalámbrica/Tanque de Tinta)</p>
+        <p class="precio-original">$249.00</p>
+        <p class="precio-descuento">$224.10</p>
+        <a href="productimpre.html?id=293">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productimpre.html?id=294">
+            <img src="../img/impresoras/Impresora multifunción a color Canon Pixma G3110 con wifi.jpeg" alt="Canon PIXMA G3110" />
+        </a>
+        <p class="nombre-producto">Canon PIXMA G3110 (WiFi/Tanques Recargables)</p>
+        <p class="precio-original">$175.00</p>
+        <p class="precio-descuento">$131.25</p>
+        <a href="productimpre.html?id=294">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productimpre.html?id=295">
+            <img src="../img/impresoras/Brother HL L2460DW Wireless Black and White Refresh Subscription Eligible Laser Printer, Great for Home Offices Gray HL-L2460DW.jpeg" alt="Brother HL-L2370DW" />
+        </a>
+        <p class="nombre-producto">Brother HL-L2370DW (Láser Monocromo)</p>
+        <p class="precio-original">$149.99</p>
+        <p class="precio-descuento">$119.99</p>
+        <a href="productimpre.html?id=295">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-30%</div>
+        <a href="productimpre.html?id=296">
+            <img src="../img/impresoras/HP LaserJet M140we Wireless Laser Multifunction Printer.jpeg" alt="HP LaserJet M110w" />
+        </a>
+        <p class="nombre-producto">HP LaserJet M110w (Láser Monocromo Compacta)</p>
+        <p class="precio-original">$120.00</p>
+        <p class="precio-descuento">$84.00</p>
+        <a href="productimpre.html?id=296">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productimpre.html?id=297">
+            <img src="../img/impresoras/Combo Cartucho Hp 664 Original Negro+color 3635 2135 4675.jpeg" alt="Cartucho HP 664 Negro" />
+        </a>
+        <p class="nombre-producto">Cartucho Original HP 664 Negro</p>
+        <p class="precio-original">$15.99</p>
+        <p class="precio-descuento">$13.59</p>
+        <a href="productimpre.html?id=297">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productimpre.html?id=298">
+            <img src="../img/impresoras/Tinta Epson 554 Negro.jpeg" alt="Tinta Epson T504 Negro" />
+        </a>
+        <p class="nombre-producto">Botella de Tinta Epson T504 (Negro)</p>
+        <p class="precio-original">$18.50</p>
+        <p class="precio-descuento">$16.65</p>
+        <a href="productimpre.html?id=298">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productimpre.html?id=299">
+            <img src="../img/impresoras/Canon 211XL Single Ink Cartridge - Tri-color (2975B005AA)_ High Yield, 210_211 Series.jpeg" alt="Cartucho Canon CL-211XL" />
+        </a>
+        <p class="nombre-producto">Cartucho Original Canon CL-211XL (Color)</p>
+        <p class="precio-original">$35.00</p>
+        <p class="precio-descuento">$28.00</p>
+        <a href="productimpre.html?id=299">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productimpre.html?id=300">
+            <img src="../img/impresoras/Skydo DR2400 Tamburo DR-2400 Compatibile per Brother DR 2400 tamburo TN-2420 Compatibile per Brother MFC-L2710DW MFC-L2750DW HL-L2310D HL-L2370DN.jpeg" alt="Tambor Brother DR-1000" />
+        </a>
+        <p class="nombre-producto">Unidad de Tambor Original Brother DR-2400</p>
+        <p class="precio-original">$59.99</p>
+        <p class="precio-descuento">$44.99</p>
+        <a href="productimpre.html?id=300">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productimpre.html?id=301">
+            <img src="../img/impresoras/Botella Canon Gi-190 Cyan.jpeg" alt="Canon Tinta GI-190 Cian" />
+        </a>
+        <p class="nombre-producto">Botella de Tinta Canon GI-190 (Cian)</p>
+        <p class="precio-original">$12.90</p>
+        <p class="precio-descuento">$11.61</p>
+        <a href="productimpre.html?id=301">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productimpre.html?id=302">
+            <img src="../img/impresoras/Hp _ DeskJet 2855e Wireless AI-Enabled All-in-One Inkjet Printer with 3 Months of Instant Ink _ White _ Best Buy.jpeg" alt="HP DeskJet 2755e" />
+        </a>
+        <p class="nombre-producto">HP DeskJet 2755e (Inalámbrica/Económica)</p>
+        <p class="precio-original">$69.99</p>
+        <p class="precio-descuento">$59.49</p>
+        <a href="productimpre.html?id=302">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productimpre.html?id=303">
+            <img src="../img/impresoras/Tinta Epson 664 T664320 T664320AL Magenta Original para Ecotank L310 L365 L375 L110 L355 L606 L1455 Refil de 70ml.jpeg" alt="Epson T664 Magenta" />
+        </a>
+        <p class="nombre-producto">Botella de Tinta Epson T664 (Magenta)</p>
+        <p class="precio-original">$11.50</p>
+        <p class="precio-descuento">$9.20</p>
+        <a href="productimpre.html?id=303">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productimpre.html?id=304">
+            <img src="../img/impresoras/Toner Original Hp 105a W1105a P_ 107a 107w 135a 135w 137fnw.jpeg" alt="Tóner HP 105A" />
+        </a>
+        <p class="nombre-producto">Tóner Original HP 105A (Negro)</p>
+        <p class="precio-original">$55.00</p>
+        <p class="precio-descuento">$41.25</p>
+        <a href="productimpre.html?id=304">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productimpre.html?id=305">
+            <img src="../img/impresoras/GPC Image TN2420 TN-2420 Compatible Toner Cartridges for Brother TN2410 TN-2410 for DCP-L2510D L2530DW L2550DN HL-L2310D L2350DW L2357DW L2370DN.jpeg" alt="Brother TN-2410 Toner" />
+        </a>
+        <p class="nombre-producto">Tóner Original Brother TN-2410 (Negro)</p>
+        <p class="precio-original">$65.00</p>
+        <p class="precio-descuento">$58.50</p>
+        <a href="productimpre.html?id=305">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-30%</div>
+        <a href="productimpre.html?id=306">
+            <img src="../img/impresoras/Papel Fotografico 200gr A4 100hjs Glossy Brillante Candy Bar.jpeg" alt="Papel Fotográfico Brillo" />
+        </a>
+        <p class="nombre-producto">Paquete Papel Fotográfico Brillo (4x6, 100 hojas)</p>
+        <p class="precio-original">$19.99</p>
+        <p class="precio-descuento">$13.99</p>
+        <a href="productimpre.html?id=306">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+</div> 
+   <nav class="paginacion" aria-label="Paginación de resultados"> 
+    <a class="pagina-btn" href="mouses.html" aria-label="Página 1">1</a> 
+    <a class="pagina-btn" href="almacenamiento.html" aria-label="Página 2">2</a> 
+    <a class="pagina-btn" href="compusaccesorios.html" aria-label="Página 3">3</a>
+    <a class="pagina-btn pagina-activa" href="impre.html" aria-label="Página 4">4</a> 
+</nav>
+  </section> 
+
+<br>
+<br>
+
+
+  <script src="../JS/compartido.js"></script>
+    <script src="../JS/cartcompartido.js"></script>
+<script>
+  
+const products = [
+    
+    { id: 292, name: "Epson EcoTank L3250 (Inalámbrica/Multifuncional)", priceDescuento: "$169.99" },
+    { id: 293, name: "HP Smart Tank 515 (Inalámbrica/Tanque de Tinta)", priceDescuento: "$224.10" },
+    { id: 294, name: "Canon PIXMA G3110 (WiFi/Tanques Recargables)", priceDescuento: "$131.25" },
+    { id: 295, name: "Brother HL-L2370DW (Láser Monocromo)", priceDescuento: "$119.99" },
+    { id: 296, name: "HP LaserJet M110w (Láser Monocromo Compacta)", priceDescuento: "$84.00" },
+    { id: 297, name: "Cartucho Original HP 664 Negro", priceDescuento: "$13.59" },
+    { id: 298, name: "Botella de Tinta Epson T504 (Negro)", priceDescuento: "$16.65" },
+    { id: 299, name: "Cartucho Original Canon CL-211XL (Color)", priceDescuento: "$28.00" },
+    { id: 300, name: "Unidad de Tambor Original Brother DR-2400", priceDescuento: "$44.99" },
+    { id: 301, name: "Botella de Tinta Canon GI-190 (Cian)", priceDescuento: "$11.61" },
+    { id: 302, name: "HP DeskJet 2755e (Inalámbrica/Económica)", priceDescuento: "$59.49" },
+    { id: 303, name: "Botella de Tinta Epson T664 (Magenta)", priceDescuento: "$9.20" },
+    { id: 304, name: "Tóner Original HP 105A (Negro)", priceDescuento: "$41.25" },
+    { id: 305, name: "Tóner Original Brother TN-2410 (Negro)", priceDescuento: "$58.50" },
+    { id: 306, name: "Paquete Papel Fotográfico Brillo (4x6, 100 hojas)", priceDescuento: "$13.99" }
+];
+ 
+  window.cart.setupAddToCartButtons(products);
+</script>
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body> 
+</html>

@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+ <link rel="stylesheet" href="../CSS/compartido2.css" />
+  <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon"> 
+  .
+ .
+  <script src="../JS/cartcompartido2.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="videos.html">TV</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+   <script>
+    // Sample product data for demonstration
+    const products = [
+  {
+    id: 215,
+    name: "SAMSUNG UHD 4K",
+    image: "../img/tv/IMG 2025-08-12 a las 19.31.49_453e839d.jpg",
+    priceOriginal: "$900.00",
+    priceDescuento: "$800.99",
+    specs: {
+      "Resolución UHD 4K": "Ofrece imágenes nítidas y detalladas con cuatro veces más píxeles que un televisor Full HD.",
+      "Tecnología HDR": "Mejora el contraste y los colores para una experiencia visual más realista.",
+      "Frecuencia de actualización": "Tasa de refresco de 60Hz para movimientos fluidos en películas y videojuegos.",
+      "Conectividad múltiple": "Incluye puertos HDMI, USB y salida de audio para conectar diferentes dispositivos.",
+      "Diseño ultradelgado": "Pantalla con bordes finos que aporta elegancia y mayor área de visualización.",
+      "Sonido envolvente": "Altavoces integrados con tecnología de sonido digital para una mejor experiencia audiovisual.",
+      "Compatibilidad amplia": "Funciona con consolas, laptops, reproductores Blu-ray y dispositivos de streaming.",
+      "Eficiencia energética": "Consumo optimizado para reducir el gasto de electricidad sin perder calidad.",
+      "Modo gaming": "Reduce el retraso de entrada (input lag) para una experiencia de juego más rápida."
+    }
+  },
+  {
+    id: 216,
+    name: "DYNAMIC CRYSTAN COLUR",
+    image: "../img/tv/IMG-20250723-WA0004.jpg",
+    priceOriginal: "$800.00",
+    priceDescuento: "$750.00",
+    specs: {
+      "Resolución UHD 4K": "Imágenes más nítidas y realistas con cuatro veces más detalle que un televisor Full HD.",
+      "Dynamic Crystal Color": "Tecnología que optimiza miles de millones de tonos para colores más vibrantes.",
+      "Procesador Crystal 4K": "Mejora la calidad de imagen y ajusta el color automáticamente para cada escena.",
+      "HDR (Alto Rango Dinámico)": "Aumenta el nivel de brillo y contraste para escenas más profundas y detalladas.",
+      "Diseño sin bordes": "Pantalla casi infinita que ofrece mayor inmersión al ver películas, series o juegos.",
+      "Sonido envolvente": "Altavoces integrados con tecnología Dolby Digital para una experiencia más inmersiva.",
+      "Conectividad avanzada": "Incluye HDMI, USB, WiFi y Bluetooth para múltiples dispositivos.",
+      "Modo Gaming": "Reduce el input lag y optimiza la pantalla para videojuegos en tiempo real.",
+      "Eficiencia energética": "Consumo reducido sin perder calidad de imagen ni rendimiento."
+    } 
+  },
+  {
+    id: 217,
+    name: "SAMSUNG UHP",
+    image: "../img/tv/IMG-20250723-WA0005.jpg",
+    priceOriginal: "$450.00",
+    priceDescuento: "$330.00",
+    specs: {
+      "Resolución Full HD+": "Ofrece imágenes claras y detalladas con gran definición.",
+      "Pantalla LED": "Colores brillantes y consumo de energía más eficiente.",
+      "Tecnología Ultra Clean View": "Reduce el ruido de la imagen y mejora la claridad visual.",
+      "HDR": "Optimiza el brillo y contraste para escenas más realistas.",
+      "Diseño elegante": "Pantalla delgada con bordes reducidos que aporta modernidad al espacio.",
+      "Sonido envolvente": "Altavoces con tecnología Dolby Audio para una mejor experiencia de audio.",
+      "Conectividad HDMI y USB": "Permite conectar fácilmente consolas, computadoras y reproductores.",
+      "Modo Cine": "Ajusta automáticamente la imagen para disfrutar de películas con mayor realismo.",
+      "Eficiencia energética": "Diseñado para consumir menos energía sin afectar el rendimiento."
+    }      
+  },
+  {
+    id: 218,
+    name: "LG UHP",
+    image: "../img/tv/IMG-20250812-WA0064.jpg",
+    priceOriginal: "$500.00",
+    priceDescuento: "$450.00",
+    specs: {
+      "Resolución UHD 4K": "Imágenes de alta definición con colores vivos y gran nivel de detalle.",
+      "Procesador Quad Core": "Optimiza la calidad de imagen y mejora el rendimiento general.",
+      "HDR10 Pro": "Brinda un mejor rango de brillo y contraste en cada escena.",
+      "AI Sound": "Sonido mejorado con inteligencia artificial que se adapta al contenido.",
+      "Diseño minimalista": "Pantalla delgada con biseles reducidos para mayor elegancia.",
+      "Conectividad múltiple": "Incluye HDMI, USB y Bluetooth para distintos dispositivos.",
+      "Sistema operativo webOS": "Acceso rápido a aplicaciones como Netflix, YouTube y más.",
+      "Modo cine y gaming": "Ajustes automáticos para películas y videojuegos con baja latencia.",
+      "Eficiencia energética": "Consumo optimizado sin sacrificar la calidad de imagen."
+    }
+  },
+  {
+    id: 219,
+    name: "SONY",
+    image: "../img/tv/IMG-20250812-WA0065.jpg",
+    priceOriginal: "$400.00",
+    priceDescuento: "$375.00",
+    specs: {
+      "Resolución Full HD": "Ofrece imágenes claras y precisas con gran nivel de detalle.",
+      "Tecnología X-Reality PRO": "Mejora cada píxel para optimizar nitidez, contraste y color.",
+      "HDR": "Aumenta el rango de brillo y contraste para escenas más realistas.",
+      "Motionflow XR": "Suaviza el movimiento en escenas rápidas de deportes y películas.",
+      "Diseño elegante": "Pantalla con biseles delgados que aporta un estilo moderno.",
+      "Sonido ClearAudio+": "Optimiza automáticamente el audio para mayor claridad y realismo.",
+      "Conectividad avanzada": "Incluye puertos HDMI, USB y compatibilidad con dispositivos externos.",
+      "Modo Cine y Deportes": "Ajustes automáticos para mejorar la experiencia de visualización.",
+      "Eficiencia energética": "Diseñado para consumir menos energía manteniendo el rendimiento."
+    }
+  },
+  {
+    id: 220,
+    name: "LG SMART TV",
+    image: "../img/tv/IMG-20250812-WA0067.jpg",
+    priceOriginal: "$456.00",
+    priceDescuento: "$430.50",
+    specs: {
+      "Resolución UHD 4K": "Imágenes con mayor nitidez y cuatro veces más detalle que un televisor Full HD.",
+      "HDR10 Pro": "Ofrece colores más vivos y mayor contraste en cada escena.",
+      "Procesador AI a5 Gen6": "Optimiza la calidad de imagen y sonido mediante inteligencia artificial.",
+      "Smart TV webOS": "Acceso rápido a aplicaciones como Netflix, YouTube, Disney+ y más.",
+      "AI Sound Pro": "Sonido envolvente adaptado automáticamente al tipo de contenido.",
+      "Diseño ultradelgado": "Pantalla con bordes reducidos para un estilo moderno y elegante.",
+      "Conectividad avanzada": "Incluye HDMI, USB, WiFi y Bluetooth para múltiples dispositivos.",
+      "Modo cine y gaming": "Ajustes automáticos para películas y juegos con baja latencia.",
+      "Eficiencia energética": "Optimizado para reducir el consumo eléctrico sin perder calidad."
+    }
+  },
+  {
+    id: 221,
+    name: "NOC-ROKU TV",
+    image: "../img/tv/IMG-20250812-WA0069.jpg",
+    priceOriginal: "$700.00",
+    priceDescuento: "$679.50",
+    specs: {
+      "Resolución Full HD": "Ofrece imágenes claras y definidas para todo tipo de contenido.",
+      "Sistema Roku integrado": "Acceso a miles de canales y aplicaciones como Netflix, YouTube, Disney+ y más.",
+      "Control remoto por voz": "Permite buscar contenido fácilmente con comandos de voz.",
+      "Conectividad múltiple": "Incluye HDMI, USB, WiFi y salida de audio digital.",
+      "Sonido envolvente": "Altavoces integrados con tecnología Dolby Audio.",
+      "Modo ahorro de energía": "Consumo eficiente diseñado para uso prolongado.",
+      "Interfaz intuitiva": "Menús sencillos y rápidos para navegar fácilmente entre aplicaciones."
+    }
+  },
+  {
+    id: 222,
+    name: "HISENSE TV",
+    image: "../img/tv/IMG-20250812-WA0086.jpg",
+    priceOriginal: "$1000.00",
+    priceDescuento: "$995.00",
+    specs: {
+      "Resolución UHD 4K": "Imágenes nítidas y realistas con cuatro veces más detalle que el Full HD.",
+      "Dolby Vision HDR": "Proporciona colores vivos y contrastes más intensos.",
+      "Sistema VIDAA Smart OS": "Interfaz rápida con acceso a aplicaciones populares de streaming.",
+      "Sonido DTS Virtual-X": "Audio envolvente que simula un sistema de cine en casa.",
+      "Diseño ultradelgado": "Pantalla con biseles mínimos para mayor inmersión.",
+      "Conectividad avanzada": "HDMI, USB, WiFi y Bluetooth integrados.",
+      "Modo Deportes y Cine": "Optimiza imagen y sonido para eventos deportivos o películas.",
+      "Eficiencia energética": "Tecnología que reduce el consumo eléctrico sin afectar calidad."
+    }
+  },
+  {
+    id: 223,
+    name: "TD SYSTEMS TV",
+    image: "../img/tv/IMG-20250812-WA0087.jpg",
+    priceOriginal: "$300.00",
+    priceDescuento: "$259.50",
+    specs: {
+      "Resolución HD Ready": "Ideal para habitaciones pequeñas y uso básico.",
+      "Android TV": "Incluye Google Play Store para descargar aplicaciones y juegos.",
+      "Chromecast integrado": "Permite enviar contenido desde móviles o laptops fácilmente.",
+      "Conectividad": "HDMI, USB, WiFi integrado y salida de auriculares.",
+      "Sonido digital": "Altavoces claros y balanceados para uso diario.",
+      "Modo Hotel": "Funciones especiales para controlar configuraciones básicas.",
+      "Diseño compacto": "Pantalla ligera, fácil de instalar y transportar."
+    }
+  },
+  {
+    id: 224,
+    name: "TCL TV",
+    image: "../img/tv/IMG-20250812-WA0088.jpg",
+    priceOriginal: "$680.00",
+    priceDescuento: "$600.00",
+    specs: {
+      "UHD 4K": "Imágenes claras y detalladas para una experiencia inmersiva.",
+      "HDR10": "Ofrece colores más vivos y mejor contraste en escenas brillantes y oscuras.",
+      "Google TV": "Interfaz inteligente con recomendaciones personalizadas.",
+      "Asistente de voz": "Compatible con Google Assistant y Alexa.",
+      "Conectividad avanzada": "Incluye HDMI, USB, WiFi y Bluetooth.",
+      "Diseño sin bordes": "Pantalla elegante y minimalista con gran área de visualización.",
+      "Modo Gaming": "Reduce la latencia para videojuegos en tiempo real."
+    }
+  },
+  {
+    id: 225,
+    name: "SAMSUNG TV PLUS",
+    image: "../img/tv/IMG-20250812-WA0089.jpg",
+    priceOriginal: "$950.00",
+    priceDescuento: "$800.00",
+    specs: {
+      "Resolución UHD 4K": "Claridad excepcional en cada escena.",
+      "Samsung TV Plus": "Canales de TV gratuitos y aplicaciones integradas de streaming.",
+      "HDR10+": "Detalles más precisos en escenas brillantes y oscuras.",
+      "Procesador Crystal 4K": "Optimiza automáticamente la calidad de imagen.",
+      "Sonido envolvente Dolby Digital": "Experiencia inmersiva para películas y música.",
+      "Diseño ultrafino": "Pantalla moderna con marcos reducidos.",
+      "Modo Juego Automático": "Reduce la latencia al detectar consolas de videojuegos."
+    }
+  },
+  {
+    id: 226,
+    name: "TUTU TV",
+    image: "../img/tv/IMG-20250812-WA0090.jpg",
+    priceOriginal: "$700.00",
+    priceDescuento: "$680.00",
+    specs: {
+      "Resolución Full HD": "Imágenes claras y brillantes en todo tipo de contenido.",
+      "Smart TV": "Acceso a plataformas de streaming como YouTube y Netflix.",
+      "Conectividad básica": "Incluye HDMI y USB para dispositivos externos.",
+      "Sonido digital": "Altavoces claros para uso cotidiano.",
+      "Diseño compacto": "Ideal para habitaciones pequeñas o como segunda TV.",
+      "Eficiencia energética": "Consumo optimizado con modo ahorro."
+    }
+  },
+  {
+    id: 227,
+    name: "SAMSUNG TV",
+    image: "../img/tv/samsung.2020.jpg",
+    priceOriginal: "673.00",
+    priceDescuento: "$622.00",
+    specs: {
+      "Resolución UHD 4K": "Cuatro veces más detalle que el Full HD.",
+      "PurColor": "Colores más naturales y realistas.",
+      "Procesador Crystal 4K": "Optimiza cada escena para mayor claridad.",
+      "HDR": "Mayor rango dinámico en brillo y contraste.",
+      "Smart Hub": "Acceso rápido a aplicaciones y contenido en streaming.",
+      "Diseño moderno": "Pantalla delgada con marcos reducidos."
+    }
+  },
+  {
+    id: 228,
+    name: "SAMSUNG TV 4K",
+    image: "../img/tv/samsung.4k UHD.jpg",
+    priceOriginal: "$500.00",
+    priceDescuento: "$480.00",
+    specs: {
+      "Resolución UHD 4K": "Imágenes más detalladas y realistas.",
+      "HDR10+": "Colores mejorados y contrastes más profundos.",
+      "Sonido Dolby Digital Plus": "Calidad de audio superior para cine y juegos.",
+      "Conectividad avanzada": "HDMI, USB, WiFi y Bluetooth.",
+      "Modo Juego Automático": "Reduce el input lag para videojuegos.",
+      "Diseño elegante": "Pantalla ultrafina con biseles reducidos."
+    }
+  },
+  {
+    id: 229,
+    name: "SAMSUNG SMART TV",
+    image: "../img/tv/samsung.UHD.jpg",
+    priceOriginal: "$600.00",
+    priceDescuento: "$550.00",
+    specs: {
+      "Resolución UHD 4K": "Imágenes más realistas y definidas.",
+      "Smart Hub": "Acceso a aplicaciones de streaming y contenido online.",
+      "HDR": "Optimiza brillo y colores para mayor realismo.",
+      "Diseño minimalista": "Pantalla sin bordes que maximiza la visualización.",
+      "Conectividad múltiple": "HDMI, USB, WiFi y Bluetooth.",
+      "AI Upscaling": "Mejora la calidad de contenido en baja resolución.",
+      "Eficiencia energética": "Bajo consumo eléctrico para uso prolongado."
+    }
+  }
+];
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

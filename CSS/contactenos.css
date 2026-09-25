@@ -1,0 +1,174 @@
+/* Estilos generales y del encabezado (sin cambios) */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E6F7FF ; /* Un fondo suave para resaltar la tarjeta */
+    margin: 0;
+    padding: 20px;
+}
+
+.titulo-central {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #373668;
+    margin: 20px auto;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 1px 1px 4px #ccc;
+    line-height: 1.4;
+    max-width: 800px;
+}
+
+.separador-linea {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(to right, #1d1abe, #5611a8);
+    margin: 10px auto 40px auto;
+    border-radius: 2px;
+}
+
+/* --- Contenedor Principal --- */
+/* Simplificado para centrar una sola tarjeta de forma eficiente */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+/* --- Estilo de la Tarjeta Única --- */
+.card {
+    width: 90%; /* Hace la tarjeta responsiva en móviles */
+    max-width: 320px; /* Limita el ancho en pantallas grandes */
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    height: 200px; 
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+
+.card-content {
+    padding: 25px;
+    text-align: center; 
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: #1D1ABE;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 1rem; 
+    line-height: 1.5;
+    margin: 0 0 25px 0;
+    color: #666;
+}
+
+
+/* --- Íconos de Redes Sociales --- */
+.redes-por-tarjeta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-por-tarjeta a {
+    /* Aquí definimos el tamaño del contenedor del icono */
+    display: flex; /* Para centrar la imagen dentro */
+    justify-content: center;
+    align-items: center;
+    width: 44px; /* Un poco más grande para el margen interno */
+    height: 44px; /* Un poco más grande para el margen interno */
+    border-radius: 50%;
+    background: #ffffff; /* Fondo blanco por defecto */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.redes-por-tarjeta a img {
+    /* La imagen se ajusta al tamaño del contenedor (el 'a') */
+    width: 70%;   /* Ajusta esto para que la imagen no se recorte, por ejemplo 70% */
+    height: 70%;  /* Ajusta esto para que la imagen no se recorte, por ejemplo 70% */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+    padding: 0; /* Ya no necesitamos padding aquí */
+    border-radius: 0; /* Ya no necesitamos border-radius aquí */
+}
+
+.redes-por-tarjeta a:hover {
+    transform: scale(1.15) rotate(10deg); /* Efecto más dinámico */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.icon-gmail img {
+    
+    box-shadow: 0 2px 8px rgba(221, 75, 57, 0.3); 
+}
+
+.redes-por-tarjeta a:hover img {
+
+    transform: scale(1.2) rotate(10deg); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            margin-bottom: 20px;
+            margin-left: 20px; /* Ajusta esto si necesitas centrarlo más */
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1D1ABE; /* Color de tu acento principal */
+            background-color: #ffffff;
+            border: 2px solid #1D1ABE;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button:hover {
+            color: #ffffff;
+            background-color: #1D1ABE;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Aseguramos que la cabecera pueda contener bien el botón */
+        header {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinea todo a la izquierda por defecto */
+        }
+        
+        .titulo-central {
+            margin: 20px auto 10px auto; /* Mueve el título para centrarlo horizontalmente */
+            width: 100%;
+        }
+        
+        .separador-linea {
+            margin: 10px auto 40px auto;
+        }

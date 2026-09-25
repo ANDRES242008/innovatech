@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Nova Tech Gaming</title> 
+  <link rel="stylesheet" href="../CSS/gadget.css" /> 
+  <link rel="stylesheet" href="../CSS/cartgadget.css" />
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body> 
+ <!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+  <button 
+    class="mobile-menu-toggle" 
+    type="button" 
+    aria-label="Abrir menú de navegación"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    â˜°
+  </button>
+  
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true">ï¸</span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div class="pago-cuota" aria-label="Pago de cuotas">
+    <a href="pago-cuotas.html" aria-label="Ir a pago de cuotas">
+      Pago de Cuota
+    </a>
+  </div>
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Banner grande con anuncios destacados --> 
+
+
+    <div class="cards-container">
+    <div class="card">
+      <div class="shape purple"></div>
+      <img src="../img/celulares/iPhone 16e (128 GB) - Preto - Distribuidor Autorizado.jpeg" alt="celulares" />
+      <div class="card-content">
+        <h3 class="card-title">Celulares de las mejores marcas</h3>
+        <p class="card-subtitle">Pontecia asegurada y durables</p>
+        <a href="celulares.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shape red"></div>
+      <img src="../img/tabletas/A9 TABLE.jpeg" alt="Tabletas" />
+      <div class="card-content">
+        <h3 class="card-title">Tabletas de la mejor potencia</h3>
+        <p class="card-subtitle">Procesadores potentes y de calidad</p>
+        <a href="tabletas.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shape orange"></div>
+      <img src="../img/gadget/sostenedor de telefono.jpeg" alt="Gadget" />
+      <div class="card-content">
+        <h3 class="card-title">Gadget para celulares y tabletas</h3>
+        <p class="card-subtitle">calidad garantizada </p>
+        <a href="gadget.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shape green"></div>
+      <img src="../img/telefonos fijos/fijo 4.jpeg" alt="telefonos fijos" />
+      <div class="card-content">
+        <h3 class="card-title">Telefonos fijos con garantia de hasta 2 años</h3>
+        <p class="card-subtitle">Lo mejor en telefonos fijos</p>
+        <a href="telefonosfijos.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+  </div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+ 
+    <div class="productos"> 
+ 
+      <!-- Aquí van los productos, máximo 8 por página --> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-13%</div> 
+        <a href="productgadget.html?id=1">
+          <img src="../img/gadget/adaptador otg.jpeg" alt="Producto 1" />
+        </a>
+        <p class="nombre-producto">Adaptador OTG</p> 
+        <p class="precio-original">$15.60</p> 
+        <p class="precio-descuento">$6.99</p> 
+        <a href="productgadget.html?id=1">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-41%</div> 
+        <a href="productgadget.html?id=2">
+          <img src="../img/gadget/anillo de luz.jpeg" alt="Producto 2" />
+        </a>
+        <p class="nombre-producto">Anillo de luz</p> 
+        <p class="precio-original">$20.00</p> 
+        <p class="precio-descuento">$12.00</p> 
+      <a href="productgadget.html?id=2">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-10%</div> 
+        <a href="productgadget.html?id=3">
+          <img src="../img/gadget/Cargador Inalambrico Magnetic.jpeg" alt="Producto 3" />
+        </a>
+        <p class="nombre-producto">Cargador Inalambrico magnetico</p> 
+        <p class="precio-original">$19.00</p> 
+        <p class="precio-descuento">$9.00</p> 
+      <a href="productgadget.html?id=3">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article>  
+ 
+      <article class="producto"> 
+        <div class="descuento">-17%</div> 
+       <a href="productgadget.html?id=4">
+          <img src="../img/gadget/Controle Remoto.jpeg" alt="Producto 4" />
+        </a>
+        <p class="nombre-producto">control bluetooth para tomar fotos</p> 
+        <p class="precio-original">$15.00</p> 
+        <p class="precio-descuento">$8.00</p> 
+        <a href="productgadget.html?id=4">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-20%</div> 
+        <a href="productgadget.html?id=5">
+          <img src="../img/gadget/Guantes tactiless.jpeg" alt="Producto 5" />
+        </a>
+        <p class="nombre-producto">guantes tactiles</p> 
+        <p class="precio-original">$29.00</p> 
+        <p class="precio-descuento">$18.00</p> 
+         <a href="productgadget.html?id=5">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-15%</div> 
+       <a href="productgadget.html?id=6">
+          <img src="../img/gadget/lamapra de lentura.jpeg" alt="Producto 6" />
+        </a>
+        <p class="nombre-producto">Lampara para lectura</p> 
+        <p class="precio-original">$26.00</p> 
+        <p class="precio-descuento">$14.50</p> 
+       <a href="productgadget.html?id=6">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-5%</div> 
+       <a href="productgadget.html?id=7">
+          <img src="../img/gadget/lente macro.jpeg" alt="Producto 7" />
+        </a>
+        <p class="nombre-producto">Lente macro</p> 
+        <p class="precio-original">$24.00</p> 
+        <p class="precio-descuento">$19.50</p> 
+       <a href="productgadget.html?id=7">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-25%</div> 
+       <a href=" productgadget.html?id=8">
+          <img src="../img/gadget/Mobile charger holding.jpeg" alt="Producto 8" />
+        </a>
+        <p class="nombre-producto">soporte multiuso</p> 
+        <p class="precio-original">$10.00</p> 
+        <p class="precio-descuento">$5.00</p> 
+       <a href="productgadget.html?id=8">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+
+
+       <article class="producto"> 
+        <div class="descuento">-17%</div> 
+        <a href="productgadget.html?id=9">
+          <img src="../img/gadget/power ban.jpeg" alt="Producto 9" />
+        </a>
+        <p class="nombre-producto">Powerban</p> 
+        <p class="precio-original">$30.00</p> 
+        <p class="precio-descuento">$25.50</p> 
+         <a href="productgadget.html?id=9">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-20%</div> 
+        <a href="productgadget.html?id=10">
+          <img src="../img/gadget/sostenedor de telefono.jpeg" alt="Producto 10" />
+        </a>
+        <p class="nombre-producto">soporte para telefonos</p> 
+        <p class="precio-original">$18.00</p> 
+        <p class="precio-descuento">$7.00</p> 
+        <a href="productgadget.html?id=10">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-15%</div> 
+        <a href="productgadget.html?id=11">
+          <img src="../img/gadget/style pen .jpeg" alt="Producto 11" />
+        </a>
+        <p class="nombre-producto">Style pen</p> 
+        <p class="precio-original">$9.00</p> 
+        <p class="precio-descuento">$3.00</p> 
+      <a href="productgadget.html?id=11">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-5%</div> 
+      <a href="productgadget.html?id=12">
+          <img src="../img/gadget/Suporte Magnético .jpeg" alt="Producto 12" />
+        </a>
+        <p class="nombre-producto">Soporte magnetico para carro</p> 
+        <p class="precio-original">$7.00</p> 
+        <p class="precio-descuento">$4.00</p> 
+         <a href="productgadget.html?id=12">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+      <article class="producto"> 
+        <div class="descuento">-25%</div> 
+       <a href="productgadget.html?id=13">
+          <img src="../img/gadget/teclado para telefono y tables.jpeg" alt="Producto 13" />
+        </a>
+        <p class="nombre-producto">Teclado para telefono y tablets</p> 
+        <p class="precio-original">$33.00</p> 
+        <p class="precio-descuento">$22.00</p> 
+       <a href="productgadget.html?id=13">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+ 
+   <article class="producto"> 
+        <div class="descuento">-25%</div> 
+       <a href="productgadget.html?id=14">
+          <img src="../img/gadget/tripode flexible.jpeg" alt="Producto 14" />
+        </a> 
+        <p class="nombre-producto">Tripode para fotos</p> 
+        <p class="precio-original">$18.00</p> 
+        <p class="precio-descuento">$7.00</p> 
+      <a href="productgadget.html?id=14">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article> 
+
+        <article class="producto"> 
+        <div class="descuento">-25%</div> 
+       <a href="productgadget.html?id=15">
+          <img src="../img/gadget/funda con espaco para accses.jpeg" alt="Producto 15" />
+        </a>
+        <p class="nombre-producto">funda para celular</p> 
+        <p class="precio-original">$30.00</p> 
+        <p class="precio-descuento">$17.00</p> 
+       <a href="productgadget.html?id=15">
+          <button class="btn-carrito">Ver detalles</button> 
+        </a>
+      </article>   
+
+    </div> 
+ 
+    <nav class="paginacion" aria-label="Paginación de resultados"> 
+      <a class="pagina-btn" href="celulares.html" aria-label="Página 1">1</a> 
+      <a class="pagina-btn" href="tabletas.html" aria-label="Página 2">2</a> 
+      <a class="pagina-btn" href="gadget.html" aria-label="Página 3">3</a>
+      <a class="pagina-btn" href="telefonosfijos.html" aria-label="Página 4">4</a> 
+    </nav> 
+ 
+  </section> 
+
+<br>
+<br>
+
+
+<script src="../JS/gadget.js"></script>
+<script src="../JS/cartgadget.js"></script>
+<script>
+  // Products array for cart reference (should match product.html)
+  const products = [
+    { id: 1, name: "Adaptador OTG", priceDescuento: "$6.99" },
+    { id: 2, name: "Anillo de luz", priceDescuento: "$12.00" },
+    { id: 3, name: "Cargador Inalambrico magnetico", priceDescuento: "$9.00" },
+    { id: 4, name: "control bluetooth para tomar fotos", priceDescuento: "$8.00" },
+    { id: 5, name: "guantes tactiles", priceDescuento: "$18.00" },
+    { id: 6, name: "Lampara para lectura", priceDescuento: "$14.50" },
+    { id: 7, name: "Lente macro", priceDescuento: "$19.50" },
+    { id: 8, name: "soporte multiuso", priceDescuento: "$5.00" },
+    { id: 9, name: "Powerban", priceDescuento: "$25.50" },
+    { id: 10, name: "soporte para telefonos", priceDescuento: "$7.00" },
+    { id: 11, name: "Style pen", priceDescuento: "$3.00" },
+    { id: 12, name: "Soporte magnetico para carro", priceDescuento: "$4.00" },
+    { id: 13, name: "Teclado para telefono y tablets", priceDescuento: "$22.00" },
+    { id: 14, name: "Tripode para fotos", priceDescuento: "$7.00" },
+    { id: 15, name: "funda para celular", priceDescuento: "$17.00" }
+  ];
+
+  // Setup add to cart buttons using cart.js helper
+  window.cart.setupAddToCartButtons(products);
+</script>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body> 
+</html>

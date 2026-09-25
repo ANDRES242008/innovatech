@@ -1,0 +1,13 @@
+ :root{
+      --bg: #e9f7fb;
+      --accent: #00AEEF;
+      --card: #ffffff;
+      --muted: #546071;
+      --radius: 14px;
+    }
+    body{ background: linear-gradient(180deg, var(--bg), #f6fbff 60%); font-family: Inter, system-ui, -apple-system, 'Helvetica Neue', Arial; color:#203040; }
+    .hero{ padding:4.5rem 1rem; text-align:center; }
+    .hero .title{ font-size:clamp(2rem, 4.5vw, 3.5rem); font-weight:800; letter-spacing:-0.02em; }
+    .hero .subtitle{ color:var(--muted); font-size:1.05rem; margin-top:.6rem }
+    .card-feature{ border:none; border-radius:var(--radius); box-shadow: 0 8px 30px rgba(35,69,110,0.06); }
+    footer{ margin-top:3rem; padding:2rem 0; color:var(--muted); }

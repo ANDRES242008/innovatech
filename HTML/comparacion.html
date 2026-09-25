@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparar Dispositivos | Innovatech</title>
+  <link rel="stylesheet" href="../CSS/estilos.css">
+  <link rel="stylesheet" href="../CSS/comparacion.css">
+</head>
+<body>
+  <div class="compare-container">
+    <button class="btn-volver" onclick="window.history.back()">← Volver</button>
+    <h2>Comparar dispositivos</h2>
+
+    <div class="compare-actions">
+      <button onclick="ordenarPor('precio')">Ordenar por precio</button>
+      <button onclick="ordenarPor('nombre')">Ordenar por nombre</button>
+      <button onclick="limpiarComparacion()">Limpiar comparación</button>
+    </div>
+
+    <div id="compare-table-visual"></div>
+  </div>
+  <script src="../JS/comparacion.js"></script>
+</body>
+</html>

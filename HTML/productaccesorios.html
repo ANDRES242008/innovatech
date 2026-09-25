@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="../CSS/compartido.css" />
+ <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="../JS/cartcompartido.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="accesorios.html">Accesorios Gaming </a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+    // Sample product data for demonstration
+    const products = [
+    {
+  id: 155,
+  name: "Spectra Vision Pro (Blanco)",
+  image: "../img/Acessorios/gafas blancas.jpeg",
+  priceOriginal: "$30.00",
+  priceDescuento: "$24.00",
+  specs: {
+    "Protección UV": "Filtro UV400 + antirreflejo para reducir deslumbramientos",
+    "Material": "Marco ligero y flexible, cómodo en uso prolongado",
+    "Uso": "Protege y reduce fatiga visual durante largas sesiones"
+  }
+},
+{
+  id: 156,
+  name: "Spectra Vision Pro (Negro)",
+  image: "../img/Acessorios/gafas negras.jpeg",
+  priceOriginal: "$32.00",
+  priceDescuento: "$25.60",
+  specs: {
+    "Protección UV": "Filtro anti-reflejante + protección UV",
+    "Material": "Marco resistente y acabado mate",
+    "Uso": "Diseñadas para gaming y uso cotidiano"
+  }
+},
+{
+  id: 157,
+  name: "Aurelius X2 Wireless (Azul)",
+  image: "../img/Acessorios/audifonos azul.jpeg",
+  priceOriginal: "$45.00",
+  priceDescuento: "$36.00",
+  specs: {
+    "Sonido": "Drivers 40 mm: buen equilibrio entre graves y agudos",
+    "Conectividad": "Jack 3.5 mm (y opción USB en algunos modelos)",
+    "Batería": "Hasta 12 h en modelos inalámbricos"
+  }
+},
+{
+  id: 158,
+  name: "Aurelius X2 Wireless (Morado)",
+  image: "../img/Acessorios/audifonos morados.jpeg",
+  priceOriginal: "$50.00",
+  priceDescuento: "$40.00",
+  specs: {
+    "Sonido": "Estéreo inmersivo para juego y multimedia",
+    "Conectividad": "Bluetooth + cable incluido",
+    "Batería": "Hasta 10 h de uso"
+  }
+},
+{
+  id: 159,
+  name: "Aurelius X2 Wireless (Rojo)",
+  image: "../img/Acessorios/audifonos rojos.jpeg",
+  priceOriginal: "$55.00",
+  priceDescuento: "$44.00",
+  specs: {
+    "Sonido": "Cancelación pasiva para claridad en voz y juegos",
+    "Conectividad": "USB-C + 3.5 mm para máxima compatibilidad",
+    "Batería": "Hasta 15 h de reproducción"
+  }
+},
+{
+  id: 160,
+  name: "Logitech G733 Wireless",
+  image: "../img/Acessorios/Logitech - Auriculares inalámbricos G733.jpeg",
+  priceOriginal: "$90.00",
+  priceDescuento: "$72.00",
+  specs: {
+    "Sonido": "Audio gaming de alta fidelidad y bajos definidos",
+    "Conectividad": "Wireless LIGHTSPEED de baja latencia",
+    "Batería": "Hasta 20 h",
+    "Comodidad": "Acolchado transpirable para uso prolongado"
+  }
+},
+{
+  id: 161,
+  name: "RedWave Studio USB Mic",
+  image: "../img/Acessorios/microfono rojo.jpeg",
+  priceOriginal: "$60.00",
+  priceDescuento: "$48.00",
+  specs: {
+    "Tipo": "Condensador USB (patrón cardioide)",
+    "Compatibilidad": "Plug & play en PC, Mac y consolas compatibles",
+    "Incluye": "Soporte y filtro anti-pop para grabación limpia"
+  }
+},
+{
+  id: 162,
+  name: "Nebula M7 (Azul)",
+  image: "../img/Acessorios/mouse azul.jpeg",
+  priceOriginal: "$28.00",
+  priceDescuento: "$22.40",
+  specs: {
+    "Sensor": "Óptico hasta 16000 DPI para seguimiento preciso",
+    "Botones": "6 botones programables",
+    "Iluminación": "RGB personalizable"
+  }
+},
+{
+  id: 163,
+  name: "Nebula M7 RGB",
+  image: "../img/Acessorios/Mouse rgb usb.jpeg",
+  priceOriginal: "$35.00",
+  priceDescuento: "$28.00",
+  specs: {
+    "Sensor": "Óptico hasta 10000 DPI",
+    "Botones": "4 botones ergonómicos",
+    "Iluminación": "RGB integrada para estilo"
+  }
+},
+{
+  id: 164,
+  name: "Spectra SunShield",
+  image: "../img/Acessorios/gafas blancas.jpeg",
+  priceOriginal: "$40.00",
+  priceDescuento: "$32.00",
+  specs: {
+    "Protección UV": "100% UV y lentes polarizadas",
+    "Material": "Lentes resistentes y anti-reflejo",
+    "Uso": "Diseñadas para exterior y transmisión en vivo"
+  }
+},
+{
+  id: 165,
+  name: "Spectra UV Shield",
+  image: "../img/Acessorios/gafas negras.jpeg",
+  priceOriginal: "$38.00",
+  priceDescuento: "$30.40",
+  specs: {
+    "Protección UV": "Filtro UV400",
+    "Material": "Marco metálico ligero y elegante",
+    "Uso": "Protección diaria con diseño estilizado"
+  }
+},
+{
+  id: 166,
+  name: "900Â° Racing Pedal Pro",
+  image: "../img/Acessorios/Hot Sale 900 Degree  Pedal and Gear  Gaming Racing.jpeg",
+  priceOriginal: "$120.00",
+  priceDescuento: "$96.00",
+  specs: {
+    "Compatible": "Compatible con la mayoría de volantes y simuladores de carrera",
+    "Construcción": "Acero y aluminio para mayor durabilidad",
+    "Ajustes": "Pedal ajustable con respuesta progresiva"
+  }
+},
+{
+  id: 167,
+  name: "Titan Switchboard Pro",
+  image: "../img/Acessorios/teclado rgb sin mouse.jpeg",
+  priceOriginal: "$60.00",
+  priceDescuento: "$48.00",
+  specs: {
+    "âŒ¨ï¸ Tipo": "Mecánico con switches táctiles",
+    "Iluminación": "RGB personalizable por zona",
+    "Funciones": "Anti-ghosting y macros programables"
+  }
+},
+{
+  id: 168,
+  name: "Titan Mini RGB 60%",
+  image: "../img/Acessorios/teclado rgb.jpeg",
+  priceOriginal: "$45.00",
+  priceDescuento: "$36.00",
+  specs: {
+    "âŒ¨ï¸ Tipo": "Membrana con retroiluminación RGB",
+    "Conectividad": "USB-A con cable trenzado",
+    "Tamaño": "Compacto 60% para setups pequeños"
+  }
+},
+{
+  id: 169,
+  name: "Titan Switchboard Pro (Edición Morada)",
+  image: "../img/Acessorios/teclado morado.jpeg",
+  priceOriginal: "$70.00",
+  priceDescuento: "$56.00",
+  specs: {
+    "âŒ¨ï¸ Tipo": "Mecánico con switches silenciosos",
+    "Iluminación": "RGB con efectos preestablecidos",
+    "Diseño": "Edición especial color morado"
+  }
+}
+
+    ];
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

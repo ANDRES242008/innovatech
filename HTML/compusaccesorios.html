@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Nova Tech Gaming</title> 
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+ <link rel="stylesheet" href="../CSS/compartido2.css" />
+  .
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body>     
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+ <div class="cards-container">
+    <div class="card">
+        <div class="shape purple"></div>
+        <img src="../img/mouses/M185.jpeg" alt="Mouses y Teclados" />
+        <div class="card-content">
+            <h3 class="card-title">Mouses y Teclados</h3>
+            <p class="card-subtitle">Encuentra la precisión y ergonomía ideal para tu trabajo diario.</p>
+            <a href="mouses.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape red"></div>
+        <img src="../img/almacenamiento/Western Digital 4TB WD My Passport Ultra for Mac Usb-c and USB 3_2 Gen 1, Portable External Hard Drive Hdd, Silver - Wdbpmv0040bsl-wesn.jpeg" alt="Almacenamiento" />
+        <div class="card-content">
+            <h3 class="card-title">Almacenamiento y USB etc.</h3>
+            <p class="card-subtitle">Discos SSD y externos de alta capacidad para guardar tu información.</p>
+            <a href="almacenamiento.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape orange"></div>
+        <img src="../img/accesorios/Hub USB-C vers HDMI _ USB _ USB-C Belkin.jpeg" alt="Accesorios para Computadoras" />
+        <div class="card-content">
+            <h3 class="card-title">Accesorios para Computadoras</h3>
+            <p class="card-subtitle">Mejora tu productividad con cámaras web, hubs y más esenciales.</p>
+            <a href="compusaccesorios.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape green"></div>
+        <img src="../img/impresoras/HP PRINTER SMART TANK 515.jpeg" alt="Impresoras" />
+        <div class="card-content">
+            <h3 class="card-title">Impresoras y tintas</h3>
+            <p class="card-subtitle">Equipos de impresión eficientes para el hogar y la oficina.</p>
+            <a href="impre.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+</div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+
+<div class="productos">
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productaccepc.html?id=277">
+            <img src="../img/accesorios/Webcam Logitech C920s.jpeg" alt="Logitech C920 HD Pro Webcam" />
+        </a>
+        <p class="nombre-producto">Logitech C920s HD Pro Webcam (Full HD)</p>
+        <p class="precio-original">$79.99</p>
+        <p class="precio-descuento">$63.99</p>
+        <a href="productaccepc.html?id=277">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productaccepc.html?id=278">
+            <img src="../img/accesorios/Teclado Trust gxt 830.jpeg" alt="Trust GXT 830-RW Avonn" />
+        </a>
+        <p class="nombre-producto">Trust GXT 830-RW Teclado Gaming (RGB)</p>
+        <p class="precio-original">$45.00</p>
+        <p class="precio-descuento">$38.25</p>
+        <a href="productaccepc.html?id=278">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productaccepc.html?id=279">
+            <img src="../img/accesorios/Logitech G 432auriculares con cable, sonido envolvente 7_1.jpeg" alt="Logitech G432 DTS Headphone" />
+        </a>
+        <p class="nombre-producto">Logitech G432 Audífonos Gaming (7.1 Surround)</p>
+        <p class="precio-original">$65.00</p>
+        <p class="precio-descuento">$48.75</p>
+        <a href="productaccepc.html?id=279">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productaccepc.html?id=280">
+            <img src="../img/accesorios/Diadema Headset GETTTECH GH-3500G Reveal con Micrófono 3_5 mm Gris.jpeg" alt="HP Stereo 3.5mm Headset G2" />
+        </a>
+        <p class="nombre-producto">HP G2 Auriculares Estéreo (3.5mm)</p>
+        <p class="precio-original">$29.99</p>
+        <p class="precio-descuento">$26.99</p>
+        <a href="productaccepc.html?id=280">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-30%</div>
+        <a href="productaccepc.html?id=281">
+            <img src="../img/accesorios/Microsoft L2 LifeCam HD-3000 Webcam for sale online _ eBay Australia.jpeg" alt="Microsoft LifeCam HD-3000" />
+        </a>
+        <p class="nombre-producto">Microsoft LifeCam HD-3000 (HD 720p)</p>
+        <p class="precio-original">$35.00</p>
+        <p class="precio-descuento">$24.50</p>
+        <a href="productaccepc.html?id=281">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productaccepc.html?id=282">
+            <img src="../img/accesorios/Logitech H390 Wired Headset for PC_Laptop, Stereo Headphones with Noise Cancelling Microphone, USB-A, in-Line Controls for Video Meetings, Music, Gaming and Beyond - Black.jpeg" alt="Logitech H390 USB Headset" />
+        </a>
+        <p class="nombre-producto">Logitech H390 Audífonos (USB con Micrófono)</p>
+        <p class="precio-original">$49.99</p>
+        <p class="precio-descuento">$39.99</p>
+        <a href="productaccepc.html?id=282">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productaccepc.html?id=283">
+            <img src="../img/accesorios/Soft Comfort Wrist Gel Rest Support Mat Mouse Mice Pad Computer PC Laptop Black.jpeg" alt="Dell Premier Recycled Mousepad" />
+        </a>
+        <p class="nombre-producto">Dell Premier Mousepad (Tejido Reciclado)</p>
+        <p class="precio-original">$12.50</p>
+        <p class="precio-descuento">$10.62</p>
+        <a href="productaccepc.html?id=283">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productaccepc.html?id=284">
+            <img src="../img/accesorios/Port Connect 4 Port USB Hub.jpeg" alt="Trust Boye Compact USB Hub" />
+        </a>
+        <p class="nombre-producto">Trust Boye USB Hub Compacto (4 Puertos)</p>
+        <p class="precio-original">$19.95</p>
+        <p class="precio-descuento">$17.95</p>
+        <a href="productaccepc.html?id=284">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productaccepc.html?id=285">
+            <img src="../img/accesorios/HP Universal USB-C Multiport Hub - 50H55AA.jpeg" alt="HP 65W USB-C Slim Power Adapter" />
+        </a>
+        <p class="nombre-producto">HP 65W Adaptador USB-C Slim</p>
+        <p class="precio-original">$59.00</p>
+        <p class="precio-descuento">$44.25</p>
+        <a href="productaccepc.html?id=285">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-30%</div>
+        <a href="productaccepc.html?id=286">
+            <img src="../img/accesorios/Logitech Z207 2_0 Stereo Computer Speakers with Bluetooth.jpeg" alt="Logitech Z150 Multimedia Speakers" />
+        </a>
+        <p class="nombre-producto">Logitech Z150 Parlantes Multimedia</p>
+        <p class="precio-original">$24.99</p>
+        <p class="precio-descuento">$17.49</p>
+        <a href="productaccepc.html?id=286">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productaccepc.html?id=287">
+            <img src="../img/accesorios/Amazon Basics USB-C to USB-A 3_1 Gen1 Female Adapter Cable Converter, 5Gbps High-Speed, USB-IF Certified, for Laptops, Tablets, Phones (iPhone 16_15), White.jpeg" alt="Amazon Basics USB-C to USB 3.1 Adapter" />
+        </a>
+        <p class="nombre-producto">Amazon Basics Adaptador USB-C a USB-A</p>
+        <p class="precio-original">$9.99</p>
+        <p class="precio-descuento">$8.99</p>
+        <a href="productaccepc.html?id=287">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productaccepc.html?id=288">
+            <img src="../img/accesorios/Dks Razer Gigantus V2 Medium - Soft Mouse Mat For Speed And Control.jpeg" alt="Razer Gigantus V2 Mouse Mat" />
+        </a>
+        <p class="nombre-producto">Razer Gigantus V2 Mouse Mat (Medium)</p>
+        <p class="precio-original">$19.99</p>
+        <p class="precio-descuento">$15.99</p>
+        <a href="productaccepc.html?id=288">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productaccepc.html?id=289">
+            <img src="../img/accesorios/Logitech R400 Wireless Presenter Remote Control, Black.jpeg" alt="Logitech Wireless Presenter R400" />
+        </a>
+        <p class="nombre-producto">Logitech R400 Presentador Inalámbrico</p>
+        <p class="precio-original">$49.99</p>
+        <p class="precio-descuento">$42.49</p>
+        <a href="productaccepc.html?id=289">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productaccepc.html?id=290">
+            <img src="../img/accesorios/Hub USB-C vers HDMI _ USB _ USB-C Belkin.jpeg" alt="Belkin 4-Port USB 3.0 Hub" />
+        </a>
+        <p class="nombre-producto">Belkin Hub USB 3.0 de 4 Puertos</p>
+        <p class="precio-original">$27.00</p>
+        <p class="precio-descuento">$20.25</p>
+        <a href="productaccepc.html?id=290">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+    
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productaccepc.html?id=291">
+            <img src="../img/accesorios/Microfone Condensador USB Blue Yeti Nano Azul - 988-000089.jpeg" alt="Blue Yeti Nano USB Microphone" />
+        </a>
+        <p class="nombre-producto">Blue Yeti Nano Micrófono USB (Streaming)</p>
+        <p class="precio-original">$99.99</p>
+        <p class="precio-descuento">$89.99</p>
+        <a href="productaccepc.html?id=291">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+</div>
+ 
+ <nav class="paginacion" aria-label="Paginación de resultados"> 
+    <a class="pagina-btn" href="mouses.html" aria-label="Página 1">1</a> 
+    <a class="pagina-btn" href="almacenamiento.html" aria-label="Página 2">2</a> 
+    <a class="pagina-btn pagina-activa" href="compusaccesorios.html" aria-label="Página 3">3</a>
+    <a class="pagina-btn" href="impre.html" aria-label="Página 4">4</a> 
+</nav>
+  </section> 
+<br>
+<br>
+
+
+  <script src="../JS/compartido.js"></script>
+    <script src="../JS/cartcompartido.js"></script>
+<script>
+  
+const products = [
+    
+    // *** ACCESORIOS PARA COMPUTADORAS (ID 277 - 291) ***
+    { id: 277, name: "Logitech C920s HD Pro Webcam (Full HD)", priceDescuento: "$63.99" },
+    { id: 278, name: "Trust GXT 830-RW Teclado Gaming (RGB)", priceDescuento: "$38.25" },
+    { id: 279, name: "Logitech G432 Audífonos Gaming (7.1 Surround)", priceDescuento: "$48.75" },
+    { id: 280, name: "HP G2 Auriculares Estéreo (3.5mm)", priceDescuento: "$26.99" },
+    { id: 281, name: "Microsoft LifeCam HD-3000 (HD 720p)", priceDescuento: "$24.50" },
+    { id: 282, name: "Logitech H390 Audífonos (USB con Micrófono)", priceDescuento: "$39.99" },
+    { id: 283, name: "Dell Premier Mousepad (Tejido Reciclado)", priceDescuento: "$10.62" },
+    { id: 284, name: "Trust Boye USB Hub Compacto (4 Puertos)", priceDescuento: "$17.95" },
+    { id: 285, name: "HP 65W Adaptador USB-C Slim", priceDescuento: "$44.25" },
+    { id: 286, name: "Logitech Z150 Parlantes Multimedia", priceDescuento: "$17.49" },
+    { id: 287, name: "Amazon Basics Adaptador USB-C a USB-A", priceDescuento: "$8.99" },
+    { id: 288, name: "Razer Gigantus V2 Mouse Mat (Medium)", priceDescuento: "$15.99" },
+    { id: 289, name: "Logitech R400 Presentador Inalámbrico", priceDescuento: "$42.49" },
+    { id: 290, name: "Belkin Hub USB 3.0 de 4 Puertos", priceDescuento: "$20.25" },
+    { id: 291, name: "Blue Yeti Nano Micrófono USB (Streaming)", priceDescuento: "$89.99" }
+];
+ 
+  window.cart.setupAddToCartButtons(products);
+</script>
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body> 
+</html>

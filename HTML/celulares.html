@@ -1,0 +1,840 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Celulares | Innovatech</title> 
+  <link rel="stylesheet" href="../CSS/celulares.css" /> 
+  <link rel="stylesheet" href="../CSS/cartcelulares.css" />
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body> 
+  
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+  <button 
+    class="mobile-menu-toggle" 
+    type="button" 
+    aria-label="Abrir menú de navegación"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    â˜°
+  </button>
+  
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true">ï¸</span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div class="pago-cuota" aria-label="Pago de cuotas">
+    <a href="pago-cuotas.html" aria-label="Ir a pago de cuotas">
+      Pago de Cuota
+    </a>
+  </div>
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Banner grande con anuncios destacados --> 
+
+
+   <div class="cards-container">
+    <div class="card">
+      <div class="shape purple"></div>
+      <img src="../img/celulares/iPhone 16e (128 GB) - Preto - Distribuidor Autorizado.jpeg" alt="celulares" />
+      <div class="card-content">
+        <h3 class="card-title">Celulares de las mejores marcas</h3>
+        <p class="card-subtitle">Pontecia asegurada y durables</p>
+        <a href="celulares.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shape red"></div>
+      <img src="../img/tabletas/A9 TABLE.jpeg" alt="Tabletas" />
+      <div class="card-content">
+        <h3 class="card-title">Tabletas de la mejor potencia</h3>
+        <p class="card-subtitle">Procesadores potentes y de calidad</p>
+        <a href="tabletas.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shape orange"></div>
+      <img src="../img/gadget/sostenedor de telefono.jpeg" alt="Gadget" />
+      <div class="card-content">
+        <h3 class="card-title">Gadget para celulares y tabletas</h3>
+        <p class="card-subtitle">calidad garantizada </p>
+        <a href="gadget.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shape green"></div>
+      <img src="../img/telefonos fijos/fijo 4.jpeg" alt="telefonos fijos" />
+      <div class="card-content">
+        <h3 class="card-title">Telefonos fijos con garantia de hasta 2 años</h3>
+        <p class="card-subtitle">Lo mejor en telefonos fijos</p>
+        <a href="telefonosfijos.html" class="btn" role="button" tabindex="0">Compra ya</a>
+      </div>
+    </div>
+  </div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+ 
+ 
+   <div class="productos">
+  <article class="producto">
+    <div class="descuento">-13%</div>
+    <a href="productcelulares.html?id=16">
+      <img
+        src="../img/celulares/Nothing Phone (1).jpeg"
+        alt="Producto 1"
+      />
+    </a>
+    <p class="nombre-producto">Nothing Phone 1</p>
+    <p class="precio-original">$790.00</p>
+    <p class="precio-descuento">$690.00</p>
+    <a href="productcelulares.html?id=16">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="16"
+      data-nombre="Nothing Phone 1"
+      data-precio="690.00"
+      data-descuento="13%"
+      data-tipo="Celular"
+      data-img="../img/celulares/Nothing Phone (1).jpeg"
+      data-ram="8 GB / 12 GB"
+      data-almacenamiento="128 GB / 256 GB"
+      data-bateria="4500 mAh"
+      data-pantalla="6.55'' OLED, 120Hz"
+      data-camara="50 MP + 50 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-41%</div>
+    <a href="productcelulares.html?id=17">
+      <img src="../img/exclusivo/24blanco.jpeg" alt="Producto 2" />
+    </a>
+    <p class="nombre-producto">Galaxy S24 ultra</p>
+    <p class="precio-original">$1200.00</p>
+    <p class="precio-descuento">$1000.00</p>
+    <a href="productcelulares.html?id=17">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="17"
+      data-nombre="Galaxy S24 ultra"
+      data-precio="1000.00"
+      data-descuento="41%"
+      data-tipo="Celular"
+      data-img="../img/exclusivo/24blanco.jpeg"
+      data-ram="12 GB"
+      data-almacenamiento="256 GB / 512 GB / 1 TB"
+      data-bateria="5000 mAh"
+      data-pantalla="6.8'' Dynamic AMOLED 2X, 120Hz"
+      data-camara="200 MP + 50 MP + 10 MP + 12 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-10%</div>
+    <a href="productcelulares.html?id=18">
+      <img
+        src="../img/celulares/galaxy a 55 blanco.jpeg"
+        alt="Producto 3"
+      />
+    </a>
+    <p class="nombre-producto">Galaxy A55 5G</p>
+    <p class="precio-original">$500.99</p>
+    <p class="precio-descuento">$450.99</p>
+    <a href="productcelulares.html?id=18">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="18"
+      data-nombre="Galaxy A55 5G"
+      data-precio="450.99"
+      data-descuento="10%"
+      data-tipo="Celular"
+      data-img="../img/celulares/galaxy a 55 blanco.jpeg"
+      data-ram="6 GB / 8 GB / 12 GB"
+      data-almacenamiento="128 GB / 256 GB"
+      data-bateria="5000 mAh"
+      data-pantalla="6.6'' Super AMOLED, 120Hz"
+      data-camara="50 MP + 12 MP + 5 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-17%</div>
+    <a href="productcelulares.html?id=19">
+      <img
+        src="../img/celulares/Apple's iPhone 16e Is Here_ Features, Price, Colors, & More.jpeg"
+        alt="Producto 4"
+      />
+    </a>
+    <p class="nombre-producto">Iphone 16e</p>
+    <p class="precio-original">$900.00</p>
+    <p class="precio-descuento">$800.50</p>
+    <a href="productcelulares.html?id=19">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="19"
+      data-nombre="Iphone 16"
+      data-precio="800.50"
+      data-descuento="17%"
+      data-tipo="Celular"
+      data-img="../img/celulares/Apple's iPhone 16e Is Here_ Features, Price, Colors, & More.jpeg"
+      data-ram="8 GB"
+      data-almacenamiento="128 GB / 256 GB / 512 GB"
+      data-bateria="3355 mAh (Estimado)"
+      data-pantalla="6.1'' Super Retina XDR OLED"
+      data-camara="48 MP + 12 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-20%</div>
+    <a href="productcelulares.html?id=20">
+      <img
+        src="../img/celulares/Samsung Galaxy A36 5g 128 Gb _ 6 Gb - Awesome White Neu & Eu.jpeg"
+        alt="Producto 5"
+      />
+    </a>
+    <p class="nombre-producto">Samsung Galaxy A35 5G</p>
+    <p class="precio-original">$600.00</p>
+    <p class="precio-descuento">$549.00</p>
+    <a href="productcelulares.html?id=20">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="20"
+      data-nombre="Samsung Galaxy A35 5G"
+      data-precio="549.00"
+      data-descuento="20%"
+      data-tipo="Celular"
+      data-img="../img/celulares/Samsung Galaxy A36 5g 128 Gb _ 6 Gb - Awesome White Neu & Eu.jpeg"
+      data-ram="6 GB / 8 GB"
+      data-almacenamiento="128 GB / 256 GB"
+      data-bateria="5000 mAh"
+      data-pantalla="6.6'' Super AMOLED, 120Hz"
+      data-camara="50 MP + 8 MP + 5 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-15%</div>
+    <a href="productcelulares.html?id=21">
+      <img src="../img/celulares/descarga.jpeg" alt="Producto 6" />
+    </a>
+    <p class="nombre-producto">Iphone 11 pro max</p>
+    <p class="precio-original">$500.00</p>
+    <p class="precio-descuento">$404.50</p>
+    <a href="productcelulares.html?id=21">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="21"
+      data-nombre="Iphone 11 pro max"
+      data-precio="404.50"
+      data-descuento="15%"
+      data-tipo="Celular"
+      data-img="../img/celulares/descarga.jpeg"
+      data-ram="4 GB"
+      data-almacenamiento="64 GB / 256 GB / 512 GB"
+      data-bateria="3969 mAh"
+      data-pantalla="6.5'' Super Retina XDR OLED"
+      data-camara="12 MP + 12 MP + 12 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-5%</div>
+    <a href="productcelulares.html?id=22">
+      <img src="../img/celulares/iPhone 13 Pro Max.jpeg" alt="Producto 7" />
+    </a>
+    <p class="nombre-producto">Iphone 12 pro max</p>
+    <p class="precio-original">$700.00</p>
+    <p class="precio-descuento">$590.50</p>
+    <a href="productcelulares.html?id=22">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="22"
+      data-nombre="Iphone 12 pro max"
+      data-precio="590.50"
+      data-descuento="5%"
+      data-tipo="Celular"
+      data-img="../img/celulares/iPhone 13 Pro Max.jpeg"
+      data-ram="6 GB"
+      data-almacenamiento="128 GB / 256 GB / 512 GB"
+      data-bateria="3687 mAh"
+      data-pantalla="6.7'' Super Retina XDR OLED"
+      data-camara="12 MP + 12 MP + 12 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-25%</div>
+    <a href="productcelulares.html?id=23">
+      <img
+        src="../img/celulares/Apple iPhone 16 Plus 256Gb - White.jpeg"
+        alt="Producto 8"
+      />
+    </a>
+    <p class="nombre-producto">Iphone 16 plus</p>
+    <p class="precio-original">$1200.00</p>
+    <p class="precio-descuento">$900.00</p>
+    <a href="productcelulares.html?id=23">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="23"
+      data-nombre="Iphone 16 plus"
+      data-precio="900.00"
+      data-descuento="25%"
+      data-tipo="Celular"
+      data-img="../img/celulares/Apple iPhone 16 Plus 256Gb - White.jpeg"
+      data-ram="8 GB"
+      data-almacenamiento="128 GB / 256 GB / 512 GB"
+      data-bateria="4006 mAh (Estimado)"
+      data-pantalla="6.7'' Super Retina XDR OLED"
+      data-camara="48 MP + 12 MP"
+    >
+      Comparar
+    </button>
+  </article>
+  <article class="producto">
+    <div class="descuento">-17%</div>
+    <a href="productcelulares.html?id=24">
+      <img src="../img/celulares/oppo a60 blanco.jpeg" alt="Producto 9" />
+    </a>
+    <p class="nombre-producto">Oppo A60</p>
+    <p class="precio-original">$210.00</p>
+    <p class="precio-descuento">$180.50</p>
+    <a href="productcelulares.html?id=24">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="24"
+      data-nombre="Oppo A60"
+      data-precio="180.50"
+      data-descuento="17%"
+      data-tipo="Celular"
+      data-img="../img/celulares/oppo a60 blanco.jpeg"
+      data-ram="8 GB"
+      data-almacenamiento="128 GB / 256 GB"
+      data-bateria="5000 mAh"
+      data-pantalla="6.67'' IPS LCD, 90Hz"
+      data-camara="50 MP + 2 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-20%</div>
+    <a href="productcelulares.html?id=25">
+      <img
+        src="../img/celulares/OnePlus 12 - Glacial White.jpeg"
+        alt="Producto 10"
+      />
+    </a>
+    <p class="nombre-producto">Oneplus 12</p>
+    <p class="precio-original">$600.00</p>
+    <p class="precio-descuento">$500.00</p>
+    <a href="productcelulares.html?id=25">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="25"
+      data-nombre="Oneplus 12"
+      data-precio="500.00"
+      data-descuento="20%"
+      data-tipo="Celular"
+      data-img="../img/celulares/OnePlus 12 - Glacial White.jpeg"
+      data-ram="12 GB / 16 GB / 24 GB"
+      data-almacenamiento="256 GB / 512 GB / 1 TB"
+      data-bateria="5400 mAh"
+      data-pantalla="6.82'' LTPO AMOLED, 120Hz"
+      data-camara="50 MP + 64 MP + 48 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-15%</div>
+    <a href="productcelulares.html?id=26">
+      <img
+        src="../img/celulares/Dimensiones filtradas del Galaxy Z Fold 7 y Galaxy Z Flip 7 prometen nuevos récords.jpeg"
+        alt="Producto 11"
+      />
+    </a>
+    <p class="nombre-producto">Samsung Galaxy Z flip 5</p>
+    <p class="precio-original">$1200.00</p>
+    <p class="precio-descuento">$1100.50</p>
+    <a href="productcelulares.html?id=26">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="26"
+      data-nombre="Samsung Galaxy Z flip 5"
+      data-precio="1100.50"
+      data-descuento="15%"
+      data-tipo="Celular"
+      data-img="../img/celulares/Dimensiones filtradas del Galaxy Z Fold 7 y Galaxy Z Flip 7 prometen nuevos récords.jpeg"
+      data-ram="8 GB"
+      data-almacenamiento="256 GB / 512 GB"
+      data-bateria="3700 mAh"
+      data-pantalla="6.7'' Foldable Dynamic AMOLED 2X, 120Hz"
+      data-camara="12 MP + 12 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-5%</div>
+    <a href="productcelulares.html?id=27">
+      <img src="../img/celulares/VIVO X100 PRO blanco.jpeg" alt="Producto 12" />
+    </a>
+    <p class="nombre-producto">VIVO X100 PRO</p>
+    <p class="precio-original">$1040.00</p>
+    <p class="precio-descuento">$850.50</p>
+    <a href="productcelulares.html?id=27">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="27"
+      data-nombre="VIVO X100 PRO"
+      data-precio="850.50"
+      data-descuento="5%"
+      data-tipo="Celular"
+      data-img="../img/celulares/VIVO X100 PRO blanco.jpeg"
+      data-ram="12 GB / 16 GB"
+      data-almacenamiento="256 GB / 512 GB / 1 TB"
+      data-bateria="5400 mAh"
+      data-pantalla="6.78'' LTPO AMOLED, 120Hz"
+      data-camara="50 MP + 50 MP + 50 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-25%</div>
+    <a href="productcelulares.html?id=28">
+      <img
+        src="../img/celulares/OPPO Find X8 Pro blanco.jpeg"
+        alt="Producto 13"
+      />
+    </a>
+    <p class="nombre-producto">OPPO find X7</p>
+    <p class="precio-original">$960.00</p>
+    <p class="precio-descuento">$800.00</p>
+    <a href="productcelulares.html?id=28">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="28"
+      data-nombre="OPPO find X7"
+      data-precio="800.00"
+      data-descuento="25%"
+      data-tipo="Celular"
+      data-img="../img/celulares/OPPO Find X8 Pro blanco.jpeg"
+      data-ram="12 GB / 16 GB"
+      data-almacenamiento="256 GB / 512 GB / 1 TB"
+      data-bateria="5000 mAh"
+      data-pantalla="6.78'' LTPO AMOLED, 120Hz"
+      data-camara="50 MP + 64 MP + 50 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-25%</div>
+    <a href="productcelulares.html?id=29">
+      <img
+        src="../img/celulares/Samsung Galaxy A26 5G Smartphone Exynos 1380, écran Super AMOLED FHD+ de 6,7_, 120 Hz, 50MP,.jpeg"
+        alt="Producto 14"
+      />
+    </a>
+    <p class="nombre-producto">Samsung Galaxy A25 5G</p>
+    <p class="precio-original">$414.00</p>
+    <p class="precio-descuento">$350.00</p>
+    <a href="productcelulares.html?id=29">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="29"
+      data-nombre="Samsung Galaxy A25 5G"
+      data-precio="350.00"
+      data-descuento="25%"
+      data-tipo="Celular"
+      data-img="../img/celulares/Samsung Galaxy A26 5G Smartphone Exynos 1380, écran Super AMOLED FHD+ de 6,7_, 120 Hz, 50MP,.jpeg"
+      data-ram="6 GB / 8 GB"
+      data-almacenamiento="128 GB / 256 GB"
+      data-bateria="5000 mAh"
+      data-pantalla="6.5'' Super AMOLED, 120Hz"
+      data-camara="50 MP + 8 MP + 2 MP"
+    >
+      Comparar
+    </button>
+  </article>
+
+  <article class="producto">
+    <div class="descuento">-25%</div>
+    <a href="productcelulares.html?id=30">
+      <img
+        src="../img/celulares/OnePlus 13 5G up for Pre-order on Amazon UK.jpeg"
+        alt="Producto 15"
+      />
+    </a>
+    <p class="nombre-producto">Oneplus 13</p>
+    <p class="precio-original">$700.00</p>
+    <p class="precio-descuento">$600.00</p>
+    <a href="productcelulares.html?id=30">
+      <button class="btn-carrito">Ver detalles</button>
+    </a>
+    <button
+      class="btn-comparar"
+      data-id="30"
+      data-nombre="Oneplus 13"
+      data-precio="600.00"
+      data-descuento="25%"
+      data-tipo="Celular"
+      data-img="../img/celulares/OnePlus 13 5G up for Pre-order on Amazon UK.jpeg"
+      data-ram="12 GB / 16 GB"
+      data-almacenamiento="256 GB / 512 GB / 1 TB"
+      data-bateria="6000 mAh (Estimado)"
+      data-pantalla="6.8'' LTPO AMOLED, 120Hz"
+      data-camara="50 MP + 50 MP + 50 MP (Estimado)"
+    >
+      Comparar
+    </button>
+  </article>
+</div>
+
+ <nav class="paginacion" aria-label="Paginación de resultados"> 
+  <a class="pagina-btn pagina-activa" href="celulares.html" aria-label="Página 1">1</a> 
+  
+  <a class="pagina-btn" href="tabletas.html" aria-label="Página 2">2</a> 
+  
+  <a class="pagina-btn" href="gadget.html" aria-label="Página 3">3</a>
+  <a class="pagina-btn" href="telefonosfijos.html" aria-label="Página 4">4</a> 
+  <a class="pagina-btn" href="comparacion.html" aria-label="Página 5">comparar</a> 
+</nav>
+ 
+  </section> 
+<br>
+<br>
+
+
+<script src="../JS/celulares.js"></script>
+<script src="../JS/cartcelulares.js"></script>
+<script>
+  // Products array for cart reference (should match product.html)
+  const products = [
+    { id: 16, name: "Nothing Phone 1", priceDescuento: "$690.00" },
+    { id: 17, name: "Galaxy S24 ultra", priceDescuento: "$1000.00" },
+    { id: 18, name: "Galaxy A55 5G", priceDescuento: "$450.99" },
+    { id: 19, name: "Iphone 16e", priceDescuento: "$800.50" },
+    { id: 20, name: "Samsung Galaxy A35 5G", priceDescuento: "$549.00" },
+    { id: 21, name: "Iphone 11 pro max", priceDescuento: "$404.50" },
+    { id: 22, name: "Iphone 12 pro max", priceDescuento: "$590.50" },
+    { id: 23, name: "Iphone 16 plus", priceDescuento: "$900.00" },
+    { id: 24, name: "Oppo A60", priceDescuento: "$180.50" },
+    { id: 25, name: "Oneplus 12", priceDescuento: "$500.00" },
+    { id: 26, name: "Samsung Galaxy Z flip 5", priceDescuento: "$1100.50" },
+    { id: 27, name: "VIVO X100 PRO", priceDescuento: "$850.50" },
+    { id: 28, name: "OPPO find X7", priceDescuento: "$800.00" },
+    { id: 29, name: "Samsung Galaxy A25 5G", priceDescuento: "$350.00" },
+    { id: 30, name: "Oneplus 13", priceDescuento: "$600.00" }
+  ];
+
+  window.cart.setupAddToCartButtons(products);
+</script>
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+<script>
+document.querySelectorAll('.btn-comparar').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const producto = {};
+    Array.from(btn.attributes).forEach(attr => {
+      if (attr.name.startsWith('data-')) {
+        producto[attr.name.replace('data-', '')] = attr.value;
+      }
+    });
+    let comparar = JSON.parse(localStorage.getItem('compararProductos') || '[]');
+    if (!comparar.find(p => p.id === producto.id && p.tipo === producto.tipo)) {
+      comparar.push(producto);
+      localStorage.setItem('compararProductos', JSON.stringify(comparar));
+      alert('¡Producto agregado para comparar!');
+    } else {
+      alert('Este producto ya está en la comparación.');
+    }
+  });
+});
+</script>
+</body> 
+</html>

@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Nova Tech Gaming</title> 
+ <link rel="stylesheet" href="../CSS/compartido2.css" />
+  <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body>     
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Banner grande con anuncios destacados --> 
+ <div class="cards-container">
+            <div class="card">
+                <div class="shape purple"></div>
+                <img src="../img/tv/IMG-20250812-WA0089.jpg" alt="Muebles Gaming" />
+                <div class="card-content">
+                    <h3 class="card-title">TV plasmas </h3>
+                    <p class="card-subtitle">con los mejores precios</p>
+                    <a href="videos.html" class="btn" role="button" tabindex="0">Compra ya</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="shape green"></div>
+                <img src="../img/accesorios tv/IMG-20250819-WA0028.jpg" alt="Consolas y Videojuegos" />
+                <div class="card-content">
+                    <h3 class="card-title">Accesorios TV</h3>
+                    <p class="card-subtitle">Accesorios para tv y mas</p>
+                    <a href="accesorios2.html" class="btn" role="button" tabindex="0">Compra ya</a>
+                </div>
+            </div>
+        </div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+
+   
+   <div class="productos">
+
+  <article class="producto"> 
+    <div class="descuento">-13%</div> 
+    <a href="productaccesorios2.html?id=230">
+      <img src="../img/accesorios tv/IMG-20250819-WA0019.jpg" alt="Producto 230" />
+    </a>
+    <p class="nombre-producto">Convertidor de AV (RCA) a HDMI</p> 
+    <p class="precio-original">$20.00</p> 
+    <p class="precio-descuento">$12.00</p> 
+    <a href="productaccesorios2.html?id=230">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-41%</div> 
+    <a href="productaccesorios2.html?id=231">
+      <img src="../img/accesorios tv/IMG-20250819-WA0020.jpg" alt="Producto 231" />
+    </a>
+    <p class="nombre-producto">Klip Xtreme, modelo KPM-875</p> 
+    <p class="precio-original">$39.00</p> 
+    <p class="precio-descuento">$30.00</p> 
+    <a href="productaccesorios2.html?id=231">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-10%</div> 
+    <a href="productaccesorios2.html?id=232">
+      <img src="../img/accesorios tv/IMG-20250819-WA0021.jpg" alt="Producto 232" />
+    </a>
+    <p class="nombre-producto">LG Magic Remote</p> 
+    <p class="precio-original">$95.00</p> 
+    <p class="precio-descuento">$84.00</p> 
+    <a href="productaccesorios2.html?id=232">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article>  
+
+  <article class="producto"> 
+    <div class="descuento">-17%</div> 
+    <a href="productaccesorios2.html?id=233">
+      <img src="../img/accesorios tv/IMG-20250819-WA0022.jpg" alt="Producto 233" />
+    </a>
+    <p class="nombre-producto">Convertidor de RCA a HDMI</p> 
+    <p class="precio-original">$18.00</p> 
+    <p class="precio-descuento">$13.00</p> 
+    <a href="productaccesorios2.html?id=233">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-20%</div> 
+    <a href="productaccesorios2.html?id=234">
+      <img src="../img/accesorios tv/IMG-20250819-WA0023.jpg" alt="Producto 234" />
+    </a>
+    <p class="nombre-producto">Cable HDMI 4k PowerBear</p> 
+    <p class="precio-original">$10.00</p> 
+    <p class="precio-descuento">$8.00</p> 
+    <a href="productaccesorios2.html?id=234">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-15%</div> 
+    <a href="productaccesorios2.html?id=235">
+      <img src="../img/accesorios tv/IMG-20250819-WA0024.jpg" alt="Producto 235" />
+    </a>
+    <p class="nombre-producto">Soporte de pared para TV</p> 
+    <p class="precio-original">$40.00</p> 
+    <p class="precio-descuento">$33.50</p> 
+    <a href="productaccesorios2.html?id=235">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-5%</div> 
+    <a href="productaccesorios2.html?id=236">
+      <img src="../img/accesorios tv/IMG-20250819-WA0025.jpg" alt="Producto 236" />
+    </a>
+    <p class="nombre-producto">Soporte de pared TV de 32 pulgadas</p> 
+    <p class="precio-original">$40.00</p> 
+    <p class="precio-descuento">$29.50</p> 
+    <a href="productaccesorios2.html?id=236">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-25%</div> 
+    <a href="productaccesorios2.html?id=237">
+      <img src="../img/accesorios tv/IMG-20250819-WA0026.jpg" alt="Producto 237" />
+    </a>
+    <p class="nombre-producto">Cable AV (Audios/videos)</p> 
+    <p class="precio-original">$25.00</p> 
+    <p class="precio-descuento">$18.00</p> 
+    <a href="productaccesorios2.html?id=237">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-17%</div> 
+    <a href="productaccesorios2.html?id=238">
+      <img src="../img/accesorios tv/IMG-20250819-WA0027.jpg" alt="Producto 238" />
+    </a>
+    <p class="nombre-producto">Control remoto PIX 6428</p> 
+    <p class="precio-original">$30.00</p> 
+    <p class="precio-descuento">$27.50</p> 
+    <a href="productaccesorios2.html?id=238">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-20%</div> 
+    <a href="productaccesorios2.html?id=239">
+      <img src="../img/accesorios tv/IMG-20250819-WA0028.jpg" alt="Producto 239" />
+    </a>
+    <p class="nombre-producto">Adaptador de HDMI MinI</p> 
+    <p class="precio-original">$10.00</p> 
+    <p class="precio-descuento">$7.00</p> 
+    <a href="productaccesorios2.html?id=239">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-15%</div> 
+    <a href="productaccesorios2.html?id=240">
+      <img src="../img/accesorios tv/IMG-20250819-WA0029.jpg" alt="Producto 240" />
+    </a>
+    <p class="nombre-producto">Amazon fire TV Stick Lite</p> 
+    <p class="precio-original">$55.00</p> 
+    <p class="precio-descuento">$39.00</p> 
+    <a href="productaccesorios2.html?id=240">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-5%</div> 
+    <a href="productaccesorios2.html?id=241">
+      <img src="../img/accesorios tv/IMG-20250819-WA0033.jpg" alt="Producto 241" />
+    </a>
+    <p class="nombre-producto">Soporte de TV de 26 a 55 pulgadas</p> 
+    <p class="precio-original">$28.00</p> 
+    <p class="precio-descuento">$20.00</p> 
+    <a href="productaccesorios2.html?id=241">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-25%</div> 
+    <a href="productaccesorios2.html?id=242">
+      <img src="../img/accesorios tv/IMG-20250819-WA0034.jpg" alt="Producto 242" />
+    </a>
+    <p class="nombre-producto">Mando a distancia</p> 
+    <p class="precio-original">$13.00</p> 
+    <p class="precio-descuento">$9.00</p> 
+    <a href="productaccesorios2.html?id=242">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-25%</div> 
+    <a href="productaccesorios2.html?id=243">
+      <img src="../img/accesorios tv/IMG-20250819-WA0036.jpg" alt="Producto 243" />
+    </a> 
+    <p class="nombre-producto">Soporte de TV de 37 a 70 Pulgadas</p> 
+    <p class="precio-original">$24.00</p> 
+    <p class="precio-descuento">$19.00</p> 
+    <a href="productaccesorios2.html?id=243">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article> 
+
+  <article class="producto"> 
+    <div class="descuento">-25%</div> 
+    <a href="productaccesorios2.html?id=244">
+      <img src="../img/accesorios tv/IMG-20250819-WA0037.jpg" alt="Producto 244" />
+    </a>
+    <p class="nombre-producto">Control Remoto LG SMART TV</p> 
+    <p class="precio-original">$15.00</p> 
+    <p class="precio-descuento">$10.00</p> 
+    <a href="productaccesorios2.html?id=244">
+      <button class="btn-carrito">Ver detalles</button> 
+    </a>
+  </article>   
+
+</div>
+
+
+
+ 
+  <nav class="paginacion" aria-label="Paginación de resultados"> 
+    <a class="pagina-btn" href="videos.html" aria-label="Página 1">1</a> 
+    <a class="pagina-btn pagina-activa" href="accesorios2.html" aria-label="Página 2">2</a> 
+</nav>
+  </section> 
+
+<br>
+<br>
+
+
+  <script src="../JS/compartido2.js"></script>
+    <script src="../JS/cartcompartido2.js"></script>
+<script>
+  // Products array for cart reference (should match product.html)
+
+    const products = [
+      { id: 230, name: "Convertidor de AV (RCA) a HDMI", priceDescuento: "$12.00", image: "../img/accesorios tv/IMG-20250819-WA0019.jpg" },
+  { id: 231, name: "Klip Xtreme, modelo KPM", priceDescuento: "$30.00", image: "../img/accesorios tv/IMG-20250819-WA0020.jpg" },
+  { id: 232, name: "LG Magic Remote", priceDescuento: "$84.00", image: "../img/accesorios tv/IMG-20250819-WA0021.jpg" },
+  { id: 233, name: "Convertidor de RCA a HDMI", priceDescuento: "$13.00", image: "../img/accesorios tv/IMG-20250819-WA0022.jpg" },
+  { id: 234, name: "Cable HDMI 4k PoerBear", priceDescuento: "$8.00", image: "../img/accesorios tv/IMG-20250819-WA0023.jpg" },
+  { id: 235, name: "Soporte de pared para TV", priceDescuento: "$33.50", image: "../img/accesorios tv/IMG-20250819-WA0024.jpg" },
+  { id: 236, name: "Soporte de pared TV de 32 pulgadas", priceDescuento: "$29.50", image: "../img/accesorios tv/IMG-20250819-WA0025.jpg" },
+  { id: 237, name: "Cable AV (Audios/videos)", priceDescuento: "$18.00", image: "../img/accesorios tv/IMG-20250819-WA0026.jpg" },
+  { id: 238, name: "Control remoto PIX 6428", priceDescuento: "$27.50", image: "../img/accesorios tv/IMG-20250819-WA0027.jpg" },
+  { id: 239, name: "Adaptador de HDMI MinI", priceDescuento: "$7.00", image: "../img/accesorios tv/IMG-20250819-WA0028.jpg" },
+  { id: 240, name: "Amazon fire TV Stick Lite", priceDescuento: "$39.00", image: "../img/accesorios tv/IMG-20250819-WA0029.jpg" },
+  { id: 241, name: "Soporte de TV de 26 a 55 pulgadas", priceDescuento: "$20.00", image: "../img/accesorios tv/IMG-20250819-WA0033.jpg" },
+  { id: 242, name: "Mando a distancia", priceDescuento: "$9.00", image: "../img/accesorios tv/IMG-20250819-WA0034.jpg" },
+  { id: 243, name: "Soporte de TV de 37 a 70 Pulgadas", priceDescuento: "$19.00", image: "../img/accesorios tv/IMG-20250819-WA0036.jpg" },
+  { id: 244, name: "Control Remoto LG SMART TV", priceDescuento: "$10.00", image: "../img/accesorios tv/IMG-20250819-WA0037.jpg" }
+
+
+];
+
+
+  // Setup add to cart buttons using cart.js helper
+  window.cart.setupAddToCartButtons(products);
+</script>
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body> 
+</html>

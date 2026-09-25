@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+  <link rel="stylesheet" href="../CSS/telefonosfijos.css" />
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="../JS/cartfijos.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+
+ <div class="top-bar" aria-label="Promotional and banking info">
+    <div class="red-highlight" aria-label="Offer banner">COMPRA HASTA <strong>12 meses</strong> sin intereses</div>
+    <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+    <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+    <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+    <a href="#" class="bank" aria-label="Banco BAC">BAC</a>
+  </div>
+
+  <header role="banner" aria-label="Encabezado principal">
+    <a href="index.html" class="logo" aria-label="INOVATECH">
+   <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+      </a>
+<div class="header-left" aria-label="Enlaces de sucursal y contacto">
+  <a href="../HTML/sucursal.html"><span class="icon"></span>Sucursales</a>
+  <a href="contactenos.html"><span class="icon"></span>ContÃ¡ctanos</a>
+  <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
+</div>
+
+    <div class="search-container" role="search" aria-label="Búsqueda de productos">
+      <input type="search" name="search" id="search" placeholder="¿Qué estás buscando?" aria-label="Campo de búsqueda"/>
+      <button aria-label="Buscar" title="Buscar">
+        
+      </button>
+    </div>
+
+   
+    <div class="header-right user-cart" aria-label="Cuenta de usuario y carrito de compras">
+  <a id="btn-cuenta" href="inicio.html" aria-label="Entrar o registrarse en mi cuenta" title="Mi Cuenta">
+    <svg class="icon-user" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+    </svg>
+    Mi Cuenta
+  </a>
+      <a href="#" aria-label="Ver mi carrito de compras" title="Mi carrito">
+        <svg class="icon-cart" viewBox="0 0 24 24" fill="none">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        Mi carrito
+      </a>
+<span class="cart-count">0</span>
+
+
+    <div class="cart-panel" style="display:none;">
+  <h3>Tu carrito</h3>
+  <ul class="cart-items"></ul>
+  <div class="cart-total">
+    Total: <span id="cart-total">$0.00</span>
+  </div>
+  <a href="carrito.html" class="btn-ver-carrito" style="display:block; margin:16px auto 0; background:#007bff; color:white; text-align:center; padding:8px 18px; border-radius:6px; text-decoration:none; font-weight:bold;">Ver mi carrito</a>
+</div>
+</div>
+      
+    </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="telefonosfijos.html">fijos</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+    // Sample product data for demonstration
+    const products = [
+      {
+        id: 46,
+        name: "Sagencom D27",
+        image: "../img/telefonos fijos/fijo 3.jpeg",
+        priceOriginal: "$40.00",
+        priceDescuento: "$30.00",
+        specs: {
+
+"Pantalla básica": "Pantalla monocroma para número marcado.",
+"Memoria": "10 números de marcación rápida.",
+"Registro": "Historial de últimas llamadas.",
+"Altavoz": "Función manos libres.",
+"Volumen ajustable": "Control de sonido de llamada.",
+"Consumo bajo": "Optimizado para larga duración.",
+"Montaje sencillo": "Compatible con pared o escritorio."
+        }
+      },
+      {
+        id: 47,
+        name: "Panasonic 40s",
+        image: "../img/telefonos fijos/fijo 4.jpeg",
+        priceOriginal: "$39.00",
+        priceDescuento: "$34.00",
+        specs: {
+      "Pantalla LCD": "Pantalla monocroma iluminada.",
+"Agenda": "Hasta 50 contactos.",
+"Registro de llamadas": "Lista de llamadas recientes.",
+"Manos libres": "Audio claro y potente.",
+"Autonomía": "Hasta 15 horas de uso.",
+"Eco Mode": "Ahorro de energía.",
+"Tonos personalizables": "Varios sonidos de llamada."
+        }
+      },
+      {
+        id: 48,
+        name: "philips 20t",
+        image: "../img/telefonos fijos/fijo1.jpeg",
+        priceOriginal: "$50.00",
+        priceDescuento: "$40.00",
+        specs: {
+   "Pantalla iluminada": "LCD retroiluminada para fácil lectura.",
+"Agenda": "50 contactos guardados.",
+"Registro de llamadas": "Lista de llamadas perdidas.",
+"Manos libres": "Altavoz integrado.",
+"Autonomía": "Hasta 16 horas en conversación.",
+"Sonido nítido": "Calidad de voz clara.",
+"Eco Mode": "Bajo consumo energético."
+
+        }
+      },
+      {
+        id: 49,
+        name: "Gigaset 10gen",
+        image: "../img/telefonos fijos/fijo10.jpeg",
+        priceOriginal: "$55.00",
+        priceDescuento: "$39.00",
+        specs: {
+       "Pantalla retroiluminada": "Pantalla gráfica iluminada en color ámbar.",
+"Gran autonomía": "Hasta 18 horas de conversación y 200 horas en modo espera.",
+"Agenda amplia": "Hasta 80 contactos almacenados.",
+"Llamadas recientes": "Muestra las últimas llamadas recibidas y marcadas.",
+"Altavoz integrado": "Función manos libres clara y potente.",
+"Eco Mode Plus": "Elimina la radiación en modo de espera.",
+"Bloqueo de teclas": "Evita marcaciones accidentales."
+        }
+      },
+      {
+        id: 50,
+        name: "gigaset 5gen",
+        image: "../img/telefonos fijos/fijo11.jpeg",
+        priceOriginal: "$40.00",
+        priceDescuento: "$33.00",
+        specs: {
+  "Pantalla LCD": "Pantalla grande y clara.",
+"Compatibilidad con audífonos": "Soporte de transmisión inductiva.",
+"Agenda": "Hasta 100 entradas almacenadas.",
+"Marcación rápida": "7 teclas programables para números frecuentes.",
+"Altavoz": "Manos libres integrado.",
+"Alimentación dual": "Funciona con batería o adaptador.",
+"Bajo consumo": "Diseño eficiente en energía."
+
+        }
+      },
+      {
+        id: 51,
+        name: "Vtech 12l",
+        image: "../img/telefonos fijos/fijo12.jpeg",
+        priceOriginal: "$44.00",
+        priceDescuento: "$15.00",
+        specs: {
+    "Identificador de llamadas": "Compatible con FSK y DTMF.",
+"Memoria": "Hasta 10 números guardados.",
+"Llamada en espera": "Aviso de llamadas entrantes.",
+"Control de volumen": "Ajuste fácil durante la llamada.",
+"Montaje dual": "Para escritorio o pared.",
+"Sonido claro": "Optimizado para voz.",
+"Bloqueo de teclas": "Previene marcaciones accidentales."
+
+        }
+      },
+      {
+        id: 52,
+        name: "Vtech 10l",
+        image: "../img/telefonos fijos/fijo13.jpeg",
+        priceOriginal: "$45.00",
+        priceDescuento: "$35.00",
+        specs: {
+  "Pantalla retroiluminada": "Pantalla LCD iluminada.",
+"Agenda": "Hasta 30 contactos guardados.",
+"Registro de llamadas": "Hasta 30 registros con identificación.",
+"Manos libres": "Altavoz integrado.",
+"Autonomía": "Hasta 7 horas de conversación.",
+"Bajo consumo": "Modo ahorro de energía.",
+"Tonos seleccionables": "Varios timbres configurables."
+        }
+      },
+      {
+        id: 53,
+        name: "Panasonic 20s",
+        image: "../img/telefonos fijos/fijo14.jpeg",
+        priceOriginal: "$60.00",
+        priceDescuento: "$50.00",
+        specs: {
+     "Pantalla retroiluminada": "Pantalla ámbar de fácil lectura.",
+"Agenda": "Hasta 120 contactos.",
+"Bloqueo de llamadas": "Filtrado de números no deseados.",
+"Altavoz": "Manos libres de alta calidad.",
+"Autonomía": "Hasta 15 horas de conversación.",
+"Eco Plus": "Baja radiación.",
+"Identificador de llamadas": "Compatible con ID FSK/DTMF."
+        }
+      },
+      {
+        id: 54,
+        name: "Gigaset 7gen",
+        image: "../img/telefonos fijos/fijo2.jpeg",
+        priceOriginal: "$30.00",
+        priceDescuento: "$25.00",
+        specs: {
+   
+"Pantalla iluminada": "Pantalla gráfica monocroma con retroiluminación ámbar para fácil lectura.",
+"Autonomía prolongada": "Hasta 18 horas en conversación y 200 horas en espera.",
+"Agenda integrada": "Capacidad para almacenar hasta 50 contactos.",
+"Registro de llamadas": "Lista de las últimas 25 llamadas perdidas o recibidas.",
+"Modo Eco DECT": "Reduce el consumo de energía y la radiación.",
+"Manos libres": "Permite conversar sin sostener el auricular.",
+"Tonos personalizables": "Incluye varios tonos de llamada ajustables en volumen."
+        }
+      },
+      {
+        id: 55,
+        name: "panasonic 10s",
+        image: "../img/telefonos fijos/fijo5.jpeg",
+        priceOriginal: "$18.00",
+        priceDescuento: "$15.00",
+        specs: {
+"Link2Cell": "Conecta hasta 2 móviles por Bluetooth.",
+"Agenda compartida": "Sincroniza contactos con el móvil.",
+"Contestador digital": "Capacidad de hasta 18 minutos.",
+"Altavoz dúplex": "Conversaciones más naturales.",
+"Energía eficiente": "Bajo consumo.",
+"Bloqueo de llamadas": "Evita spam telefónico.",
+"Pantalla grande": "Pantalla LCD retroiluminada."
+        }
+      },
+      {
+        id: 56,
+        name: "Avaya 5progen",
+        image: "../img/telefonos fijos/Avaya 1416 digital phone 1416 telephone IP Office.jpg",
+        priceOriginal: "$30.00",
+        priceDescuento: "$24.00",
+        specs: {
+              "Pantalla a color": "Pantalla de 2.8con interfaz gráfica intuitiva.",
+"Soporte VoIP": "Compatible con protocolo SIP.",
+"Puertos Ethernet": "Conexión dual 10/100/1000 Mbps.",
+"Varias líneas": "Admite hasta 4 líneas simultáneas.",
+"Manos libres": "Audio de alta calidad.",
+"Seguridad": "Soporte para cifrado TLS y SRTP.",
+"Bajo consumo": "Optimizado para uso empresarial."
+
+        }
+      },
+      {
+        id: 57,
+        name: "Gigaset 8gen",
+        image: "../img/telefonos fijos/fijo7.jpeg",
+        priceOriginal: "$80.00",
+        priceDescuento: "$40.00",
+        specs: {
+    
+        "Pantalla a color": "Pantalla TFT de 1.8con 65.000 colores.",
+"Agenda avanzada": "Hasta 200 contactos con nombre, apellido y 3 números cada uno.",
+"Autonomía extendida": "Hasta 14 horas de conversación.",
+"Registro de llamadas": "Historial detallado con fecha y hora.",
+"Manos libres": "Audio de alta calidad en modo altavoz.",
+"Interfaz personalizable": "Fondos y temas configurables.",
+"Modo Eco DECT": "Ahorro energético inteligente."
+
+        }
+      },
+      {
+        id: 58,
+        name: "Gigaset 4gen",
+        image: "../img/telefonos fijos/fijo8.jpeg",
+        priceOriginal: "48.00",
+        priceDescuento: "$36.00",
+        specs: {
+     
+"Pantalla grande": "Pantalla iluminada con caracteres grandes y claros.",
+"Volumen extra alto": "Ajuste de volumen para personas con problemas auditivos.",
+"Agenda": "Almacena hasta 150 contactos.",
+"Registro": "Lista de llamadas entrantes y perdidas.",
+"Altavoz": "Manos libres de alta calidad.",
+"Botón SOS": "Marcación rápida de emergencia.",
+"Eco Mode": "Reducción automática de radiación."
+        }
+      },
+      {
+        id: 59,
+        name: "Gigaset pro 12gen",
+        image: "../img/telefonos fijos/fijo9.jpeg",
+        priceOriginal: "$25.00",
+        priceDescuento: "$20.00",
+        specs: {
+"Pantalla HD": "Pantalla TFT de alta resolución a color.",
+"Agenda pro": "Hasta 500 contactos con múltiples campos.",
+"Bluetooth integrado": "Conexión con auriculares y móviles.",
+"Registro completo": "Historial detallado de llamadas.",
+"Audio HDSP": "Sonido de alta definición.",
+"Eco DECT": "Modo de bajo consumo.",
+"Autonomía": "Hasta 12 horas de conversación."
+        }
+      },
+      {
+        id: 60,
+        name: "gigaset note 19gen",
+        image: "../img/telefonos fijos/descarga.jpg",
+        priceOriginal: "$30.00",
+        priceDescuento: "$17.00",
+        specs: {
+         "Pantalla grande": "Pantalla de 1.8iluminada en color.",
+"Agenda": "Capacidad para 150 contactos.",
+"Colores personalizables": "4 colores de retroiluminación de pantalla.",
+"Autonomía": "Hasta 18 horas de uso.",
+"Llamadas": "Registro de llamadas con hora y fecha.",
+"Altavoz": "Manos libres integrado.",
+"Eco Mode": "Ahorro de energía."
+        }
+      }
+    ];
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <title>Nova Tech Gaming</title> 
+  <link rel="stylesheet" href="../CSS/audifonos.css" /> 
+  <link rel="stylesheet" href="../CSS/cartaudifonos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body> 
+       
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Banner grande con anuncios destacados --> 
+
+
+   <div class="cards-container">
+  <div class="card">
+    <div class="shape purple"></div>
+    <img src="../img/audifonos/â˜ï¸.jpeg" alt="Audífonos Inalámbricos" />
+    <div class="card-content">
+      <h3 class="card-title">Audífonos Inalámbricos</h3>
+      <p class="card-subtitle">Comodidad y libertad sin cables</p>
+      <a href="audifonos.html" class="btn" role="button" tabindex="0">Compra ya</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="shape red"></div>
+    <img src="../img/audio para el hogar/LG CK43 XBOOM.jpeg" alt="Audio para el Hogar" />
+    <div class="card-content">
+      <h3 class="card-title">Audio para el Hogar</h3>
+      <p class="card-subtitle">Bocinas potentes para tu sala o fiesta</p>
+      <a href="audio-para-el-hogar.html" class="btn" role="button" tabindex="0">Compra ya</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="shape orange"></div>
+    <img src="../img/audio personal/Bocina jbl clip 4 negra.jpg" alt="Bocinas Portátiles" />
+    <div class="card-content">
+      <h3 class="card-title">Bocinas Portátiles</h3>
+      <p class="card-subtitle">Llévalas contigo a cualquier lugar</p>
+      <a href="audio-personal.html" class="btn" role="button" tabindex="0">Compra ya</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="shape green"></div>
+    <img src="../img/audio pro/Micrófono USB para transmisión con filtro RadioShack Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg" alt="Audio Profesional" />
+    <div class="card-content">
+      <h3 class="card-title">Audio Profesional</h3>
+      <p class="card-subtitle">Sonido de calidad para eventos y estudios</p>
+      <a href="audio-profesional.html" class="btn" role="button" tabindex="0">Compra ya</a>
+    </div>
+  </div>
+</div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+ 
+ <div class="productos"> 
+    <!-- Aquí van los productos, máximo 8 por página --> 
+ <article class="producto"> 
+  <div class="descuento">-13%</div> 
+  <a href="productaudifonos.html?id=101">
+    <img src="../img/audifonos/Audifonos JBL Synchros E50 BT blanco.jpg" alt="Producto 1" />
+  </a>
+  <p class="nombre-producto">Audifonos JBL Synchros E50 BT</p> 
+  <p class="precio-original">$150.00</p>  
+  <p class="precio-descuento">$130.05</p> 
+  <a href="productaudifonos.html?id=101">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-41%</div> 
+  <a href="productaudifonos.html?id=102">
+    <img src="../img/audifonos/Audífonos Bluetooth Quietcomfort White Smoke___.jpeg" alt="Producto 2" />
+  </a>
+  <p class="nombre-producto">Audifonos bose</p> 
+  <p class="precio-original">$369.00</p> 
+  <p class="precio-descuento">$217.70</p> 
+  <a href="productaudifonos.html?id=102">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-10%</div> 
+  <a href="productaudifonos.html?id=103">
+    <img src="../img/audifonos/JBL Tune Flex True Wireless Noise Cancelling Earbuds - White.jpeg" alt="Producto 3" />
+  </a>
+  <p class="nombre-producto">Audifonos JBL Tune flex 2 con ANC</p> 
+  <p class="precio-original">$99.90</p> 
+  <p class="precio-descuento">$89.90</p> 
+  <a href="productaudifonos.html?id=103">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article>  
+
+<article class="producto"> 
+  <div class="descuento">-17%</div> 
+  <a href="productaudifonos.html?id=104">
+    <img src="../img/audifonos/SÅ‚uchawki JBL Quantum 100P Nauszne.jpeg" alt="Producto 4" />
+  </a>
+  <p class="nombre-producto">Audifonos Gaming JBL Quantum 800</p> 
+  <p class="precio-original">$150.00</p> 
+  <p class="precio-descuento">$124.05</p> 
+  <a href="productaudifonos.html?id=104">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-20%</div> 
+  <a href="productaudifonos.html?id=105">
+    <img src="../img/audifonos/â˜ï¸.jpeg" alt="Producto 5" />
+  </a>
+  <p class="nombre-producto">Audifonos inalambricos JBL tune 520 Over Ear</p> 
+  <p class="precio-original">$49.99</p> 
+  <p class="precio-descuento">$39.02</p> 
+  <a href="productaudifonos.html?id=105">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-15%</div> 
+  <a href="productaudifonos.html?id=106">
+    <img src="../img/audifonos/JBL TUNE 120TWS.jpg" alt="Producto 6" />
+  </a>
+  <p class="nombre-producto">JBL TUNE 120TWS</p> 
+  <p class="precio-original">$99.99</p> 
+  <p class="precio-descuento">$84.15</p> 
+  <a href="productaudifonos.html?id=106">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-20%</div> 
+  <a href="productaudifonos.html?id=107">
+    <img src="../img/audifonos/jbl 200 tws.jpg" alt="Producto 7" />
+  </a>
+  <p class="nombre-producto">audifonos jbl 200tws</p> 
+  <p class="precio-original">$80.00</p> 
+  <p class="precio-descuento">$64.00</p> 
+  <a href="productaudifonos.html?id=107">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-25%</div> 
+  <a href="productaudifonos.html?id=108">
+    <img src="../img/audifonos/WIN- Sony WH-CH500 Wireless Bluetooth NFC On-Ear Headphones.jpeg" alt="Producto 8" />
+  </a>
+  <p class="nombre-producto">audifonos sony WH-CH500</p> 
+  <p class="precio-original">$112.00</p> 
+  <p class="precio-descuento">$84.00</p> 
+  <a href="productaudifonos.html?id=108">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-17%</div> 
+  <a href="productaudifonos.html?id=109">
+    <img src="../img/audifonos/Audífonos inalámbricos Bluetooth WH CH520 Blancos.jpeg" alt="Producto 9" />
+  </a>
+  <p class="nombre-producto">Audifonos Inalambrico Sony Wh-ch520</p> 
+  <p class="precio-original">$64.00</p> 
+  <p class="precio-descuento">$53.12</p> 
+  <a href="productaudifonos.html?id=109">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-21%</div> 
+  <a href="productaudifonos.html?id=110">
+    <img src="../img/audifonos/Galaxy Buds3 Pro White _ Samsung Chile.jpeg" alt="Producto 10" />
+  </a>
+  <p class="nombre-producto">Audifonos Samsung Galaxy buds 3 pro</p> 
+  <p class="precio-original">$169.00</p> 
+  <p class="precio-descuento">$134.00</p> 
+  <a href="productaudifonos.html?id=110">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-15%</div> 
+  <a href="productaudifonos.html?id=111">
+    <img src="../img/audifonos/buds blancos.jpeg" alt="Producto 11" />
+  </a>
+  <p class="nombre-producto">Audifonos Samsung buds 2 pro</p> 
+  <p class="precio-original">$54.00</p>  
+  <p class="precio-descuento">$45.00</p> 
+  <a href="productaudifonos.html?id=111">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article> 
+
+<article class="producto"> 
+  <div class="descuento">-12%</div> 
+  <a href="productaudifonos.html?id=112">
+    <img src="../img/audifonos/Sony WF-1000XM4 Blanco.jpeg" alt="Producto 15" />
+  </a>
+  <p class="nombre-producto">Sony WF-1000XM4</p> 
+  <p class="precio-original">$280.00</p> 
+  <p class="precio-descuento">$246.00</p> 
+  <a href="productaudifonos.html?id=112">
+    <button class="btn-carrito">Ver detalles</button> 
+  </a>
+</article>
+
+
+
+      </div>
+
+ 
+   <nav class="paginacion" aria-label="Paginación de resultados"> 
+    <a class="pagina-btn pagina-activa" href="audifonos.html" aria-label="Página 1">1</a> 
+    <a class="pagina-btn" href="audio-para-el-hogar.html" aria-label="Página 2">2</a> 
+    <a class="pagina-btn" href="audio-personal.html" aria-label="Página 3">3</a>
+    <a class="pagina-btn" href="audio-profesional.html" aria-label="Página 4">4</a> 
+</nav>
+ 
+  </section> 
+<br>
+<br>
+
+
+ <script src="../JS/audifonos.js"></script>
+<script src="../JS/cartaudifonos.js"></script>
+<script>
+  // Products array for cart reference (should match product.html)
+const products = [
+    { id: 101, name: "Audifonos JBL Synchros E50 BT", priceDescuento: "$130.05" },
+{ id: 102, name: "Audifonos Bose Quietcomfort", priceDescuento: "$217.70" },
+{ id: 103, name: "Audifonos JBL Tune flex 2 con ANC", priceDescuento: "$89.90" },
+{ id: 104, name: "Audifonos Gaming JBL Quantum 800", priceDescuento: "$124.05" },
+{ id: 105, name: "Audifonos inalambricos JBL tune 520 Over Ear", priceDescuento: "$39.02" },
+{ id: 106, name: "JBL TUNE 120TWS", priceDescuento: "$84.15" },
+{ id: 107, name: "Audifonos JBL 200 TWS", priceDescuento: "$64.00" },
+{ id: 108, name: "Audifonos Sony WH-CH500", priceDescuento: "$84.00" },
+{ id: 109, name: "Audifonos Inalambricos Sony WH-CH520", priceDescuento: "$53.12" },
+{ id: 110, name: "Audifonos Samsung Galaxy Buds 3 Pro", priceDescuento: "$134.00" },
+{ id: 111, name: "Audifonos Samsung Buds 2 Pro", priceDescuento: "$45.00" },
+{ id: 112, name: "Sony WF-1000XM4", priceDescuento: "$246.00" },
+
+    ];
+
+  // Setup add to cart buttons using cart.js helper
+  window.cart.setupAddToCartButtons(products);
+</script>
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body> 
+</html>

@@ -1,0 +1,631 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="../CSS/compartido.css" />
+    <link rel="stylesheet" href="../CSS/cartcompartido.css" />
+     <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+ .
+  <script src="../JS/cartcompartido.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="laptops.html">Laptops Gaming </a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+    const products = [
+  {
+    id: 200,
+    name: "ASUS TUF GAMING A15",
+    image: "../img/LAPS/ASUS A15.jpeg",
+    priceOriginal: "$950.00",
+    priceDescuento: "$760.00",
+    specs: {
+      CPU: "AMD Ryzen 7 8845HS / Ryzen 9 8945H",
+      GPU: "NVIDIA GeForce RTX 4050 / RTX 4060 Laptop (hasta 140W TGP)",
+      RAM: "16 GB DDR5 5600MHz (ampliable a 32 GB)",
+      Almacenamiento: "512 GB / 1 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "15.6'' FHD (1920x1080) IPS, 144Hz, G-SYNC",
+      SO: "Windows 11 Home",
+      Batería: "90Wh",
+      Puertos:
+        "1x USB4, 1x USB-C 3.2, 2x USB-A 3.2, HDMI 2.1, RJ-45, Jack 3.5mm, Wi-Fi 6E",
+      Peso: "2.2 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 201,
+    name: "Lenovo ThinkPad X13 Yoga Gen 4",
+    image: "../img/LAPS/4gen.jpeg",
+    priceOriginal: "$880.00",
+    priceDescuento: "$748.00",
+    specs: {
+      CPU: "Intel Core Ultra 5 125U / Core Ultra 7 155U",
+      GPU: "Intel Graphics integrada",
+      RAM: "16 GB / 32 GB LPDDR5x (soldada)",
+      Almacenamiento: "512 GB / 1 TB NVMe PCIe 4.0 SSD",
+      Pantalla:
+        "13.3'' WUXGA (1920x1200) IPS Táctil, 300 nits, 100% sRGB",
+      SO: "Windows 11 Pro",
+      Batería: "54.7Wh",
+      Puertos:
+        "2x Thunderbolt 4 (USB-C), 2x USB-A 3.2, HDMI 2.1, Jack 3.5mm, Lector de huellas",
+      Peso: "1.2 kg",
+      Garantía: "3 años",
+    },
+  },
+  {
+    id: 202,
+    name: "Alienware x16 R2",
+    image: "../img/LAPS/16X.jpeg",
+    priceOriginal: "$1,400.00",
+    priceDescuento: "$1,148.00",
+    specs: {
+      CPU: "Intel Core Ultra 7 155H / Core Ultra 9 185H",
+      GPU: "NVIDIA GeForce RTX 4060 / RTX 4070 / RTX 4080 Laptop",
+      RAM: "16 GB / 32 GB LPDDR5x 7467MHz",
+      Almacenamiento: "1 TB / 2 TB / 4 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "16'' QHD+ (2560x1600) 240Hz, 100% DCI-P3, G-SYNC",
+      SO: "Windows 11 Home",
+      Batería: "90Wh",
+      Puertos:
+        "1x Thunderbolt 4, 1x USB-C 3.2, 2x USB-A 3.2, HDMI 2.1, Lector microSD, Jack 3.5mm",
+      Peso: "2.72 kg",
+      Garantía: "1 año Premium Support",
+    },
+  },
+  {
+    id: 203,
+    name: "Lenovo Legion 5 15",
+    image: "../img/LAPS/Lenovo Legion 5 15 Gaming Laptop.jpeg",
+    priceOriginal: "$1,250.00",
+    priceDescuento: "$975.00",
+    specs: {
+      CPU: "AMD Ryzen 7 8845H / Intel Core i7-14650HX",
+      GPU: "NVIDIA GeForce RTX 4050 / RTX 4060 Laptop",
+      RAM: "16 GB DDR5 5600MHz",
+      Almacenamiento: "1 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "15.6'' WQHD (2560x1440) IPS, 165Hz, 100% sRGB",
+      SO: "Windows 11 Home",
+      Batería: "80Wh",
+      Puertos:
+        "2x USB-C 3.2, 3x USB-A 3.2, HDMI 2.1, RJ-45, Jack 3.5mm, Lector SD",
+      Peso: "2.4 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 204,
+    name: "Acer Nitro V 15",
+    image: "../img/LAPS/Notebook Acer Gamer Nitro V15 ANV15-51-7837.jpeg",
+    priceOriginal: "$1,100.00",
+    priceDescuento: "$880.00",
+    specs: {
+      CPU: "Intel Core i5-13420H / Core i7-13620H",
+      GPU: "NVIDIA GeForce RTX 4050 Laptop",
+      RAM: "8 GB / 16 GB DDR5",
+      Almacenamiento: "512 GB / 1 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "15.6'' FHD (1920x1080) IPS, 144Hz",
+      SO: "Windows 11 Home",
+      Batería: "57Wh",
+      Puertos:
+        "1x Thunderbolt 4 (USB-C), 3x USB-A 3.2, HDMI 2.1, RJ-45, Jack 3.5mm",
+      Peso: "2.1 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 205,
+    name: "MSI Titan 18 HX",
+    image: "../img/LAPS/MSI Titan 18 HX AI A2XWJG-614US Gaming Laptop.jpeg",
+    priceOriginal: "$1,350.00",
+    priceDescuento: "$1,120.50",
+    specs: {
+      CPU: "Intel Core i9-14900HX",
+      GPU: "NVIDIA GeForce RTX 4080 / RTX 4090 Laptop",
+      RAM: "32 GB / 64 GB / 128 GB DDR5",
+      Almacenamiento: "2 TB / 4 TB NVMe PCIe 5.0 SSD",
+      Pantalla: "18'' UHD+ (3840x2400) Mini LED, 120Hz, 100% DCI-P3",
+      SO: "Windows 11 Pro",
+      Batería: "99.9Wh",
+      Puertos:
+        "2x Thunderbolt 4 (USB-C), 3x USB-A 3.2, HDMI 2.1, RJ-45, Lector SD, Jack 3.5mm",
+      Peso: "3.6 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 206,
+    name: "Alienware M18 R2",
+    image: "../img/LAPS/Alienware M18 R2 Gaming Laptop.jpeg",
+    priceOriginal: "$1,050.00",
+    priceDescuento: "$850.50",
+    specs: {
+      CPU: "Intel Core i7-14650HX / Core i9-14900HX",
+      GPU: "NVIDIA GeForce RTX 4060 / RTX 4070 / RTX 4080 / RTX 4090 Laptop",
+      RAM: "16 GB / 32 GB / 64 GB DDR5 5600MHz",
+      Almacenamiento: "1 TB a 8 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "18'' QHD+ (2560x1600) 165Hz o FHD+ (1920x1200) 480Hz",
+      SO: "Windows 11 Home",
+      Batería: "97Wh",
+      Puertos:
+        "2x Thunderbolt 4, 1x USB-C 3.2, 3x USB-A 3.2, HDMI 2.1, RJ-45, Lector SD, Jack 3.5mm",
+      Peso: "4.23 kg",
+      Garantía: "1 año Premium Support",
+    },
+  },
+  {
+    id: 207,
+    name: "ACEMAGIC AX15 Laptop",
+    image: "../img/LAPS/Limited-time deal_ ACEMAGIC Laptop Computer, 16GB.jpeg",
+    priceOriginal: "$780.00",
+    priceDescuento: "$616.20",
+    specs: {
+      CPU: "Intel Alder Lake N95 (4 núcleos)",
+      GPU: "Intel UHD Graphics integrada",
+      RAM: "16 GB DDR4",
+      Almacenamiento: "512 GB M.2 SSD",
+      Pantalla: "15.6'' FHD (1920x1080) IPS",
+      SO: "Windows 11 Pro",
+      Batería: "38Wh",
+      Puertos: "1x USB-C, 2x USB 3.0, 1x USB 2.0, HDMI, Jack 3.5mm",
+      Peso: "1.7 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 208,
+    name: "Lenovo LOQ 15",
+    image: "../img/LAPS/Latest LENOVO LOQ 15IRH8 GAMING LAPTOP gives you a.jpeg",
+    priceOriginal: "$1,000.00",
+    priceDescuento: "$840.00",
+    specs: {
+      CPU: "Intel Core i5-13450HX / AMD Ryzen 7 7840HS",
+      GPU: "NVIDIA GeForce RTX 4050 Laptop",
+      RAM: "8 GB / 16 GB DDR5 5600MHz",
+      Almacenamiento: "512 GB / 1 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "15.6'' FHD (1920x1080) IPS, 144Hz",
+      SO: "Windows 11 Home",
+      Batería: "60Wh",
+      Puertos:
+        "1x USB-C 3.2 (DisplayPort), 3x USB-A 3.2, HDMI 2.1, RJ-45, Jack 3.5mm",
+      Peso: "2.4 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 209,
+    name: "MSI Vector 16 HX",
+    image: "../img/LAPS/MSI Vector 16 HX.jpeg",
+    priceOriginal: "$1,200.00",
+    priceDescuento: "$1,020.00",
+    specs: {
+      CPU: "Intel Core i7-14700HX / Core i9-14900HX",
+      GPU: "NVIDIA GeForce RTX 4060 / RTX 4070 Laptop",
+      RAM: "16 GB / 32 GB DDR5 5600MHz",
+      Almacenamiento: "1 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "16'' QHD+ (2560x1600) IPS-Level, 240Hz, 100% DCI-P3",
+      SO: "Windows 11 Home",
+      Batería: "90Wh",
+      Puertos:
+        "1x Thunderbolt 4, 1x USB-C 3.2, 3x USB-A 3.2, HDMI 2.1, Lector SD, RJ-45",
+      Peso: "2.7 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 210,
+    name: "MSI Vector 17 HX",
+    image: "../img/LAPS/Laptop mit 18_ QWUXGA Display, Intel Core.jpeg",
+    priceOriginal: "$1,500.00",
+    priceDescuento: "$1,290.00",
+    specs: {
+      CPU: "Intel Core i9-14900HX",
+      GPU: "NVIDIA GeForce RTX 4080 Laptop",
+      RAM: "32 GB DDR5 5600MHz",
+      Almacenamiento: "1 TB / 2 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "17'' QHD+ (2560x1600) IPS-Level, 240Hz, 100% DCI-P3",
+      SO: "Windows 11 Home",
+      Batería: "90Wh",
+      Puertos:
+        "1x Thunderbolt 4, 1x USB-C 3.2, 3x USB-A 3.2, HDMI 2.1, Lector SD, RJ-45",
+      Peso: "3.0 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 211,
+    name: "MSI Raider GE78 HX",
+    image: "../img/LAPS/NOW is the time to score the hottest holiday deals.jpeg",
+    priceOriginal: "$2,000.00",
+    priceDescuento: "$1,740.00",
+    specs: {
+      CPU: "Intel Core i9-14900HX",
+      GPU: "NVIDIA GeForce RTX 4070 / RTX 4080 / RTX 4090 Laptop",
+      RAM: "32 GB / 64 GB DDR5",
+      Almacenamiento: "2 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "17'' QHD+ (2560x1600) IPS-Level, 240Hz, 100% DCI-P3",
+      SO: "Windows 11 Home",
+      Batería: "99.9Wh",
+      Puertos:
+        "1x Thunderbolt 4, 1x USB-C 3.2 (DisplayPort), 2x USB-A 3.2, HDMI 2.1, Lector SD, RJ-45",
+      Peso: "3.1 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 212,
+    name: "HP Omen Transcend 14",
+    image: "../img/LAPS/tracend 14.jpeg",
+    priceOriginal: "$2,200.00",
+    priceDescuento: "$1,760.00",
+    specs: {
+      CPU: "Intel Core Ultra 7 155H / Core Ultra 9 185H",
+      GPU: "NVIDIA GeForce RTX 4050 / RTX 4060 / RTX 4070 Laptop",
+      RAM: "16 GB / 32 GB LPDDR5x (soldada)",
+      Almacenamiento: "512 GB / 1 TB / 2 TB NVMe PCIe 4.0 SSD",
+      Pantalla:
+        "14'' 2.8K (2880x1800) OLED, 120Hz, HDR 500 nits, 100% DCI-P3",
+      SO: "Windows 11 Home",
+      Batería: "71Wh",
+      Puertos:
+        "1x Thunderbolt 4, 1x USB-C 3.2, 2x USB-A 3.2, HDMI 2.1, Jack 3.5mm",
+      Peso: "1.63 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 213,
+    name: "MSI Modern 14",
+    image: "../img/LAPS/Latest AMD Ryzen 5 7430U Processors is here_ The.jpeg",
+    priceOriginal: "$1,800.00",
+    priceDescuento: "$1,530.00",
+    specs: {
+      CPU: "Intel Core i7-1355U / AMD Ryzen 7 7730U",
+      GPU: "Intel Iris Xe / AMD Radeon Graphics integrada",
+      RAM: "16 GB DDR4 (en algunos modelos soldada)",
+      Almacenamiento: "512 GB / 1 TB NVMe PCIe 3.0 SSD",
+      Pantalla: "14'' FHD (1920x1080) IPS-Level, 60Hz",
+      SO: "Windows 11 Home",
+      Batería: "39.3Wh",
+      Puertos: "1x USB-C 3.2, 2x USB-A, HDMI, Lector microSD, Jack 3.5mm",
+      Peso: "1.4 kg",
+      Garantía: "1 año",
+    },
+  },
+  {
+    id: 214,
+    name: "ROG Strix G18",
+    image: "../img/LAPS/ROG 18.jpeg",
+    priceOriginal: "$1,600.00",
+    priceDescuento: "$1,312.00",
+    specs: {
+      CPU: "Intel Core i9-14900HX",
+      GPU: "NVIDIA GeForce RTX 4070 / RTX 4080 Laptop",
+      RAM: "16 GB / 32 GB DDR5 5600MHz",
+      Almacenamiento: "1 TB / 2 TB NVMe PCIe 4.0 SSD",
+      Pantalla: "18'' QHD+ (2560x1600) Nebula Display, 240Hz, G-SYNC",
+      SO: "Windows 11 Home",
+      Batería: "90Wh",
+      Puertos:
+        "1x Thunderbolt 4, 1x USB-C 3.2, 2x USB-A 3.2, HDMI 2.1, RJ-45, Jack 3.5mm",
+      Peso: "3.0 kg",
+      Garantía: "1 año",
+    },
+  },
+];
+
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

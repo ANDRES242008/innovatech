@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Nova Tech Gaming</title> 
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+ <link rel="stylesheet" href="../CSS/compartido2.css" />
+  .
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body> 
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+  <button 
+    class="mobile-menu-toggle" 
+    type="button" 
+    aria-label="Abrir menú de navegación"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    â˜°
+  </button>
+  
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true">ï¸</span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div class="pago-cuota" aria-label="Pago de cuotas">
+    <a href="pago-cuotas.html" aria-label="Ir a pago de cuotas">
+      Pago de Cuota
+    </a>
+  </div>
+</nav>
+   <main>
+ <br> 
+  <br> 
+
+
+
+ <div class="cards-container">
+    <div class="card">
+        <div class="shape purple"></div>
+        <img src="../img/mouses/M185.jpeg" alt="Mouses y Teclados" />
+        <div class="card-content">
+            <h3 class="card-title">Mouses y Teclados</h3>
+            <p class="card-subtitle">Encuentra la precisión y ergonomía ideal para tu trabajo diario.</p>
+            <a href="mouses.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape red"></div>
+        <img src="../img/almacenamiento/Western Digital 4TB WD My Passport Ultra for Mac Usb-c and USB 3_2 Gen 1, Portable External Hard Drive Hdd, Silver - Wdbpmv0040bsl-wesn.jpeg" alt="Almacenamiento" />
+        <div class="card-content">
+            <h3 class="card-title">Almacenamiento y USB etc.</h3>
+            <p class="card-subtitle">Discos SSD y externos de alta capacidad para guardar tu información.</p>
+            <a href="almacenamiento.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape orange"></div>
+        <img src="../img/accesorios/Hub USB-C vers HDMI _ USB _ USB-C Belkin.jpeg" alt="Accesorios para Computadoras" />
+        <div class="card-content">
+            <h3 class="card-title">Accesorios para Computadoras</h3>
+            <p class="card-subtitle">Mejora tu productividad con cámaras web, hubs y más esenciales.</p>
+            <a href="compusaccesorios.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shape green"></div>
+        <img src="../img/impresoras/HP PRINTER SMART TANK 515.jpeg" alt="Impresoras" />
+        <div class="card-content">
+            <h3 class="card-title">Impresoras y tintas</h3>
+            <p class="card-subtitle">Equipos de impresión eficientes para el hogar y la oficina.</p>
+            <a href="impre.html" class="btn" role="button" tabindex="0">Compra ya</a>
+        </div>
+    </div>
+</div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+
+<div class="productos">
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productalmacenamiento.html?id=261">
+            <img src="../img/almacenamiento/Portable SSD T7 1 TB USB 3_2 Gen 2 (Gray).jpeg" alt="Samsung T7 Portable SSD 500GB" />
+        </a>
+        <p class="nombre-producto">Samsung T7 Portable SSD 500GB (USB 3.2)</p>
+        <p class="precio-original">$89.99</p>
+        <p class="precio-descuento">$76.49</p>
+        <a href="productalmacenamiento.html?id=261">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productalmacenamiento.html?id=262">
+            <img src="../img/almacenamiento/Sandisk 1tb Extreme Portable Ssd V2.jpeg" alt="SanDisk Extreme Portable SSD 1TB" />
+        </a>
+        <p class="nombre-producto">SanDisk Extreme Portable SSD 1TB (V2)</p>
+        <p class="precio-original">$145.00</p>
+        <p class="precio-descuento">$116.00</p>
+        <a href="productalmacenamiento.html?id=262">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productalmacenamiento.html?id=263">
+            <img src="../img/almacenamiento/Western Digital 4TB WD My Passport Ultra for Mac Usb-c and USB 3_2 Gen 1, Portable External Hard Drive Hdd, Silver - Wdbpmv0040bsl-wesn.jpeg" alt="WD My Passport Disco Duro 5TB" />
+        </a>
+        <p class="nombre-producto">Western Digital My Passport 5TB (Portable HDD)</p>
+        <p class="precio-original">$150.00</p>
+        <p class="precio-descuento">$135.00</p>
+        <a href="productalmacenamiento.html?id=263">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productalmacenamiento.html?id=264">
+            <img src="../img/almacenamiento/Crucial X8 1TB USB 3_2 Gen 2 Portable SSD Review.jpeg" alt="Crucial X8 Portable SSD 1TB" />
+        </a>
+        <p class="nombre-producto">Crucial X8 Portable SSD 1TB (USB 3.2 Gen2)</p>
+        <p class="precio-original">$115.00</p>
+        <p class="precio-descuento">$86.25</p>
+        <a href="productalmacenamiento.html?id=264">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-30%</div>
+        <a href="productalmacenamiento.html?id=265">
+            <img src="../img/almacenamiento/Kingston DataTraveler Exodia M USB Flash Drive - 64GB USB 3_2 Gen 1 - with Moving Cap [DTXM_64GB].jpeg" alt="Kingston DataTraveler USB 64GB" />
+        </a>
+        <p class="nombre-producto">Kingston DataTraveler Exodia USB 3.2 64GB</p>
+        <p class="precio-original">$19.99</p>
+        <p class="precio-descuento">$13.99</p>
+        <a href="productalmacenamiento.html?id=265">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productalmacenamiento.html?id=266">
+            <img src="../img/almacenamiento/Seagate Expansion 4Tb - Hdd _ Hd _ Hardisk _ Harddisk External 2_5_.jpeg" alt="Seagate Expansion HDD 4TB" />
+        </a>
+        <p class="nombre-producto">Seagate Expansion Portable HDD 4TB (USB 3.0)</p>
+        <p class="precio-original">$119.90</p>
+        <p class="precio-descuento">$107.91</p>
+        <a href="productalmacenamiento.html?id=266">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productalmacenamiento.html?id=267">
+            <img src="../img/almacenamiento/SanDisk 128GB U1 microSDXC Memory Card Ultra Class 10 UHS-I with SD Adapter $23_88.jpeg" alt="SanDisk Ultra MicroSDXC 128GB" />
+        </a>
+        <p class="nombre-producto">SanDisk Ultra MicroSDXC 128GB (Clase 10/U1)</p>
+        <p class="precio-original">$24.99</p>
+        <p class="precio-descuento">$21.24</p>
+        <a href="productalmacenamiento.html?id=267">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productalmacenamiento.html?id=268">
+            <img src="../img/almacenamiento/Western Digital Elements Portable - Externe harde schijf - 2TB _ bol_com.jpeg" alt="WD Easystore Portable HDD 2TB" />
+        </a>
+        <p class="nombre-producto">Western Digital Elements Portable HDD 2TB</p>
+        <p class="precio-original">$75.00</p>
+        <p class="precio-descuento">$60.00</p>
+        <a href="productalmacenamiento.html?id=268">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productalmacenamiento.html?id=269">
+            <img src="../img/almacenamiento/Samsung Usb 3_1 Memory Stick Flash Drive Plus Muf-128ab_apc With Keyring.jpeg" alt="Samsung USB Flash Drive FIT Plus 128GB" />
+        </a>
+        <p class="nombre-producto">Samsung FIT Plus USB 3.1 128GB (Low Profile)</p>
+        <p class="precio-original">$29.99</p>
+        <p class="precio-descuento">$26.99</p>
+        <a href="productalmacenamiento.html?id=269">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productalmacenamiento.html?id=270">
+            <img src="../img/almacenamiento/Kingston Technology Canvas Go! Plus UHS-I SDXC Memory Card 256GB.jpeg" alt="Kingston Canvas Go! Plus SD Card 256GB" />
+        </a>
+        <p class="nombre-producto">Kingston Canvas Go! Plus SD Card 256GB (U3/V30)</p>
+        <p class="precio-original">$45.00</p>
+        <p class="precio-descuento">$33.75</p>
+        <a href="productalmacenamiento.html?id=270">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productalmacenamiento.html?id=271">
+            <img src="../img/almacenamiento/SanDisk SDDDC4 Ultra Dual Drive Luxe USB 3_2 Flash Drive 64GB Type C 128GB 256GB 512GB Metaal Type A.jpeg" alt="SanDisk Ultra Dual Drive Luxe USB-C" />
+        </a>
+        <p class="nombre-producto">SanDisk Ultra Dual Drive Luxe USB-C 64GB</p>
+        <p class="precio-original">$19.95</p>
+        <p class="precio-descuento">$15.96</p>
+        <a href="productalmacenamiento.html?id=271">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-15%</div>
+        <a href="productalmacenamiento.html?id=272">
+            <img src="../img/almacenamiento/Seagate One Touch Ssd, 1tb, External Ssd, Usb 3_0, Blue, 1 Year Myliocreate, 4 M.jpeg" alt="Seagate One Touch SSD 1TB" />
+        </a>
+        <p class="nombre-producto">Seagate One Touch Portable SSD 1TB (USB 3.0)</p>
+        <p class="precio-original">$135.00</p>
+        <p class="precio-descuento">$114.75</p>
+        <a href="productalmacenamiento.html?id=272">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-30%</div>
+        <a href="productalmacenamiento.html?id=273">
+            <img src="../img/almacenamiento/Pny _ 128GB Attaché 4 USB 2_0 Type A Flash Drive _ Black _ Best Buy.jpeg" alt="PNY Attaché 4 USB 128GB" />
+        </a>
+        <p class="nombre-producto">PNY Attaché 4 USB Flash Drive 128GB (Retráctil)</p>
+        <p class="precio-original">$29.99</p>
+        <p class="precio-descuento">$20.99</p>
+        <a href="productalmacenamiento.html?id=273">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-10%</div>
+        <a href="productalmacenamiento.html?id=274">
+            <img src="../img/almacenamiento/adata_hd710_pro_2tb.jpeg" alt="ADATA HD710 Pro Disco Duro 2TB" />
+        </a>
+        <p class="nombre-producto">ADATA HD710 Pro 2TB (Resistente al agua/polvo)</p>
+        <p class="precio-original">$99.99</p>
+        <p class="precio-descuento">$89.99</p>
+        <a href="productalmacenamiento.html?id=274">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-25%</div>
+        <a href="productalmacenamiento.html?id=275">
+            <img src="../img/almacenamiento/Samsung EVO Select 64 GB micro SDXC Card UHS-I + Adapter (MB-ME64KA_AM).jpeg" alt="Samsung EVO Select MicroSDXC 64GB" />
+        </a>
+        <p class="nombre-producto">Samsung EVO Select MicroSDXC 64GB (U3/Clase 10)</p>
+        <p class="precio-original">$15.99</p>
+        <p class="precio-descuento">$11.99</p>
+        <a href="productalmacenamiento.html?id=275">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+
+    <article class="producto">
+        <div class="descuento">-20%</div>
+        <a href="productalmacenamiento.html?id=276">
+            <img src="../img/almacenamiento/Lexar S80 256GB JumpDrive USB 3_1 Flash Drive, up to 150MB_s read quickly transfer a 3GB 4K movie clip in less than 1 minute, compared to the 4 minu LJDS080256G-BNBNG.jpeg" alt="Lexar JumpDrive S45 USB 256GB" />
+        </a>
+        <p class="nombre-producto">Lexar JumpDrive S47 USB 3.1 256GB (Ultra Compacto)</p>
+        <p class="precio-original">$39.00</p>
+        <p class="precio-descuento">$31.20</p>
+        <a href="productalmacenamiento.html?id=276">
+            <button class="btn-carrito">Ver detalles</button>
+        </a>
+    </article>
+</div>
+ 
+    <nav class="paginacion" aria-label="Paginación de resultados"> 
+    <a class="pagina-btn" href="mouses.html" aria-label="Página 1">1</a> 
+    <a class="pagina-btn pagina-activa" href="almacenamiento.html" aria-label="Página 2">2</a> 
+    <a class="pagina-btn" href="compusaccesorios.html" aria-label="Página 3">3</a>
+    <a class="pagina-btn" href="impre.html" aria-label="Página 4">4</a> 
+</nav>
+  </section> 
+
+<br>
+<br>
+
+
+  <script src="../JS/compartido.js"></script>
+    <script src="../JS/cartcompartido.js"></script>
+<script>
+  
+const products = [
+    { id: 261, name: "Samsung T7 Portable SSD 500GB (USB 3.2)", priceDescuento: "$76.49" },
+    { id: 262, name: "SanDisk Extreme Portable SSD 1TB (V2)", priceDescuento: "$116.00" },
+    { id: 263, name: "Western Digital My Passport 5TB (Portable HDD)", priceDescuento: "$135.00" },
+    { id: 264, name: "Crucial X8 Portable SSD 1TB (USB 3.2 Gen2)", priceDescuento: "$86.25" },
+    { id: 265, name: "Kingston DataTraveler Exodia USB 3.2 64GB", priceDescuento: "$13.99" },
+    { id: 266, name: "Seagate Expansion Portable HDD 4TB (USB 3.0)", priceDescuento: "$107.91" },
+    { id: 267, name: "SanDisk Ultra MicroSDXC 128GB (Clase 10/U1)", priceDescuento: "$21.24" },
+    { id: 268, name: "Western Digital Elements Portable HDD 2TB", priceDescuento: "$60.00" },
+    { id: 269, name: "Samsung FIT Plus USB 3.1 128GB (Low Profile)", priceDescuento: "$26.99" },
+    { id: 270, name: "Kingston Canvas Go! Plus SD Card 256GB (U3/V30)", priceDescuento: "$33.75" },
+    { id: 271, name: "SanDisk Ultra Dual Drive Luxe USB-C 64GB", priceDescuento: "$15.96" },
+    { id: 272, name: "Seagate One Touch Portable SSD 1TB (USB 3.0)", priceDescuento: "$114.75" },
+    { id: 273, name: "PNY Attaché 4 USB Flash Drive 128GB (Retráctil)", priceDescuento: "$20.99" },
+    { id: 274, name: "ADATA HD710 Pro 2TB (Resistente al agua/polvo)", priceDescuento: "$89.99" },
+    { id: 275, name: "Samsung EVO Select MicroSDXC 64GB (U3/Clase 10)", priceDescuento: "$11.99" },
+    { id: 276, name: "Lexar JumpDrive S47 USB 3.1 256GB (Ultra Compacto)", priceDescuento: "$31.20" }
+];
+
+ 
+  window.cart.setupAddToCartButtons(products);
+</script>
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body> 
+</html>

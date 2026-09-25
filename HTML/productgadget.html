@@ -1,0 +1,610 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+  <link rel="stylesheet" href="../CSS/gadget.css" />
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon"> 
+  <script src="../JS/cartgadget.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+
+ <!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="gadget.html">gadget</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+    // Sample product data for demonstration
+    const products = [
+      {
+        id: 1,
+        name: "Adaptador OTG",
+        image: "../img/gadget/adaptador otg.jpeg",
+        priceOriginal: "$15.60",
+        priceDescuento: "$6.99",
+        specs: {
+          "Adaptador USB-C a USB-A metálico": "Versátil, compacto y esencial para conectar dispositivos USB-A a puertos USB-C. Ideal para quienes trabajan en múltiples entornos y necesitan soluciones rápidas de conectividad.",
+  "Transferencia de datos rápida": "Permite una transmisión estable y veloz de archivos entre computadoras, móviles y otros periféricos compatibles.",
+  "Diseño metálico resistente": "Construido con una carcasa de metal pulido que brinda durabilidad, resistencia al desgaste y un aspecto moderno.",
+  "Formato ultracompacto": "Su tamaño reducido permite llevarlo a todas partes en bolsillos, estuches o conectado directamente a tu equipo sin ocupar espacio extra.",
+  "Compatibilidad amplia": "Funciona con una gran variedad de dispositivos, desde laptops y tablets hasta cargadores y hubs, siempre que tengan puerto USB-C.",
+  "Ideal para profesionales móviles": "Perfecto para quienes necesitan conectar pendrives, teclados o ratones mientras trabajan fuera de casa o la oficina.",
+  "Tolerancia térmica": "Los materiales metálicos ayudan a disipar el calor generado durante el uso prolongado, garantizando un funcionamiento seguro.",
+  "Material fácil de limpiar": "Su acabado metálico repele huellas y polvo, manteniéndolo limpio con solo una pasada de paño.",
+  "Regalo práctico": "Ideal para estudiantes, profesionales y tech lovers que buscan accesorios funcionales, duraderos y elegantes."
+
+        }
+      },
+      {
+        id: 2,
+        name: "Anillo de luz",
+        image: "../img/gadget/anillo de luz.jpeg",
+        priceOriginal: "$20.00",
+        priceDescuento: "$12.00",
+        specs: {
+          "Aro de luz LED con trípode": "Iluminación uniforme y profesional para tus contenidos. Este aro de luz, montado sobre un trípode ajustable, es perfecto para creadores que buscan destacar con calidad visual en cada toma.",
+  "Soporte flexible para smartphone": "Incluye un brazo articulado que sostiene tu teléfono en el centro del aro, permitiendo grabaciones y transmisiones en vivo sin necesidad de sujetarlo manualmente.",
+  "Luz regulable": "Ofrece diferentes niveles de brillo y temperaturas de color, adaptándose al ambiente y al estilo deseado para cada ocasión.",
+  "Trípode ajustable": "Se adapta a distintas alturas y ángulos de uso, ideal para grabar en escritorio o a nivel corporal sin complicaciones.",
+  "Montaje sencillo": "Diseñado para armarse fácilmente sin necesidad de herramientas, ideal para principiantes y profesionales.",
+  "Ideal para creadores de contenido": "Perfecto para grabar tutoriales, hacer videollamadas, tomarse selfies o transmitir en redes sociales con iluminación perfecta.",
+  "Portátil y compacto": "Fácil de guardar y transportar. Su estructura ligera lo convierte en un aliado útil para grabar en diferentes espacios.",
+  "Material resistente": "Fabricado con componentes duraderos que soportan el uso constante sin perder estabilidad.",
+  "Regalo funcional": "Una excelente opción para obsequiar a influencers, estudiantes o profesionales que buscan mejorar su producción visual."
+
+        }
+      },
+      {
+        id: 3,
+        name: "Cargador Inalambrico magnetico",
+        image: "../img/gadget/Cargador Inalambrico Magnetic.jpeg",
+        priceOriginal: "$19.00",
+        priceDescuento: "$9.00",
+        specs: {
+          "Cargador inalámbrico USB-C con adaptador USB-A": "Solución moderna y elegante para cargar tu dispositivo sin cables. Su diseño circular y minimalista complementa cualquier espacio de trabajo o dormitorio.",
+  "Conexión dual USB-C y USB-A": "Incluye adaptador desmontable para ampliar su compatibilidad con distintos tipos de cargadores y fuentes de energía.",
+  "Compatibilidad universal con carga inalámbrica": "Ideal para smartphones con tecnología Qi. Solo coloca el dispositivo sobre la base para iniciar la carga sin interrupciones.",
+  "Diseño compacto y limpio": "Su forma redondeada, color blanco y acabado liso le dan un aspecto sofisticado y fácil de integrar en cualquier entorno.",
+  "Indicador LED discreto": "Pequeña luz que señala el estado de carga sin ser invasiva, perfecta para uso nocturno o en espacios tranquilos.",
+  "Material fácil de limpiar": "La superficie repele el polvo y las huellas dactilares, manteniéndose impecable con un paño suave.",
+  "Seguridad integrada": "Protege tu dispositivo contra sobrecalentamiento, cortocircuitos y sobrecargas durante la carga inalámbrica.",
+  "Plug & Play": "No requiere configuración ni instalación. Solo conecta y empieza a cargar.",
+  "Regalo ideal para tech lovers": "Perfecto para quienes valoran la comodidad y el diseño moderno en sus accesorios tecnológicos."
+
+        }
+      },
+      {
+        id: 4,
+        name: "control bluetooth para tomar fotos",
+        image: "../img/gadget/Controle Remoto.jpeg",
+        priceOriginal: "$15.00",
+        priceDescuento: "$8.00",
+        specs: {
+         "Control remoto Bluetooth para cámara": "Pequeño, práctico y potente. Este control inalámbrico te permite capturar fotos o iniciar grabaciones sin necesidad de tocar tu dispositivo, ideal para selfies, vlogs y sesiones grupales.",
+  "Botones dedicados para iOS y Android": "Cuenta con dos botones separados, optimizados para trabajar de manera precisa con dispositivos Apple o Android, garantizando compatibilidad instantánea.",
+  "Conectividad estable": "Funciona mediante tecnología Bluetooth, ofreciendo conexión rápida, segura y de largo alcance para tomar fotos con libertad.",
+  "Diseño compacto y ligero": "Su forma ergonómica y tamaño reducido lo hacen fácil de llevar en bolsillos, mochilas o incluso colgado en llaveros.",
+  "Uso intuitivo": "No requiere instalación de apps. Solo empareja el control con tu smartphone y empieza a capturar recuerdos con un solo clic.",
+  "Batería de larga duración": "Equipado con batería tipo botón reemplazable que ofrece semanas de uso continuo sin necesidad de recarga.",
+  "Ideal para creadores y viajeros": "Perfecto para generar contenido desde ángulos creativos sin asistencia, grabar tomas estables o documentar momentos en solitario.",
+  "Regalo funcional y original": "Ideal para regalar a amantes de la fotografía, influencers o cualquier persona que disfrute capturar instantes únicos de manera fácil."
+
+        }
+      },
+      {
+        id: 5,
+        name: "guantes tactiles",
+        image: "../img/gadget/Guantes tactiless.jpeg",
+        priceOriginal: "$29.00",
+        priceDescuento: "$18.00",
+        specs: {
+  "Guantes táctiles deportivos": "Diseñados para mantener tus manos abrigadas mientras interactúas con pantallas táctiles. Son ideales para quienes necesitan usar su smartphone sin quitarse los guantes.",
+  "Tecnología táctil en dedos": "Incorporan zonas conductivas en la punta de los dedos, permitiendo el uso de dispositivos como teléfonos y tabletas con total precisión.",
+  "Diseño ergonómico y ajustado": "Se adaptan cómodamente a la forma de la mano, brindando libertad de movimiento y evitando que se deslicen durante el uso.",
+  "Material transpirable": "Fabricados con tejidos que permiten la circulación del aire, manteniendo las manos secas y cómodas incluso en actividad física ligera.",
+  "Estilo urbano y discreto": "Su color negro y detalles texturizados los convierten en un accesorio versátil que combina con todo tipo de ropa deportiva o casual.",
+  "Protección térmica": "Ideales para climas frescos, ayudan a conservar el calor corporal sin comprometer la funcionalidad.",
+  "Fáciles de limpiar": "Se pueden lavar a mano o a máquina sin perder su forma ni sus propiedades táctiles.",
+  "Uso diario y deportivo": "Perfectos para ciclismo, caminatas, correr o simplemente moverse por la ciudad en días fríos.",
+  "Regalo útil y moderno": "Una excelente opción para personas activas que valoran la practicidad y el confort sin renunciar a la conectividad."
+
+        }
+      },
+      {
+        id: 6,
+        name: "Lampara para lectura",
+        image: "../img/gadget/lamapra de lentura.jpeg",
+        priceOriginal: "$26.00",
+        priceDescuento: "$14.50",
+        specs: {
+   "Luz de lectura LED con clip": "Accesorio portátil y práctico para iluminar tus libros sin molestar a otros. Perfecto para leer en la noche, viajar o concentrarte en tus estudios con luz enfocada.",
+  "Doble brazo flexible": "Cuenta con dos luces independientes y ajustables, permitiendo dirigir el haz de luz exactamente donde lo necesitas para mayor comodidad.",
+  "Clip de sujeción estable": "Se adhiere firmemente a libros, cuadernos o bordes de muebles, garantizando estabilidad sin dañar las superficies.",
+  "Luz LED suave y eficiente": "Proporciona una iluminación clara sin parpadeos ni deslumbramientos, cuidando la vista durante lecturas prolongadas.",
+  "Funciona con baterías": "Ideal para uso portátil. No depende de cables ni tomas de corriente, lo que lo hace perfecto para viajes o estudios nocturnos.",
+  "Ideal para estudiantes y lectores nocturnos": "Una herramienta indispensable para quienes estudian hasta tarde, leen antes de dormir o trabajan en ambientes poco iluminados.",
+  "Diseño limpio y minimalista": "Su estilo discreto y moderno lo hace atractivo para cualquier tipo de usuario, combinando con escritorios, habitaciones o bibliotecas.",
+  "Regalo funcional": "Excelente opción para regalar a amantes de la lectura, estudiantes o personas que valoran la practicidad en sus rutinas diarias."
+
+        }
+      },
+      {
+        id: 7,
+        name: "Lente macro",
+        image: "../img/gadget/lente macro.jpeg",
+        priceOriginal: "$24.00",
+        priceDescuento: "$19.50",
+        specs: {
+  "Lente de clip 0.45X gran angular + macro": "Complemento ideal para mejorar las capacidades fotográficas de tu smartphone. Su sistema de doble función permite capturar imágenes amplias y detalles minúsculos con gran claridad.",
+  "Efecto gran angular": "Amplía el campo de visión, ideal para paisajes, fotos grupales y escenas urbanas. Permite incluir más elementos en la toma sin alejarte del sujeto.",
+  "Función macro incorporada": "Captura objetos pequeños con precisión y nitidez, perfecto para fotografía de flores, insectos, texturas o detalles técnicos.",
+  "Sistema de clip universal": "Se fija de manera segura en la mayoría de dispositivos móviles con cámara. Sujeción firme sin necesidad de herramientas ni adaptadores.",
+  "Diseño metálico en color negro": "Estética elegante y profesional que combina con cualquier estilo de dispositivo. Letras en blanco sobre fondo negro para fácil identificación.",
+  "Portátil y fácil de transportar": "Ligero y compacto, cabe perfectamente en bolsos, mochilas o estuches de fotografía para uso en exteriores.",
+  "Ideal para creadores visuales": "Perfecto para influencers, estudiantes o entusiastas de la fotografía móvil que buscan versatilidad sin invertir en cámaras costosas.",
+  "Material duradero y fácil de limpiar": "Fabricado con componentes resistentes que soportan el uso cotidiano y se mantienen impecables con un paño suave.",
+  "Regalo creativo y útil": "Excelente opción para regalar a personas aficionadas a la fotografía móvil o quienes buscan sacar más provecho a su smartphone."
+
+        }
+      },
+      {
+        id: 8,
+        name: "soporte multiuso",
+        image: "../img/gadget/Mobile charger holding.jpeg",
+        priceOriginal: "$10.00",
+        priceDescuento: "$5.00",
+        specs: {
+      "Estación de carga con soporte de pared GADGETON": "Accesorio práctico y seguro que mantiene tu smartphone elevado mientras se carga, evitando caídas o desorden sobre escritorios y pisos.",
+  "Soporte horizontal integrado": "Sujeta el teléfono de manera estable mientras está conectado al cargador, facilitando el uso del dispositivo sin interrumpir la carga.",
+  "Diseño compacto y llamativo": "Fabricado en plástico rojo con acabado brillante, destaca visualmente y aporta un toque moderno a cualquier ambiente.",
+  "Fijación directa a la toma de corriente": "Se monta directamente sobre el enchufe de pared, aprovechando el espacio vertical y manteniendo el dispositivo al alcance.",
+  "Protege el dispositivo durante la carga": "Evita que el teléfono quede expuesto al suelo o superficies inseguras, reduciendo el riesgo de daños por caídas o golpes.",
+  "Fácil de instalar y transportar": "Ligero, portátil y sin necesidad de herramientas para su colocación, ideal para uso en casa, oficina o viajes.",
+  "Ideal para ambientes ordenados": "Perfecto para quienes buscan una solución de carga limpia, sin cables enredados ni dispositivos esparcidos.",
+  "Compatible con cargadores estándar": "Funciona con la mayoría de los cargadores y smartphones de tamaño regular, brindando comodidad universal.",
+  "Regalo práctico y funcional": "Excelente opción para personas organizadas o amantes de la tecnología que valoran soluciones simples y efectivas."
+
+        }
+      },
+      {
+        id: 9,
+        name: "Powerban",
+        image: "../img/gadget/power ban.jpeg",
+        priceOriginal: "$30.00",
+        priceDescuento: "$25.50",
+        specs: {
+      "Power bank PINENG con textura de fibra de carbono": "Diseño elegante y portátil que proporciona energía confiable donde la necesites. Ideal para viajes, días largos o rutinas intensas en movimiento.",
+  "Cables integrados USB-C y Lightning": "Incluye dos cables incorporados en color verde, compatibles con dispositivos Android y Apple, eliminando la necesidad de llevar cables extra.",
+  "Acabado premium texturizado": "Superficie con patrón tipo fibra de carbono que aporta resistencia a rayones, mejor agarre y estilo moderno.",
+  "Alta compatibilidad": "Funciona con la mayoría de smartphones, tablets y dispositivos electrónicos que admiten carga rápida por USB-C o Lightning.",
+  "Carga eficiente y segura": "Incorpora sistemas de protección contra sobrecarga, cortocircuitos y calentamiento para cuidar tus dispositivos durante la carga.",
+  "Tamaño compacto": "Diseño liviano que cabe fácilmente en bolsos, mochilas o bolsillos sin ocupar espacio extra.",
+  "Ideal para usuarios activos": "Perfecto para estudiantes, trabajadores en campo, viajeros o personas que dependen de su móvil todo el día.",
+  "Fácil de limpiar": "Superficie resistente al polvo y huellas, se mantiene impecable con una simple pasada de paño.",
+  "Regalo funcional y moderno": "Excelente opción para tech lovers que valoran la utilidad, el estilo y la movilidad sin interrupciones."
+
+        }
+      },
+      {
+        id: 10,
+        name: "soporte para telefonos",
+        image: "../img/gadget/sostenedor de telefono.jpeg",
+        priceOriginal: "$18.00",
+        priceDescuento: "$7.00",
+        specs: {
+ "Soporte plegable para smartphone y tablet": "Accesorio versátil que permite colocar tu dispositivo en posición vertical u horizontal con total estabilidad. Ideal para videollamadas, clases virtuales o ver contenido sin usar las manos.",
+  "Ajuste de ángulo personalizable": "Cuenta con una bisagra móvil que permite inclinar el soporte en distintos ángulos según tu comodidad, facilitando una visualización ergonómica.",
+  "Base antideslizante": "Incluye una base sólida con superficie adherente para evitar deslizamientos sobre escritorios, mesas o cualquier superficie plana.",
+  "Diseño compacto y plegable": "Se pliega fácilmente para guardarlo o transportarlo sin ocupar espacio, perfecto para bolsos, mochilas o escritorios con poco espacio.",
+  "Compatible con múltiples dispositivos": "Funciona con smartphones y tablets de diferentes tamaños y marcas, asegurando una sujeción firme y segura.",
+  "Ideal para oficina, estudio o viajes": "Perfecto para acompañarte durante el trabajo, estudio o entretenimiento en cualquier lugar.",
+  "Material resistente y fácil de limpiar": "Superficie texturizada que repele polvo y huellas, conservando su apariencia con mínimo mantenimiento.",
+  "Diseño discreto en color negro": "Su estilo sobrio y profesional combina con cualquier entorno tecnológico o decorativo.",
+  "Regalo práctico y elegante": "Una excelente opción para personas organizadas que valoran la funcionalidad y el diseño minimalista."
+
+        }
+      },
+      {
+        id: 11,
+        name: "Style pen",
+        image: "../img/gadget/style pen .jpeg",
+        priceOriginal: "$9.00",
+        priceDescuento: "$3.00",
+        specs: {
+          "Lápiz digital universal con estuche": "Herramienta precisa y elegante para dibujar, escribir o navegar en dispositivos táctiles. Ideal para artistas digitales, estudiantes y profesionales creativos.",
+  "Compatibilidad versátil": "Funciona con tablets, smartphones y pantallas capacitivas. No requiere conexión Bluetooth ni instalación de software.",
+  "Diseño ergonómico y moderno": "Forma estilizada en color blanco con detalles plateados. Cuenta con botón de encendido/apagado y luz indicadora de estado.",
+  "Batería recargable integrada": "Proporciona horas de uso continuo. Se recarga fácilmente mediante cable USB, lo que garantiza productividad sin interrupciones.",
+  "Incluye estuche de presentación": "Empaque compacto y visualmente atractivo que protege el lápiz cuando no está en uso. Ideal para transportarlo con seguridad.",
+  "Superficie fácil de limpiar": "Acabado liso que repele huellas y polvo. Conserva su estética impecable con solo una pasada de paño.",
+  "Ideal para dibujo, notas y productividad": "Perfecto para tomar apuntes, realizar bocetos digitales o interactuar con aplicaciones creativas sin esfuerzo.",
+  "Herramienta profesional y educativa": "Útil para clases virtuales, diseño gráfico o edición de imágenes. Ayuda a mantener precisión en tareas detalladas.",
+  "Regalo sofisticado y funcional": "Excelente opción para estudiantes, diseñadores, arquitectos o cualquier persona que busque un lápiz digital confiable."
+
+        }
+      },
+      {
+        id: 12,
+        name: "Soporte magnetico para carro",
+        image: "../img/gadget/Suporte Magnético .jpeg",
+        priceOriginal: "$7.00",
+        priceDescuento: "$4.00",
+        specs: {
+     
+                 "Soporte magnético para auto": "Accesorio compacto y elegante que sujeta tu smartphone de forma segura mientras conduces. Ideal para navegar, atender llamadas o reproducir música sin usar las manos.",
+  "Fijación magnética potente": "Cuenta con una superficie magnética central de alta adherencia que mantiene tu dispositivo firme incluso en caminos irregulares.",
+  "Diseño metálico minimalista": "Acabado moderno en tono metálico que complementa la estética del tablero del vehículo sin ser invasivo.",
+  "Rotación ajustable": "Permite girar y ajustar el ángulo de visión del teléfono para mayor comodidad, visibilidad y seguridad al conducir.",
+  "Compatibilidad universal": "Funciona con la mayoría de smartphones gracias al sistema de placa metálica adhesiva, sin importar la marca o tamaño.",
+  "Instalación rápida": "Se adhiere fácilmente a superficies lisas del auto como el tablero o parabrisas, sin necesidad de herramientas.",
+  "Ideal para conductores activos": "Perfecto para quienes dependen del GPS, llamadas en altavoz o aplicaciones de viaje durante trayectos largos.",
+  "Material fácil de limpiar": "La superficie pulida repele huellas y polvo, manteniéndose impecable con una simple pasada.",
+  "Regalo práctico para automovilistas": "Excelente opción para regalar a personas que pasan tiempo en carretera o buscan funcionalidad y diseño en su vehículo."
+        
+
+        }
+      },
+      {
+        id: 13,
+        name: "Teclado para telefono y tablets",
+        image: "../img/gadget/teclado para telefono y tables.jpeg",
+        priceOriginal: "33.00",
+        priceDescuento: "$22.00",
+        specs: {
+        "âŒ¨ï¸ Set de teclado y mouse inalámbricos en tonos pastel": "Accesorios de escritorio con diseño moderno y encantador. El teclado en rosa claro y el mouse en lavanda ofrecen un toque de estilo a cualquier espacio de trabajo.",
+  "Conectividad inalámbrica eficiente": "Funciona mediante Bluetooth, brindando libertad de movimiento y un escritorio libre de cables. Ideal para usuarios que valoran la organización visual.",
+  "Indicadores LED integrados": "El teclado muestra luces discretas para estado de batería, Bluetooth y Bloq Mayús, asegurando monitoreo visual del funcionamiento.",
+  "Mouse ergonómico en color lavanda": "Diseño suave y minimalista con scroll central. Aporta comodidad durante largas horas de uso y combina perfectamente con el teclado.",
+  "Estética delicada y juvenil": "Colores pastel que atraen por su ternura y originalidad. Una excelente opción para estudiantes, diseñadores y amantes del buen gusto.",
+  "Ideal para espacios creativos": "Perfecto para escritorios en casa, oficinas con estilo o zonas de estudio. Aporta armonía visual sin sacrificar funcionalidad.",
+  "Tamaño compacto y funcional": "El diseño plano y ordenado del teclado facilita la escritura fluida, mientras el mouse encaja cómodamente en la mano.",
+  "Superficie fácil de limpiar": "Ambos accesorios tienen acabado liso que repele polvo y huellas, manteniéndose impecables con una simple pasada.",
+  "Regalo con estilo": "Una elección encantadora para sorprender a quien disfruta de la tecnología con un toque de personalidad."
+
+        }
+      },
+      {
+        id: 14,
+        name: "Tripode para fotos",
+        image: "../img/gadget/tripode flexible.jpeg",
+        priceOriginal: "$18.00",
+        priceDescuento: "$7.00",
+        specs: {
+   "Trípode flexible de tres patas con soporte universal": "Ideal para capturar fotos y grabar vídeos desde ángulos únicos. Su diseño adaptable lo convierte en una herramienta creativa para creadores de contenido y aficionados a la fotografía.",
+  "Patas recubiertas de espuma antideslizante": "Ofrecen excelente agarre y estabilidad sobre distintas superficies. Se pueden doblar y envolver alrededor de objetos como ramas, postes o bordes.",
+  "Montura universal ajustable": "Compatible con la mayoría de smartphones y cámaras pequeñas. La sujeción firme permite grabar de forma segura sin vibraciones.",
+  "Ángulos personalizables": "Permite posicionar el dispositivo en inclinaciones diversas para obtener tomas creativas y contenido visual con perspectiva dinámica.",
+  "Portátil y ligero": "Su tamaño compacto lo hace fácil de guardar en mochilas o estuches. Perfecto para vlogs en exteriores, viajes o grabaciones urbanas.",
+  "Fácil de usar": "Sin necesidad de herramientas. Se instala y ajusta en segundos, lo que permite pasar rápidamente de una toma a otra.",
+  "Material resistente y lavable": "Las superficies de espuma se limpian fácilmente. Mantiene su aspecto profesional incluso con uso constante.",
+  "Ideal para fotógrafos móviles y aventureros": "Perfecto para grabar en la naturaleza, en ciudad o desde puntos de vista poco convencionales.",
+  "Regalo creativo y funcional": "Una gran opción para influencers, estudiantes o cualquier persona que quiera expandir sus opciones de grabación sin gastar mucho."
+
+        }
+      },
+      {
+        id: 15,
+        name: "funda para celular",
+        image: "../img/gadget/funda con espaco para accses.jpeg",
+        priceOriginal: "$30.00",
+        priceDescuento: "$17.00",
+        specs: {
+     "Brazalete Deportivo Nike para Smartphone":  "Comodidad, seguridad y estilo mientras te mueves. Este brazalete premium de Nike es el compañero ideal para quienes buscan mantener su dispositivo móvil accesible y protegido durante entrenamientos intensos o paseos al aire libre.",
+ "Ventana transparente de alta sensibilidad": "Permite el acceso completo a la pantalla táctil sin necesidad de sacar el dispositivo. Responde a tus mensajes, controla tu música y revisa tu rendimiento con facilidad.",
+"Ajuste seguro y ergonómico": "Fabricado con materiales ligeros y resistentes, el brazalete se adapta al contorno del brazo sin causar molestias. Ideal para sesiones prolongadas de ejercicio.",
+ "Transpirable y resistente al sudor": "Su diseño técnico incluye tejidos que permiten una ventilación adecuada, evitando acumulación de humedad y manteniendo la piel fresca.",
+ "Marca de confianza":"Con el icónico logo de Nike, representa estilo deportivo y garantía de calidad internacional.",
+        }
+      }
+    ];
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

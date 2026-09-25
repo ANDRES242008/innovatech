@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Nova Tech Gaming</title> 
+  <link rel="stylesheet" href="../CSS/exclusivo.css" /> 
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body> 
+ 
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+    
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navegación principal">
+  <div 
+    class="categories-label" 
+    tabindex="0" 
+    role="button"
+    aria-label="Abrir menú de categorías"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="menu-items"
+  >
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12" stroke="white" stroke-width="2"/>
+    </svg>
+    CATEGORÍAS
+  </div>
+
+  <div class="nav-categories" aria-label="Categorías principales">
+  <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div 
+    class="menu-items" 
+    id="menu-items"
+    role="menu" 
+    aria-label="Menú de categorías completo"
+    aria-hidden="true"
+  >
+    <a href="celulares.html" role="menuitem">
+      <span aria-hidden="true"></span> Celulares
+    </a>
+    <a href="gaming.html" role="menuitem">
+      <span aria-hidden="true"></span> Gaming
+    </a>
+    <a href="mouses.html" role="menuitem">
+      <span aria-hidden="true"></span> Computación
+    </a>
+    <a href="videos.html" role="menuitem">
+      <span aria-hidden="true"></span> Video
+    </a>
+    <a href="audifonos.html" role="menuitem">
+      <span aria-hidden="true"></span> Audio
+    </a>
+    <a href="exclusivo.html" role="menuitem">
+      <span aria-hidden="true"></span> Exclusivo online
+    </a>
+  </div>
+
+  <div class="pago-cuota" aria-label="Pago de cuotas">
+    <a href="pago-cuotas.html" aria-label="Ir a pago de cuotas">
+      Pago de Cuota
+    </a>
+  </div>
+</nav>
+   <main>
+ <br> 
+  <br>  
+
+
+ <div class="banner-exclusivo" style="width:100%; max-width:1400px; margin:40px auto; border-radius:24px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.15); background:#fff; display:flex; align-items:center; justify-content:center;">
+    <img src="../img/exclusivo/fest tech.jpg" alt="Productos exclusivos online" style="width:100%; max-height:560px; object-fit:cover;" />
+  </div>
+  <br> 
+     <br> 
+  <section class="resultados"> 
+    <div class="ordenar"> 
+      <label for="orden-select">Ordenar por:</label> 
+      <select id="orden-select" name="orden"> 
+        <option value="precio-asc">Precio: menor a mayor</option> 
+        <option value="precio-desc">Precio: mayor a menor</option> 
+        <option value="descuento">Mayor descuento</option> 
+      </select> 
+    </div> 
+ 
+    <h2>Techno Gaming / 10 de 24 resultados</h2> 
+ 
+    <div class="productos"> 
+ 
+      <!-- Aquí van los productos, máximo 8 por página --> 
+
+      <article class="producto">
+  <div class="descuento">-13%</div>
+  <a href="productexclusivo2.html?id=88">
+    <img src="../img/exclusivo/xboxblanco.jpeg" alt="Xbox Series X" />
+  </a>
+  <p class="nombre-producto">Xbox Series X</p>
+  <p class="precio-original">$399.00</p>
+  <p class="precio-descuento">$349.00</p>
+  <a href="productexclusivo2.html?id=88">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-10%</div>
+  <a href="productexclusivo2.html?id=89">
+    <img src="../img/exclusivo/CÃ¢mera Canon Eos R50 Mirrorless 18-45Mm Branca Br.jpeg" alt="Canon EOS R10" />
+  </a>
+  <p class="nombre-producto">Canon EOS R50</p>
+  <p class="precio-original">$999.00</p>
+  <p class="precio-descuento">$899.00</p>
+  <a href="productexclusivo2.html?id=89">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+<article class="producto">
+  <div class="descuento">-18%</div>
+  <a href="productexclusivo2.html?id=91">
+    <img src="../img/exclusivo/silver m4.jpeg" alt="MacBook Pro M3" />
+  </a>
+  <p class="nombre-producto">MacBook Pro M4</p>
+  <p class="precio-descuento">$1799.00</p>
+  <a href="productexclusivo2.html?id=91">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-15%</div>
+  <a href="productexclusivo2.html?id=92">
+    <img src="../img/exclusivo/surface 11 blanca.jpeg" alt="Surface Pro 9" />
+  </a>
+  <p class="nombre-producto">Surface Pro 11</p>
+  <p class="precio-original">$1500.00</p>
+  <p class="precio-descuento">$1275.00</p>
+  <a href="productexclusivo2.html?id=92">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-20%</div>
+  <a href="productexclusivo2.html?id=93">
+    <img src="../img/exclusivo/Play 5.jpeg" alt="PlayStation 5" />
+  </a>
+  <p class="nombre-producto">PlayStation 5</p>
+  <p class="precio-original">$699.00</p>
+  <p class="precio-descuento">$559.00</p>
+  <a href="productexclusivo2.html?id=93">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-16%</div>
+  <a href="productexclusivo2.html?id=94">
+    <img src="../img/exclusivo/6blanco.jpeg" alt="Galaxy Watch 6" />
+  </a>
+  <p class="nombre-producto">Galaxy Watch 6</p>
+  <p class="precio-original">$399.00</p>
+  <p class="precio-descuento">$335.00</p>
+  <a href="productexclusivo2.html?id=94">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-12%</div>
+  <a href="productexclusivo2.html?id=95">
+    <img src="../img/exclusivo/JBL VIBE BLANCOS.jpeg" alt="AirPods Pro 2" />
+  </a>
+  <p class="nombre-producto">JBL Vibe Bean</p>
+  <p class="precio-original">$60.00</p>
+  <p class="precio-descuento">$40.00</p>
+  <a href="productexclusivo2.html?id=95">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-19%</div>
+  <a href="productexclusivo2.html?id=96">
+    <img src="../img/exclusivo/Lenovo Yoga 9i 2-in-1 Laptop.jpeg" alt="Lenovo Yoga 9i" />
+  </a>
+  <p class="nombre-producto">Lenovo Yoga 9i</p>
+  <p class="precio-original">$1800.00</p>
+  <p class="precio-descuento">$1458.00</p>
+  <a href="productexclusivo2.html?id=96">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-17%</div>
+  <a href="productexclusivo2.html?id=97">
+    <img src="../img/exclusivo/razer blade blanca.jpeg" alt="Razer Blade 16" />
+  </a>
+  <p class="nombre-producto">Razer Blade Stealth 13</p>
+  <p class="precio-original">$3200.00</p>
+  <p class="precio-descuento">$2656.00</p>
+  <a href="productexclusivo2.html?id=97">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-23%</div>
+  <a href="productexclusivo2.html?id=98">
+    <img src="../img/exclusivo/Portátil Go 4 JBL blanca - R$ 254,8.jpeg" alt="JBL GO 4" />
+  </a>
+  <p class="nombre-producto">Bocina JBL Go 4 </p>
+  <p class="precio-original">$80.00</p>
+  <p class="precio-descuento">$60.00</p>
+  <a href="productexclusivo2.html?id=98">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-15%</div>
+  <a href="productexclusivo2.html?id=99">
+    <img src="../img/exclusivo/instaxblanca.jpeg" alt="Fujifilm Instax Mini 12" />
+  </a>
+  <p class="nombre-producto">Fujifilm Instax Mini 12</p>
+  <p class="precio-original">$99.00</p>
+  <p class="precio-descuento">$84.00</p>
+  <a href="productexclusivo2.html?id=99">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+
+<article class="producto">
+  <div class="descuento">-13%</div>
+  <a href="productexclusivo2.html?id=100">
+    <img src="../img/exclusivo/fifitblanco.jpeg" alt="Fitbit Charge 6" />
+  </a>
+  <p class="nombre-producto">Fitbit Charge 6</p>
+  <p class="precio-original">$159.00</p>
+  <p class="precio-descuento">$139.00</p>
+  <a href="productexclusivo2.html?id=100">
+    <button class="btn-carrito">Ver detalles</button>
+  </a>
+</article>
+    </div> 
+ 
+    <nav class="paginacion" aria-label="Paginación de resultados"> 
+      <a class="pagina-btn" href="exclusivo.html" aria-label="Página 1">1</a> 
+       <a class="pagina-btn" href="exclusivo2.html" aria-label="Página 2">2</a> 
+      
+    </nav> 
+ 
+  </section> 
+
+<br>
+<br>
+
+
+<script src="../JS/exclusivo.js"></script>
+<script src="../JS/cartexclusivo.js"></script>
+<script>
+  // Products array for cart reference (should match product.html)
+const products = [
+  { id: 88, name: "Nintendo Switch OLED", priceDescuento: "$349.00" },
+  { id: 89, name: "Canon EOS R10", priceDescuento: "$899.00" },
+  { id: 91, name: "MacBook Pro M3", priceDescuento: "$1799.00" },
+  { id: 92, name: "Surface Pro 11", priceDescuento: "$1275.00" },
+  { id: 93, name: "PlayStation 5", priceDescuento: "$559.00" },
+  { id: 94, name: "Galaxy Watch 6", priceDescuento: "$335.00" },
+  { id: 95, name: "AirPods Pro 2", priceDescuento: "$263.00" },
+  { id: 96, name: "Lenovo Yoga 9i", priceDescuento: "$1458.00" },
+  { id: 97, name: "Razer Blade Stealth 13", priceDescuento: "$2656.00" },
+  { id: 98, name: "Google Nest Hub Max", priceDescuento: "$197.00" },
+  { id: 99, name: "Fujifilm Instax Mini 12", priceDescuento: "$84.00" },
+  { id: 100, name: "Fitbit Charge 6", priceDescuento: "$139.00" },
+  
+];
+
+  // Setup add to cart buttons using cart.js helper
+  window.cart.setupAddToCartButtons(products);
+</script>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body> 
+</html>

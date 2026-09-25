@@ -1,0 +1,126 @@
+﻿
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Carrito</title>
+  <link rel="stylesheet" href="../CSS/carrito.css" />
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+</head>
+<body>
+ <div class="top-bar" aria-label="Promotional and banking info">
+    <div class="red-highlight" aria-label="Offer banner">COMPRA HASTA <strong>12 meses</strong> sin intereses</div>
+    <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+    <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+    <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+    <a href="#" class="bank" aria-label="Banco BAC">BAC</a>
+  </div>
+
+   <header role="banner" aria-label="Encabezado principal">
+    <a href="index.html" class="logo" aria-label="INOVATECH">
+   <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+      </a>
+<div class="header-left" aria-label="Enlaces de sucursal y contacto">
+  <a href="sucursal.html"><span class="icon"></span>Sucursales</a>
+  <a href="contactenos.html"><span class="icon"></span>ContÃ¡ctanos</a>
+  <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
+</div>
+
+
+   
+    <div class="header-right user-cart" aria-label="Cuenta de usuario y carrito de compras">
+  <a id="btn-cuenta" href="inicio.html" aria-label="Entrar o registrarse en mi cuenta" title="Mi Cuenta">
+    <svg class="icon-user" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+    </svg>
+    Mi Cuenta
+  </a>
+    
+
+  </div>
+  </header>
+  <main>
+  <h1>Mi Carrito</h1>
+  <div id="cart-container"></div>
+  <div id="cart-total" style="font-size:1.3rem; font-weight:bold; margin-top:20px;"></div>
+  <div id="cart-actions" style="max-width:420px; margin:32px auto 0; background:#f5f7fa; border-radius:16px; box-shadow:0 2px 12px #1976d211; padding:28px 24px; text-align:center;"></div>
+</main>
+  <script src="../JS/cartgadget.js"></script>
+  <script src="../JS/carttabletas.js"></script>
+  <script src="../JS/cartcelulares.js"></script>
+  <script src="../JS/cartfijos.js"></script>
+  <script src="../JS/mi carrito.js"></script>
+  <script>
+    // Los datos de productos están en JS/mi carrito.js
+  </script>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="#">¿Por qué es seguro?</a></li>
+          <li><a href="#">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="#">INOVAPARTY</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="#">Beneficios RadioShack</a></li>
+          <li><a href="#">ServiShack</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Políticas generales</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+           <li><a href="formulario.html">+50376482812</a></li>
+            <li><a href="formulario.html">INOVATECH24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384012.png" alt="YouTube"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+</body>
+</html>

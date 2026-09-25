@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="../CSS/compartido.css" />
+    <link rel="stylesheet" href="../CSS/cartcompartido.css" />
+     <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+ .
+  <script src="../JS/cartcompartido.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+
+ <div class="top-bar" aria-label="Promotional and banking info">
+    <div class="red-highlight" aria-label="Offer banner">COMPRA HASTA <strong>12 meses</strong> sin intereses</div>
+    <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+    <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+    <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+    <a href="#" class="bank" aria-label="Banco BAC">BAC</a>
+  </div>
+
+  <header role="banner" aria-label="Encabezado principal">
+    <a href="index.html" class="logo" aria-label="INOVATECH">
+  <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+      </a>
+<div class="header-left" aria-label="Enlaces de sucursal y contacto">
+  <a href="../HTML/sucursal.html"><span class="icon"></span>Sucursales</a>
+  <a href="contactenos.html"><span class="icon"></span>ContÃ¡ctanos</a>
+  <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
+</div>
+
+    <div class="search-container" role="search" aria-label="Búsqueda de productos">
+      <input type="search" name="search" id="search" placeholder="¿Qué estás buscando?" aria-label="Campo de búsqueda"/>
+      <button aria-label="Buscar" title="Buscar">
+        
+      </button>
+    </div>
+
+   
+    <div class="header-right user-cart" aria-label="Cuenta de usuario y carrito de compras">
+  <a id="btn-cuenta" href="inicio.html" aria-label="Entrar o registrarse en mi cuenta" title="Mi Cuenta">
+    <svg class="icon-user" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+    </svg>
+    Mi Cuenta
+  </a>
+    <a href="#" aria-label="Ver mi carrito de compras" title="Mi carrito">
+        <svg class="icon-cart" viewBox="0 0 24 24" fill="none">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        Mi carrito
+      </a>
+<span class="cart-count">0</span>
+
+
+    <div class="cart-panel" style="display:none;">
+  <h3>Tu carrito</h3>
+  <ul class="cart-items"></ul>
+  <div class="cart-total">
+    Total: <span id="cart-total">$0.00</span>
+  </div>
+  <a href="carrito.html" class="btn-ver-carrito" style="display:block; margin:16px auto 0; background:#007bff; color:white; text-align:center; padding:8px 18px; border-radius:6px; text-decoration:none; font-weight:bold;">Ver mi carrito</a>
+</div>
+</div>
+      
+    </div>
+  </header>
+   <main>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="videojuegos.html">Consolas</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>  
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+    const products = [
+   {
+  id: 185,
+  name: "Control Xbox",
+  image: "../img/VIDEOJUEGOS/Xbox Wireless Controller Dawn Shadow Special Edition [Discontinued].jpeg",
+  priceOriginal: "$60.00",
+  priceDescuento: "$55.00",
+  specs: {
+    "Tipo": "Control inalámbrico",
+    "Compatibilidad": "Xbox One, Xbox Series X/S",
+    "Conexión": "Bluetooth y USB",
+    "Extras": "Vibración y ergonomía mejorada",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 186,
+  name: "Spider-Man 2 (PS5)",
+  image: "../img/VIDEOJUEGOS/spiderman 2 ps5.jpeg",
+  priceOriginal: "$70.00",
+  priceDescuento: "$65.00",
+  specs: {
+    "Plataforma": "PlayStation 5",
+    "Género": "Acción/Aventura",
+    "Características": "Gráficos mejorados y mundo abierto",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 187,
+  name: "The Last of Us Part 2 (PS4)",
+  image: "../img/VIDEOJUEGOS/the las of us part 2.jpeg",
+  priceOriginal: "$50.00",
+  priceDescuento: "$45.00",
+  specs: {
+    "Plataforma": "PlayStation 4",
+    "Género": "Acción/Aventura",
+    "Características": "Narrativa profunda y gráficos realistas",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 188,
+  name: "Mando Retro N64",
+  image: "../img/VIDEOJUEGOS/miadore Retro N 64 Bit N64 Controller,Wired Gamepad Controller Joystick for N64 Console N64 System,Gray.jpeg",
+  priceOriginal: "$30.00",
+  priceDescuento: "$25.00",
+  specs: {
+    "Tipo": "Mando con cable",
+    "Compatibilidad": "Consola N64",
+    "Diseño": "Ergonómico y clásico",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 189,
+  name: "Control PS5 DualSense",
+image: "../img/VIDEOJUEGOS/control ps5.jpeg",
+  priceOriginal: "$70.00",
+  priceDescuento: "$65.00",
+  specs: {
+    "Tipo": "Control inalámbrico",
+    "Compatibilidad": "PlayStation 5",
+    "Conexión": "Bluetooth",
+    "Extras": "Retroalimentación háptica y gatillos adaptativos",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 190,
+  name: "Control DualShock 4",
+  image: "../img/VIDEOJUEGOS/control de ps4.jpeg",
+  priceOriginal: "$60.00",
+  priceDescuento: "$55.00",
+  specs: {
+    "Tipo": "Control inalámbrico",
+    "Compatibilidad": "PlayStation 4",
+    "Conexión": "Bluetooth y USB",
+    "Extras": "Touchpad y barra de luz",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 191,
+  name: "Marvel's Spider-Man Miles Morales PS4",
+  image: "../img/VIDEOJUEGOS/Marvel's Spider-Man_ Miles Morales.jpeg",
+  priceOriginal: "$40.00",
+  priceDescuento: "$35.00",
+  specs: {
+    "Plataforma": "PlayStation 4",
+    "Género": "Acción/Aventura",
+    "Características": "Historia y acción",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 192,
+  name: "Control Xbox One Fat 500GB",
+  image: "../img/VIDEOJUEGOS/Xbox One Fat 500gb Completo Frete Grátis Leia Toda DescriÃ§Ã£obSz.jpeg",
+  priceOriginal: "$250.00",
+  priceDescuento: "$230.00",
+  specs: {
+    "Tipo": "Consola de videojuegos",
+    "Compatibilidad": "Juegos de Xbox One",
+    "Características": "500GB de almacenamiento",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 193,
+  name: "Mortal Kombat X",
+  image: "../img/VIDEOJUEGOS/Mortal kombat x.jpeg",
+  priceOriginal: "$50.00",
+  priceDescuento: "$45.00",
+  specs: {
+    "Plataforma": "Xbox One",
+    "Género": "Lucha",
+    "Características": "Personajes y escenarios icónicos",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 194,
+name: "PlayStation 2 (PS2)",
+  image: "../img/VIDEOJUEGOS/PlayStation 2 (PS2).jpeg",
+  priceOriginal: "$100.00",
+  priceDescuento: "$85.00",
+  specs: {
+    "Tipo": "Consola de videojuegos",
+    "Compatibilidad": "Juegos de PS1 y PS2",
+    "Características": "Reproducción de DVD",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 195,
+  name: "Nintendo Switch (Neon Red/Neon Blue)",
+  image: "../img/VIDEOJUEGOS/Nintendo Switch (Neon Red_Neon blue).jpeg",
+  priceOriginal: "$300.00",
+  priceDescuento: "$280.00",
+  specs: {
+    "Tipo": "Consola híbrida",
+    "Compatibilidad": "Juego en casa y portátil",
+    "Características": "Multijugador y pantalla táctil",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 196,
+  name: "PlayStation 3",
+  image: "../img/VIDEOJUEGOS/SONY PS3.jpeg",
+  priceOriginal: "$150.00",
+  priceDescuento: "$120.00",
+  specs: {
+    "Tipo": "Consola de videojuegos",
+    "Compatibilidad": "Juegos de PS3",
+    "Características": "Multimedia",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 197,
+  name: "Viernes 13 (PS5)",
+  image: "../img/VIDEOJUEGOS/viernes 13.jpeg",
+  priceOriginal: "$70.00",
+  priceDescuento: "$56.00",
+  specs: {
+    "Plataforma": "PlayStation 5",
+    "Género": "Horror/Supervivencia",
+    "Características": "Tensión y multijugador",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 198,
+  name: "Xbox Series S",
+  image: "../img/VIDEOJUEGOS/xbox series s.jpeg",
+  priceOriginal: "$300.00",
+  priceDescuento: "$255.00",
+  specs: {
+    "Tipo": "Consola de videojuegos",
+    "Compatibilidad": "Xbox Series",
+    "Características": "Compacta y eficiente",
+    "Garantía": "1 año"
+  }
+},
+{
+  id: 199,
+  name: "PS5",
+  image: "../img/VIDEOJUEGOS/PlayStation 5 Console.jpeg",
+  priceOriginal: "$700.00",
+  priceDescuento: "$630.00",
+  specs: {
+    "Tipo": "Consola de videojuegos",
+    "Compatibilidad": "PlayStation 5",
+    "Características": "Alto rendimiento",
+    "Garantía": "1 año"
+  }
+}
+
+  ];
+
+
+
+
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

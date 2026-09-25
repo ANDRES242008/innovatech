@@ -1,0 +1,627 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+  <link rel="stylesheet" href="../CSS/exclusivo.css" />
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon"> 
+  <script src="../JS/cartexclusivo.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+
+ <!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="exclusivo.html">exclusivo online</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+<div class="product-info-left" style="flex: 1 1 60%;">
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          
+          <!-- Color selection buttons -->
+          <div id="color-selection" style="margin: 15px 0; text-align: center;">
+            <label style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 10px;">Color:</label>
+            <div id="color-buttons-container" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <div class="color-selector">
+  <button class="color-btn selected" data-color="blanco" style="background-color:#E0E0E0;" title="Negro"></button>
+  
+  <button class="color-btn" data-color="negro" style="background-color:#1b1b1a;" title="Oro"></button>
+</div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+    // Sample product data for demonstration
+    const products = [
+     {
+        id: 88,
+        name: "Xbox Series X",
+        image: "../img/exclusivo/Xbox series x.jpeg",
+         images: {
+          "blanco": "../img/exclusivo/xboxblanco.jpeg",
+        
+          "negro": "../img/exclusivo/Xbox series x.jpeg"
+        },
+        priceOriginal: "$399.00",
+        priceDescuento: "$349.00",
+        specs: {
+          "Pantalla": "7 pulgadas OLED",
+          "Almacenamiento": "64GB",
+          "Batería": "Hasta 9 horas",
+          "Conectividad": "WiFi, Bluetooth",
+          "Extras": "Dock, Joy-Con, modo portátil"
+        }
+      },
+      {
+        id: 89,
+        name: "Canon EOS R50",
+        image: "../img/exclusivo/canon10.jpeg",
+         images: {
+          "blanco": "../img/exclusivo/CÃ¢mera Canon Eos R50 Mirrorless 18-45Mm Branca Br.jpeg",
+         
+          "negro": "../img/exclusivo/Canon EOS R50.jpeg"
+        },
+        priceOriginal: "$999.00",
+        priceDescuento: "$899.00",
+        specs: {
+          "Sensor": "APS-C 24.2MP",
+          "Video": "4K60p",
+          "Enfoque": "Dual Pixel CMOS AF II",
+          "Pantalla": "3 pulgadas táctil abatible",
+          "Extras": "WiFi, Bluetooth, ráfaga 15fps"
+        }
+      },
+      {
+  id: 91,
+  name: "MacBook Pro M4",
+  image: "../img/exclusivo/silver m4.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/silver m4.jpeg",
+         
+          "negro": "../img/exclusivo/black m4.jpeg"
+        },
+  priceOriginal: "$2200.00",
+  priceDescuento: "$1799.00",
+  specs: {
+    "Pantalla": "14 pulgadas Liquid Retina XDR",
+    "Procesador": "Apple M3 Pro",
+    "RAM": "16GB/32GB",
+    "Almacenamiento": "512GB/1TB SSD",
+    "Batería": "Hasta 18 horas",
+    "Conectividad": "WiFi 6E, Bluetooth 5.3, Thunderbolt 4",
+    "Sistema": "macOS Sonoma",
+    "Extras": "Touch ID, FaceTime HD, Magic Keyboard"
+  }
+},
+{
+  id: 92,
+  name: "Surface Pro 11",
+  image: "../img/exclusivo/surface 11 blanca.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/surface 11 blanca.jpeg",
+        
+          "negro": "../img/exclusivo/surface 11 negra.jpeg"
+        },
+  priceOriginal: "$1500.00",
+  priceDescuento: "$1275.00",
+  specs: {
+    "Pantalla": "13 pulgadas PixelSense Flow",
+    "Procesador": "Intel Core i7 12th Gen",
+    "RAM": "16GB",
+    "Almacenamiento": "512GB SSD",
+    "Batería": "Hasta 15 horas",
+    "Conectividad": "WiFi 6E, Bluetooth 5.1, USB-C",
+    "Sistema": "Windows 11",
+    "Extras": "Surface Pen, teclado desmontable"
+  }
+},
+{
+  id: 93,
+  name: "PlayStation 5",
+  image: "../img/exclusivo/Play 5.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/Play 5.jpeg",
+         
+          "negro": "../img/exclusivo/Play 5.jpeg"
+        },
+  priceOriginal: "$699.00",
+  priceDescuento: "$559.00",
+  specs: {
+    "Procesador": "AMD Ryzen Zen 2",
+    "Gráficos": "AMD RDNA 2",
+    "Almacenamiento": "825GB SSD",
+    "RAM": "16GB GDDR6",
+    "Conectividad": "WiFi 6, Bluetooth 5.1",
+    "Extras": "DualSense, 4K UHD Blu-ray, Ray Tracing"
+  }
+},
+{
+  id: 94,
+  name: "Galaxy Watch 6",
+  image: "../img/exclusivo/Reloj Inteligente Samsung Galaxy Watch 6 Classic 47 Mm Lte Negro - Venta Internacional.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/6blanco.jpeg",
+         
+          "negro": "../img/exclusivo/Reloj Inteligente Samsung Galaxy Watch 6 Classic 47 Mm Lte Negro - Venta Internacional.jpeg"
+        },
+  priceOriginal: "$399.00",
+  priceDescuento: "$335.00",
+  specs: {
+    "Pantalla": "1.5 pulgadas Super AMOLED",
+    "Procesador": "Exynos W930",
+    "Sensores": "ECG, Oxígeno, ritmo cardíaco",
+    "Batería": "Hasta 40 horas",
+    "Conectividad": "Bluetooth 5.3, WiFi, GPS",
+    "Sistema": "Wear OS",
+    "Extras": "Resistencia IP68, Always-On"
+  }
+},
+{
+  id: 95,
+  name: "JBL Vibe Bean",
+  image: "../img/exclusivo/JBL VIBE BLANCOS.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/JBL VIBE BLANCOS.jpeg",
+        
+          "negro": "../img/exclusivo/JBL Vibe Beam NEGROS.jpeg"
+        },
+  priceOriginal: "$60.00",
+  priceDescuento: "$40.00",
+  specs: {
+    "Tipo": "Auriculares inalámbricos",
+    "Cancelación": "Activa de ruido",
+    "Batería": "Hasta 30 horas con estuche",
+    "Conectividad": "Bluetooth 5.3",
+    "Compatibilidad": "iOS, Android",
+    "Extras": "Audio espacial, resistencia al agua IPX4"
+  }
+},
+{
+  id: 96,
+  name: "Lenovo Yoga 9i",
+  image: "../img/exclusivo/Lenovo Yoga 9i 2-in-1 Laptop.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/Lenovo Yoga 9i 2-in-1 Laptop.jpeg",
+       
+          "negro": "../img/exclusivo/Lenovo Yoga 9 82BG00BSIN 2-in-1 Convertible Laptop ( Core i7-1185G7 _ 16GB ram _ 1TB SSD ).jpeg"
+        },
+  priceOriginal: "$1800.00",
+  priceDescuento: "$1458.00",
+  specs: {
+    "Pantalla": "14 pulgadas OLED táctil",
+    "Procesador": "Intel Core i7 13th Gen",
+    "RAM": "16GB",
+    "Almacenamiento": "1TB SSD",
+    "Batería": "Hasta 15 horas",
+    "Conectividad": "WiFi 6E, Bluetooth 5.2",
+    "Sistema": "Windows 11",
+    "Extras": "Rotación 360Â°, stylus incluido"
+  }
+},
+{
+  id: 97,
+  name: "Razer Blade Stealth 13",
+  image: "../img/exclusivo/razer blade blanca.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/razer blade blanca.jpeg",
+        
+          "negro": "../img/exclusivo/Razer Blade Stealth 13(2019) _ RZ09-0281x Manual and FAQ.jpeg"
+        },
+  priceOriginal: "$3200.00",
+  priceDescuento: "$2656.00",
+  specs: {
+    "Pantalla": "16 pulgadas Dual Mode Mini-LED",
+    "Procesador": "Intel Core i9 13th Gen",
+    "Gráficos": "NVIDIA RTX 4090",
+    "RAM": "32GB DDR5",
+    "Almacenamiento": "2TB SSD",
+    "Conectividad": "WiFi 6E, Bluetooth 5.3",
+    "Sistema": "Windows 11",
+    "Extras": "RGB Chroma, Thunderbolt 4"
+  }
+},
+{
+  id: 98,
+  name: "Bocina JBL Go 4 ",
+  image: "../img/exclusivo/Portátil Go 4 JBL blanca - R$ 254,8.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/Portátil Go 4 JBL blanca - R$ 254,8.jpeg",
+        
+          "negro": "../img/exclusivo/JBL Go 4 Black).jpeg"
+        },
+  priceOriginal: "$80.00",
+  priceDescuento: "$60.00",
+  specs: {
+    "Transductor": "45 mm (1.75 pulgadas)",
+"Potencia": "4.2 W RMS",
+"Respuesta de frecuencia": "90 Hz 20 kHz",
+"Relación señal-ruido": ">85 dB",
+"Conectividad": "Bluetooth 5.3, perfiles A2DP v1.4, AVRCP v1.6",
+"Batería": "Li-ion 3.8V / 850 mAh (3.23 Wh)",
+"Autonomía": "Hasta 7 horas (con Playtime Boost hasta 9h)",
+"Tiempo de carga": "â‰ˆ3 horas (USB-C 5V/1A)",
+"Protección": "IP67 resistente al agua y polvo",
+"Dimensiones": "94.3 Ã— 75.7 Ã— 42.2 mm",
+"Peso": "190 g",
+"Compatibilidad": "Auracast, app JBL Portable (EQ y actualizaciones)",
+"Extras": "Anilla integrada para transporte, materiales reciclados"
+
+  }
+},
+{
+  id: 99,
+  name: "Fujifilm Instax Mini 12",
+  image: "../img/exclusivo/instaxblanca.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/instaxblanca.jpeg", 
+          "negro": "../img/exclusivo/instaxblanca.jpeg"
+        },
+  priceOriginal: "$99.00",
+  priceDescuento: "$84.00",
+  specs: {
+    "Tipo": "Cámara instantánea",
+    "Formato": "Mini film",
+    "Batería": "2x AA",
+    "Colores": "Varios",
+    "Extras": "Modo selfie, lente ajustable"
+  }
+},
+{
+  id: 100,
+  name: "Fitbit Charge 6",
+  image: "../img/exclusivo/fifitblanco.jpeg",
+   images: {
+          "blanco": "../img/exclusivo/fitfiblanco.jpeg",
+        
+          "negro": "../img/exclusivo/fifittnegro.jpeg"
+        
+        },
+  priceOriginal: "$159.00",
+  priceDescuento: "$139.00",
+  specs: {
+    "Pantalla": "1.04 pulgadas AMOLED",
+    "Sensores": "Oxígeno, ritmo cardíaco, GPS",
+    "Batería": "Hasta 7 días",
+    "Conectividad": "Bluetooth, NFC",
+    "Sistema": "Fitbit OS",
+    "Extras": "Pagos, notificaciones, resistencia al agua"
+  }
+}
+
+    ];
+
+   function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+
+  function loadProduct() {
+    const productId = parseInt(getQueryParam('id'));
+    const product = products.find(p => p.id === productId);
+
+    if (!product) {
+      document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+      return;
+    }
+
+    // Nombre y precios
+    document.getElementById('product-name').textContent = product.name;
+    document.getElementById('product-name-breadcrumb').textContent = product.name;
+    document.getElementById('price-original').textContent = product.priceOriginal;
+    document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+    // Imagen principal (color por defecto = primer valor del objeto images)
+    const firstImage = product.images ? Object.values(product.images)[0] : product.image;
+    document.getElementById('product-image').src = firstImage;
+    document.getElementById('product-image').alt = product.name;
+
+    // Specs
+    const specsBody = document.getElementById('specs-body');
+    specsBody.innerHTML = '';
+    for (const [key, value] of Object.entries(product.specs)) {
+      const specItem = document.createElement('div');
+      specItem.className = 'specs-item';
+      
+      const specName = document.createElement('div');
+      specName.className = 'specs-name';
+      specName.textContent = key;
+      
+      const specValue = document.createElement('div');
+      specValue.className = 'specs-value';
+      specValue.textContent = value;
+      
+      specItem.appendChild(specName);
+      specItem.appendChild(specValue);
+      specsBody.appendChild(specItem);
+    }
+
+    // Colores (si el producto tiene imágenes por color)
+    if (product.images) {
+      setupColorButtons(product);
+    }
+  }
+
+  // Cambiar imagen según color
+  function setupColorButtons(product) {
+    const buttons = document.querySelectorAll(".color-btn");
+    const productImage = document.getElementById("product-image");
+
+    buttons.forEach(btn => {
+        console.log(`Button clicked: ${btn.getAttribute("data-color")}`); // Debug log
+      btn.addEventListener("click", () => {
+        const color = btn.getAttribute("data-color");
+        if (product.images[color]) {
+          productImage.src = product.images[color];
+        }
+
+        // Marcar botón seleccionado
+        buttons.forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+      });
+    });
+  }
+
+  // Agregar al carrito
+  document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+    const productId = parseInt(getQueryParam('id'));
+    const product = products.find(p => p.id === productId);
+    const quantityInput = document.getElementById('quantity-input');
+    let quantity = 1;
+
+    if (quantityInput) {
+      quantity = parseInt(quantityInput.value);
+      if (isNaN(quantity) || quantity < 1) {
+        quantity = 1;
+      }
+    }
+
+    if (product) {
+      window.cart.addToCart(product, quantity);
+      window.cart.updateCartUI();
+      alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+    } else {
+      alert('Producto no encontrado');
+    }
+  });
+
+  // Menú de categorías
+  document.addEventListener('DOMContentLoaded', () => {
+    const label = document.querySelector('.categories-label');
+    const menu = document.querySelector('.menu-items');
+
+    function toggleMenu() {
+      const isVisible = menu.style.display === 'grid';
+      menu.style.display = isVisible ? 'none' : 'grid';
+      label.setAttribute('aria-expanded', String(!isVisible));
+    }
+
+    label.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!label.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = 'none';
+        label.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    label.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+  });
+
+  // Ejecutar carga inicial
+  window.onload = loadProduct;
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

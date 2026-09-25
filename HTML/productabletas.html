@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+  <link rel="stylesheet" href="../CSS/tabletas.css" />
+   <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="../JS/carttabletas.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+
+ <div class="top-bar" aria-label="Promotional and banking info">
+    <div class="red-highlight" aria-label="Offer banner">COMPRA HASTA <strong>12 meses</strong> sin intereses</div>
+    <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+    <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+    <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+    <a href="#" class="bank" aria-label="Banco BAC">BAC</a>
+  </div>
+
+  <header role="banner" aria-label="Encabezado principal">
+    <a href="index.html" class="logo" aria-label="INOVATECH">
+   <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+      </a>
+<div class="header-left" aria-label="Enlaces de sucursal y contacto">
+  <a href="../HTML/sucursal.html"><span class="icon"></span>Sucursales</a>
+  <a href="contactenos.html"><span class="icon"></span>ContÃ¡ctanos</a>
+  <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
+</div>
+
+    <div class="search-container" role="search" aria-label="Búsqueda de productos">
+      <input type="search" name="search" id="search" placeholder="¿Qué estás buscando?" aria-label="Campo de búsqueda"/>
+      <button aria-label="Buscar" title="Buscar">
+        
+      </button>
+    </div>
+
+   
+    <div class="header-right user-cart" aria-label="Cuenta de usuario y carrito de compras">
+  <a id="btn-cuenta" href="inicio.html" aria-label="Entrar o registrarse en mi cuenta" title="Mi Cuenta">
+    <svg class="icon-user" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+    </svg>
+    Mi Cuenta
+  </a>
+      <a href="#" aria-label="Ver mi carrito de compras" title="Mi carrito">
+        <svg class="icon-cart" viewBox="0 0 24 24" fill="none">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        Mi carrito
+      </a>
+<span class="cart-count">0</span>
+
+
+    <div class="cart-panel" style="display:none;">
+  <h3>Tu carrito</h3>
+  <ul class="cart-items"></ul>
+  <div class="cart-total">
+    Total: <span id="cart-total">$0.00</span>
+  </div>
+  <a href="carrito.html" class="btn-ver-carrito" style="display:block; margin:16px auto 0; background:#007bff; color:white; text-align:center; padding:8px 18px; border-radius:6px; text-decoration:none; font-weight:bold;">Ver mi carrito</a>
+</div>
+</div>
+      
+    </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="tabletas.html">tabletas</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+<main>
+  <script>
+      // Sample product data for demonstration
+   const products = [
+      {
+        id: 31,
+       name: "Apple iPad Pro 13",
+    image: "../img/tabletas/Apple iPad Pro 13-.jpeg",
+    priceOriginal: "$1399.00",
+    priceDescuento: "$1199.00",
+    specs: {
+      "Color": "Negro espacial",
+      "Pantalla": "13 pulgadas Liquid Retina XDR, resolución 2732 x 2048 px, ProMotion 120 Hz, True Tone",
+      "Memoria": "8 GB / 16 GB de RAM, almacenamiento de 128 GB / 256 GB / 512 GB / 1 TB / 2 TB",
+      "Batería": "Hasta 10 horas de navegación web o reproducción de video",
+      "Conectividad": "Wi-Fi 6E, Bluetooth 5.3, 5G (modelos celulares), USB-C con Thunderbolt 4",
+      "Cámara trasera": "Sistema dual: 12 MP (gran angular) + 10 MP (ultra gran angular), escáner LiDAR",
+      "Cámara frontal": "12 MP Ultra Wide con Center Stage",
+      "Procesador": "Apple M2 chip con 8 núcleos CPU, 10 núcleos GPU",
+      "Sistema Operativo": "iPadOS 17",
+        }
+      },
+      {
+        id: 32,
+        name: "Samsung Galaxy Tab S10 +",
+    image: "../img/tabletas/s10+.jpeg",
+    priceOriginal: "$1299.00",
+    priceDescuento: "$1149.00",
+    specs: {
+      "Color": "Negro",
+      "Pantalla": "14.6 pulgadas AMOLED, resolución 2960 x 1848 px, tasa de refresco 120 Hz",
+      "Memoria": "8 GB / 12 GB / 16 GB de RAM, almacenamiento de 128 GB / 256 GB / 512 GB (expandible con microSD)",
+      "Batería": "11200 mAh, carga rápida de 45W",
+      "Conectividad": "Wi-Fi 6E, Bluetooth 5.2, 5G (modelos celulares), USB-C",
+      "Cámara trasera": "Dual: 13 MP (principal) + 6 MP (ultra gran angular)",
+      "Cámara frontal": "Dual: 12 MP + 12 MP (ultra gran angular)",
+      "Procesador": "Qualcomm Snapdragon 8 Gen 1",
+      "Sistema Operativo": "Android 13 con One UI",
+        }
+      },
+      {
+        id: 33,
+        name: "Xiaomi Pad 6S Pro",
+    image: "../img/tabletas/Xiaomi Pad 6S Pro Global Version.jpeg",
+    priceOriginal: "$749.00",
+    priceDescuento: "$669.00",
+    specs: {
+      "Color": "Negro, Plata",
+      "Pantalla": "11 pulgadas IPS LCD, resolución 2560 x 1600 px, tasa de refresco 120 Hz",
+      "Memoria": "6 GB / 8 GB de RAM, almacenamiento de 128 GB / 256 GB (expandible con microSD)",
+      "Batería": "8720 mAh, carga rápida de 67W",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.3, USB-C",
+      "Cámara trasera": "50 MP (principal)",
+      "Cámara frontal": "8 MP",
+      "Procesador": "Qualcomm Snapdragon 870",
+      "Sistema Operativo": "Android 13 con MIUI Pad",
+        }
+      },
+      {
+        id:34,
+         name: "HONOR MagicPad 2",
+    image: "../img/tabletas/Honor-MagicPad-2.jpg",
+    priceOriginal: "$729.00",
+    priceDescuento: "$599.00",
+    specs: {
+      "Color": "Azul titanio",
+      "Pantalla": "12.4 pulgadas OLED, resolución 2560 x 1600 px, tasa de refresco 120 Hz",
+      "Memoria": "8 GB / 12 GB de RAM, almacenamiento de 128 GB / 256 GB",
+      "Batería": "9500 mAh, carga rápida de 40W",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.2, USB-C",
+      "Cámara trasera": "13 MP",
+      "Cámara frontal": "8 MP",
+      "Procesador": "Qualcomm Snapdragon 8 Gen 1",
+      "Sistema Operativo": "Android 12 con Magic UI",
+        }
+      },
+      {
+        id: 35,
+        name: "Lenovo Yoga Tab Plus",
+        image: "../img/tabletas/LENOVO Yoga Tab .jpeg",
+        priceOriginal: "$799.00",
+        priceDescuento: "$699.00",
+        specs: {
+          "Color": "Gris oscuro",
+      "Pantalla": "13 pulgadas IPS LCD, resolución 2160 x 1350 px",
+      "Memoria": "8 GB de RAM, almacenamiento de 128 GB / 256 GB (expandible con microSD)",
+      "Batería": "10200 mAh, carga rápida",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.0, USB-C",
+      "Cámara trasera": "13 MP",
+      "Cámara frontal": "8 MP",
+      "Procesador": "Qualcomm Snapdragon 870",
+      "Sistema Operativo": "Android 12",
+        }
+      },
+      {
+        id: 36,
+       name: "Samsung Galaxy Tab S10 FE+",
+    image: "../img/tabletas/Samsung Galaxy Tab S10 Fe+ .jpeg",
+      priceOriginal: "$649.00",
+    priceDescuento: "$579.00",
+    specs: {
+      "Color": "Lavanda",
+      "Pantalla": "12.4 pulgadas TFT LCD, resolución 2560 x 1600 px, tasa de refresco 90 Hz",
+      "Memoria": "6 GB / 8 GB de RAM, 128 GB / 256 GB de almacenamiento (expandible con microSD)",
+      "Batería": "10090 mAh, carga rápida de 45W",
+      "Conectividad": "5G (en modelos celulares), Wi-Fi 6, Bluetooth 5.3, USB-C",
+      "Cámara trasera": "8 MP",
+      "Cámara frontal": "12 MP ultra gran angular",
+      "Procesador": "Exynos 1380 / Snapdragon 7 Gen 1 (según región)",
+      "Sistema Operativo": "Android 13 con One UI 5",
+        }
+      },
+      {
+        id: 37,
+       name: "Xiaomi Pad 7 Pro",
+    image: "../img/tabletas/xiami pad 7.jpeg",
+    priceOriginal: "$699.00",
+    priceDescuento: "$639.00",
+    specs: {
+      Color: "Gris oscuro, Plata",
+      "Pantalla": "11 pulgadas LCD, resolución 2560 x 1600 px, tasa de refresco 144 Hz",
+      "Memoria": "8 GB / 12 GB de RAM, almacenamiento de 128 GB / 256 GB / 512 GB",
+      "Batería": "8600 mAh, carga rápida de 67W",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.2, USB-C",
+      "Cámara trasera": "50 MP (principal) + 2 MP (profundidad)",
+      "Cámara frontal": "20 MP",
+      "Procesador": "Qualcomm Snapdragon 8+ Gen 1",
+      "Sistema Operativo": "Android 14 con HyperOS",
+        }
+      },
+      {
+        id: 38,
+      name: "Google Pixel Tablet",
+    image: "../img/tabletas/google pixle.jpeg",
+    priceOriginal: "$599.00",
+    priceDescuento: "$529.00",
+    specs: {
+      "Color": "Porcelana, Avellana, Rosa",
+      "Pantalla": "10.95 pulgadas LCD, resolución 2560 x 1600 px",
+      "Memoria": "8 GB de RAM, 128 GB / 256 GB de almacenamiento",
+      "Batería": "7020 mAh, carga rápida de 15W",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.2, USB-C, carga inalámbrica en base",
+      "Cámara trasera": "8 MP",
+      "Cámara frontal": "8 MP",
+      "Procesador": "Google Tensor G2",
+      "Sistema Operativo": "Android 13",
+        }
+      },
+      {
+        id: 39,
+       name: "Huawei MatePad 11.5",
+    image: "../img/tabletas/huawei.jpeg",
+    priceOriginal: "$549.00",
+    priceDescuento: "$479.00",
+    specs: {
+      "Color": "Gris espacial",
+      "Pantalla": "11.5 pulgadas TFT LCD, resolución 2200 x 1440 px, tasa de refresco 120 Hz",
+      "Memoria": "6 GB / 8 GB de RAM, 128 GB / 256 GB de almacenamiento",
+      "Batería": "7700 mAh, carga rápida de 22.5W",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.1, USB-C",
+      "Cámara trasera": "13 MP",
+      "Cámara frontal": "8 MP",
+      "Procesador": "Qualcomm Snapdragon 7 Gen 1 / Snapdragon 870 (según versión)",
+      "Sistema Operativo": "HarmonyOS 3.1",
+        }
+      },
+      {
+        id: 40,
+       name: "iPad (2025)",
+    image: "../img/tabletas/Apple iPad 11-inch.jpeg",
+    priceOriginal: "$599.00",
+    priceDescuento: "$549.00",
+    specs: {
+      "Color": "Plata, Azul, Rosa, Amarillo",
+      "Pantalla": "10.9 pulgadas Liquid Retina, resolución 2360 x 1640 px, True Tone",
+      "Memoria": "4 GB / 6 GB de RAM, 64 GB / 256 GB de almacenamiento",
+      "Batería": "Hasta 10 horas de navegación web",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.2, USB-C",
+      "Cámara trasera": "12 MP (gran angular)",
+      "Cámara frontal": "12 MP Ultra Wide (frontal lateral)",
+      "Procesador": "Apple A15 Bionic",
+      "Sistema Operativo": "iPadOS 17",
+        }
+      },
+      {
+        id: 41,
+        name: "Lenovo Tab M11",
+    image: "../img/tabletas/Lenovo Tab M11.jpeg",
+    priceOriginal: "$529.00",
+    priceDescuento: "$479.00",
+    specs: {
+      Color: "Gris tormenta",
+      "Pantalla": "11 pulgadas LCD, resolución 1920 x 1200 px, tasa de refresco 90 Hz",
+      "Memoria": "4 GB / 6 GB de RAM, 64 GB / 128 GB de almacenamiento (expandible con microSD)",
+      "Batería": "7040 mAh, carga rápida de 15W",
+      "Conectividad": "Wi-Fi 5, Bluetooth 5.1, USB-C, Jack 3.5 mm",
+      "Cámara trasera": "8 MP",
+      "Cámara frontal": "8 MP",
+      "Procesador": "MediaTek Helio G88",
+      "Sistema Operativo": "Android 13"
+        }
+      },
+      {
+        id: 42,
+       name: "Samsung Galaxy Tab A9",
+    image: "../img/tabletas/A9 TABLE.jpeg",
+    priceOriginal: "$519.00",
+    priceDescuento: "$469.00",
+    specs: {
+      "Color": "Grafito, Plata, Azul marino",
+      "Pantalla": "11 pulgadas PLS LCD, resolución 1920 x 1200 px, tasa de refresco 90 Hz",
+      "Memoria": "4 GB / 8 GB de RAM, 64 GB / 128 GB de almacenamiento (expandible con microSD)",
+      "Batería": "7040 mAh, carga rápida de 15W",
+      "Conectividad": "5G (modelos compatibles), Wi-Fi 5, Bluetooth 5.1, USB-C",
+      "Cámara trasera": "8 MP",
+      "Cámara frontal": "5 MP",
+      "Procesador": "Qualcomm Snapdragon 695",
+      "Sistema Operativo": "Android 13 con One UI 5.1"
+        }
+      },
+      {
+        id: 43,
+        name: "Amazon Fire HD 10",
+    image: "../img/tabletas/amanzo 10HD.jpeg",
+    priceOriginal: "$509.00",
+    priceDescuento: "$459.00",
+    specs: {
+      Color: "Negro, Azul, Verde",
+      "Pantalla": "10.1 pulgadas IPS LCD, resolución Full HD (1920 x 1200 px)",
+      "Memoria": "3 GB de RAM, 32 GB / 64 GB de almacenamiento (expandible hasta 1 TB con microSD)",
+      "Batería": "Hasta 12 horas de uso mixto",
+      "Conectividad": "Wi-Fi de doble banda, Bluetooth 5.0, USB-C",
+      "Cámara trasera": "5 MP",
+      "Cámara frontal": "2 MP",
+      "Procesador": "Octa-core 2.0 GHz",
+      "Sistema Operativo": "Fire OS (basado en Android)"
+        }
+      },
+      {
+        id: 44,
+         name: "Amazon Fire 7",
+    image: "../img/tabletas/Amazon Fire 7 .jpeg",
+    priceOriginal: "$505.00",
+    priceDescuento: "$449.00",
+    specs: {
+      "Color": "Negro, Azul, Rosa",
+      "Pantalla": "7 pulgadas IPS LCD, resolución 1024 x 600 px",
+      "Memoria": "2 GB de RAM, 16 GB / 32 GB de almacenamiento (expandible hasta 1 TB con microSD)",
+      "Batería": "Hasta 10 horas de uso mixto",
+      "Conectividad": "Wi-Fi, Bluetooth 5.0, USB-C",
+      "Cámara trasera": "2 MP",
+      "Cámara frontal": "2 MP",
+      "Procesador": "Quad-core 2.0 GHz",
+      "Sistema Operativo": "Fire OS (basado en Android)"
+        }
+      },
+      {
+        id: 45,
+        name: "Apple iPad mini (2024)",
+        image: "../img/tabletas/Apple iPad mini.jpeg",
+        priceOriginal: "$629.00",
+        priceDescuento: "$579.00",
+        specs: {
+       "Color": "Gris espacial, Rosa, Púrpura, Luz estelar",
+      "Pantalla": "8.3 pulgadas Liquid Retina, resolución 2266 x 1488 px, True Tone, 500 nits",
+      "Memoria": "4 GB de RAM, 64 GB / 256 GB de almacenamiento",
+      "Batería": "Hasta 10 horas de navegación web",
+      "Conectividad": "Wi-Fi 6, Bluetooth 5.0, USB-C",
+      "Cámara trasera": "12 MP (f/1.8)",
+      "Cámara frontal": "12 MP Ultra Wide con Center Stage",
+      "Procesador": "Apple A16 Bionic",
+      "Sistema Operativo": "iPadOS 17"
+        }
+      }
+    ];
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+    // Integración del nuevo código para el menú desplegable
+    document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+    window.onload = loadProduct;
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

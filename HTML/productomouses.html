@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="../CSS/compartido2.css" />
+ <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="../JS/cartcompartido.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="mouses.html">mouses y teclados </a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+   const products = [
+    // *** MOUSES (ID 245 - 253) ***
+    {
+        id: 245,
+        name: "Logitech M185 Wireless Mouse (Azul)",
+        image: "../img/mouses/M185.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$15.50",
+        priceDescuento: "$13.95", // -10%
+        specs: {
+            "Tipo": "Mouse óptico inalámbrico",
+            "Batería": "1 pila AA, hasta 12 meses",
+            "Conectividad": "Nano receptor USB de 2.4 GHz",
+            "Uso": "Diseño compacto, ideal para laptops y viajes"
+        }
+    },
+    {
+        id: 246,
+        name: "Microsoft Mobile Mouse 1850 (Negro)",
+        image: "../img/mouses/s1850.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$22.99",
+        priceDescuento: "$18.39", // -20%
+        specs: {
+            "Tipo": "Mouse inalámbrico de viaje",
+            "Conectividad": "Nano receptor (almacenable en el mouse)",
+            "Uso": "Portabilidad y comodidad para uso en cualquier mano",
+            "Rueda": "Rueda de desplazamiento para navegación rápida"
+        }
+    },
+    {
+        id: 247,
+        name: "HP Wireless Mouse 200 (Azul)",
+        image: "../img/mouses/hp 200.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$19.00",
+        priceDescuento: "$14.25", // -25%
+        specs: {
+            "Sensor": "Sensor óptico de 1000 ppp",
+            "Conectividad": "Wireless a 2.4 GHz",
+            "Uso": "Diseño ambidiestro y ergonómico",
+            "Batería": "Hasta 12 meses de autonomía"
+        }
+    },
+    {
+        id: 248,
+        name: "Dell Optical Mouse MS116 (Gris)",
+        image: "../img/mouses/ms116.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$28.50",
+        priceDescuento: "$24.22", // -15%
+        specs: {
+            "Tipo": "Mouse óptico con cable",
+            "Conectividad": "USB-A (Plug and Play)",
+            "Uso": "Ideal para uso diario en el hogar u oficina",
+            "Diseño": "Diseño sencillo y tamaño estándar"
+        }
+    },
+    {
+        id: 249,
+        name: "Logitech Pebble M350 (Rojo)",
+        image: "../img/mouses/350.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$14.99",
+        priceDescuento: "$10.49", // -30%
+        specs: {
+            "Diseño": "Forma delgada, portátil y moderna",
+            "Silencio": "Clics y desplazamiento silenciosos",
+            "Conectividad": "Bluetooth o Receptor USB",
+            "Batería": "Hasta 18 meses"
+        }
+    },
+    {
+        id: 250,
+        name: "Microsoft Sculpt Comfort Mouse",
+        image: "../img/mouses/descargar (1).jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$35.00",
+        priceDescuento: "$31.50", // -10%
+        specs: {
+            "Tipo": "Mouse ergonómico",
+            "Conectividad": "Bluetooth",
+            "Botones": "Botón personalizable para inicio de Windows",
+            "Uso": "Forma diseñada para la comodidad de la palma"
+        }
+    },
+    {
+        id: 251,
+        name: "Logitech MX Master 3S (Mouse)",
+        image: "../img/exclusivo/logitechblanco.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$129.00", // Precio ajustado para reflejar el descuento del 23% ($99.00)
+        priceDescuento: "$99.00", // -23% (ajustado según tu HTML anterior)
+        specs: {
+            "Tipo": "Mouse avanzado",
+            "Rueda": "Rueda de desplazamiento MagSpeed superrápida",
+            "Batería": "Recargable, dura hasta 70 días con carga completa",
+            "Uso": "Diseñado para creadores y codificadores (productividad)"
+        }
+    },
+    {
+        id: 252,
+        name: "HP Comfort Grip Wireless Mouse",
+        image: "../img/mouses/confor micro.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$45.00",
+        priceDescuento: "$33.75", // -25%
+        specs: {
+            "Diseño": "Agarre lateral de goma contorneado",
+            "Conectividad": "Inalámbrico (receptor USB)",
+            "Sensor": "Tecnología de seguimiento láser (funciona en más superficies)",
+            "Uso": "Comodidad duradera para la oficina"
+        }
+    },
+    {
+        id: 253,
+        name: "Logitech Ergo M575 Trackball",
+        image: "../img/mouses/logi111.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$31.50",
+        priceDescuento: "$26.77", // -15%
+        specs: {
+            "Tipo": "Trackball ergonómico",
+            "Comodidad": "Reduce el movimiento de la muñeca y el brazo",
+            "Conectividad": "Bluetooth y Receptor USB",
+            "Uso": "Ideal para espacios de escritorio reducidos"
+        }
+    },
+
+    // ---
+    // *** TECLADOS (ID 254 - 260) ***
+    {
+        id: 254,
+        name: "Dell KB216 Wired Keyboard (Negro)",
+        image: "../img/mouses/kb212.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$29.00",
+        priceDescuento: "$20.30", // -30%
+        specs: {
+            "âŒ¨ï¸ Tipo": "Teclado de membrana con cable",
+            "Conectividad": "USB-A estándar",
+            "Características": "Teclas chiclet de perfil bajo",
+            "Uso": "Diseño de tamaño completo para la oficina"
+        }
+    },
+    {
+        id: 255,
+        name: "Logitech K380 Multi-Device Keyboard",
+        image: "../img/mouses/k380.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$42.00",
+        priceDescuento: "$37.80", // -10%
+        specs: {
+            "âŒ¨ï¸ Conectividad": "Bluetooth (se conecta hasta 3 dispositivos)",
+            "Batería": "2 pilas AAA, hasta 24 meses",
+            "Diseño": "Diseño compacto y teclas cóncavas",
+            "Uso": "Ideal para PC, Mac, tabletas y smartphones"
+        }
+    },
+    {
+        id: 256,
+        name: "Microsoft Ergonomic Keyboard",
+        image: "../img/mouses/Microsoft Natural Ergonomic .jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$75.00",
+        priceDescuento: "$60.00", // -20%
+        specs: {
+            "âŒ¨ï¸ Tipo": "Teclado ergonómico dividido",
+            "Comodidad": "Reposamanos de tela suave y acolchada",
+            "Conectividad": "Con cable (USB)",
+            "Uso": "Máximo confort para largas horas de escritura"
+        }
+    },
+    {
+        id: 257,
+        name: "HP K1500 USB Keyboard",
+        image: "../img/mouses/K1500.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$55.00",
+        priceDescuento: "$41.25", // -25%
+        specs: {
+            "âŒ¨ï¸ Tipo": "Teclado estándar de escritorio",
+            "Conectividad": "Con cable (USB)",
+            "Resistencia": "Diseño resistente a salpicaduras",
+            "Uso": "Fiabilidad plug and play para PC"
+        }
+    },
+    {
+        id: 258,
+        name: "Logitech K400 Plus Touch Keyboard",
+        image: "../img/mouses/k400.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$39.99",
+        priceDescuento: "$33.99", // -15%
+        specs: {
+            "âŒ¨ï¸ Integración": "Touchpad integrado (ideal para Smart TV)",
+            "Alcance": "Inalámbrico con un alcance de hasta 10 m",
+            "Conectividad": "Receptor Unifying de Logitech",
+            "Uso": "Control de PC conectado a TV (entretenimiento)"
+        }
+    },
+    {
+        id: 259,
+        name: "Dell Premier Wireless Keyboard (Morado)",
+        image: "../img/mouses/kb9000.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$24.00",
+        priceDescuento: "$16.80", // -30%
+        specs: {
+            "âŒ¨ï¸ Tipo": "Teclado de bajo perfil inalámbrico",
+            "Conectividad": "Wireless (2.4 GHz) y Bluetooth",
+            "Características": "Teclas multimedia y de acceso rápido",
+            "Uso": "Productividad y estilo elegante"
+        }
+    },
+    {
+        id: 260,
+        name: "Microsoft All-in-One Media Keyboard",
+        image: "../img/mouses/one media.jpeg", // RUTA ACTUALIZADA
+        priceOriginal: "$18.00",
+        priceDescuento: "$14.40", // -20%
+        specs: {
+            "âŒ¨ï¸ Integración": "Trackpad multitáctil integrado",
+            "Características": "Teclas de volumen de fácil acceso",
+            "Conectividad": "Inalámbrico (USB)",
+            "Uso": "Control de medios y navegación fácil"
+        }
+    }
+];
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="../CSS/compartido2.css" />
+ <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="../JS/cartcompartido.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+
+
+
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="compusaccesorios.html">Accesorios para pc</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+  <script>
+const products = [
+    // ---
+    // *** ACCESORIOS PARA COMPUTADORAS (ID 277 - 291) ***
+    {
+        id: 277,
+        name: "Logitech C920s HD Pro Webcam (Full HD)",
+        image: "../img/accesorios/Webcam Logitech C920s.jpeg",
+        priceOriginal: "$79.99",
+        priceDescuento: "$63.99", // -20%
+        specs: {
+            "Resolución": "Full HD 1080p a 30 fps",
+            "Micrófonos": "Dos micrófonos omnidireccionales con reducción de ruido",
+            "Característica": "Tapa de privacidad incluida",
+            "Conexión": "USB-A, Plug and Play"
+        }
+    },
+    {
+        id: 278,
+        name: "Trust GXT 830-RW Teclado Gaming (RGB)",
+        image: "../img/accesorios/Teclado Trust gxt 830.jpeg",
+        priceOriginal: "$45.00",
+        priceDescuento: "$38.25", // -15%
+        specs: {
+            "âŒ¨ï¸ Tipo": "Membrana, tamaño completo",
+            "Iluminación": "Ondas de color Rainbow (RGB fijo)",
+            "Características": "Tecnología anti-ghosting de 12 teclas",
+            "Conexión": "USB con cable"
+        }
+    },
+    {
+        id: 279,
+        name: "Logitech G432 Audífonos Gaming (7.1 Surround)",
+        image: "../img/accesorios/Logitech G 432auriculares con cable, sonido envolvente 7_1.jpeg",
+        priceOriginal: "$65.00",
+        priceDescuento: "$48.75", // -25%
+        specs: {
+            "Sonido": "7.1 DTS Headphone:X 2.0 (PC)",
+            "Driver": "Drivers de 50 mm",
+            "Micrófono": "Micrófono abatible de 6 mm con función de silencio",
+            "Plataforma": "PC (USB), Consolas (3.5mm)"
+        }
+    },
+    {
+        id: 280,
+        name: "HP G2 Auriculares Estéreo (3.5mm)",
+        image: "../img/accesorios/Diadema Headset GETTTECH GH-3500G Reveal con Micrófono 3_5 mm Gris.jpeg",
+        priceOriginal: "$29.99",
+        priceDescuento: "$26.99", // -10%
+        specs: {
+            "Tipo": "Auriculares Estéreo con diadema ajustable",
+            "Micrófono": "Boom ajustable en línea",
+            "Conexión": "Conector de audio de 3.5 mm dual (audio y micrófono)",
+            "Uso": "Oficina y llamadas por PC"
+        }
+    },
+    {
+        id: 281,
+        name: "Microsoft LifeCam HD-3000 (HD 720p)",
+        image: "../img/accesorios/Microsoft L2 LifeCam HD-3000 Webcam for sale online _ eBay Australia.jpeg",
+        priceOriginal: "$35.00",
+        priceDescuento: "$24.50", // -30%
+        specs: {
+            "Resolución": "HD 720p (hasta 30 fps)",
+            "Micrófono": "Integrado con cancelación de ruido",
+            "Tecnología": "TrueColor para video brillante y colorido",
+            "Conexión": "USB-A"
+        }
+    },
+    {
+        id: 282,
+        name: "Logitech H390 Audífonos (USB con Micrófono)",
+        image: "../img/accesorios/Logitech H390 Wired Headset for PC_Laptop, Stereo Headphones with Noise Cancelling Microphone, USB-A, in-Line Controls for Video Meetings, Music, Gaming and Beyond - Black.jpeg",
+        priceOriginal: "$49.99",
+        priceDescuento: "$39.99", // -20%
+        specs: {
+            "Tipo": "Auriculares estéreo acolchados",
+            "Micrófono": "Con cancelación de ruido y brazo giratorio",
+            "Control": "Controles de volumen y silencio en el cable",
+            "Conexión": "USB-A digital (ideal para conferencias)"
+        }
+    },
+    {
+        id: 283,
+        name: "Dell Premier Mousepad (Tejido Reciclado)",
+        image: "../img/accesorios/Soft Comfort Wrist Gel Rest Support Mat Mouse Mice Pad Computer PC Laptop Black.jpeg",
+        priceOriginal: "$12.50",
+        priceDescuento: "$10.62", // -15%
+        specs: {
+            "Material": "Tejido suave (superficie), base de goma antideslizante",
+            "â™»ï¸ Sostenibilidad": "Fabricado con material reciclado",
+            "Dimensiones": "Mediano (aprox. 250 x 200 mm)",
+            "Diseño": "Optimizado para la precisión del mouse óptico"
+        }
+    },
+    {
+        id: 284,
+        name: "Trust Boye USB Hub Compacto (4 Puertos)",
+        image: "../img/accesorios/Port Connect 4 Port USB Hub.jpeg",
+        priceOriginal: "$19.95",
+        priceDescuento: "$17.95", // -10%
+        specs: {
+            "Puertos": "4 Puertos USB 3.0",
+            "Velocidad": "Hasta 5 Gbps",
+            "Diseño": "Extremadamente compacto y ligero",
+            "Compatibilidad": "PC, Laptop, Mac"
+        }
+    },
+    {
+        id: 285,
+        name: "HP 65W Adaptador USB-C Slim",
+        image: "../img/accesorios/HP Universal USB-C Multiport Hub - 50H55AA.jpeg",
+        priceOriginal: "$59.00",
+        priceDescuento: "$44.25", // -25%
+        specs: {
+            "Potencia": "65W",
+            "Conector": "USB Tipo C",
+            "Diseño": "Compacto y ligero (Slim)",
+            "Compatibilidad": "Universal para laptops y dispositivos USB-C"
+        }
+    },
+    {
+        id: 286,
+        name: "Logitech Z150 Parlantes Multimedia",
+        image: "../img/accesorios/Logitech Z207 2_0 Stereo Computer Speakers with Bluetooth.jpeg",
+        priceOriginal: "$24.99",
+        priceDescuento: "$17.49", // -30%
+        specs: {
+            "Tipo": "2.0 Estéreo (dos altavoces)",
+            "Salida": "Conector de 3.5mm para auriculares",
+            "Conexión": "Audio de 3.5mm (entrada auxiliar)",
+            "Potencia": "6 vatios de potencia de pico"
+        }
+    },
+    {
+        id: 287,
+        name: "Amazon Basics Adaptador USB-C a USB-A",
+        image: "../img/accesorios/Amazon Basics USB-C to USB-A 3_1 Gen1 Female Adapter Cable Converter, 5Gbps High-Speed, USB-IF Certified, for Laptops, Tablets, Phones (iPhone 16_15), White.jpeg",
+        priceOriginal: "$9.99",
+        priceDescuento: "$8.99", // -10%
+        specs: {
+            "Conectores": "USB-C Macho a USB-A Hembra (3.1 Gen 1)",
+            "Velocidad": "Hasta 5 Gbps",
+            "Diseño": "Cable corto y duradero",
+            "Uso": "Conectar periféricos USB-A a puertos USB-C"
+        }
+    },
+    {
+        id: 288,
+        name: "Razer Gigantus V2 Mouse Mat (Medium)",
+        image: "../img/accesorios/Dks Razer Gigantus V2 Medium - Soft Mouse Mat For Speed And Control.jpeg",
+        priceOriginal: "$19.99",
+        priceDescuento: "$15.99", // -20%
+        specs: {
+            "Superficie": "Tejido de microtextura, optimizado para velocidad y control",
+            "Tamaño": "Mediano (aprox. 360 x 275 mm)",
+            "Base": "Goma antideslizante densa",
+            "Durabilidad": "Bordes cosidos para evitar el deshilachado"
+        }
+    },
+    {
+        id: 289,
+        name: "Logitech R400 Presentador Inalámbrico",
+        image: "../img/accesorios/Logitech R400 Wireless Presenter Remote Control, Black.jpeg",
+        priceOriginal: "$49.99",
+        priceDescuento: "$42.49", // -15%
+        specs: {
+            "Función": "Puntero láser rojo",
+            "Rango": "Hasta 15 metros",
+            "Controles": "Botones de avance y retroceso de diapositivas",
+            "Conexión": "Receptor USB-A Plug and Play"
+        }
+    },
+    {
+        id: 290,
+        name: "Belkin Hub USB 3.0 de 4 Puertos",
+        image: "../img/accesorios/Hub USB-C vers HDMI _ USB _ USB-C Belkin.jpeg",
+        priceOriginal: "$27.00",
+        priceDescuento: "$20.25", // -25%
+        specs: {
+            "Puertos": "4 Puertos USB 3.0",
+            "Velocidad": "Hasta 5 Gbps",
+            "Diseño": "Delgado y compacto",
+            "Alimentación": "Autoalimentado por USB (no requiere adaptador de corriente)"
+        }
+    },
+    {
+        id: 291,
+        name: "Blue Yeti Nano Micrófono USB (Streaming)",
+        image: "../img/accesorios/Microfone Condensador USB Blue Yeti Nano Azul - 988-000089.jpeg",
+        priceOriginal: "$99.99",
+        priceDescuento: "$89.99", // -10%
+        specs: {
+            "Tipo": "Micrófono de condensador USB",
+            "Patrones": "Cardioide y Omnidireccional",
+            "Uso": "Streaming, podcasting y grabación de voz",
+            "Soporte": "Base de escritorio metálica integrada"
+        }
+    }
+];
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

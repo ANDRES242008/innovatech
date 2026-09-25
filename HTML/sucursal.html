@@ -1,0 +1,605 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sucursal Â· INNOVA TECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
+    <style>
+        /* =================================
+            GLOBAL STYLES & THEME VARS
+            ================================= */
+        :root{
+            --bg: linear-gradient(180deg,#0b1220,#071027);
+            --card-bg: rgba(255,255,255,0.03);
+            --text: #e6eefc;
+            --muted: rgba(230,238,252,0.7);
+            --accent1: #7c4dff;
+            --accent2: #00c2ff;
+            --glass-border: rgba(255,255,255,0.06);
+            --radius: 16px;
+            --shadow: 0 20px 50px rgba(2,6,23,0.6);
+            --header-bg: rgba(7, 16, 39, 0.9);
+            --nav-bg: rgba(11, 18, 32, 0.95);
+            --top-bar-bg: linear-gradient(to right, #1d2c47, #071227);
+            --top-bar-text: #00aeef;
+            --footer-bg: #040914;
+            --link-color: #00aeef;
+        }
+        :root[data-theme='light']{
+            --bg: linear-gradient(180deg,#f5fbff,#fcfdff);
+            --card-bg: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+            --text: #071227;
+            --muted: #5b6b84;
+            --glass-border: rgba(10,25,45,0.04);
+            --shadow: 0 12px 30px rgba(12,24,48,0.06);
+            --header-bg: rgba(230, 247, 255, 0.9);
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --top-bar-bg: linear-gradient(to right, #d6f1ff, #e6f7ff);
+            --top-bar-text: #1D1ABE;
+            --footer-bg: #e6f7ff;
+            --link-color: #1D1ABE;
+        }
+
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0; font-family: Inter, Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+            background:var(--bg); color:var(--text); padding:0; -webkit-font-smoothing:antialiased;
+        }
+
+        /* =================================
+            TOP BAR & HEADER STYLES
+            ================================= */
+
+        .top-bar {
+            display: flex; align-items: center; justify-content: center; gap: 14px;
+            padding: 10px 24px; background: var(--top-bar-bg); font-size: 0.85rem;
+            font-weight: 600; color: var(--top-bar-text); overflow-x: auto;
+            white-space: nowrap; border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05); scrollbar-width: none;
+        }
+        .top-bar::-webkit-scrollbar { display: none; }
+        .top-bar a.bank {
+            display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
+            border-radius: 20px; background: var(--card-bg); color: var(--link-color);
+            font-weight: 700; font-size: 0.85rem; text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: background 0.3s ease, transform 0.2s ease;
+            border: 1px solid var(--glass-border);
+        }
+        .top-bar .red-highlight {
+            background: linear-gradient(to right, #ff5c5c, #ff3636); color: #fff;
+            padding: 6px 14px; border-radius: 20px; font-weight: 700;
+            font-size: 0.85rem; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            animation: pulseHighlight 1.6s infinite ease-in-out;
+        }
+
+        @keyframes pulseHighlight {
+            0% { transform: scale(1); box-shadow: 0 0 6px rgba(255, 78, 78, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 12px rgba(255, 78, 78, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 0 6px rgba(255, 78, 78, 0.5); }
+        }
+
+        header {
+            padding: 8px 28px; display: flex; align-items: center; justify-content: space-between;
+            font-size: 15px; background:var(--header-bg); position: sticky; top: 0px;
+            z-index: 1000; backdrop-filter: blur(8px); border-bottom: 1px solid var(--glass-border);
+        }
+        .logo { margin-right: 15px; cursor: pointer; flex-shrink: 0; transition: transform 0.3s ease; }
+        .logo img { height: 60px; width: auto; border-radius: 8px; box-shadow: var(--shadow); transition: box-shadow 0.3s ease; }
+        .header-left { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; white-space: nowrap; font-size: 0.95rem; }
+        .header-left a {
+            display: flex; align-items: center; gap: 6px; padding: 6px 10px;
+            border-radius: 6px; background: var(--card-bg); color: var(--link-color);
+            font-weight: 600; text-decoration: none; transition: background 0.3s ease, color 0.3s ease;
+            border: 1px solid var(--glass-border);
+        }
+        .header-left a:hover { background: rgba(0, 194, 255, 0.1); }
+
+        /* Search */
+        .search-container { flex-grow: 1; max-width: 450px; position: relative; margin: 0 20px; }
+        .search-container input[type="search"] {
+            width: 100%; padding: 10px 42px 10px 16px; font-size: 15px;
+            border: 1px solid var(--glass-border); border-radius: 30px;
+            background: var(--card-bg); color: var(--text);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .search-container input[type="search"]:focus {
+            border-color: var(--accent2); box-shadow: 0 0 0 3px rgba(0, 194, 255, 0.2); outline: none; background: var(--card-bg);
+        }
+        .search-container button {
+            position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+            background: var(--accent2); border: none; border-radius: 50%; color: white;
+            font-size: 16px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* User & Cart */
+        .user-cart {
+            display: flex; align-items: center; gap: 20px; font-size: 0.95rem;
+            background: var(--card-bg); padding: 8px 16px; border-radius: 8px;
+            box-shadow: var(--shadow); border: 1px solid var(--glass-border);
+        }
+        .user-cart a {
+            display: inline-flex; align-items: center; gap: 8px; color: var(--link-color);
+            font-weight: 600; text-decoration: none; padding: 6px 12px; border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .user-cart a:hover { background: rgba(0, 194, 255, 0.1); transform: translateY(-1px); color: var(--accent1); }
+        .cart-count { font-weight: 700; color: var(--text); background: var(--accent1); padding: 4px 8px; border-radius: 50%; font-size: 0.8rem; line-height: 1; }
+        .icon-user, .icon-cart { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linejoin: round; stroke-linecap: round; }
+
+        /* ===== Navigation categories bar ===== */
+        nav {
+            background: var(--nav-bg); display: flex; align-items: center; padding: 5px 28px;
+            font-size: 13px; color:var(--text); position: sticky; top: 80px; z-index: 999;
+            overflow-x: auto; white-space: nowrap; flex-wrap: nowrap;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        nav .categories-label {
+            font-weight: 600; text-transform: uppercase; padding: 10px 18px; border-radius: 6px;
+            margin-right: 10px; flex-shrink: 0; cursor: pointer; display: inline-flex;
+            align-items: center; gap: 10px; font-size: 0.95rem; color: #ffffff;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        nav .categories-label:hover { transform: translateY(-2px); }
+
+        .pago-cuota { margin-left: auto; display: flex; justify-content: flex-end; padding: 8px 0; }
+        .pago-cuota a {
+            background: linear-gradient(135deg, var(--accent2), var(--accent1));
+            color: var(--text); padding: 10px 24px; font-size: 1rem; font-weight: 700;
+            border-radius: 12px; text-decoration: none; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; white-space: nowrap;
+            border: 1px solid var(--glass-border);
+        }
+        .pago-cuota a:hover { transform: translateY(-2px); }
+
+        /* =================================
+            MAIN CONTENT STYLES
+            ================================= */
+        .main-content{padding: 28px 28px 40px;}
+        .stage{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:380px 1fr; gap:22px; align-items:start;}
+
+        .card-left{background:var(--card-bg); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); min-height:480px; position:relative; border:1px solid var(--glass-border); display:flex; flex-direction:column; gap:12px}
+        .brand{display:flex; justify-content:space-between; align-items:center}
+        .brand-left{display:flex; gap:12px; align-items:center}
+        .logo-it{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;color:white;font-weight:800;font-size:18px;background:linear-gradient(135deg,var(--accent2),var(--accent1));}
+        h1{margin:0;font-size:18px;color:var(--accent2);font-family:Poppins}
+
+        .info{margin-top:6px; display:flex; flex-direction:column; gap:8px}
+        .row{display:flex; gap:10px; align-items:center}
+        .label{min-width:94px; color:var(--text); font-weight:700}
+        .value{color:var(--muted); font-size:15px}
+
+        .gallery-grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; margin-top:8px}
+        .thumb{height:96px; border-radius:10px; overflow:hidden; position:relative; border:1px solid rgba(255,255,255,0.04); background:rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center}
+        .thumb img{width:100%; height:100%; object-fit:cover}
+
+        .btn{border:none;padding:12px 14px;border-radius:12px;cursor:pointer;font-weight:800; transition: transform 0.2s ease;}
+        .btn.primary{background:linear-gradient(90deg,var(--accent2),var(--accent1)); color:#041125}
+        .btn.ghost{background:transparent;border:1px solid var(--glass-border); color:var(--text)}
+        .btn:hover{transform: translateY(-2px);}
+
+        .map-wrap{height:520px;border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow);border:1px solid var(--glass-border)}
+        #map{width:100%;height:100%}
+
+        .controls{position:absolute; left:16px; top:16px; display:flex; gap:8px; z-index:999}
+        .control{background:var(--card-bg); border:1px solid var(--glass-border); padding:8px 12px; border-radius:10px; font-weight:700; cursor:pointer; color:var(--text); transition: background 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+        .control:hover{background:rgba(0, 194, 255, 0.1);}
+        .map-card-cta{position:absolute; right:18px; bottom:18px; background:var(--card-bg); border:1px solid var(--glass-border); padding:12px 14px; border-radius:12px; display:flex; gap:12px; align-items:center}
+        .map-card-cta strong{color:var(--accent2)}
+        .map-card-cta span{color:var(--muted)}
+
+        /* =================================
+            FOOTER STYLES
+            ================================= */
+        .footer {
+            background: var(--footer-bg);
+            color: #ffffff;
+            padding: 60px 30px;
+            font-size: 0.95rem;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 220px;
+        }
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 14px;
+            color: var(--accent2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-col ul li a:hover {
+            color: var(--accent2);
+            text-decoration: underline;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin-right: 12px;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.15);
+        }
+        .social-icons img {
+            width: 34px;
+            height: 34px;
+            background-color: var(--accent2);
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        /* =================================
+            RESPONSIVENESS
+            ================================= */
+        @media (max-width:1000px){
+            .stage{grid-template-columns:1fr}
+            .map-wrap{height:440px}
+            header, nav, .main-content{padding-left: 12px; padding-right: 12px;}
+            .header-left { display: none; }
+        }
+        @media (max-width:600px){
+            .map-wrap{height:360px}
+            .logo img{height: 50px;}
+            .user-cart{gap: 10px; padding: 6px 12px;}
+            .user-cart a span:nth-child(2){display: none;}
+            .user-cart a{padding: 4px 6px;}
+            .search-container{margin: 0 10px;}
+            .top-bar{justify-content: flex-start;}
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="top-bar" aria-label="Promotional and banking info">
+        <div class="red-highlight" aria-label="Offer banner"><strong>12 meses</strong> sin intereses</div>
+        <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+        <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+        <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+    </div>
+
+   <header role="banner" aria-label="Encabezado principal">
+        <a href="index.html" class="logo" aria-label="INOVATECH">
+            <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+        </a>
+        <div class="header-left" aria-label="Enlaces de sucursal y contacto">
+            <a href="../HTML/sucursal.html"><span class="icon"></span>Sucursales</a>
+            <a href="contactenos.html"><span class="icon"></span>ContÃ¡ctanos</a>
+            <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
+        </div>
+
+        <div class="search-container" role="search" aria-label="Búsqueda de productos" style="position:relative;">
+            <input type="search" name="search" id="search" placeholder="¿Qué estás buscando?" aria-label="Campo de búsqueda"/>
+            <button aria-label="Buscar" title="Buscar"></button>
+        </div>
+
+        <div class="header-right user-cart" aria-label="Cuenta de usuario y carrito de compras">
+            <a id="btn-cuenta" href="inicio.html" aria-label="Entrar o registrarse en mi cuenta" title="Mi Cuenta">
+                <svg class="icon-user" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+                </svg>
+                <span>Mi Cuenta</span>
+            </a>
+            <a href="#" aria-label="Ver mi carrito de compras" title="Mi carrito">
+                <svg class="icon-cart" viewBox="0 0 24 24" fill="none">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+                <span>Mi carrito</span>
+            </a>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+
+    <main class="main-content">
+        <div class="stage" role="main">
+            <section class="card-left" aria-label="Panel de sucursal">
+                <div class="brand">
+                    <div class="brand-left">
+                        <div class="logo-it">IT</div>
+                        <div>
+                            <h1>INNOVA TECH Â· Sucursal</h1>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <button id="themeBtn" class="theme-toggle" title="Cambiar tema">Oscuro</button>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div class="row"><div class="label">Nombre</div><div id="branchName" class="value">Colegio Salarrué, Tercer Ciclo y Bachillerato</div></div>
+                    <div class="row"><div class="label">Dirección</div><div id="branchAddress" class="value">Avenida Morazán, Sonsonate (P7GG+88C)</div></div>
+                    <div class="row"><div class="label">Teléfono</div><div id="branchPhone" class="value">+503 7648 2812</div></div>
+
+                    <div style="display:flex;gap:8px;margin-top:6px">
+                        <div class="pill" style="background:transparent;border:1px solid var(--glass-border);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700">Lun - Vie Â· 9:00 - 18:00</div>
+                        <div class="pill" style="background:transparent;border:1px solid var(--glass-border);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700">Sáb Â· 9:00 - 14:00</div>
+                    </div>
+
+                    <div class="gallery">
+                        <div style="display:flex;justify-content:space-between;align-items:center; margin-top: 10px;">
+                            <strong style="color:var(--text)">Galería de la sucursal</strong>
+                        </div>
+
+                        <div id="galleryGrid" class="gallery-grid">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="display:flex;gap:8px;margin-top:auto">
+                    <button id="directionsBtn" class="btn ghost">Cómo llegar</button>
+                    <button id="callBtn" class="btn primary">Llamar</button>
+                    <button id="copyBtn" class="btn ghost">Copiar</button>
+                </div>
+
+                <div style="position:absolute;left:18px;bottom:18px;font-size:12px;color:var(--muted)">Plus Code: <span id="plusCode">P7GG+88C</span></div>
+            </section>
+
+            <section class="map-wrap" aria-label="Mapa de la sucursal">
+                <div id="map" role="application" aria-label="Mapa interactivo"></div>
+
+                <div class="controls" role="toolbar" aria-label="Controles del mapa">
+                    <div id="centerBtn" class="control">Centrar</div>
+                    <div id="toggleBtn" class="control">Arrastrar: ON</div>
+                    <div id="satBtn" class="control">Satélite</div>
+                </div>
+
+                <div class="map-card-cta" aria-hidden>
+                    <div style="display:flex;flex-direction:column">
+                        <strong style="color:var(--accent2)">Colegio Salarrué</strong>
+                        <span style="font-size:13px;color:var(--muted)">Avenida Morazán, Sonsonate</span>
+                    </div>
+                    <button id="openStreet" class="btn primary" style="padding:8px 10px;">Abrir mapa</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+ 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Compra segura</h4>
+                <ul>
+                    <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+                    <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+                </ul>
+                <h4>Eventos</h4>
+                <ul>
+                    <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+                    <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Beneficios</h4>
+                <ul>
+                    <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Políticas</h4>
+                <ul>
+                    <li><a href="terminos.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Servicios al cliente</h4>
+                <ul>
+                    <li><a href="formulario.html">Contáctenos</a></li>
+                    <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Redes Sociales</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/innovatech234/" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram">
+                    </a>
+                    <a href="https://x.com/INNOVATECH244" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X/Twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        // Data de la sucursal y la galería
+        const images = [
+            'https://images.unsplash.com/photo-1529338171692-8c2a0f4f3f7f?q=80&w=1200&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1564736022659-0a08a7d2d2a8?q=80&w=1200&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop'
+        ];
+
+        const branch = {
+            lat: 13.72579,
+            lng: -89.72429,
+            name: "Colegio Salarrué, Tercer Ciclo y Bachillerato",
+            address: "Avenida Morazán, Sonsonate (P7GG+88C)",
+            phone: "+503 7648 2812",
+            plusCode: "P7GG+88C"
+        };
+
+        // Rellenar información de la sucursal
+        document.getElementById('branchName').textContent = branch.name;
+        document.getElementById('branchAddress').textContent = branch.address;
+        document.getElementById('branchPhone').textContent = branch.phone;
+        document.getElementById('plusCode').textContent = branch.plusCode;
+
+        // Lógica de cambio de Tema
+        const themeBtn = document.getElementById('themeBtn');
+        const storedTheme = localStorage.getItem('innova_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', storedTheme);
+        updateThemeButton(storedTheme);
+
+        function updateThemeButton(theme){ themeBtn.textContent = theme==='light' ? 'â˜€ï¸ Claro' : 'Oscuro'; }
+        
+        // Lógica del Mapa (Leaflet)
+        const map = L.map('map', { zoomControl: false, dragging: true, scrollWheelZoom: false }).setView([branch.lat, branch.lng],16);
+        const light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{ attribution:'Â© CartoDB', maxZoom:19 });
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{ attribution:'Esri', maxZoom:19 });
+        light.addTo(map);
+
+        // Forzar la actualización del tamaño del mapa después de la carga inicial (soluciona problemas de tiles en blanco)
+        setTimeout(() => { map.invalidateSize(); }, 400);
+
+        // Helper function para generar el HTML del marcador según el tema
+        const getMarkerHtml = (theme) => {
+            const color = theme === 'light' ? '#1D1ABE' : '#00c2ff';
+            const ringColor = theme === 'light' ? 'rgba(29, 26, 190, 0.3)' : 'rgba(0, 194, 255, 0.3)';
+            return `<div style="position:relative; width:44px; height:44px; display:grid; place-items:center;">
+            <style>
+                .pulse-ring { width: 44px; height: 44px; border-radius: 50%; background: ${ringColor}; position: absolute; animation: pulse 2s infinite; }
+                .pulse-marker { width: 14px; height: 14px; border-radius: 50%; background: ${color}; position: absolute; box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+                @keyframes pulse { 0% { transform: scale(0.6); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; } }
+            </style>
+            <div class="pulse-ring"></div><div class="pulse-marker"></div>
+            </div>`;
+        };
+
+        // Variable global para el marcador
+        let marker = null;
+
+        // Función para crear/actualizar el marcador
+        function updateMarker(theme) {
+            const popupColor = theme === 'light' ? '#1D1ABE' : '#00c2ff';
+            const popupTextColor = theme === 'light' ? '#5b6b84' : '#c7d9ff';
+
+            // 1. Remover el marcador anterior si existe
+            if (marker) {
+                map.removeLayer(marker);
+            }
+
+            // 2. Crear el nuevo ícono con el tema actual
+            const icon = L.divIcon({ html: getMarkerHtml(theme), className: '', iconSize: [44, 44], iconAnchor: [22, 44] });
+            
+            // 3. Crear el nuevo marcador
+            marker = L.marker([branch.lat, branch.lng], { icon }).addTo(map);
+
+            // 4. Crear el nuevo popup con el tema actual
+            marker.bindPopup(`<div style="min-width:180px;font-family:Inter">
+                <strong style="color:${popupColor}">${escapeHtml(branch.name)}</strong>
+                <div style="margin-top:6px;color:${popupTextColor}">${escapeHtml(branch.address)}</div>
+                <div style="margin-top:6px;color:${popupTextColor}">${escapeHtml(branch.phone)}</div>
+            </div>`);
+
+            // 5. Pequeño UX: Abrir el popup
+            setTimeout(() => { marker.openPopup(); }, 100);
+            
+            // Re-agregar listener para reabrir popup si se cierra
+            marker.getElement().addEventListener('click', () => { marker.openPopup(); });
+        }
+
+        // Inicializar el marcador con el tema guardado
+        updateMarker(storedTheme);
+
+        // Evento para cambiar el tema (llama a updateMarker)
+        themeBtn.addEventListener('click', ()=>{
+            const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+            const next = cur === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('innova_theme', next);
+            updateThemeButton(next);
+            updateMarker(next); 
+        });
+
+
+        // Controladores del mapa
+        document.getElementById('centerBtn').addEventListener('click', ()=>{ map.setView([branch.lat, branch.lng],16,{animate:true}); marker.openPopup(); });
+        
+        const toggleBtn = document.getElementById('toggleBtn'); 
+        let dragging=true; 
+        toggleBtn.addEventListener('click', ()=>{ 
+            dragging=!dragging; 
+            if(dragging) map.dragging.enable(); else map.dragging.disable(); 
+            toggleBtn.textContent = `Arrastrar: ${dragging? 'ON':'OFF'}`; 
+        });
+        
+        let satOn=false; 
+        document.getElementById('satBtn').addEventListener('click', ()=>{ 
+            if(!satOn){ 
+                map.addLayer(satellite); map.removeLayer(light); satOn=true; document.getElementById('satBtn').textContent='Calle'; 
+            } else{ 
+                map.addLayer(light); map.removeLayer(satellite); satOn=false; document.getElementById('satBtn').textContent='Satélite'; 
+            } 
+        });
+
+        // FUNCIONES CORREGIDAS PARA GOOGLE MAPS
+        document.getElementById('directionsBtn').addEventListener('click', () => { 
+            const url = `https://www.google.com/maps/dir/?api=1&destination=${branch.lat},${branch.lng}&travelmode=driving`; 
+            window.open(url, '_blank'); 
+        });
+        document.getElementById('callBtn').addEventListener('click', ()=>{ 
+            window.location.href = `tel:${branch.phone.replace(/[^+0-9]/g,'')}`; 
+        });
+        document.getElementById('copyBtn').addEventListener('click', async ()=>{ 
+            const text = `${branch.lat}, ${branch.lng}`; 
+            try{ await navigator.clipboard.writeText(text); showToast('Coordenadas copiadas'); } 
+            catch(e){ fallbackCopy(text); } 
+        });
+        document.getElementById('openStreet').addEventListener('click', () => { 
+            const url = `https://www.google.com/maps/search/?api=1&query=${branch.lat},${branch.lng}`; 
+            window.open(url, '_blank'); 
+        });
+
+    
+        // Lógica de la Galería
+        const galleryGrid = document.getElementById('galleryGrid');
+        function renderGallery(){ galleryGrid.innerHTML = '';
+            images.forEach(src=>{
+                const div = document.createElement('div'); div.className='thumb'; const img = document.createElement('img'); img.src = src; img.alt = 'Imagen sucursal'; div.appendChild(img); galleryGrid.appendChild(div);
+            });
+        }
+        renderGallery();
+
+        // ---------- helpers (Kept as is) ----------
+        function showToast(msg){ const t=document.createElement('div'); t.textContent=msg; t.style.position='fixed'; t.style.left='50%'; t.style.bottom='28px'; t.style.transform='translateX(-50%)'; t.style.background='rgba(2,6,23,0.8)'; t.style.color='white'; t.style.padding='10px 14px'; t.style.borderRadius='10px'; t.style.zIndex=99999; document.body.appendChild(t); setTimeout(()=>{ t.style.opacity=0; setTimeout(()=>t.remove(),300) },1500); }
+        function fallbackCopy(txt){ const el=document.createElement('textarea'); el.value=txt; el.style.position='fixed'; el.style.left='-9999px'; document.body.appendChild(el); el.select(); document.execCommand('copy'); el.remove(); showToast('Coordenadas copiadas'); }
+        function escapeHtml(str){ if(!str) return ''; return String(str).replace(/[&<>'"`=\/]/g, function(s){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','/':'&#x2F;','`':'&#x60;','=':'&#x3D;'})[s]; }); }
+
+        // small UX touches
+        setTimeout(()=>{ marker.openPopup(); },700);
+    </script>
+</body>
+</html>

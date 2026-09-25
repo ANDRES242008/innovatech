@@ -1,0 +1,566 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto</title>
+ <link rel="stylesheet" href="../CSS/compartido2.css" />
+     <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
+  <script src="../JS/cartcompartido2.js"></script>
+  <script>
+    // Toggle specs visibility on header click
+    document.addEventListener('DOMContentLoaded', () => {
+      const specsHeader = document.querySelector('.specs-header');
+      const specsGrid = document.getElementById('specs-body');
+      if (specsHeader && specsGrid) {
+        specsHeader.addEventListener('click', () => {
+          if (specsGrid.style.display === 'none') {
+            specsGrid.style.display = 'grid';
+          } else {
+            specsGrid.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+<!-- Top Bar -->
+<div class="top-bar" role="complementary" aria-label="Información bancaria">
+  <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
+  <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
+  <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
+</div>
+
+<!-- Header -->
+<header role="banner" aria-label="Encabezado principal">
+  <a href="index.html" class="logo" aria-label="Ir a inicio - INOVATECH">
+    <img src="../img/logos/e.jpg" alt="Logo INOVATECH">
+  </a>
+
+  <div class="header-left" aria-label="Enlaces de navegación">
+    <a href="sucursal.html" aria-label="Ver nuestras sucursales">
+      <span aria-hidden="true">🏀</span> Sucursales
+    </a>
+    <a href="contactenos.html" aria-label="ContÃ¡ctanos">
+      <span aria-hidden="true">📞</span> ContÃ¡ctanos
+    </a>
+    <a href="formulario.html" aria-label="Â¿Tienes problemas?">
+      <span aria-hidden="true">🤔</span> Â¿Problemas?
+    </a>
+  </div>
+
+  <div class="search-container" role="search" aria-label="Búsqueda de productos">
+    <input 
+      type="search" 
+      name="search" 
+      id="search" 
+      placeholder="¿Qué estás buscando?" 
+      aria-label="Buscar productos"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="autocompleteDropdown"
+      aria-expanded="false"
+    >
+    <button type="button" aria-label="Buscar">
+      
+    </button>
+    <div id="autocompleteDropdown" role="listbox" aria-label="Sugerencias de búsqueda"></div>
+  </div>
+
+
+  <div class="user-cart" aria-label="Usuario y carrito">
+    <a href="inicio.html" id="btn-cuenta" aria-label="Ir a mi cuenta - Andres">
+      <svg class="icon-user" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+      </svg>
+      <span>Andres</span>
+    </a>
+    <a 
+      href="#" 
+      id="cart-link" 
+      aria-label="Ver carrito de compras"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <svg class="icon-cart" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span>Mi carrito</span>
+      <span class="cart-count" aria-label="Productos en el carrito">0</span>
+    </a>
+  </div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" role="dialog" aria-label="Panel del carrito de compras" aria-hidden="true">
+    <h3>Tu carrito</h3>
+    <ul class="cart-items" aria-live="polite" aria-atomic="true"></ul>
+    <div class="cart-total" aria-live="polite">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="carrito.html" class="btn-ver-carrito" aria-label="Ver carrito completo">
+      Ver mi carrito completo
+    </a>
+  </div>
+  </header>
+   <main>
+
+
+
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Inicio</a> >
+    <a href="accesorios2.html">Accesorios para TV</a> >
+    <span id="product-name-breadcrumb">Producto</span>
+  </nav>
+
+  <main class="product-detail">
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img id="product-image" class="product-image" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+
+      <div class="product-info" style="gap: 20px;"> <!-- Reduced gap from 40px to 20px -->
+        <div class="product-info-left" style="flex: 1 1 60%;"> <!-- Increased flex basis to 60% -->
+          <h1 id="product-name">Producto</h1>
+          <div>
+            <span class="price-original" id="price-original"></span>
+            <span class="price-descuento" id="price-descuento"></span>
+          </div>
+          <div style="margin-top: 15px;">
+            <label for="quantity-input" style="font-weight: 600; font-size: 16px; display: block; margin-bottom: 6px;">Cantidad:</label>
+            <input type="number" id="quantity-input" value="1" min="1" style="width: 100px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px; display: block;" />
+            <button class="btn-carrito" id="add-to-cart-btn" style="width: 100%; padding: 14px 0; font-size: 18px; border-radius: 6px;">Agregar al carrito</button>
+          </div>
+          <div class="specs-container" aria-label="Especificaciones del producto" style="margin-top: 20px;"> <!-- Moved specs container here -->
+            <div class="specs-header">
+              <h2>Especificaciones Técnicas</h2>
+            </div>
+            <div class="specs-grid" id="specs-body">
+              <!-- Specs will be inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="product-info-right" style="flex: 1 1 40%; display: none;"> <!-- Hide right column -->
+          <!-- Removed specs container from here -->
+        </div>
+      </div>
+  </main>
+
+   <script>
+    // Sample product data for demonstration
+    const products = [
+     {
+        id: 230,
+        name: "Convertidor de AV (RCA) a HDMI",
+        image: "../img/accesorios tv/IMG-20250819-WA0019.jpg",
+        priceOriginal: "$20.00",
+        priceDescuento: "$12.00",
+        specs: [
+
+    "Convierte señal de audio y video analógico (RCA) a digital HDMI.",
+    "Compatible con entrada RCA: video (amarillo) y audio estéreo (rojo y blanco).",
+    "Salida HDMI en alta definición hasta 1080p.",
+    "Instalación sencilla: conectar y usar, sin necesidad de drivers.",
+    "Funciona con televisores, monitores y proyectores con entrada HDMI.",
+    "Ideal para reproductores de DVD, VHS, consolas retro y cámaras antiguas.",
+    "Diseño compacto y ligero, fácil de transportar.",
+    "Alimentación mediante cable USB (incluido)."
+  
+      ]
+        },
+      {
+        id: 231,
+        name: "Klip Xtreme, modelo KPM-875",
+        image: "../img/accesorios tv/IMG-20250819-WA0020.jpg",
+        priceOriginal: "$39.00",
+        priceDescuento: "$30.00",
+        specs:[
+    
+    "Soporte de pared para pantallas LED, LCD y plasma.",
+    "Compatible con televisores de 13a 42pulgadas.",
+    "Diseño articulado con brazo ajustable para mayor ángulo de visión.",
+    "Capacidad de carga máxima: 25 kg.",
+    "Cumple con estándar VESA (75x75, 100x100, 200x200 mm).",
+    "Permite inclinación, giro lateral y extensión desde la pared.",
+    "Estructura metálica resistente con acabado en pintura electrostática.",
+    "Incluye kit de instalación con tornillos y herrajes."
+       ]
+       },
+      {
+        id: 232,
+        name: "LG Magic Remote",
+        image: "../img/accesorios tv/IMG-20250819-WA0021.jpg",
+        priceOriginal: "$95.00",
+        priceDescuento: "$84.00",
+        specs: [
+    "Control remoto inteligente compatible con televisores LG Smart TV.",
+    "Función de puntero y desplazamiento para navegar fácilmente en la pantalla.",
+    "Reconocimiento de voz para búsqueda rápida y comandos inteligentes.",
+    "Diseño ergonómico con botones de acceso directo a aplicaciones de streaming.",
+    "Conectividad inalámbrica mediante Bluetooth.",
+    "Compatible con funciones de control universal para manejar otros dispositivos.",
+    "Instalación sencilla y sincronización automática con el televisor.",
+    "Bajo consumo de energía con baterías de larga duración."
+       ]     
+       },
+      {
+        id: 233,
+        name: "Convertidor de RCA a HDMI",
+        image: "../img/accesorios tv/IMG-20250819-WA0022.jpg",
+        priceOriginal: "$18.00",
+        priceDescuento: "$13.00",
+        specs:[ 
+"Convierte señal de RCA (compuesto) a HDMI para televisores modernos.",
+        "Soporta resolución hasta 1080p Full HD.",
+        "Plug & Play, no requiere instalación de drivers.",
+        "Compatible con audio estéreo y video NTSC/PAL.",
+        "Incluye adaptador de corriente USB para funcionamiento estable."
+      ]
+      },
+      {
+        id: 234,
+        name: "Cable HDMI 4k PowerBear",
+        image: "../img/accesorios tv/IMG-20250819-WA0023.jpg",
+        priceOriginal: "$10.00",
+        priceDescuento: "$8.00",
+        specs: [
+"Soporta resolución 4K UHD a 60Hz.",
+        "Compatible con HDTV, Blu-ray, PS4, Xbox y otros dispositivos HDMI.",
+        "Alta calidad de transmisión sin pérdida de señal.",
+        "Conectores chapados en oro para mejor conductividad.",
+        "Longitud de 1.5 metros, flexible y resistente."
+      ]
+      },
+      {
+        id: 235,
+        name: "Soporte de pared para TV",
+        image: "../img/accesorios tv/IMG-20250819-WA0024.jpg",
+        priceOriginal: "$40.00",
+        priceDescuento: "$33.50",
+        specs: [
+ "Compatible con la mayoría de televisores de 32\" a 65\".",
+        "Soporta hasta 40 kg de peso.",
+        "Incluye nivelador y tornillería para instalación.",
+        "Diseño ajustable para inclinación y giro.",
+        "Acabado en negro con material resistente y duradero."
+      ]
+      },
+      {
+        id: 236,
+        name: "Soporte de pared TV de 32 pulgadas",
+        image: "../img/accesorios tv/IMG-20250819-WA0025.jpg",
+        priceOriginal: "$40.00",
+        priceDescuento: "$29.50",
+        specs: [ 
+"Diseñado específicamente para TVs de 32 pulgadas.",
+        "Fácil instalación con manual incluido.",
+        "Permite inclinación para mejor ángulo de visión.",
+        "Material metálico resistente y seguro.",
+        "Acabado en color negro elegante."
+        ]
+      },
+      {
+        id: 237,
+        name: "Cable AV (Audios/videos)",
+        image: "../img/accesorios tv/IMG-20250819-WA0026.jpg",
+        priceOriginal: "$25.00",
+        priceDescuento: "$18.00",
+        specs: [
+           "Transmite audio y video desde dispositivos antiguos a televisores modernos.",
+        "Compatible con DVD, VHS, consolas antiguas y más.",
+        "Conectores codificados por color para fácil conexión.",
+        "Longitud de 1.2 metros, flexible y duradero.",
+        "Alta fidelidad de audio y video sin interferencias."
+        ]
+      },
+      {
+        id: 238,
+        name: "Control remoto PIX 6428",
+        image: "../img/accesorios tv/IMG-20250819-WA0027.jpg",
+        priceOriginal: "$30.00",
+        priceDescuento: "$27.50",
+        specs: [
+            "Compatible con decodificadores PIX 6428.",
+        "Funciones completas: encendido, volumen, canales, menú y más.",
+        "Botones sensibles y de fácil uso.",
+        "Diseño ergonómico y compacto.",
+        "Incluye batería AAA para funcionamiento inmediato."
+        ]
+      },
+      {
+        id: 239,
+        name: "Adaptador de HDMI MinI",
+        image: "../img/accesorios tv/IMG-20250819-WA0028.jpg",
+        priceOriginal: "$10.00",
+        priceDescuento: "$7.00",
+        specs: [
+"Adaptador HDMI Mini de alta velocidad compatible con la mayoría de dispositivos electrónicos.",
+    "Soporta resolución Full HD y 4K para una calidad de imagen nítida.",
+    "Diseño compacto y ligero, fácil de transportar y almacenar.",
+    "Conexión plug-and-play, no requiere instalación de drivers.",
+    "Compatible con televisores, proyectores, laptops y consolas de videojuegos.",
+    "Construcción robusta para garantizar durabilidad y estabilidad de la señal.",
+    "Transferencia de audio y video sin interferencias ni pérdida de calidad.",
+    "Bajo consumo de energía, ideal para uso prolongado sin afectar el dispositivo."
+        ]
+      },
+      {
+        id: 240,
+        name: "Amazon fire TV Stick Lite",
+        image: "../img/accesorios tv/IMG-20250819-WA0029.jpg",
+        priceOriginal: "$55.00",
+        priceDescuento: "$39.00",
+        specs:[
+"Acceso a más de 500,000 películas y series de Prime Video, Netflix, Disney+ y más.",
+    "Control remoto Alexa con funciones de voz para búsqueda y navegación rápida.",
+    "Streaming en Full HD 1080p con alta calidad de imagen y sonido.",
+    "Compatible con televisores con puerto HDMI y Wi-Fi integrado.",
+    "Instalación rápida y sencilla, sin necesidad de equipos adicionales.",
+    "Funciona con apps populares de entretenimiento, noticias y música.",
+    "Modo ahorro de energía que reduce el consumo cuando no está en uso.",
+    "Actualizaciones automáticas para nuevas funciones y mejoras de seguridad."
+        ]
+      },
+      {
+        id: 241,
+        name: "Soporte de TV de 26 a 55 pulgadas",
+        image: "../img/accesorios tv/IMG-20250819-WA0033.jpg",
+        priceOriginal: "$28.00",
+        priceDescuento: "$20.00",
+        specs:[
+"Compatible con televisores de 26a 55pulgadas.",
+    "Diseño articulado que permite inclinación, giro lateral y extensión desde la pared.",
+    "Capacidad de carga máxima: 35 kg.",
+    "Cumple con estándar VESA (75x75, 100x100, 200x200, 300x300 mm).",
+    "Estructura metálica resistente con acabado en pintura electrostática.",
+    "Instalación rápida y sencilla con kit de tornillos y herrajes incluidos.",
+    "Permite ajustar el ángulo de visión para mayor comodidad y ergonomía.",
+    "Diseño moderno y discreto que se integra con cualquier decoración."
+        ]
+      },
+      {
+        id: 242,
+        name: "Mando a distancia",
+        image: "../img/accesorios tv/IMG-20250819-WA0034.jpg",
+        priceOriginal: "13.00",
+        priceDescuento: "$9.00",
+        specs: [
+"Compatible con televisores y dispositivos multimedia de varias marcas.",
+    "Botones ergonómicos para fácil manejo y navegación rápida.",
+    "Incluye funciones de control de volumen, canal y encendido/apagado.",
+    "Diseño compacto y ligero, ideal para usar en cualquier lugar del salón.",
+    "Funciona con pilas AA (no incluidas) para mayor autonomía.",
+    "Botón de acceso rápido a aplicaciones y funciones inteligentes.",
+    "Instalación y emparejamiento sencillos con dispositivos compatibles.",
+    "Construcción resistente y durable para uso diario prolongado."
+        ]
+      },
+      {
+        id: 243,
+        name: "Soporte de TV de 37 a 70 Pulgadas",
+        image: "../img/accesorios tv/IMG-20250819-WA0036.jpg",
+        priceOriginal: "$24.00",
+        priceDescuento: "$19.00",
+        specs: [
+"Acceso a más de 500,000 películas y series de Prime Video, Netflix, Disney+ y más.",
+    "Control remoto Alexa con funciones de voz para búsqueda y navegación rápida.",
+    "Streaming en Full HD 1080p con alta calidad de imagen y sonido.",
+    "Compatible con televisores con puerto HDMI y Wi-Fi integrado.",
+    "Instalación rápida y sencilla, sin necesidad de equipos adicionales.",
+    "Funciona con apps populares de entretenimiento, noticias y música.",
+    "Modo ahorro de energía que reduce el consumo cuando no está en uso.",
+    "Actualizaciones automáticas para nuevas funciones y mejoras de seguridad."
+        ]
+      },
+      {
+        id: 244,
+        name: "Control Remoto LG SMART TV",
+        image: "../img/accesorios tv/IMG-20250819-WA0037.jpg",
+        priceOriginal: "$15.00",
+        priceDescuento: "$10.00",
+        specs:[
+"Compatible con televisores LG Smart TV de varias series.",
+    "Botones ergonómicos y de fácil acceso para navegar en menús y aplicaciones.",
+    "Función de control de volumen, canal y encendido/apagado.",
+    "Incluye acceso rápido a aplicaciones populares como Netflix, YouTube y Prime Video.",
+    "Reconocimiento de voz para búsqueda y comandos inteligentes (si el televisor lo soporta).",
+    "Diseño ligero y cómodo, ideal para uso prolongado.",
+    "Instalación y emparejamiento sencillos con televisores LG compatibles.",
+    "Durabilidad garantizada para uso diario con construcción resistente."
+        ]
+      }
+
+    ];
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.body.innerHTML = "<h2>Producto no encontrado</h2>";
+        return;
+      }
+
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-name-breadcrumb').textContent = product.name;
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.name;
+      document.getElementById('price-original').textContent = product.priceOriginal;
+      document.getElementById('price-descuento').textContent = product.priceDescuento;
+
+      const specsBody = document.getElementById('specs-body');
+      specsBody.innerHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const specItem = document.createElement('div');
+        specItem.className = 'specs-item';
+        
+        const specName = document.createElement('div');
+        specName.className = 'specs-name';
+        specName.textContent = key;
+        
+        const specValue = document.createElement('div');
+        specValue.className = 'specs-value';
+        specValue.textContent = value;
+        
+        specItem.appendChild(specName);
+        specItem.appendChild(specValue);
+        specsBody.appendChild(specItem);
+      }
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
+      const quantityInput = document.getElementById('quantity-input');
+      let quantity = 1;
+      if (quantityInput) {
+        quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1) {
+          quantity = 1;
+        }
+      }
+      if (product) {
+        window.cart.addToCart(product, quantity);
+        window.cart.updateCartUI();
+        alert(`Producto "${product.name}" agregado al carrito (Cantidad: ${quantity})`);
+      } else {
+        alert('Producto no encontrado');
+      }
+    });
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+      const label = document.querySelector('.categories-label');
+      const menu = document.querySelector('.menu-items');
+
+      function toggleMenu() {
+        const isVisible = menu.style.display === 'grid';
+        menu.style.display = isVisible ? 'none' : 'grid';
+        label.setAttribute('aria-expanded', String(!isVisible));
+      }
+
+      label.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!label.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+          label.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Accesibilidad con Enter o espacio
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+    });
+
+
+    window.onload = loadProduct;
+
+ 
+  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nombre = localStorage.getItem('nombreUsuario');
+  if (nombre) {
+    const cuenta = document.getElementById('btn-cuenta');
+    if (cuenta) {
+      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
+        </svg>
+        ${nombre}`;
+    }
+  }
+});
+</script>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Compra segura</h4>
+        <ul>
+          <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
+          <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
+        </ul>
+        <h4>Eventos</h4>
+        <ul>
+          <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
+           <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Beneficios</h4>
+        <ul>
+          <li><a href="beneficios.html">Beneficios Innovatech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios al cliente</h4>
+        <ul>
+          <li><a href="formulario.html">Contáctenos</a></li>
+            <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+         <a href="  https://www.instagram.com/innovatech234/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="https://x.com/INNOVATECH244" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

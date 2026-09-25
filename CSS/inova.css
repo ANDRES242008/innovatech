@@ -1,0 +1,57 @@
+
+    :root {
+      --bg: #f6f7ff;
+      --gradient: linear-gradient(90deg, #6a5af9 0%, #1d1abe 60%, #ffd700 100%);
+      --accent: #6a5af9;
+      --muted: #5a5f75;
+      --card: #ffffff;
+      --radius: 14px;
+    }
+    body {
+      background: linear-gradient(180deg, var(--bg), #ffffff 60%);
+      font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial;
+      color:#202545;
+    }
+    .hero {
+      padding:4.5rem 1rem;
+      text-align:center;
+    }
+    .hero .title {
+      font-size:clamp(2rem, 4.5vw, 3.5rem);
+      font-weight:800;
+      letter-spacing:-0.02em;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero .subtitle {
+      color:var(--muted);
+      font-size:1.05rem;
+      margin-top:.6rem
+    }
+    .card-feature {
+      border:none;
+      border-radius:var(--radius);
+      box-shadow: 0 8px 30px rgba(35,69,110,0.06);
+      background: #fff;
+    }
+    footer {
+      margin-top:3rem;
+      padding:2rem 0;
+      color:var(--muted);
+    }
+    .btn-gradient {
+      background: var(--gradient);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: .7rem 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform .2s ease;
+    }
+    .btn-gradient:hover {
+      transform: scale(1.05);
+      color: white;
+    }

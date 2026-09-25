@@ -11,12 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const facebookBtn = document.querySelector('.facebook');
   const githubBtn = document.querySelector('.github');
 
-  // Usuarios permitidos
-  const usuarios = [
-    { username: "Daniel", password: "daniel24", nombre: "Daniel" },
-    { username: "Andres", password: "andres24", nombre: "Andres" },
-    { username: "Geraldo", password: "geraldo24", nombre: "Geraldo" }
-  ];
+   // Modo demo: autenticación real llega en Fase 3 (backend + JWT)H
 
   // Mostrar/Ocultar contraseña
   togglePassword.addEventListener('click', () => {
@@ -43,7 +38,8 @@ loginForm.addEventListener('submit', (e) => {
     const username = usernameInput.value.trim();
     const password = passwordInput.value.trim();
 
-    const usuario = usuarios.find(u => u.username === username && u.password === password);
+       // Modo demo: acepta cualquier usuario con contraseña de 6+ caracteres
+    const usuario = { nombre: username };
 
     if (usuario) {
         // --- 🔑 PASO CLAVE: Limpiar el carrito antes de la nueva sesión ---

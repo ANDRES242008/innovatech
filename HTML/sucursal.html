@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Sucursal Â· INNOVA TECH</title>
+    <title>Sucursal · INNOVA TECH</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 
@@ -293,7 +293,7 @@
         </a>
         <div class="header-left" aria-label="Enlaces de sucursal y contacto">
             <a href="../HTML/sucursal.html"><span class="icon"></span>Sucursales</a>
-            <a href="contactenos.html"><span class="icon"></span>ContÃ¡ctanos</a>
+            <a href="contactenos.html"><span class="icon"></span>Contáctanos</a>
             <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
         </div>
 
@@ -330,7 +330,7 @@
                     <div class="brand-left">
                         <div class="logo-it">IT</div>
                         <div>
-                            <h1>INNOVA TECH Â· Sucursal</h1>
+                            <h1>INNOVA TECH · Sucursal</h1>
                         </div>
                     </div>
 
@@ -345,8 +345,8 @@
                     <div class="row"><div class="label">Teléfono</div><div id="branchPhone" class="value">+503 7648 2812</div></div>
 
                     <div style="display:flex;gap:8px;margin-top:6px">
-                        <div class="pill" style="background:transparent;border:1px solid var(--glass-border);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700">Lun - Vie Â· 9:00 - 18:00</div>
-                        <div class="pill" style="background:transparent;border:1px solid var(--glass-border);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700">Sáb Â· 9:00 - 14:00</div>
+                        <div class="pill" style="background:transparent;border:1px solid var(--glass-border);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700">Lun - Vie · 9:00 - 18:00</div>
+                        <div class="pill" style="background:transparent;border:1px solid var(--glass-border);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700">Sáb · 9:00 - 14:00</div>
                     </div>
 
                     <div class="gallery">
@@ -473,11 +473,11 @@
         document.documentElement.setAttribute('data-theme', storedTheme);
         updateThemeButton(storedTheme);
 
-        function updateThemeButton(theme){ themeBtn.textContent = theme==='light' ? 'â˜€ï¸ Claro' : 'Oscuro'; }
+        function updateThemeButton(theme){ themeBtn.textContent = theme==='light' ? '☀️ Claro' : 'Oscuro'; }
         
         // Lógica del Mapa (Leaflet)
         const map = L.map('map', { zoomControl: false, dragging: true, scrollWheelZoom: false }).setView([branch.lat, branch.lng],16);
-        const light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{ attribution:'Â© CartoDB', maxZoom:19 });
+        const light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{ attribution:'© CartoDB', maxZoom:19 });
         const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{ attribution:'Esri', maxZoom:19 });
         light.addTo(map);
 

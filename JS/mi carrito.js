@@ -2,7 +2,7 @@
       {
         id: 1,
         name: "Adaptador OTG",
-        image: "../img/gadget/adaptador otg.jpeg",
+        image: "../assets/images/gadget/adaptador-otg.webp",
         priceOriginal: "$15.60",
         priceDescuento: "$6.99",
         specs: {
@@ -21,7 +21,7 @@
       {
         id: 2,
         name: "Anillo de luz",
-        image: "../img/gadget/anillo de luz.jpeg",
+        image: "../assets/images/gadget/anillo-de-luz.webp",
         priceOriginal: "$20.00",
         priceDescuento: "$12.00",
         specs: {
@@ -40,7 +40,7 @@
       {
         id: 3,
         name: "Cargador Inalambrico magnetico",
-        image: "../img/gadget/Cargador Inalambrico Magnetic.jpeg",
+        image: "../assets/images/gadget/cargador-inalambrico-magnetic.webp",
         priceOriginal: "$19.00",
         priceDescuento: "$9.00",
         specs: {
@@ -59,7 +59,7 @@
       {
         id: 4,
         name: "control bluetooth para tomar fotos",
-        image: "../img/gadget/Controle Remoto.jpeg",
+        image: "../assets/images/gadget/controle-remoto.webp",
         priceOriginal: "$15.00",
         priceDescuento: "$8.00",
         specs: {
@@ -77,7 +77,7 @@
       {
         id: 5,
         name: "guantes tactiles",
-        image: "../img/gadget/Guantes tactiless.jpeg",
+        image: "../assets/images/gadget/guantes-tactiless.webp",
         priceOriginal: "$29.00",
         priceDescuento: "$18.00",
         specs: {
@@ -96,7 +96,7 @@
       {
         id: 6,
         name: "Lampara para lectura",
-        image: "../img/gadget/lamapra de lentura.jpeg",
+        image: "../assets/images/gadget/lamapra-de-lentura.webp",
         priceOriginal: "$26.00",
         priceDescuento: "$14.50",
         specs: {
@@ -114,7 +114,7 @@
       {
         id: 7,
         name: "Lente macro",
-        image: "../img/gadget/lente macro.jpeg",
+        image: "../assets/images/gadget/lente-macro.webp",
         priceOriginal: "$24.00",
         priceDescuento: "$19.50",
         specs: {
@@ -133,7 +133,7 @@
       {
         id: 8,
         name: "soporte multiuso",
-        image: "../img/gadget/Mobile charger holding.jpeg",
+        image: "../assets/images/gadget/mobile-charger-holding.webp",
         priceOriginal: "$10.00",
         priceDescuento: "$5.00",
         specs: {
@@ -152,7 +152,7 @@
       {
         id: 9,
         name: "Powerban",
-        image: "../img/gadget/power ban.jpeg",
+        image: "../assets/images/gadget/power-ban.webp",
         priceOriginal: "$30.00",
         priceDescuento: "$25.50",
         specs: {
@@ -171,7 +171,7 @@
       {
         id: 10,
         name: "soporte para telefonos",
-        image: "../img/gadget/sostenedor de telefono.jpeg",
+        image: "../assets/images/gadget/sostenedor-de-telefono.webp",
         priceOriginal: "$18.00",
         priceDescuento: "$7.00",
         specs: {
@@ -190,7 +190,7 @@
       {
         id: 11,
         name: "Style pen",
-        image: "../img/gadget/style pen .jpeg",
+        image: "../assets/images/gadget/style-pen.webp",
         priceOriginal: "$9.00",
         priceDescuento: "$3.00",
         specs: {
@@ -209,7 +209,7 @@
       {
         id: 12,
         name: "Soporte magnetico para carro",
-        image: "../img/gadget/Suporte Magnético .jpeg",
+        image: "../assets/images/gadget/suporte-magnetico.webp",
         priceOriginal: "$7.00",
         priceDescuento: "$4.00",
         specs: {
@@ -230,7 +230,7 @@
       {
         id: 13,
         name: "Teclado para telefono y tablets",
-        image: "../img/gadget/teclado para telefono y tables.jpeg",
+        image: "../assets/images/gadget/teclado-para-telefono-y-tables.webp",
         priceOriginal: "$33.00",
         priceDescuento: "$22.00",
         specs: {
@@ -249,7 +249,7 @@
       {
         id: 14,
         name: "Tripode para fotos",
-        image: "../img/gadget/tripode flexible.jpeg",
+        image: "../assets/images/gadget/tripode-flexible.webp",
         priceOriginal: "$18.00",
         priceDescuento: "$7.00",
         specs: {
@@ -268,7 +268,7 @@
       {
         id: 15,
         name: "funda para celular",
-        image: "../img/gadget/funda con espaco para accses.jpeg",
+        image: "../assets/images/gadget/funda-con-espaco-para-accses.webp",
         priceOriginal: "$30.00",
         priceDescuento: "$17.00",
         specs: {
@@ -283,11 +283,11 @@
      {
         id: 16,
         name: "Nothing Phone 1 ",
-        image: "../img/celulares/Nothing Phone (1).jpeg",
+        image: "../assets/images/celulares/nothing-phone-1.webp",
         images: {
-          "blanco": "../img/celulares/Nothing Phone (1).jpeg",
+          "blanco": "../assets/images/celulares/nothing-phone-1.webp",
         
-          "negro": "../img/celulares/Köp Nothing phone (1) med abonnemang - Mobiltelefoner - Telenor i 2022 _ Mobiltelefoner, Reparera.jpeg"
+          "negro": "../assets/images/celulares/kop-nothing-phone-1-med-abonnemang-mobiltelefoner-telenor-i.webp"
         },
        priceOriginal: "$790.00",
        priceDescuento: "$690.00",
@@ -305,8 +305,8 @@
       {
         id: 17,
     name: "Galaxy S24 Ultra",
-    image: "../img/exclusivo/24blanco.jpeg",
-    images: { "blanco": "img/exclusivo/24blanco.jpeg", "negro": "../img/celulares/gaalxy34.jpeg" },
+    image: "../assets/images/exclusivo/24blanco.webp",
+    images: { "blanco": "../assets/images/exclusivo/24blanco.webp", "negro": "../assets/images/celulares/gaalxy34.webp" },
     priceOriginal: "$1200.00",
     priceDescuento: "$1000.00",
     specs: {
@@ -323,8 +323,8 @@
       {
         id: 18,
     name: "Samsung Galaxy A55 5G",
-    image: "../img/celulares/galaxy a 55 blanco.jpeg",
-    images: { "blanco": "../img/celulares/galaxy a 55 blanco.jpeg", "negro": "../img/celulares/galaxy a 55.jpeg" },
+    image: "../assets/images/celulares/galaxy-a-55-blanco.webp",
+    images: { "blanco": "../assets/images/celulares/galaxy-a-55-blanco.webp", "negro": "../assets/images/celulares/galaxy-a-55.webp" },
     priceOriginal: "$500.99",
     priceDescuento: "$450.99",
     specs: {
@@ -341,8 +341,8 @@
       {
        id: 19,
     name: "Iphone 16e",
-    image: "../img/celulares/Apple's iPhone 16e Is Here_ Features, Price, Colors, & More.jpeg",
-    images: { "blanco": "../img/celulares/Apple's iPhone 16e Is Here_ Features, Price, Colors, & More.jpeg", "negro": "../img/celulares/iPhone 16e (128 GB) - Preto - Distribuidor Autorizado.jpeg" },
+    image: "../assets/images/celulares/apple-s-iphone-16e-is-here-features-price-colors-more.webp",
+    images: { "blanco": "../assets/images/celulares/apple-s-iphone-16e-is-here-features-price-colors-more.webp", "negro": "../assets/images/celulares/iphone-16e-128-gb-preto-distribuidor-autorizado.webp" },
     priceOriginal: "$900.00",
     priceDescuento: "$800.50",
     specs: {
@@ -359,8 +359,8 @@
        {
     id: 20,
     name: "Samsung Galaxy A36 5G",
-  image: "../img/celulares/Samsung Galaxy A36 5g 128 Gb _ 6 Gb - Awesome White Neu & Eu.jpeg",
-    images: { "blanco": "../img/celulares/Samsung Galaxy A36 5g 128 Gb _ 6 Gb - Awesome White Neu & Eu.jpeg", "negro": "../img/celulares/Samsung Galaxy A36 5G Sim Free Smartphone w_ 8GB Ram & 256GB Storage - QVC UK.jpeg" },
+  image: "../assets/images/celulares/samsung-galaxy-a36-5g-128-gb-6-gb-awesome-white-neu-eu.webp",
+    images: { "blanco": "../assets/images/celulares/samsung-galaxy-a36-5g-128-gb-6-gb-awesome-white-neu-eu.webp", "negro": "../assets/images/celulares/samsung-galaxy-a36-5g-sim-free-smartphone-w-8gb-ram-256gb.webp" },
     priceOriginal: "$600.00",
     priceDescuento: "$549.00",
     specs: {
@@ -378,8 +378,8 @@
   {
     id: 21,
     name: "Iphone 11 pro max",
-    image: "../img/celulares/descarga.jpeg",
-    images: { "blanco": "../img/celulares/descarga.jpeg", "negro": "../img/celulares/descarga (1).jpeg" },
+    image: "../assets/images/celulares/descarga.webp",
+    images: { "blanco": "../assets/images/celulares/descarga.webp", "negro": "../assets/images/celulares/descarga-1.webp" },
     priceOriginal: "$500.00",
     priceDescuento: "$404.00",
     specs: {
@@ -397,8 +397,8 @@
   {
     id: 22,
     name: "Iphone 13 pro max",
-    image: "../img/celulares/iPhone 13 Pro Max.jpeg",
-    images: { "blanco": "../img/celulares/iPhone 13 Pro Max.jpeg", "negro": "../img/celulares/iphone 13 negro.jpeg" },
+    image: "../assets/images/celulares/iphone-13-pro-max.webp",
+    images: { "blanco": "../assets/images/celulares/iphone-13-pro-max.webp", "negro": "../assets/images/celulares/iphone-13-negro.webp" },
     priceOriginal: "$700.00",
     priceDescuento: "$590.50",
     specs: {
@@ -416,8 +416,8 @@
   {
     id: 23,
     name: "Iphone 14 pro max",
-    image: "../img/celulares/iphone.jpeg",
-    images: { "blanco": "../img/celulares/iphone.jpeg", "negro": "../img/celulares/iphone.jpeg" },
+    image: "../assets/images/celulares/iphone.webp",
+    images: { "blanco": "../assets/images/celulares/iphone.webp", "negro": "../assets/images/celulares/iphone.webp" },
     priceOriginal: "$1000.00",
     priceDescuento: "$850.00",
     specs: {
@@ -435,8 +435,8 @@
   {
     id: 24,
     name: "Oppo A91",
-    image:"../img/celulares/oppo a60 blanco.jpeg",
-    images: { "blanco": "../img/celulares/oppo a60 blanco.jpeg", "negro": "../img/celulares/Opoo a60 negro.jpeg" },
+    image:"../assets/images/celulares/oppo-a60-blanco.webp",
+    images: { "blanco": "../assets/images/celulares/oppo-a60-blanco.webp", "negro": "../assets/images/celulares/opoo-a60-negro.webp" },
     priceOriginal: "$210.00",
     priceDescuento: "$180.50",
     specs: {
@@ -454,8 +454,8 @@
   {
     id: 25,
     name: "Oneplus 12",
-    image: "../img/celulares/OnePlus 12 - Glacial White.jpeg",
-    images: { "blanco": "../img/celulares/OnePlus 12 - Glacial White.jpeg", "negro": "../img/celulares/Discover the Features of the OnePlus 12 - Technocastel.jpeg" },
+    image: "../assets/images/celulares/oneplus-12-glacial-white.webp",
+    images: { "blanco": "../assets/images/celulares/oneplus-12-glacial-white.webp", "negro": "../assets/images/celulares/discover-the-features-of-the-oneplus-12-technocastel.webp" },
     priceOriginal: "$600.00",
     priceDescuento: "$500.00",
      specs: {
@@ -473,8 +473,8 @@
   {
     id: 26,
     name: "Samsung Galaxy Z flip 7 FE",
-    image: "../img/celulares/Dimensiones filtradas del Galaxy Z Fold 7 y Galaxy Z Flip 7 prometen nuevos récords.jpeg",
-    images: { "blanco": "../img/celulares/Dimensiones filtradas del Galaxy Z Fold 7 y Galaxy Z Flip 7 prometen nuevos récords.jpeg", "negro": "../img/celulares/Samsung Galaxy Z Flip7 FE - 6,7_ Smartphone med 8GB RAM og 128GB Lager - Sort.jpeg" },
+    image: "../assets/images/celulares/dimensiones-filtradas-del-galaxy-z-fold-7-y-galaxy-z-flip-7.webp",
+    images: { "blanco": "../assets/images/celulares/dimensiones-filtradas-del-galaxy-z-fold-7-y-galaxy-z-flip-7.webp", "negro": "../assets/images/celulares/samsung-galaxy-z-flip7-fe-6-7-smartphone-med-8gb-ram-og.webp" },
     priceOriginal: "$1200.00",
     priceDescuento: "$1100.50",
     specs: {
@@ -492,8 +492,8 @@
   {
     id: 27,
     name: "VIVO X100 PRO",
-    image: "../img/celulares/VIVO X100 PRO blanco.jpeg",
-    images: { "blanco": "../img/celulares/VIVO X100 PRO blanco.jpeg", "negro": "../img/celulares/Vivo X100 Pro negro.jpeg" },
+    image: "../assets/images/celulares/vivo-x100-pro-blanco.webp",
+    images: { "blanco": "../assets/images/celulares/vivo-x100-pro-blanco.webp", "negro": "../assets/images/celulares/vivo-x100-pro-negro.webp" },
     priceOriginal: "$1040.00",
     priceDescuento: "$850.00",
     specs: {
@@ -512,8 +512,8 @@
   {
     id: 28,
     name: "OPPO find X8",
-    image: "../img/celulares/OPPO Find X8 Pro blanco.jpeg",
-    images: { "blanco": "../img/celulares/OPPO Find X8 Pro blanco.jpeg", "negro": "../img/celulares/OPPO Find X8 Pro negro.jpeg" },
+    image: "../assets/images/celulares/oppo-find-x8-pro-blanco.webp",
+    images: { "blanco": "../assets/images/celulares/oppo-find-x8-pro-blanco.webp", "negro": "../assets/images/celulares/oppo-find-x8-pro-negro.webp" },
     priceOriginal: "$260.00",
     priceDescuento: "$200.00",
     specs: {
@@ -532,8 +532,8 @@
   {
     id: 29,
     name: "Samsung Galaxy A26 5G",
-    image: "../img/celulares/Samsung Galaxy A26 5G Smartphone Exynos 1380, écran Super AMOLED FHD+ de 6,7_, 120 Hz, 50MP,.jpeg",
-    images: { "blanco": "../img/celulares/Samsung Galaxy A26 5G Smartphone Exynos 1380, écran Super AMOLED FHD+ de 6,7_, 120 Hz, 50MP,.jpeg", "negro": "../img/celulares/Samsung Galaxy A26 5g 128 Gb Black Dual Sim.jpeg" },
+    image: "../assets/images/celulares/samsung-galaxy-a26-5g-smartphone-exynos-1380-ecran-super.webp",
+    images: { "blanco": "../assets/images/celulares/samsung-galaxy-a26-5g-smartphone-exynos-1380-ecran-super.webp", "negro": "../assets/images/celulares/samsung-galaxy-a26-5g-128-gb-black-dual-sim.webp" },
     priceOriginal: "$414.00",
     priceDescuento: "$350.00",
     specs: {
@@ -551,8 +551,8 @@
   {
     id: 30,
     name: "OnePlus 13",
-    image: "../img/celulares/OnePlus 13 5G up for Pre-order on Amazon UK.jpeg",
-    images: { "blanco": "../img/celulares/OnePlus 13 5G up for Pre-order on Amazon UK.jpeg", "negro": "../img/celulares/oneplus nefro.jpeg" },
+    image: "../assets/images/celulares/oneplus-13-5g-up-for-pre-order-on-amazon-uk.webp",
+    images: { "blanco": "../assets/images/celulares/oneplus-13-5g-up-for-pre-order-on-amazon-uk.webp", "negro": "../assets/images/celulares/oneplus-nefro.webp" },
     priceOriginal: "$700.00",
     priceDescuento: "$600.00",
     specs: {
@@ -571,7 +571,7 @@
   {
         id: 31,
        name: "Apple iPad Pro 13",
-    image: "../img/tabletas/Apple iPad Pro 13-.jpeg",
+    image: "../assets/images/tabletas/apple-ipad-pro-13.webp",
     priceOriginal: "$1399.00",
     priceDescuento: "$1199.00",
     specs: {
@@ -589,7 +589,7 @@
       {
         id: 32,
         name: "Samsung Galaxy Tab S10 +",
-    image: "../img/tabletas/s10+.jpeg",
+    image: "../assets/images/tabletas/s10.webp",
     priceOriginal: "$1299.00",
     priceDescuento: "$1149.00",
     specs: {
@@ -607,7 +607,7 @@
       {
         id: 33,
         name: "Xiaomi Pad 6S Pro",
-    image: "../img/tabletas/Xiaomi Pad 6S Pro Global Version.jpeg",
+    image: "../assets/images/tabletas/xiaomi-pad-6s-pro-global-version.webp",
     priceOriginal: "$749.00",
     priceDescuento: "$669.00",
     specs: {
@@ -625,7 +625,7 @@
       {
         id:34,
          name: "HONOR MagicPad 2",
-    image: "../img/tabletas/Honor-MagicPad-2.jpg",
+    image: "../assets/images/tabletas/honor-magicpad-2.webp",
     priceOriginal: "$729.00",
     priceDescuento: "$599.00",
     specs: {
@@ -643,7 +643,7 @@
       {
         id: 35,
         name: "Lenovo Yoga Tab Plus",
-        image: "../img/tabletas/LENOVO Yoga Tab .jpeg",
+        image: "../assets/images/tabletas/lenovo-yoga-tab.webp",
         priceOriginal: "$799.00",
         priceDescuento: "$699.00",
         specs: {
@@ -661,7 +661,7 @@
       {
         id: 36,
        name: "Samsung Galaxy Tab S10 FE+",
-    image: "../img/tabletas/Samsung Galaxy Tab S10 Fe+ .jpeg",
+    image: "../assets/images/tabletas/samsung-galaxy-tab-s10-fe.webp",
       priceOriginal: "$649.00",
     priceDescuento: "$579.00",
     specs: {
@@ -679,7 +679,7 @@
       {
         id: 37,
        name: "Xiaomi Pad 7 Pro",
-    image: "../img/tabletas/xiami pad 7.jpeg",
+    image: "../assets/images/tabletas/xiami-pad-7.webp",
     priceOriginal: "$699.00",
     priceDescuento: "$639.00",
     specs: {
@@ -697,7 +697,7 @@
       {
         id: 38,
       name: "Google Pixel Tablet",
-    image: "../img/tabletas/google pixle.jpeg",
+    image: "../assets/images/tabletas/google-pixle.webp",
     priceOriginal: "$599.00",
     priceDescuento: "$529.00",
     specs: {
@@ -715,7 +715,7 @@
       {
         id: 39,
        name: "Huawei MatePad 11.5",
-    image: "../img/tabletas/huawei.jpeg",
+    image: "../assets/images/tabletas/huawei.webp",
     priceOriginal: "$549.00",
     priceDescuento: "$479.00",
     specs: {
@@ -733,7 +733,7 @@
       {
         id: 40,
        name: "iPad (2025)",
-    image: "../img/tabletas/Apple iPad 11-inch.jpeg",
+    image: "../assets/images/tabletas/apple-ipad-11-inch.webp",
     priceOriginal: "$599.00",
     priceDescuento: "$549.00",
     specs: {
@@ -751,7 +751,7 @@
       {
         id: 41,
         name: "Lenovo Tab M11",
-    image: "../img/tabletas/Lenovo Tab M11.jpeg",
+    image: "../assets/images/tabletas/lenovo-tab-m11.webp",
     priceOriginal: "$529.00",
     priceDescuento: "$479.00",
     specs: {
@@ -769,7 +769,7 @@
       {
         id: 42,
        name: "Samsung Galaxy Tab A9",
-    image: "../img/tabletas/A9 TABLE.jpeg",
+    image: "../assets/images/tabletas/a9-table.webp",
     priceOriginal: "$519.00",
     priceDescuento: "$469.00",
     specs: {
@@ -787,7 +787,7 @@
       {
         id: 43,
         name: "Amazon Fire HD 10",
-    image: "../img/tabletas/amanzo 10HD.jpeg",
+    image: "../assets/images/tabletas/amanzo-10hd.webp",
     priceOriginal: "$509.00",
     priceDescuento: "$459.00",
     specs: {
@@ -805,7 +805,7 @@
       {
         id: 44,
          name: "Amazon Fire 7",
-    image: "../img/tabletas/Amazon Fire 7 .jpeg",
+    image: "../assets/images/tabletas/amazon-fire-7.webp",
     priceOriginal: "$505.00",
     priceDescuento: "$449.00",
     specs: {
@@ -823,7 +823,7 @@
       {
         id: 45,
         name: "Apple iPad mini (2024)",
-        image: "../img/tabletas/Apple iPad mini.jpeg",
+        image: "../assets/images/tabletas/apple-ipad-mini.webp",
         priceOriginal: "$629.00",
         priceDescuento: "$579.00",
         specs: {
@@ -842,7 +842,7 @@
   {
         id: 46,
         name: "Sagencom D27",
-        image: "../img/telefonos fijos/fijo 3.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo-3.webp",
         priceOriginal: "$40.00",
         priceDescuento: "$30.00",
         specs: {
@@ -859,7 +859,7 @@
       {
         id: 47,
         name: "Panasonic 40s",
-        image: "../img/telefonos fijos/fijo 4.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo-4.webp",
         priceOriginal: "$39.00",
         priceDescuento: "$34.00",
         specs: {
@@ -875,7 +875,7 @@
       {
         id: 48,
         name: "philips 20t",
-        image: "../img/telefonos fijos/fijo1.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo1.webp",
         priceOriginal: "$50.00",
         priceDescuento: "$40.00",
         specs: {
@@ -892,7 +892,7 @@
       {
         id: 49,
         name: "Gigaset 10gen",
-        image: "../img/telefonos fijos/fijo10.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo10.webp",
         priceOriginal: "$55.00",
         priceDescuento: "$39.00",
         specs: {
@@ -908,7 +908,7 @@
       {
         id: 50,
         name: "gigaset 5gen",
-        image: "../img/telefonos fijos/fijo11.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo11.webp",
         priceOriginal: "$40.00",
         priceDescuento: "$33.00",
         specs: {
@@ -925,7 +925,7 @@
       {
         id: 51,
         name: "Vtech 12l",
-        image: "../img/telefonos fijos/fijo12.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo12.webp",
         priceOriginal: "$44.00",
         priceDescuento: "$15.00",
         specs: {
@@ -942,7 +942,7 @@
       {
         id: 52,
         name: "Vtech 10l",
-        image: "../img/telefonos fijos/fijo13.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo13.webp",
         priceOriginal: "$45.00",
         priceDescuento: "$35.00",
         specs: {
@@ -958,7 +958,7 @@
       {
         id: 53,
         name: "Panasonic 20s",
-        image: "../img/telefonos fijos/fijo14.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo14.webp",
         priceOriginal: "$60.00",
         priceDescuento: "$50.00",
         specs: {
@@ -974,7 +974,7 @@
       {
         id: 54,
         name: "Gigaset 7gen",
-        image: "../img/telefonos fijos/fijo2.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo2.webp",
         priceOriginal: "$30.00",
         priceDescuento: "$25.00",
         specs: {
@@ -991,7 +991,7 @@
       {
         id: 55,
         name: "panasonic 10s",
-        image: "../img/telefonos fijos/fijo5.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo5.webp",
         priceOriginal: "$18.00",
         priceDescuento: "$15.00",
         specs: {
@@ -1007,7 +1007,7 @@
       {
         id: 56,
         name: "Avaya 5progen",
-        image: "../img/telefonos fijos/Avaya 1416 digital phone 1416 telephone IP Office.jpg",
+        image: "../assets/images/telefonos-fijos/avaya-1416-digital-phone-1416-telephone-ip-office.webp",
         priceOriginal: "$30.00",
         priceDescuento: "$24.00",
         specs: {
@@ -1024,7 +1024,7 @@
       {
         id: 57,
         name: "Gigaset 8gen",
-        image: "../img/telefonos fijos/fijo7.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo7.webp",
         priceOriginal: "$80.00",
         priceDescuento: "$40.00",
         specs: {
@@ -1042,7 +1042,7 @@
       {
         id: 58,
         name: "Gigaset 4gen",
-        image: "../img/telefonos fijos/fijo8.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo8.webp",
         priceOriginal: "48.00",
         priceDescuento: "$36.00",
         specs: {
@@ -1059,7 +1059,7 @@
       {
         id: 59,
         name: "Gigaset pro 12gen",
-        image: "../img/telefonos fijos/fijo9.jpeg",
+        image: "../assets/images/telefonos-fijos/fijo9.webp",
         priceOriginal: "$25.00",
         priceDescuento: "$20.00",
         specs: {
@@ -1075,7 +1075,7 @@
       {
         id: 60,
         name: "gigaset note 19gen",
-        image: "../img/telefonos fijos/descarga.jpg",
+        image: "../assets/images/telefonos-fijos/descarga.webp",
         priceOriginal: "$30.00",
         priceDescuento: "$17.00",
         specs: {
@@ -1092,7 +1092,7 @@
  {
   id: 76,
   name: "iPhone 14 Pro Max",
-  image: "../img/exclusivo/iphone14 2.jpeg",
+  image: "../assets/images/exclusivo/iphone14-2.webp",
   priceOriginal: "$1200.00",
   priceDescuento: "$999.00",
   specs: {
@@ -1110,7 +1110,7 @@
 {
   id: 77,
   name: "iPad Air 5",
-  image: "../img/exclusivo/TwoiPadAir5.jpeg",
+  image: "../assets/images/exclusivo/twoipadair5.webp",
   priceOriginal: "$800.00",
   priceDescuento: "$699.00",
   specs: {
@@ -1127,7 +1127,7 @@
 {
   id: 78,
   name: "Samsung Galaxy S24 Ultra",
-  image: "../img/celulares/gaalxy34.jpeg",
+  image: "../assets/images/celulares/gaalxy34.webp",
   priceOriginal: "$1400.00",
   priceDescuento: "$1199.00",
   specs: {
@@ -1144,7 +1144,7 @@
 {
   id: 79,
   name: "Xiaomi Pad 6 Pro",
-  image: "../img/exclusivo/Xiaomi Pad 6.jpeg",
+  image: "../assets/images/exclusivo/xiaomi-pad-6.webp",
   priceOriginal: "$600.00",
   priceDescuento: "$499.00",
   specs: {
@@ -1161,7 +1161,7 @@
 {
   id: 80,
   name: "Apple Watch Series 9",
-  image: "../img/exclusivo/apleee waht 9 series.jpeg",
+  image: "../assets/images/exclusivo/apleee-waht-9-series.webp",
   priceOriginal: "$499.00",
   priceDescuento: "$429.00",
   specs: {
@@ -1178,7 +1178,7 @@
 {
   id: 81,
   name: "Sony WH-1000XM5",
-  image: "../img/exclusivo/audisoni2.jpeg",
+  image: "../assets/images/exclusivo/audisoni2.webp",
   priceOriginal: "$399.00",
   priceDescuento: "$349.00",
   specs: {
@@ -1193,7 +1193,7 @@
 {
   id: 82,
   name: "GoPro HERO12 Black",
-  image: "../img/exclusivo/gopro2.jpeg",
+  image: "../assets/images/exclusivo/gopro2.webp",
   priceOriginal: "$499.00",
   priceDescuento: "$429.00",
   specs: {
@@ -1208,7 +1208,7 @@
 {
   id: 83,
   name: "Nintendo Switch OLED",
-  image: "../img/exclusivo/OLED.jpeg",
+  image: "../assets/images/exclusivo/oled.webp",
   priceOriginal: "$300.00",
   priceDescuento: "$260.00",
   specs: {
@@ -1223,7 +1223,7 @@
 {
   id: 84,
   name: "DJI Mini 4 Pro",
-  image: "../img/exclusivo/dron.jpeg",
+  image: "../assets/images/exclusivo/dron.webp",
   priceOriginal: "$999.00",
   priceDescuento: "$849.00",
   specs: {
@@ -1237,7 +1237,7 @@
 {
   id: 85,
   name: "Logitech MX Master 3S",
-  image: "../img/exclusivo/mouseamazon2.jpeg",
+  image: "../assets/images/exclusivo/mouseamazon2.webp",
   priceOriginal: "$129.00",
   priceDescuento: "$99.00",
   specs: {
@@ -1252,7 +1252,7 @@
 {
   id: 86,
   name: "Samsung Galaxy Tab A9",
-  image: "../img/exclusivo/A9+ blanca.jpeg",
+  image: "../assets/images/exclusivo/a9-blanca.webp",
   priceOriginal: "$899.00",
   priceDescuento: "$799.00",
   specs: {
@@ -1268,7 +1268,7 @@
 {
   id: 87,
   name: "Amazon Echo Dot 5th Gen",
-  image: "../img/exclusivo/bocina.jpeg",
+  image: "../assets/images/exclusivo/bocina.webp",
   priceOriginal: "$69.00",
   priceDescuento: "$49.00",
   specs: {
@@ -1282,7 +1282,7 @@
 {
   id: 88,
   name: "Xbox Series X",
-  image: "../img/exclusivo/Xbox series x.jpeg",
+  image: "../assets/images/exclusivo/xbox-series-x.webp",
   priceOriginal: "$399.00",
   priceDescuento: "$349.00",
   specs: {
@@ -1296,7 +1296,7 @@
 {
   id: 89,
   name: "Canon EOS R10",
-  image: "../img/exclusivo/canon10.jpeg",
+  image: "../assets/images/exclusivo/canon10.webp",
   priceOriginal: "$999.00",
   priceDescuento: "$899.00",
   specs: {
@@ -1310,7 +1310,7 @@
 {
   id: 91,
   name: "MacBook Pro M4",
-  image: "../img/exclusivo/silver m4.jpeg",
+  image: "../assets/images/exclusivo/silver-m4.webp",
   priceOriginal: "$2200.00",
   priceDescuento: "$1799.00",
   specs: {
@@ -1327,7 +1327,7 @@
 {
   id: 92,
   name: "Surface Pro 11",
-  image: "../img/exclusivo/surface 11 blanca.jpeg",
+  image: "../assets/images/exclusivo/surface-11-blanca.webp",
   priceOriginal: "$1500.00",
   priceDescuento: "$1275.00",
   specs: {
@@ -1375,7 +1375,7 @@
 {
   id: 95,
   name: "JBL Vibe Bean",
-  image: "../img/exclusivo/JBL VIBE BLANCOS.jpeg",
+  image: "../assets/images/exclusivo/jbl-vibe-blancos.webp",
   priceOriginal: "$299.00",
   priceDescuento: "$263.00",
   specs: {
@@ -1407,7 +1407,7 @@
 {
   id: 97,
   name: "Razer Blade Stealth 13",
-  image: "../img/exclusivo/razer blade blanca.jpeg",
+  image: "../assets/images/exclusivo/razer-blade-blanca.webp",
   priceOriginal: "$3200.00",
   priceDescuento: "$2656.00",
   specs: {
@@ -1470,7 +1470,7 @@
 {
     id: 140,
     name: "Altavoz JBL 1100 W Bluetooth ",
-    image: "../img/audio pro/Altavoz JBL 1100 W Bluetooth Negro PartyBox Ultimate_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/altavoz-jbl-1100-w-bluetooth-negro-partybox-ultimate-le.webp",
     priceOriginal: "$2,099.00",
     priceDescuento: "$1,749.03",
     specs: {
@@ -1488,7 +1488,7 @@
   {
     id: 141,
     name: "Micrófono inalámbrico  330158",
-    image: "../img/audio pro/Micrófono inalámbrico RadioShack Negro 3301587_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/microfono-inalambrico-radioshack-negro-3301587-le-upscale.webp",
     priceOriginal: "$39.99",
     priceDescuento: "$33.99",
     specs: {
@@ -1506,7 +1506,7 @@
   {
     id: 142,
     name: "Micrófono USB para transmisión con filtro ",
-    image: "../img/audio pro/Micrófono USB para transmisión con filtro RadioShack Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/microfono-usb-para-transmision-con-filtro-radioshack-negro.webp",
     priceOriginal: "$49.99",
     priceDescuento: "$42.49",
     specs: {
@@ -1524,7 +1524,7 @@
   {
     id: 143,
     name: "Parlante de torre  4001942 150 W",
-    image: "../img/audio pro/Parlante de torre RadioShack 4001942 150 W_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/parlante-de-torre-radioshack-4001942-150-w-le-upscale.webp",
     priceOriginal: "$999.00",
     priceDescuento: "$699.03",
     specs: {
@@ -1542,7 +1542,7 @@
   {
     id: 144,
     name: "Parlante LG XBOOM RNC7 420 W Bluetooth",
-    image: "../img/audio pro/Parlante LG XBOOM RNC7 420 W Bluetooth Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/parlante-lg-xboom-rnc7-420-w-bluetooth-negro-le-upscale.webp",
     priceOriginal: "$249.99",
     priceDescuento: "$184.26",
     specs: {
@@ -1560,7 +1560,7 @@
   {
     id: 145,
     name: "Parlante  Activo 4001923 60 W Bluetooth ",
-    image: "../img/audio pro/Parlante RadioShack Activo 4001923 60 W Bluetooth Negro_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/parlante-radioshack-activo-4001923-60-w-bluetooth-negro-le.webp",
     priceOriginal: "$299.99",
     priceDescuento: "$280.00",
     specs: {
@@ -1578,7 +1578,7 @@
   {
     id: 146,
     name: "Parlante Sony 1000 Watts Bluetooth  SRSULT1000",
-    image: "../img/audio pro/Parlante Sony 1000 Watts Bluetooth Negro SRSULT1000_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/parlante-sony-1000-watts-bluetooth-negro-srsult1000-le.webp",
     priceOriginal: "$599.00",
     priceDescuento: "$479.02",
     specs: {
@@ -1596,7 +1596,7 @@
   {
     id: 147,
     name: "Parlantes  Activo dual 500 W Bluetooth ",
-    image: "../img/audio pro/Parlantes RadioShack Activo dual 500 W Bluetooth Negro_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/parlantes-radioshack-activo-dual-500-w-bluetooth-negro-le.webp",
     priceOriginal: "$599.00",
     priceDescuento: "$461.23",
     specs: {
@@ -1614,7 +1614,7 @@
   {
     id: 148,
     name: "Sistema de micrófono inalámbrico DJI Negro Mic Mini",
-    image: "../img/audio pro/Sistema de micrófono inalámbrico DJI Negro Mic Mini_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/sistema-de-microfono-inalambrico-dji-negro-mic-mini-le.webp",
     priceOriginal: "$399.00",
     priceDescuento: "$323.19",
     specs: {
@@ -1632,7 +1632,7 @@
   {
     id: 149,
     name: "Sistema de micrófonos inalámbricos ",
-    image: "../img/audio pro/Sistema de micrófonos inalámbricos RadioShack Negro_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/sistema-de-microfonos-inalambricos-radioshack-negro-le.webp",
     priceOriginal: "$499.00",
     priceDescuento: "$384.23",
     specs: {
@@ -1650,7 +1650,7 @@
   {
     id: 150,
     name: "Micrófono 2607050",
-    image: "../img/audio pro/Micrófono Radioshack 2607050_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/microfono-radioshack-2607050-le-upscale-balanced-x4-tone.webp",
     priceOriginal: "$149.00",
     priceDescuento: "$119.02",
     specs: {
@@ -1667,7 +1667,7 @@
   {
     id: 151,
     name: "Megáfono 3202715 25 W ",
-    image: "../img/audio pro/Megáfono RadioShack 3202715 25 W Blanco y rojo_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/megafono-radioshack-3202715-25-w-blanco-y-rojo-le-upscale.webp",
     priceOriginal: "$699.00",
     priceDescuento: "$573.18",
     specs: {
@@ -1685,7 +1685,7 @@
   {
     id: 152,
     name: "Megáfono  3202716 75W ",
-    image: "../img/audio pro/Megáfono RadioShack 3202716 75W Blanco con Azul_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/megafono-radioshack-3202716-75w-blanco-con-azul-le-upscale.webp",
     priceOriginal: "249.00",
     priceDescuento: "$174.03",
     specs: {
@@ -1703,7 +1703,7 @@
   {
     id: 153,
     name: "Karaoke Portátil  4001970 ",
-    image: "../img/audio pro/Karaoke Portátil RadioShack 4001970 Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/karaoke-portatil-radioshack-4001970-negro-le-upscale.webp",
     priceOriginal: "$799.00",
     priceDescuento: "$599.25",
     specs: {
@@ -1721,7 +1721,7 @@
   {
     id: 154,
     name: "Altavoz tipo torre  240 W Bluetooth ",
-    image: "../img/audio pro/Altavoz tipo torre RadioShack 240 W Bluetooth Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/altavoz-tipo-torre-radioshack-240-w-bluetooth-negro-le.webp",
     priceOriginal: "$299.00",
     priceDescuento: "$269.01",
     specs: {
@@ -1740,10 +1740,10 @@
   {
     id: 128,
     name: "Bocina JBL Boombox 3 Wi-Fi 80W",
-    image: "../img/audio personal/Bocina jbl Boombox 3 Wi-Fi 80W negra.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-boombox-3-wi-fi-80w-negra.webp",
     images: {
-      "blanco": "../img/audio personal/Bocina jbl Boombox 3 Wi-Fi 80W negra.jpg",
-      "negro": "../img/audio personal/Bocina jbl Boombox 3 Wi-Fi 80W negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-boombox-3-wi-fi-80w-negra.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-boombox-3-wi-fi-80w-negra.webp"
     },
     priceOriginal: "$600.00",
     priceDescuento: "$498.00",
@@ -1761,10 +1761,10 @@
   {
     id: 129,
     name: "Bocina JBL Clip 4",
-    image: "../img/audio personal/Bocina jbl clip 4 blanca.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-clip-4-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/Bocina jbl clip 4 blanca.jpg",
-      "negro": "../img/audio personal/Bocina jbl clip 4 negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-clip-4-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-clip-4-negra.webp"
     },
     priceOriginal: "$70.00",
     priceDescuento: "$59.50",
@@ -1782,10 +1782,10 @@
   {
     id: 130,
     name: "Bocina JBL Flip 6",
-    image: "../img/audio personal/JBL Flip 5 blanca.jpg",
+    image: "../assets/images/audio-personal/jbl-flip-5-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/JBL Flip 5 blanca.jpg",
-      "negro": "../img/audio personal/Bocina jbl flip 6 negra.jpg"
+      "blanco": "../assets/images/audio-personal/jbl-flip-5-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-flip-6-negra.webp"
     },
     priceOriginal: "$130.00",
     priceDescuento: "$110.50",
@@ -1803,10 +1803,10 @@
   {
     id: 131,
     name: "Bocina JBL Go 3",
-    image: "../img/audio personal/BOcina jbl go 3 blanca.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-go-3-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/BOcina jbl go 3 blanca.jpg",
-      "negro": "../img/audio personal/BOcina jbl go 3 negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-go-3-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-go-3-negra.webp"
     },
     priceOriginal: "$50.00",
     priceDescuento: "$37.50",
@@ -1824,10 +1824,10 @@
   {
     id: 132,
     name: "Bocina JBL Go 4",
-    image: "../img/audio personal/Bocina jbl go4 blanca.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-go4-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/Bocina jbl go4 blanca.jpg",
-      "negro": "../img/audio personal/Bocina jbl go4 negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-go4-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-go4-negra.webp"
     },
     priceOriginal: "$70.00",
     priceDescuento: "$49.00",
@@ -1845,10 +1845,10 @@
   {
     id: 133,
     name: "Ultimate Ears Megaboom 3",
-    image: "../img/audio personal/ultimate ear megaboom 3 blanca.jpg",
+    image: "../assets/images/audio-personal/ultimate-ear-megaboom-3-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/ultimate ear megaboom 3 blanca.jpg",
-      "negro": "../img/audio personal/ultimate ear megaboom 3 blanca.jpg"
+      "blanco": "../assets/images/audio-personal/ultimate-ear-megaboom-3-blanca.webp",
+      "negro": "../assets/images/audio-personal/ultimate-ear-megaboom-3-blanca.webp"
     },
     priceOriginal: "$200.00",
     priceDescuento: "$162.00",
@@ -1866,10 +1866,10 @@
   {
     id: 134,
     name: "Ultimate Ears Megaboom 4",
-    image: "../img/audio personal/ultimate ear megaboom 4 negra.webp",
+    image: "../assets/images/audio-personal/ultimate-ear-megaboom-4-negra.webp",
     images: {
-      "blanco": "../img/audio personal/ultimate ear megaboom 4 negra.webp",
-      "negro": "../img/audio personal/ultimate ear megaboom 4 negra.webp"
+      "blanco": "../assets/images/audio-personal/ultimate-ear-megaboom-4-negra.webp",
+      "negro": "../assets/images/audio-personal/ultimate-ear-megaboom-4-negra.webp"
     },
     priceOriginal: "$250.00",
     priceDescuento: "$202.50",
@@ -1887,10 +1887,10 @@
   {
     id: 135,
     name: "Ultimate Ears Wonderboom",
-    image: "../img/audio personal/ultimate ears wonderboom negra.webp",
+    image: "../assets/images/audio-personal/ultimate-ears-wonderboom-negra.webp",
     images: {
-      "blanco": "../img/audio personal/ultimate ears wonderboom negra.webp",
-      "negro": "../img/audio personal/ultimate ears wonderboom negra.webp"
+      "blanco": "../assets/images/audio-personal/ultimate-ears-wonderboom-negra.webp",
+      "negro": "../assets/images/audio-personal/ultimate-ears-wonderboom-negra.webp"
     },
     priceOriginal: "$100.00",
     priceDescuento: "$77.00",
@@ -1908,10 +1908,10 @@
   {
     id: 136,
     name: "Sony SRS-XB100",
-    image: "../img/audio personal/SONY SRS-XB100 negra.jpg",
+    image: "../assets/images/audio-personal/sony-srs-xb100-negra.webp",
     images: {
-      "blanco": "../img/audio personal/SONY SRS-XB100 negra.jpg",
-      "negro": "../img/audio personal/SONY SRS-XB100 negra.jpg"
+      "blanco": "../assets/images/audio-personal/sony-srs-xb100-negra.webp",
+      "negro": "../assets/images/audio-personal/sony-srs-xb100-negra.webp"
     },
     priceOriginal: "$70.00",
     priceDescuento: "$57.40",
@@ -1929,10 +1929,10 @@
   {
     id: 137,
     name: "JBL Charge 6",
-    image: "../img/audio personal/jbl charge 6 blanca.jpg",
+    image: "../assets/images/audio-personal/jbl-charge-6-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/jbl charge 6 blanca.jpg",
-      "negro": "../img/audio personal/jbl charge 6 blanca.jpg"
+      "blanco": "../assets/images/audio-personal/jbl-charge-6-blanca.webp",
+      "negro": "../assets/images/audio-personal/jbl-charge-6-blanca.webp"
     },
     priceOriginal: "$180.00",
     priceDescuento: "$153.00",
@@ -1950,10 +1950,10 @@
   {
     id: 138,
     name: "JBL Flip 5",
-    image: "../img/audio personal/JBL Flip 5 negra.jpg",
+    image: "../assets/images/audio-personal/jbl-flip-5-negra.webp",
     images: {
-      "blanco": "../img/audio personal/JBL Flip 5 negra.jpg",
-      "negro": "../img/audio personal/JBL Flip 5 negra.jpg"
+      "blanco": "../assets/images/audio-personal/jbl-flip-5-negra.webp",
+      "negro": "../assets/images/audio-personal/jbl-flip-5-negra.webp"
     },
     priceOriginal: "$120.00",
     priceDescuento: "$103.20",
@@ -1971,10 +1971,10 @@
   {
     id: 139,
     name: "Sony ULT Field 5",
-    image: "../img/audio personal/SONY ULT FIELD 5 blanca.jpg",
+    image: "../assets/images/audio-personal/sony-ult-field-5-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/SONY ULT FIELD 5 blanca.jpg",
-      "negro": "../img/audio personal/SONY ULT FIELD 5 blanca.jpg"
+      "blanco": "../assets/images/audio-personal/sony-ult-field-5-blanca.webp",
+      "negro": "../assets/images/audio-personal/sony-ult-field-5-blanca.webp"
     },
     priceOriginal: "$300.00",
     priceDescuento: "$270.00",
@@ -1994,11 +1994,11 @@
   {
         id: 101,
         name: "Audifonos JBL Synchros E50 BT",
-        image: "../img/audifonos/Audifonos JBL Synchros E50 BT blanco.jpg",
+        image: "../assets/images/audifonos/audifonos-jbl-synchros-e50-bt-blanco.webp",
         images: {
-          "blanco": "../img/audifonos/Audifonos JBL Synchros E50 BT blanco.jpg",
+          "blanco": "../assets/images/audifonos/audifonos-jbl-synchros-e50-bt-blanco.webp",
         
-          "negro": "../img/audifonos/JBL E50 Synchros Headphones.jpeg"
+          "negro": "../assets/images/audifonos/jbl-e50-synchros-headphones.webp"
         },
         priceOriginal: "$150.00",
         priceDescuento: "$130.05",
@@ -2018,11 +2018,11 @@
       {
         id: 102,
         name: "Audifonos Bose",
-       image: "../img/audifonos/Audífonos Bluetooth Quietcomfort White Smoke___.jpeg",
+       image: "../assets/images/audifonos/audifonos-bluetooth-quietcomfort-white-smoke.webp",
         images: {
-          "blanco": "../img/audifonos/Audífonos Bluetooth Quietcomfort White Smoke___.jpeg",
+          "blanco": "../assets/images/audifonos/audifonos-bluetooth-quietcomfort-white-smoke.webp",
         
-          "negro": "../img/audifonos/Audífonos de Diadema Inalámbricos Bose QuietComfort con Noise Cancelling.jpeg"
+          "negro": "../assets/images/audifonos/audifonos-de-diadema-inalambricos-bose-quietcomfort-con.webp"
         },
         priceOriginal: "$369.00",
         priceDescuento: "$217.70",
@@ -2041,11 +2041,11 @@
       {
         id: 103,
         name: "Audifonos JBL Tune flex 2 con ANC",
-       image: "../img/audifonos/JBL Tune Flex True Wireless Noise Cancelling Earbuds - White.jpeg",
+       image: "../assets/images/audifonos/jbl-tune-flex-true-wireless-noise-cancelling-earbuds-white.webp",
         images: {
-          "blanco": "../img/audifonos/JBL Tune Flex True Wireless Noise Cancelling Earbuds - White.jpeg",
+          "blanco": "../assets/images/audifonos/jbl-tune-flex-true-wireless-noise-cancelling-earbuds-white.webp",
         
-          "negro": "../img/audifonos/audpp.jpg"
+          "negro": "../assets/images/audifonos/audpp.webp"
         },
         priceOriginal: "$99.90",
         priceDescuento: "$89.90",
@@ -2067,11 +2067,11 @@
       {
         id: 104,
         name: "Audifonos Gaming JBL Quantum 800",
-      image: "../img/audifonos/Słuchawki JBL Quantum 100P Nauszne.jpeg",
+      image: "../assets/images/audifonos/suchawki-jbl-quantum-100p-nauszne.webp",
         images: {
-          "blanco": "../img/audifonos/Słuchawki JBL Quantum 100P Nauszne.jpeg",
+          "blanco": "../assets/images/audifonos/suchawki-jbl-quantum-100p-nauszne.webp",
         
-          "negro": "../img/audifonos/audifonos amingjbl.jpg"
+          "negro": "../assets/images/audifonos/audifonos-amingjbl.webp"
         },
         priceOriginal: "$150.00",
         priceDescuento: "$124.05",
@@ -2091,11 +2091,11 @@
       {
         id:105,
         name: "Audifonos inalambricos JBL tune 520 Over Ear",
-      image: "../img/audifonos/☁️.jpeg",
+      image: "../assets/images/audifonos/imagen.webp",
         images: {
-          "blanco": "../img/audifonos/☁️.jpeg",
+          "blanco": "../assets/images/audifonos/imagen.webp",
         
-          "negro": "../img/audifonos/aujbl.jpg"
+          "negro": "../assets/images/audifonos/aujbl.webp"
         },
         priceOriginal: "$49.99",
         priceDescuento: "$39.02",
@@ -2114,11 +2114,11 @@
       {
         id: 106,
         name: "JBL TUNE 120TWS",
-       image: "../img/audifonos/JBL TUNE 120TWS.jpg",
+       image: "../assets/images/audifonos/jbl-tune-120tws.webp",
         images: {
-          "blanco": "../img/audifonos/JBL TUNE 120TWS.jpg",
+          "blanco": "../assets/images/audifonos/jbl-tune-120tws.webp",
         
-          "negro": "../img/audifonos/JBL TUNE 120TWS negro.jpg"
+          "negro": "../assets/images/audifonos/jbl-tune-120tws-negro.webp"
         },
         priceOriginal: "$99.99",
         priceDescuento: "$84.15",
@@ -2137,11 +2137,11 @@
       {
         id: 107,
         name: "Audifonos inalambricos JBL vibe 200 TWS",
-      image: "../img/audifonos/jbl 200 tws.jpg",
+      image: "../assets/images/audifonos/jbl-200-tws.webp",
         images: {
-          "blanco": "../img/audifonos/jbl 200 tws.jpg",
+          "blanco": "../assets/images/audifonos/jbl-200-tws.webp",
         
-          "negro": "../img/audifonos/Auriculares inalámbricos jbl wave 200tws negro.jpeg"
+          "negro": "../assets/images/audifonos/auriculares-inalambricos-jbl-wave-200tws-negro.webp"
         },
         priceOriginal: "$80.00",
         priceDescuento: "$64.00",
@@ -2160,11 +2160,11 @@
       {
         id: 108,
         name: "audifonos sony WH-CH500",
-       image: "../img/audifonos/WIN- Sony WH-CH500 Wireless Bluetooth NFC On-Ear Headphones.jpeg",
+       image: "../assets/images/audifonos/win-sony-wh-ch500-wireless-bluetooth-nfc-on-ear-headphones.webp",
         images: {
           "blanco": "",
         
-          "negro": "../img/audifonos/WIN- Sony WH-CH500 Wireless Bluetooth NFC On-Ear Headphones.jpeg"
+          "negro": "../assets/images/audifonos/win-sony-wh-ch500-wireless-bluetooth-nfc-on-ear-headphones.webp"
         },
         priceOriginal: "$112.00",
         priceDescuento: "$84.00",
@@ -2186,11 +2186,11 @@
       {
         id: 109,
         name: "Audifonos Inalambrico Sony Wh-ch520",
-       image: "../img/audifonos/Audífonos inalámbricos Bluetooth WH CH520 Blancos.jpeg",
+       image: "../assets/images/audifonos/audifonos-inalambricos-bluetooth-wh-ch520-blancos.webp",
         images: {
-          "blanco": "../img/audifonos/Audífonos inalámbricos Bluetooth WH CH520 Blancos.jpeg",
+          "blanco": "../assets/images/audifonos/audifonos-inalambricos-bluetooth-wh-ch520-blancos.webp",
         
-          "negro": "../img/audifonos/audifonos sony wh ch520.jpg"
+          "negro": "../assets/images/audifonos/audifonos-sony-wh-ch520.webp"
         },
         priceOriginal: "$64.00",
         priceDescuento: "$53.12",
@@ -2212,11 +2212,11 @@
       {
         id: 110,
         name: "Audifonos Sansung Galaxy buds 3 ",
-      image: "../img/audifonos/Galaxy Buds3 Pro White _ Samsung Chile.jpeg",
+      image: "../assets/images/audifonos/galaxy-buds3-pro-white-samsung-chile.webp",
         images: {
-          "blanco": "../img/audifonos/Galaxy Buds3 Pro White _ Samsung Chile.jpeg",
+          "blanco": "../assets/images/audifonos/galaxy-buds3-pro-white-samsung-chile.webp",
         
-          "negro": "../img/audifonos/Samsung Galaxy Buds 3 Pro nregros.jpeg"
+          "negro": "../assets/images/audifonos/samsung-galaxy-buds-3-pro-nregros.webp"
         },
         priceOriginal: "$169.00",
         priceDescuento: "$134.00",
@@ -2238,11 +2238,11 @@
       {
         id: 111,
         name: "Audifonos Samsung buds 2 pro",
-        image: "../img/audifonos/buds blancos.jpeg",
+        image: "../assets/images/audifonos/buds-blancos.webp",
         images: {
-          "blanco": "../img/audifonos/buds blancos.jpeg",
+          "blanco": "../assets/images/audifonos/buds-blancos.webp",
         
-          "negro": "../img/audifonos/buds negros.jpeg"
+          "negro": "../assets/images/audifonos/buds-negros.webp"
         },
         priceOriginal: "$54.00",
         priceDescuento: "$45.00",
@@ -2264,11 +2264,11 @@
       {
         id: 112,
         name: "Sony WF-1000XM4",
-       image: "../img/audifonos/Sony WF-1000XM4 Blanco.jpeg",
+       image: "../assets/images/audifonos/sony-wf-1000xm4-blanco.webp",
         images: {
-          "blanco": "../img/audifonos/Sony WF-1000XM4 Blanco.jpeg",
+          "blanco": "../assets/images/audifonos/sony-wf-1000xm4-blanco.webp",
         
-          "negro": "../img/audifonos/Sony WF-1000XM4 negros .jpeg"
+          "negro": "../assets/images/audifonos/sony-wf-1000xm4-negros.webp"
         },
         priceOriginal: "$54.00",
         priceDescuento: "$49.00",
@@ -2293,7 +2293,7 @@
        {
         id: 113,
         name: "Bose Acoustimass 10 seies IV",
-        image: "../img/audio para el hogar/Bose Acoustimass 10 Home Entertainment Speaker System – 5_1.jpg",
+        image: "../assets/images/audio-para-el-hogar/bose-acoustimass-10-home-entertainment-speaker-system-5-1.webp",
         priceOriginal: "$799.00",
         priceDescuento: "$599.03",
         specs: {"🎶 Bose Acoustimass 10 Home Entertainment Speaker System": "Sistema de altavoces envolventes de 5.1 canales que proporciona un sonido envolvente excepcional.",
@@ -2311,7 +2311,7 @@
       {
         id: 114,
         name: "Chaine HiFi Philips BTM3360 _ Darty",
-        image: "../img/audio para el hogar/Chaine HiFi Philips BTM3360 _ Darty.jpg",
+        image: "../assets/images/audio-para-el-hogar/chaine-hifi-philips-btm3360-darty.webp",
 
         priceOriginal: "$199.00",
         priceDescuento: "$117.49",
@@ -2332,7 +2332,7 @@
       {
         id: 115,
         name: "Harman Kardon BDS-3D753",
-        image: "../img/audio para el hogar/Harman Kardon BDS-3D753.jpg",
+        image: "../assets/images/audio-para-el-hogar/harman-kardon-bds-3d753.webp",
         priceOriginal: "$499.90",
         priceDescuento: "$439.90",
         specs: {
@@ -2353,7 +2353,7 @@
       {
         id: 116,
         name: "LG XBOOM CJ45",
-        image: "../img/audio para el hogar/minicomponente.jpeg",
+        image: "../assets/images/audio-para-el-hogar/minicomponente.webp",
         priceOriginal: "$999.00",
         priceDescuento: "$699.03",
         specs: {
@@ -2373,7 +2373,7 @@
       {
         id: 117,
         name: "Microcomponente Sony CMT SBT40D 50W RMS",
-        image: "../img/audio para el hogar/Microcomponente Sony CMT SBT40D 50W RMS.jpg",
+        image: "../assets/images/audio-para-el-hogar/microcomponente-sony-cmt-sbt40d-50w-rms.webp",
         priceOriginal: "$249.99",
         priceDescuento: "$184.26",
         specs: {
@@ -2392,7 +2392,7 @@
       {
         id: 118,
         name: "Samsung HT-H5550W",
-        image: "../img/audio para el hogar/Samsung HT-H5550W 5_1 3D.jpeg",
+        image: "../assets/images/audio-para-el-hogar/samsung-ht-h5550w-5-1-3d.webp",
         priceOriginal: "$299.99",
         priceDescuento: "$280.00",
         specs: {
@@ -2410,7 +2410,7 @@
       {
         id: 119,
         name: "Sharp XL-BH530 CD Mini Shelf System",
-        image: "../img/audio para el hogar/Sharp XL-BH530 CD Mini Shelf System.jpg",
+        image: "../assets/images/audio-para-el-hogar/sharp-xl-bh530-cd-mini-shelf-system.webp",
         priceOriginal: "$599.00",
         priceDescuento: "$479.02",
         specs: {
@@ -2429,7 +2429,7 @@
       {
         id: 120,
         name: "Sony modelo MHCSHAKEX3D",
-        image: "../img/audio para el hogar/Sony modelo MHCSHAKEX3D_  potencia de 1200W RMS",
+        image: "../assets/images/audio-para-el-hogar/sony-modelo-mhcshakex3d-potencia-de-1200w-rms.webp",
         priceOriginal: "$599.00",
         priceDescuento: "$461.23",
         specs: {
@@ -2451,7 +2451,7 @@
       {
         id: 121,
         name: "SAMSUNG - Mx-j630 - Home Cinema - 2",
-        image: "../img/audio para el hogar/SAMSUNG - Mx-j630 - Home Cinema - 2 (Stereo).jpeg",
+        image: "../assets/images/audio-para-el-hogar/samsung-mx-j630-home-cinema-2-stereo.webp",
         priceOriginal: "$399.00",
         priceDescuento: "$323.19",
         specs: {
@@ -2472,7 +2472,7 @@
       {
         id: 122,
         name: "MHC-GPX3_ME2  Salida 10400W .",
-        image: "../img/audio para el hogar/MHC-GPX3_ME2  Salida 10400W PMPO 950W RMS  Bandeja 1 CD.jpeg",
+        image: "../assets/images/audio-para-el-hogar/mhc-gpx3-me2-salida-10400w-pmpo-950w-rms-bandeja-1-cd.webp",
         priceOriginal: "$499.00",
         priceDescuento: "$384.23",
         specs: {
@@ -2493,7 +2493,7 @@
       {
         id: 123,
         name: "Altavoz LG LK72B",
-        image: "../img/audio para el hogar/Altavoz LG LK72B.jpeg",
+        image: "../assets/images/audio-para-el-hogar/altavoz-lg-lk72b.webp",
         priceOriginal: "$149.00",
         priceDescuento: "$119.02",
         specs: {
@@ -2515,7 +2515,7 @@
       {
         id: 124,
         name: "LG XBOOM CL87 2350W",
-        image: "../img/audio para el hogar/LG XBOOM CL87 2350W.jpeg",
+        image: "../assets/images/audio-para-el-hogar/lg-xboom-cl87-2350w.webp",
         priceOriginal: "$699.00",
         priceDescuento: "$573.18",
         specs: {
@@ -2537,7 +2537,7 @@
       {
         id: 125,
         name: "LG CK43 XBOOM",
-        image: "../img/audio para el hogar/LG CK43 XBOOM.jpeg",
+        image: "../assets/images/audio-para-el-hogar/lg-ck43-xboom.webp",
         priceOriginal: "249.00",
         priceDescuento: "$174.03",
         specs: {
@@ -2558,7 +2558,7 @@
       {
         id: 126,
         name: "LG XBOOM CL 98",
-        image: "../img/audio para el hogar/Lg XBOOM CL 98.avif",
+        image: "../assets/images/audio-para-el-hogar/lg-xboom-cl-98.webp",
         priceOriginal: "$799.00",
         priceDescuento: "$599.25",
         specs: {
@@ -2580,7 +2580,7 @@
       {
         id: 127,
         name: "Panasonic SC-AKX18",
-        image: "../img/audio para el hogar/Panasonic 350W Bookshelf Stereo System Black SC-AKX18.jpeg",
+        image: "../assets/images/audio-para-el-hogar/panasonic-350w-bookshelf-stereo-system-black-sc-akx18.webp",
         priceOriginal: "$299.00",
         priceDescuento: "$269.01",
         specs: {
@@ -2601,10 +2601,10 @@
   {
     id: 128,
     name: "Bocina JBL Boombox 3 Wi-Fi 80W",
-    image: "../img/audio personal/Bocina jbl Boombox 3 Wi-Fi 80W negra.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-boombox-3-wi-fi-80w-negra.webp",
     images: {
-      "blanco": "../img/audio personal/Bocina jbl Boombox 3 Wi-Fi 80W negra.jpg",
-      "negro": "../img/audio personal/Bocina jbl Boombox 3 Wi-Fi 80W negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-boombox-3-wi-fi-80w-negra.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-boombox-3-wi-fi-80w-negra.webp"
     },
     priceOriginal: "$600.00",
     priceDescuento: "$498.00",
@@ -2622,10 +2622,10 @@
   {
     id: 129,
     name: "Bocina JBL Clip 4",
-    image: "../img/audio personal/Bocina jbl clip 4 blanca.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-clip-4-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/Bocina jbl clip 4 blanca.jpg",
-      "negro": "../img/audio personal/Bocina jbl clip 4 negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-clip-4-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-clip-4-negra.webp"
     },
     priceOriginal: "$70.00",
     priceDescuento: "$59.50",
@@ -2643,10 +2643,10 @@
   {
     id: 130,
     name: "Bocina JBL Flip 6",
-    image: "../img/audio personal/JBL Flip 5 blanca.jpg",
+    image: "../assets/images/audio-personal/jbl-flip-5-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/JBL Flip 5 blanca.jpg",
-      "negro": "../img/audio personal/Bocina jbl flip 6 negra.jpg"
+      "blanco": "../assets/images/audio-personal/jbl-flip-5-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-flip-6-negra.webp"
     },
     priceOriginal: "$130.00",
     priceDescuento: "$110.50",
@@ -2664,10 +2664,10 @@
   {
     id: 131,
     name: "Bocina JBL Go 3",
-    image: "../img/audio personal/BOcina jbl go 3 blanca.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-go-3-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/BOcina jbl go 3 blanca.jpg",
-      "negro": "../img/audio personal/BOcina jbl go 3 negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-go-3-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-go-3-negra.webp"
     },
     priceOriginal: "$50.00",
     priceDescuento: "$37.50",
@@ -2685,10 +2685,10 @@
   {
     id: 132,
     name: "Bocina JBL Go 4",
-    image: "../img/audio personal/Bocina jbl go4 blanca.jpg",
+    image: "../assets/images/audio-personal/bocina-jbl-go4-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/Bocina jbl go4 blanca.jpg",
-      "negro": "../img/audio personal/Bocina jbl go4 negra.jpg"
+      "blanco": "../assets/images/audio-personal/bocina-jbl-go4-blanca.webp",
+      "negro": "../assets/images/audio-personal/bocina-jbl-go4-negra.webp"
     },
     priceOriginal: "$70.00",
     priceDescuento: "$49.00",
@@ -2706,10 +2706,10 @@
   {
     id: 133,
     name: "Ultimate Ears Megaboom 3",
-    image: "../img/audio personal/ultimate ear megaboom 3 blanca.jpg",
+    image: "../assets/images/audio-personal/ultimate-ear-megaboom-3-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/ultimate ear megaboom 3 blanca.jpg",
-      "negro": "../img/audio personal/ultimate ear megaboom 3 blanca.jpg"
+      "blanco": "../assets/images/audio-personal/ultimate-ear-megaboom-3-blanca.webp",
+      "negro": "../assets/images/audio-personal/ultimate-ear-megaboom-3-blanca.webp"
     },
     priceOriginal: "$200.00",
     priceDescuento: "$162.00",
@@ -2727,10 +2727,10 @@
   {
     id: 134,
     name: "Ultimate Ears Megaboom 4",
-    image: "../img/audio personal/ultimate ear megaboom 4 negra.webp",
+    image: "../assets/images/audio-personal/ultimate-ear-megaboom-4-negra.webp",
     images: {
-      "blanco": "../img/audio personal/ultimate ear megaboom 4 negra.webp",
-      "negro": "../img/audio personal/ultimate ear megaboom 4 negra.webp"
+      "blanco": "../assets/images/audio-personal/ultimate-ear-megaboom-4-negra.webp",
+      "negro": "../assets/images/audio-personal/ultimate-ear-megaboom-4-negra.webp"
     },
     priceOriginal: "$250.00",
     priceDescuento: "$202.50",
@@ -2748,10 +2748,10 @@
   {
     id: 135,
     name: "Ultimate Ears Wonderboom",
-    image: "../img/audio personal/ultimate ears wonderboom negra.webp",
+    image: "../assets/images/audio-personal/ultimate-ears-wonderboom-negra.webp",
     images: {
-      "blanco": "../img/audio personal/ultimate ears wonderboom negra.webp",
-      "negro": "../img/audio personal/ultimate ears wonderboom negra.webp"
+      "blanco": "../assets/images/audio-personal/ultimate-ears-wonderboom-negra.webp",
+      "negro": "../assets/images/audio-personal/ultimate-ears-wonderboom-negra.webp"
     },
     priceOriginal: "$100.00",
     priceDescuento: "$77.00",
@@ -2769,10 +2769,10 @@
   {
     id: 136,
     name: "Sony SRS-XB100",
-    image: "../img/audio personal/SONY SRS-XB100 negra.jpg",
+    image: "../assets/images/audio-personal/sony-srs-xb100-negra.webp",
     images: {
-      "blanco": "../img/audio personal/SONY SRS-XB100 negra.jpg",
-      "negro": "../img/audio personal/SONY SRS-XB100 negra.jpg"
+      "blanco": "../assets/images/audio-personal/sony-srs-xb100-negra.webp",
+      "negro": "../assets/images/audio-personal/sony-srs-xb100-negra.webp"
     },
     priceOriginal: "$70.00",
     priceDescuento: "$57.40",
@@ -2790,10 +2790,10 @@
   {
     id: 137,
     name: "JBL Charge 6",
-    image: "../img/audio personal/jbl charge 6 blanca.jpg",
+    image: "../assets/images/audio-personal/jbl-charge-6-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/jbl charge 6 blanca.jpg",
-      "negro": "../img/audio personal/jbl charge 6 blanca.jpg"
+      "blanco": "../assets/images/audio-personal/jbl-charge-6-blanca.webp",
+      "negro": "../assets/images/audio-personal/jbl-charge-6-blanca.webp"
     },
     priceOriginal: "$180.00",
     priceDescuento: "$153.00",
@@ -2811,10 +2811,10 @@
   {
     id: 138,
     name: "JBL Flip 5",
-    image: "../img/audio personal/JBL Flip 5 negra.jpg",
+    image: "../assets/images/audio-personal/jbl-flip-5-negra.webp",
     images: {
-      "blanco": "../img/audio personal/JBL Flip 5 negra.jpg",
-      "negro": "../img/audio personal/JBL Flip 5 negra.jpg"
+      "blanco": "../assets/images/audio-personal/jbl-flip-5-negra.webp",
+      "negro": "../assets/images/audio-personal/jbl-flip-5-negra.webp"
     },
     priceOriginal: "$120.00",
     priceDescuento: "$103.20",
@@ -2832,10 +2832,10 @@
   {
     id: 139,
     name: "Sony ULT Field 5",
-    image: "../img/audio personal/SONY ULT FIELD 5 blanca.jpg",
+    image: "../assets/images/audio-personal/sony-ult-field-5-blanca.webp",
     images: {
-      "blanco": "../img/audio personal/SONY ULT FIELD 5 blanca.jpg",
-      "negro": "../img/audio personal/SONY ULT FIELD 5 blanca.jpg"
+      "blanco": "../assets/images/audio-personal/sony-ult-field-5-blanca.webp",
+      "negro": "../assets/images/audio-personal/sony-ult-field-5-blanca.webp"
     },
     priceOriginal: "$300.00",
     priceDescuento: "$270.00",
@@ -2856,7 +2856,7 @@
        {
     id: 140,
     name: "Altavoz JBL 1100 W Bluetooth ",
-    image: "../img/audio pro/Altavoz JBL 1100 W Bluetooth Negro PartyBox Ultimate_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/altavoz-jbl-1100-w-bluetooth-negro-partybox-ultimate-le.webp",
     priceOriginal: "$2,099.00",
     priceDescuento: "$1,749.03",
     specs: {
@@ -2874,7 +2874,7 @@
   {
     id: 141,
     name: "Micrófono inalámbrico  330158",
-    image: "../img/audio pro/Micrófono inalámbrico RadioShack Negro 3301587_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/microfono-inalambrico-radioshack-negro-3301587-le-upscale.webp",
     priceOriginal: "$39.99",
     priceDescuento: "$33.99",
     specs: {
@@ -2892,7 +2892,7 @@
   {
     id: 142,
     name: "Micrófono USB para transmisión con filtro ",
-    image: "../img/audio pro/Micrófono USB para transmisión con filtro RadioShack Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/microfono-usb-para-transmision-con-filtro-radioshack-negro.webp",
     priceOriginal: "$49.99",
     priceDescuento: "$42.49",
     specs: {
@@ -2910,7 +2910,7 @@
   {
     id: 143,
     name: "Parlante de torre  4001942 150 W",
-    image: "../img/audio pro/Parlante de torre RadioShack 4001942 150 W_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/parlante-de-torre-radioshack-4001942-150-w-le-upscale.webp",
     priceOriginal: "$999.00",
     priceDescuento: "$699.03",
     specs: {
@@ -2928,7 +2928,7 @@
   {
     id: 144,
     name: "Parlante LG XBOOM RNC7 420 W Bluetooth",
-    image: "../img/audio pro/Parlante LG XBOOM RNC7 420 W Bluetooth Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/parlante-lg-xboom-rnc7-420-w-bluetooth-negro-le-upscale.webp",
     priceOriginal: "$249.99",
     priceDescuento: "$184.26",
     specs: {
@@ -2946,7 +2946,7 @@
   {
     id: 145,
     name: "Parlante  Activo 4001923 60 W Bluetooth ",
-    image: "../img/audio pro/Parlante RadioShack Activo 4001923 60 W Bluetooth Negro_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/parlante-radioshack-activo-4001923-60-w-bluetooth-negro-le.webp",
     priceOriginal: "$299.99",
     priceDescuento: "$280.00",
     specs: {
@@ -2964,7 +2964,7 @@
   {
     id: 146,
     name: "Parlante Sony 1000 Watts Bluetooth  SRSULT1000",
-    image: "../img/audio pro/Parlante Sony 1000 Watts Bluetooth Negro SRSULT1000_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/parlante-sony-1000-watts-bluetooth-negro-srsult1000-le.webp",
     priceOriginal: "$599.00",
     priceDescuento: "$479.02",
     specs: {
@@ -2982,7 +2982,7 @@
   {
     id: 147,
     name: "Parlantes  Activo dual 500 W Bluetooth ",
-    image: "../img/audio pro/Parlantes RadioShack Activo dual 500 W Bluetooth Negro_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/parlantes-radioshack-activo-dual-500-w-bluetooth-negro-le.webp",
     priceOriginal: "$599.00",
     priceDescuento: "$461.23",
     specs: {
@@ -3000,7 +3000,7 @@
   {
     id: 148,
     name: "Sistema de micrófono inalámbrico DJI Negro Mic Mini",
-    image: "../img/audio pro/Sistema de micrófono inalámbrico DJI Negro Mic Mini_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/sistema-de-microfono-inalambrico-dji-negro-mic-mini-le.webp",
     priceOriginal: "$399.00",
     priceDescuento: "$323.19",
     specs: {
@@ -3018,7 +3018,7 @@
   {
     id: 149,
     name: "Sistema de micrófonos inalámbricos ",
-    image: "../img/audio pro/Sistema de micrófonos inalámbricos RadioShack Negro_LE_upscale_balanced_x4.jpg",
+    image: "../assets/images/audio-pro/sistema-de-microfonos-inalambricos-radioshack-negro-le.webp",
     priceOriginal: "$499.00",
     priceDescuento: "$384.23",
     specs: {
@@ -3036,7 +3036,7 @@
   {
     id: 150,
     name: "Micrófono 2607050",
-    image: "../img/audio pro/Micrófono Radioshack 2607050_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/microfono-radioshack-2607050-le-upscale-balanced-x4-tone.webp",
     priceOriginal: "$149.00",
     priceDescuento: "$119.02",
     specs: {
@@ -3053,7 +3053,7 @@
   {
     id: 151,
     name: "Megáfono 3202715 25 W ",
-    image: "../img/audio pro/Megáfono RadioShack 3202715 25 W Blanco y rojo_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/megafono-radioshack-3202715-25-w-blanco-y-rojo-le-upscale.webp",
     priceOriginal: "$699.00",
     priceDescuento: "$573.18",
     specs: {
@@ -3071,7 +3071,7 @@
   {
     id: 152,
     name: "Megáfono  3202716 75W ",
-    image: "../img/audio pro/Megáfono RadioShack 3202716 75W Blanco con Azul_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/megafono-radioshack-3202716-75w-blanco-con-azul-le-upscale.webp",
     priceOriginal: "249.00",
     priceDescuento: "$174.03",
     specs: {
@@ -3089,7 +3089,7 @@
   {
     id: 153,
     name: "Karaoke Portátil  4001970 ",
-    image: "../img/audio pro/Karaoke Portátil RadioShack 4001970 Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/karaoke-portatil-radioshack-4001970-negro-le-upscale.webp",
     priceOriginal: "$799.00",
     priceDescuento: "$599.25",
     specs: {
@@ -3107,7 +3107,7 @@
   {
     id: 154,
     name: "Altavoz tipo torre  240 W Bluetooth ",
-    image: "../img/audio pro/Altavoz tipo torre RadioShack 240 W Bluetooth Negro_LE_upscale_balanced_x4_tone_enhance_50_color_enhance_50.jpg",
+    image: "../assets/images/audio-pro/altavoz-tipo-torre-radioshack-240-w-bluetooth-negro-le.webp",
     priceOriginal: "$299.00",
     priceDescuento: "$269.01",
     specs: {
@@ -3124,7 +3124,7 @@
   {
   id: 155,
   name: "Spectra Vision Pro (Blanco)",
-  image: "../img/Acessorios/gafas blancas.jpeg",
+  image: "../assets/images/accesorios-gaming/gafas-blancas.webp",
   priceOriginal: "$30.00",
   priceDescuento: "$24.00",
   specs: {
@@ -3136,7 +3136,7 @@
 {
   id: 156,
   name: "Spectra Vision Pro (Negro)",
-  image: "../img/Acessorios/gafas negras.jpeg",
+  image: "../assets/images/accesorios-gaming/gafas-negras.webp",
   priceOriginal: "$32.00",
   priceDescuento: "$25.60",
   specs: {
@@ -3148,7 +3148,7 @@
 {
   id: 157,
   name: "Aurelius X2 Wireless (Azul)",
-  image: "../img/Acessorios/audifonos azul.jpeg",
+  image: "../assets/images/accesorios-gaming/audifonos-azul.webp",
   priceOriginal: "$45.00",
   priceDescuento: "$36.00",
   specs: {
@@ -3160,7 +3160,7 @@
 {
   id: 158,
   name: "Aurelius X2 Wireless (Morado)",
-  image: "../img/Acessorios/audifonos morados.jpeg",
+  image: "../assets/images/accesorios-gaming/audifonos-morados.webp",
   priceOriginal: "$50.00",
   priceDescuento: "$40.00",
   specs: {
@@ -3172,7 +3172,7 @@
 {
   id: 159,
   name: "Aurelius X2 Wireless (Rojo)",
-  image: "../img/Acessorios/audifonos rojos.jpeg",
+  image: "../assets/images/accesorios-gaming/audifonos-rojos.webp",
   priceOriginal: "$55.00",
   priceDescuento: "$44.00",
   specs: {
@@ -3184,7 +3184,7 @@
 {
   id: 160,
   name: "Logitech G733 Wireless",
-  image: "../img/Acessorios/Logitech - Auriculares inalámbricos G733….jpeg",
+  image: "../assets/images/accesorios-gaming/logitech-auriculares-inalambricos-g733.webp",
   priceOriginal: "$90.00",
   priceDescuento: "$72.00",
   specs: {
@@ -3197,7 +3197,7 @@
 {
   id: 161,
   name: "RedWave Studio USB Mic",
-  image: "../img/Acessorios/microfono rojo.jpeg",
+  image: "../assets/images/accesorios-gaming/microfono-rojo.webp",
   priceOriginal: "$60.00",
   priceDescuento: "$48.00",
   specs: {
@@ -3209,7 +3209,7 @@
 {
   id: 162,
   name: "Nebula M7 (Azul)",
-  image: "../img/Acessorios/mouse azul.jpeg",
+  image: "../assets/images/accesorios-gaming/mouse-azul.webp",
   priceOriginal: "$28.00",
   priceDescuento: "$22.40",
   specs: {
@@ -3221,7 +3221,7 @@
 {
   id: 163,
   name: "Nebula M7 RGB",
-  image: "../img/Acessorios/Mouse rgb usb.jpeg",
+  image: "../assets/images/accesorios-gaming/mouse-rgb-usb.webp",
   priceOriginal: "$35.00",
   priceDescuento: "$28.00",
   specs: {
@@ -3233,7 +3233,7 @@
 {
   id: 164,
   name: "Spectra SunShield",
-  image: "../img/Acessorios/gafas blancas.jpeg",
+  image: "../assets/images/accesorios-gaming/gafas-blancas.webp",
   priceOriginal: "$40.00",
   priceDescuento: "$32.00",
   specs: {
@@ -3245,7 +3245,7 @@
 {
   id: 165,
   name: "Spectra UV Shield",
-  image: "../img/Acessorios/gafas negras.jpeg",
+  image: "../assets/images/accesorios-gaming/gafas-negras.webp",
   priceOriginal: "$38.00",
   priceDescuento: "$30.40",
   specs: {
@@ -3257,7 +3257,7 @@
 {
   id: 166,
   name: "900° Racing Pedal Pro",
-  image: "../img/Acessorios/Hot Sale 900 Degree  Pedal and Gear  Gaming Racing….jpeg",
+  image: "../assets/images/accesorios-gaming/hot-sale-900-degree-pedal-and-gear-gaming-racing.webp",
   priceOriginal: "$120.00",
   priceDescuento: "$96.00",
   specs: {
@@ -3269,7 +3269,7 @@
 {
   id: 167,
   name: "Titan Switchboard Pro",
-  image: "../img/Acessorios/teclado rgb sin mouse.jpeg",
+  image: "../assets/images/accesorios-gaming/teclado-rgb-sin-mouse.webp",
   priceOriginal: "$60.00",
   priceDescuento: "$48.00",
   specs: {
@@ -3281,7 +3281,7 @@
 {
   id: 168,
   name: "Titan Mini RGB 60%",
-  image: "../img/Acessorios/teclado rgb.jpeg",
+  image: "../assets/images/accesorios-gaming/teclado-rgb.webp",
   priceOriginal: "$45.00",
   priceDescuento: "$36.00",
   specs: {
@@ -3293,7 +3293,7 @@
 {
   id: 169,
   name: "Titan Switchboard Pro (Edición Morada)",
-  image: "../img/Acessorios/teclado morado.jpeg",
+  image: "../assets/images/accesorios-gaming/teclado-morado.webp",
   priceOriginal: "$70.00",
   priceDescuento: "$56.00",
   specs: {
@@ -3305,7 +3305,7 @@
    {
   id: 170,
   name: "Silla Gamer Elite",
-  image: "../img/SILLAS/Gamer _ set up_ silla gamer _ black _.jpeg",
+  image: "../assets/images/sillas/gamer-set-up-silla-gamer-black.webp",
   priceOriginal: "$150.00",
   priceDescuento: "$135.00",
   specs: {
@@ -3320,7 +3320,7 @@
 {
   id: 171,
   name: "Silla Gamer Pro",
-  image: "../img/SILLAS/silla.jpeg",
+  image: "../assets/images/sillas/silla.webp",
   priceOriginal: "$180.00",
   priceDescuento: "$153.00",
   specs: {
@@ -3335,7 +3335,7 @@
 {
   id: 172,
   name: "Silla Gamer Comfort",
-  image: "../img/SILLAS/¡descubre La Comodidad Definitiva Para Tus….jpeg",
+  image: "../assets/images/sillas/descubre-la-comodidad-definitiva-para-tus.webp",
   priceOriginal: "$200.00",
   priceDescuento: "$160.00",
   specs: {
@@ -3350,7 +3350,7 @@
 {
   id: 173,
   name: "Escritorio Gamer ThunderX3",
-  image: "../img/SILLAS/ThunderX3- Mesa gaming con iluminación RGB y….jpeg",
+  image: "../assets/images/sillas/thunderx3-mesa-gaming-con-iluminacion-rgb-y.webp",
   priceOriginal: "$250.00",
   priceDescuento: "$187.50",
   specs: {
@@ -3364,7 +3364,7 @@
 {
   id: 174,
   name: "Silla Gamer Premium",
-  image: "../img/SILLAS/Cadeira Gamer Black Hawk com Apoio Cervical….jpeg",
+  image: "../assets/images/sillas/cadeira-gamer-black-hawk-com-apoio-cervical.webp",
   priceOriginal: "$300.00",
   priceDescuento: "$210.00",
   specs: {
@@ -3379,7 +3379,7 @@
 {
   id: 175,
   name: "Silla Gamer Ergonomía",
-  image: "../img/SILLAS/Amazon_com_ RESPAWN 110 Ergonomic Gaming Chair….jpeg",
+  image: "../assets/images/sillas/amazon-com-respawn-110-ergonomic-gaming-chair.webp",
   priceOriginal: "$220.00",
   priceDescuento: "$187.00",
   specs: {
@@ -3394,7 +3394,7 @@
 {
   id: 176,
   name: "Escritorio Gamer Esquinero ShadowEdge",
-  image: "../img/SILLAS/mesa blanca.jpeg",
+  image: "../assets/images/sillas/mesa-blanca.webp",
   priceOriginal: "$175.00",
   priceDescuento: "$140.00",
   specs: {
@@ -3408,7 +3408,7 @@
 {
   id: 177,
   name: "Silla Gamer Dowinx Pro",
-  image: "../img/SILLAS/Cadeira Gamer Ii Reclinável 180º Giratória Preta….jpeg",
+  image: "../assets/images/sillas/cadeira-gamer-ii-reclinavel-180o-giratoria-preta.webp",
   priceOriginal: "$160.00",
   priceDescuento: "$144.00",
   specs: {
@@ -3423,7 +3423,7 @@
 {
   id: 178,
   name: "Silla Gamer Deluxe",
-  image: "../img/SILLAS/silla con celeste.jpeg",
+  image: "../assets/images/sillas/silla-con-celeste.webp",
   priceOriginal: "$280.00",
   priceDescuento: "$210.00",
   specs: {
@@ -3438,7 +3438,7 @@
 {
   id: 179,
   name: "Escritorio Gamer Elevado",
-  image: "../img/SILLAS/mesa azul.jpeg",
+  image: "../assets/images/sillas/mesa-azul.webp",
   priceOriginal: "$130.00",
   priceDescuento: "$110.50",
   specs: {
@@ -3453,7 +3453,7 @@
 {
   id: 180,
   name: "Silla Gamer ThunderX3 STYLE",
-  image: "../img/SILLAS/ThunderX3 Spain Professional Gaming Chair Bc3 Blue.jpeg",
+  image: "../assets/images/sillas/thunderx3-spain-professional-gaming-chair-bc3-blue.webp",
   priceOriginal: "$240.00",
   priceDescuento: "$192.00",
   specs: {
@@ -3468,7 +3468,7 @@
 {
   id: 181,
   name: "Escritorio Gamer Esquinero BlackFire",
-  image: "../img/SILLAS/b94213bd-e8b1-470d-a72c-454406dda68d.jpeg",
+  image: "../assets/images/sillas/b94213bd-e8b1-470d-a72c-454406dda68d.webp",
   priceOriginal: "$190.00",
   priceDescuento: "$161.50",
   specs: {
@@ -3482,7 +3482,7 @@
 {
   id: 182,
   name: "Escritorio Gamer Modular",
-  image: "../img/SILLAS/mesa amarilla.jpeg",
+  image: "../assets/images/sillas/mesa-amarilla.webp",
   priceOriginal: "$170.00",
   priceDescuento: "$136.00",
   specs: {
@@ -3497,7 +3497,7 @@
 {
   id: 183,
   name: "Silla Gamer Merax Viper",
-  image: "../img/SILLAS/PRICES MAY VARY_ ✔Ergonomic Design of Gaming….jpeg",
+  image: "../assets/images/sillas/prices-may-vary-ergonomic-design-of-gaming.webp",
   priceOriginal: "$320.00",
   priceDescuento: "$240.00",
   specs: {
@@ -3512,7 +3512,7 @@
 {
   id: 184,
   name: "Silla Gamer Dowinx Sakura",
-  image: "../img/SILLAS/silla rosada.jpeg",
+  image: "../assets/images/sillas/silla-rosada.webp",
   priceOriginal: "$140.00",
   priceDescuento: "$126.00",
   specs: {
@@ -3529,7 +3529,7 @@
  {
   id: 185,
   name: "Control Xbox",
-  image: "../img/VIDEOJUEGOS/Xbox Wireless Controller – Dawn Shadow Special Edition [Discontinued].jpeg",
+  image: "../assets/images/videojuegos/xbox-wireless-controller-dawn-shadow-special-edition.webp",
   priceOriginal: "$60.00",
   priceDescuento: "$55.00",
   specs: {
@@ -3569,7 +3569,7 @@
 {
   id: 188,
   name: "Mando Retro N64",
-  image: "../img/VIDEOJUEGOS/miadore Retro N 64 Bit N64 Controller,Wired Gamepad Controller Joystick for N64 Console N64 System,Gray.jpeg",
+  image: "../assets/images/videojuegos/miadore-retro-n-64-bit-n64-controller-wired-gamepad.webp",
   priceOriginal: "$30.00",
   priceDescuento: "$25.00",
   specs: {
@@ -3610,7 +3610,7 @@ image: "../img/VIDEOJUEGOS/control de ps5.jpeg",
 {
   id: 191,
   name: "Marvel's Spider-Man Miles Morales PS4",
-  image: "../img/VIDEOJUEGOS/Marvel's Spider-Man_ Miles Morales.jpeg",
+  image: "../assets/images/videojuegos/marvel-s-spider-man-miles-morales.webp",
   priceOriginal: "$40.00",
   priceDescuento: "$35.00",
   specs: {
@@ -3623,7 +3623,7 @@ image: "../img/VIDEOJUEGOS/control de ps5.jpeg",
 {
   id: 192,
   name: "Control Xbox One Fat 500GB",
-  image: "../img/VIDEOJUEGOS/Xbox One Fat 500gb Completo Frete Grátis Leia Toda DescriçãobSz.jpeg",
+  image: "../assets/images/videojuegos/xbox-one-fat-500gb-completo-frete-gratis-leia-toda.webp",
   priceOriginal: "$250.00",
   priceDescuento: "$230.00",
   specs: {
@@ -3636,7 +3636,7 @@ image: "../img/VIDEOJUEGOS/control de ps5.jpeg",
 {
   id: 193,
   name: "Mortal Kombat X",
-  image: "../img/VIDEOJUEGOS/Mortal kombat x.jpeg",
+  image: "../assets/images/videojuegos/mortal-kombat-x.webp",
   priceOriginal: "$50.00",
   priceDescuento: "$45.00",
   specs: {
@@ -3649,7 +3649,7 @@ image: "../img/VIDEOJUEGOS/control de ps5.jpeg",
 {
   id: 194,
 name: "PlayStation 2 (PS2)",
-  image: "../img/VIDEOJUEGOS/PlayStation 2 (PS2).jpeg",
+  image: "../assets/images/videojuegos/playstation-2-ps2.webp",
   priceOriginal: "$100.00",
   priceDescuento: "$85.00",
   specs: {
@@ -3662,7 +3662,7 @@ name: "PlayStation 2 (PS2)",
 {
   id: 195,
   name: "Nintendo Switch (Neon Red/Neon Blue)",
-  image: "../img/VIDEOJUEGOS/Nintendo Switch (Neon Red_Neon blue).jpeg",
+  image: "../assets/images/videojuegos/nintendo-switch-neon-red-neon-blue.webp",
   priceOriginal: "$300.00",
   priceDescuento: "$280.00",
   specs: {
@@ -3675,7 +3675,7 @@ name: "PlayStation 2 (PS2)",
 {
   id: 196,
   name: "PlayStation 3",
-  image: "../img/VIDEOJUEGOS/SONY PS3.jpeg",
+  image: "../assets/images/videojuegos/sony-ps3.webp",
   priceOriginal: "$150.00",
   priceDescuento: "$120.00",
   specs: {
@@ -3714,7 +3714,7 @@ name: "PlayStation 2 (PS2)",
 {
   id: 199,
   name: "PS5",
-  image: "../img/VIDEOJUEGOS/PlayStation 5 Console.jpeg",
+  image: "../assets/images/videojuegos/playstation-5-console.webp",
   priceOriginal: "$700.00",
   priceDescuento: "$630.00",
   specs: {
@@ -3729,7 +3729,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 200,
     name: "ASUS TUF GAMING A15",
-    image: "../img/LAPS/ASUS A15.jpeg",
+    image: "../assets/images/laptops/asus-a15.webp",
     priceOriginal: "$950.00",
     priceDescuento: "$760.00",
     specs: {
@@ -3749,7 +3749,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 201,
     name: "Lenovo ThinkPad X13 Yoga Gen 4",
-    image: "../img/LAPS/4gen.jpeg",
+    image: "../assets/images/laptops/4gen.webp",
     priceOriginal: "$880.00",
     priceDescuento: "$748.00",
     specs: {
@@ -3770,7 +3770,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 202,
     name: "Alienware x16 R2",
-    image: "../img/LAPS/16X.jpeg",
+    image: "../assets/images/laptops/16x.webp",
     priceOriginal: "$1,400.00",
     priceDescuento: "$1,148.00",
     specs: {
@@ -3790,7 +3790,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 203,
     name: "Lenovo Legion 5 15",
-    image: "../img/LAPS/Lenovo Legion 5 15 Gaming Laptop.jpeg",
+    image: "../assets/images/laptops/lenovo-legion-5-15-gaming-laptop.webp",
     priceOriginal: "$1,250.00",
     priceDescuento: "$975.00",
     specs: {
@@ -3810,7 +3810,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 204,
     name: "Acer Nitro V 15",
-    image: "../img/LAPS/Notebook Acer Gamer Nitro V15 ANV15-51-7837….jpeg",
+    image: "../assets/images/laptops/notebook-acer-gamer-nitro-v15-anv15-51-7837.webp",
     priceOriginal: "$1,100.00",
     priceDescuento: "$880.00",
     specs: {
@@ -3830,7 +3830,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 205,
     name: "MSI Titan 18 HX",
-    image: "../img/LAPS/MSI Titan 18 HX AI A2XWJG-614US Gaming Laptop.jpeg",
+    image: "../assets/images/laptops/msi-titan-18-hx-ai-a2xwjg-614us-gaming-laptop.webp",
     priceOriginal: "$1,350.00",
     priceDescuento: "$1,120.50",
     specs: {
@@ -3850,7 +3850,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 206,
     name: "Alienware M18 R2",
-    image: "../img/LAPS/Alienware M18 R2 Gaming Laptop.jpeg",
+    image: "../assets/images/laptops/alienware-m18-r2-gaming-laptop.webp",
     priceOriginal: "$1,050.00",
     priceDescuento: "$850.50",
     specs: {
@@ -3870,7 +3870,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 207,
     name: "ACEMAGIC AX15 Laptop",
-    image: "../img/LAPS/Limited-time deal_ ACEMAGIC Laptop Computer, 16GB….jpeg",
+    image: "../assets/images/laptops/limited-time-deal-acemagic-laptop-computer-16gb.webp",
     priceOriginal: "$780.00",
     priceDescuento: "$616.20",
     specs: {
@@ -3889,7 +3889,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 208,
     name: "Lenovo LOQ 15",
-    image: "../img/LAPS/Latest LENOVO LOQ 15IRH8 GAMING LAPTOP gives you a….jpeg",
+    image: "../assets/images/laptops/latest-lenovo-loq-15irh8-gaming-laptop-gives-you-a.webp",
     priceOriginal: "$1,000.00",
     priceDescuento: "$840.00",
     specs: {
@@ -3909,7 +3909,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 209,
     name: "MSI Vector 16 HX",
-    image: "../img/LAPS/MSI Vector 16 HX.jpeg",
+    image: "../assets/images/laptops/msi-vector-16-hx.webp",
     priceOriginal: "$1,200.00",
     priceDescuento: "$1,020.00",
     specs: {
@@ -3929,7 +3929,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 210,
     name: "MSI Vector 17 HX",
-    image: "../img/LAPS/Laptop mit 18_ QWUXGA Display, Intel Core….jpeg",
+    image: "../assets/images/laptops/laptop-mit-18-qwuxga-display-intel-core.webp",
     priceOriginal: "$1,500.00",
     priceDescuento: "$1,290.00",
     specs: {
@@ -3949,7 +3949,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 211,
     name: "MSI Raider GE78 HX",
-    image: "../img/LAPS/NOW is the time to score the hottest holiday deals….jpeg",
+    image: "../assets/images/laptops/now-is-the-time-to-score-the-hottest-holiday-deals.webp",
     priceOriginal: "$2,000.00",
     priceDescuento: "$1,740.00",
     specs: {
@@ -3969,7 +3969,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 212,
     name: "HP Omen Transcend 14",
-    image: "../img/LAPS/tracend 14.jpeg",
+    image: "../assets/images/laptops/tracend-14.webp",
     priceOriginal: "$2,200.00",
     priceDescuento: "$1,760.00",
     specs: {
@@ -3990,7 +3990,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 213,
     name: "MSI Modern 14",
-    image: "../img/LAPS/Latest AMD Ryzen 5 7430U Processors is here_ The….jpeg",
+    image: "../assets/images/laptops/latest-amd-ryzen-5-7430u-processors-is-here-the.webp",
     priceOriginal: "$1,800.00",
     priceDescuento: "$1,530.00",
     specs: {
@@ -4009,7 +4009,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 214,
     name: "ROG Strix G18",
-    image: "../img/LAPS/ROG 18.jpeg",
+    image: "../assets/images/laptops/rog-18.webp",
     priceOriginal: "$1,600.00",
     priceDescuento: "$1,312.00",
     specs: {
@@ -4031,7 +4031,7 @@ name: "PlayStation 2 (PS2)",
 {
     id: 215,
     name: "SAMSUNG UHD 4K",
-    image: "../img/tv/IMG 2025-08-12 a las 19.31.49_453e839d.jpg",
+    image: "../assets/images/tv/img-2025-08-12-a-las-19-31-49-453e839d.webp",
     priceOriginal: "$900.00",
     priceDescuento: "$800.99",
     specs: {
@@ -4049,7 +4049,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 216,
     name: "DYNAMIC CRYSTAN COLUR",
-    image: "../img/tv/IMG-20250723-WA0004.jpg",
+    image: "../assets/images/tv/img-20250723-wa0004.webp",
     priceOriginal: "$800.00",
     priceDescuento: "$750.00",
     specs: {
@@ -4067,7 +4067,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 217,
     name: "SAMSUNG UHP",
-    image: "../img/tv/IMG-20250723-WA0005.jpg",
+    image: "../assets/images/tv/img-20250723-wa0005.webp",
     priceOriginal: "$450.00",
     priceDescuento: "$330.00",
     specs: {
@@ -4085,7 +4085,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 218,
     name: "LG UHP",
-    image: "../img/tv/IMG-20250812-WA0064.jpg",
+    image: "../assets/images/tv/img-20250812-wa0064.webp",
     priceOriginal: "$500.00",
     priceDescuento: "$450.00",
     specs: {
@@ -4103,7 +4103,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 219,
     name: "SONY",
-    image: "../img/tv/IMG-20250812-WA0065.jpg",
+    image: "../assets/images/tv/img-20250812-wa0065.webp",
     priceOriginal: "$400.00",
     priceDescuento: "$375.00",
     specs: {
@@ -4121,7 +4121,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 220,
     name: "LG SMART TV",
-    image: "../img/tv/IMG-20250812-WA0067.jpg",
+    image: "../assets/images/tv/img-20250812-wa0067.webp",
     priceOriginal: "$456.00",
     priceDescuento: "$430.50",
     specs: {
@@ -4139,7 +4139,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 221,
     name: "NOC-ROKU TV",
-    image: "../img/tv/IMG-20250812-WA0069.jpg",
+    image: "../assets/images/tv/img-20250812-wa0069.webp",
     priceOriginal: "$700.00",
     priceDescuento: "$679.50",
     specs: {
@@ -4155,7 +4155,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 222,
     name: "HISENSE TV",
-    image: "../img/tv/IMG-20250812-WA0086.jpg",
+    image: "../assets/images/tv/img-20250812-wa0086.webp",
     priceOriginal: "$1000.00",
     priceDescuento: "$995.00",
     specs: {
@@ -4172,7 +4172,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 223,
     name: "TD SYSTEMS TV",
-    image: "../img/tv/IMG-20250812-WA0087.jpg",
+    image: "../assets/images/tv/img-20250812-wa0087.webp",
     priceOriginal: "$300.00",
     priceDescuento: "$259.50",
     specs: {
@@ -4188,7 +4188,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 224,
     name: "TCL TV",
-    image: "../img/tv/IMG-20250812-WA0088.jpg",
+    image: "../assets/images/tv/img-20250812-wa0088.webp",
     priceOriginal: "$680.00",
     priceDescuento: "$600.00",
     specs: {
@@ -4204,7 +4204,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 225,
     name: "SAMSUNG TV PLUS",
-    image: "../img/tv/IMG-20250812-WA0089.jpg",
+    image: "../assets/images/tv/img-20250812-wa0089.webp",
     priceOriginal: "$950.00",
     priceDescuento: "$800.00",
     specs: {
@@ -4220,7 +4220,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 226,
     name: "TUTU TV",
-    image: "../img/tv/IMG-20250812-WA0090.jpg",
+    image: "../assets/images/tv/img-20250812-wa0090.webp",
     priceOriginal: "$700.00",
     priceDescuento: "$680.00",
     specs: {
@@ -4235,7 +4235,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 227,
     name: "SAMSUNG TV",
-    image: "../img/tv/samsung.2020.jpg",
+    image: "../assets/images/tv/samsung-2020.webp",
     priceOriginal: "673.00",
     priceDescuento: "$622.00",
     specs: {
@@ -4250,7 +4250,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 228,
     name: "SAMSUNG TV 4K",
-    image: "../img/tv/samsung.4k UHD.jpg",
+    image: "../assets/images/tv/samsung-4k-uhd.webp",
     priceOriginal: "$500.00",
     priceDescuento: "$480.00",
     specs: {
@@ -4265,7 +4265,7 @@ name: "PlayStation 2 (PS2)",
   {
     id: 229,
     name: "SAMSUNG SMART TV",
-    image: "../img/tv/samsung.UHD.jpg",
+    image: "../assets/images/tv/samsung-uhd.webp",
     priceOriginal: "$600.00",
     priceDescuento: "$550.00",
     specs: {
@@ -4283,7 +4283,7 @@ name: "PlayStation 2 (PS2)",
    {
         id: 230,
         name: "Convertidor de AV (RCA) a HDMI",
-        image: "../img/accesorios tv/IMG-20250819-WA0019.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0019.webp",
         priceOriginal: "$20.00",
         priceDescuento: "$12.00",
         specs: [
@@ -4302,7 +4302,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 231,
         name: "Klip Xtreme, modelo KPM-875",
-        image: "../img/accesorios tv/IMG-20250819-WA0020.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0020.webp",
         priceOriginal: "$39.00",
         priceDescuento: "$30.00",
         specs:[
@@ -4320,7 +4320,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 232,
         name: "LG Magic Remote",
-        image: "../img/accesorios tv/IMG-20250819-WA0021.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0021.webp",
         priceOriginal: "$95.00",
         priceDescuento: "$84.00",
         specs: [
@@ -4337,7 +4337,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 233,
         name: "Convertidor de RCA a HDMI",
-        image: "../img/accesorios tv/IMG-20250819-WA0022.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0022.webp",
         priceOriginal: "$18.00",
         priceDescuento: "$13.00",
         specs:[ 
@@ -4351,7 +4351,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 234,
         name: "Cable HDMI 4k PowerBear",
-        image: "../img/accesorios tv/IMG-20250819-WA0023.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0023.webp",
         priceOriginal: "$10.00",
         priceDescuento: "$8.00",
         specs: [
@@ -4365,7 +4365,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 235,
         name: "Soporte de pared para TV",
-        image: "../img/accesorios tv/IMG-20250819-WA0024.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0024.webp",
         priceOriginal: "$40.00",
         priceDescuento: "$33.50",
         specs: [
@@ -4379,7 +4379,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 236,
         name: "Soporte de pared TV de 32 pulgadas",
-        image: "../img/accesorios tv/IMG-20250819-WA0025.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0025.webp",
         priceOriginal: "$40.00",
         priceDescuento: "$29.50",
         specs: [ 
@@ -4393,7 +4393,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 237,
         name: "Cable AV (Audios/videos)",
-        image: "../img/accesorios tv/IMG-20250819-WA0026.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0026.webp",
         priceOriginal: "$25.00",
         priceDescuento: "$18.00",
         specs: [
@@ -4407,7 +4407,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 238,
         name: "Control remoto PIX 6428",
-        image: "../img/accesorios tv/IMG-20250819-WA0027.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0027.webp",
         priceOriginal: "$30.00",
         priceDescuento: "$27.50",
         specs: [
@@ -4421,7 +4421,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 239,
         name: "Adaptador de HDMI MinI",
-        image: "../img/accesorios tv/IMG-20250819-WA0028.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0028.webp",
         priceOriginal: "$10.00",
         priceDescuento: "$7.00",
         specs: [
@@ -4438,7 +4438,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 240,
         name: "Amazon fire TV Stick Lite",
-        image: "../img/accesorios tv/IMG-20250819-WA0029.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0029.webp",
         priceOriginal: "$55.00",
         priceDescuento: "$39.00",
         specs:[
@@ -4455,7 +4455,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 241,
         name: "Soporte de TV de 26 a 55 pulgadas",
-        image: "../img/accesorios tv/IMG-20250819-WA0033.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0033.webp",
         priceOriginal: "$28.00",
         priceDescuento: "$20.00",
         specs:[
@@ -4472,7 +4472,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 242,
         name: "Mando a distancia",
-        image: "../img/accesorios tv/IMG-20250819-WA0034.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0034.webp",
         priceOriginal: "13.00",
         priceDescuento: "$9.00",
         specs: [
@@ -4489,7 +4489,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 243,
         name: "Soporte de TV de 37 a 70 Pulgadas",
-        image: "../img/accesorios tv/IMG-20250819-WA0036.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0036.webp",
         priceOriginal: "$24.00",
         priceDescuento: "$19.00",
         specs: [
@@ -4506,7 +4506,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 244,
         name: "Control Remoto LG SMART TV",
-        image: "../img/accesorios tv/IMG-20250819-WA0037.jpg",
+        image: "../assets/images/accesorios-tv/img-20250819-wa0037.webp",
         priceOriginal: "$15.00",
         priceDescuento: "$10.00",
         specs:[
@@ -4524,7 +4524,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 245,
         name: "Logitech M185 Wireless Mouse (Azul)",
-        image: "../img/mouses/M185.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/m185.webp", // RUTA ACTUALIZADA
         priceOriginal: "$15.50",
         priceDescuento: "$13.95", // -10%
         specs: {
@@ -4537,7 +4537,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 246,
         name: "Microsoft Mobile Mouse 1850 (Negro)",
-        image: "../img/mouses/s1850.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/s1850.webp", // RUTA ACTUALIZADA
         priceOriginal: "$22.99",
         priceDescuento: "$18.39", // -20%
         specs: {
@@ -4550,7 +4550,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 247,
         name: "HP Wireless Mouse 200 (Azul)",
-        image: "../img/mouses/hp 200.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/hp-200.webp", // RUTA ACTUALIZADA
         priceOriginal: "$19.00",
         priceDescuento: "$14.25", // -25%
         specs: {
@@ -4563,7 +4563,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 248,
         name: "Dell Optical Mouse MS116 (Gris)",
-        image: "../img/mouses/ms116.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/ms116.webp", // RUTA ACTUALIZADA
         priceOriginal: "$28.50",
         priceDescuento: "$24.22", // -15%
         specs: {
@@ -4576,7 +4576,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 249,
         name: "Logitech Pebble M350 (Rojo)",
-        image: "../img/mouses/350.jpeg", 
+        image: "../assets/images/mouses/350.webp", 
         priceDescuento: "$10.49", 
         specs: {
             "🖱️ Diseño": "Forma delgada, portátil y moderna",
@@ -4588,7 +4588,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 250,
         name: "Microsoft Sculpt Comfort Mouse",
-        image: "../img/mouses/descargar (1).jpeg",
+        image: "../assets/images/mouses/descargar-1.webp",
         priceOriginal: "$35.00",
         priceDescuento: "$31.50",
         specs: {
@@ -4601,7 +4601,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 251,
         name: "Logitech MX Master 3S (Mouse)",
-        image: "../img/exclusivo/logitechblanco.jpeg", 
+        image: "../assets/images/exclusivo/logitechblanco.webp", 
         priceOriginal: "$129.00", 
         priceDescuento: "$99.00", 
         specs: {
@@ -4614,7 +4614,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 252,
         name: "HP Comfort Grip Wireless Mouse",
-        image: "../img/mouses/confor micro.jpeg",
+        image: "../assets/images/mouses/confor-micro.webp",
         priceOriginal: "$45.00",
         priceDescuento: "$33.75", 
         specs: {
@@ -4627,7 +4627,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 253,
         name: "Logitech Ergo M575 Trackball",
-        image: "../img/mouses/logi111.jpeg", 
+        image: "../assets/images/mouses/logi111.webp", 
         priceOriginal: "$31.50",
         priceDescuento: "$26.77", 
         specs: {
@@ -4643,7 +4643,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 254,
         name: "Dell KB216 Wired Keyboard (Negro)",
-        image: "../img/mouses/kb212.jpeg", 
+        image: "../assets/images/mouses/kb212.webp", 
         priceOriginal: "$29.00",
         priceDescuento: "$20.30", 
         specs: {
@@ -4656,7 +4656,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 255,
         name: "Logitech K380 Multi-Device Keyboard",
-        image: "../img/mouses/k380.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/k380.webp", // RUTA ACTUALIZADA
         priceOriginal: "$42.00",
         priceDescuento: "$37.80", // -10%
         specs: {
@@ -4669,7 +4669,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 256,
         name: "Microsoft Ergonomic Keyboard",
-        image: "../img/mouses/Microsoft Natural Ergonomic .jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/microsoft-natural-ergonomic.webp", // RUTA ACTUALIZADA
         priceOriginal: "$75.00",
         priceDescuento: "$60.00", // -20%
         specs: {
@@ -4682,7 +4682,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 257,
         name: "HP K1500 USB Keyboard",
-        image: "../img/mouses/K1500.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/k1500.webp", // RUTA ACTUALIZADA
         priceOriginal: "$55.00",
         priceDescuento: "$41.25", // -25%
         specs: {
@@ -4695,7 +4695,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 258,
         name: "Logitech K400 Plus Touch Keyboard",
-        image: "../img/mouses/k400.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/k400.webp", // RUTA ACTUALIZADA
         priceOriginal: "$39.99",
         priceDescuento: "$33.99", // -15%
         specs: {
@@ -4708,7 +4708,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 259,
         name: "Dell Premier Wireless Keyboard (Morado)",
-        image: "../img/mouses/kb9000.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/kb9000.webp", // RUTA ACTUALIZADA
         priceOriginal: "$24.00",
         priceDescuento: "$16.80", // -30%
         specs: {
@@ -4721,7 +4721,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 260,
         name: "Microsoft All-in-One Media Keyboard",
-        image: "../img/mouses/one media.jpeg", // RUTA ACTUALIZADA
+        image: "../assets/images/mouses/one-media.webp", // RUTA ACTUALIZADA
         priceOriginal: "$18.00",
         priceDescuento: "$14.40", // -20%
         specs: {
@@ -4734,7 +4734,7 @@ name: "PlayStation 2 (PS2)",
         {
         id: 261,
         name: "Samsung T7 Portable SSD 500GB (USB 3.2)",
-        image: "../img/almacenamiento/Portable SSD T7 1 TB USB 3_2 Gen 2 (Gray).jpeg",
+        image: "../assets/images/almacenamiento/portable-ssd-t7-1-tb-usb-3-2-gen-2-gray.webp",
         priceOriginal: "$89.99",
         priceDescuento: "$76.49", // -15%
         specs: {
@@ -4747,7 +4747,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 262,
         name: "SanDisk Extreme Portable SSD 1TB (V2)",
-        image: "../img/almacenamiento/Sandisk 1tb Extreme Portable Ssd V2.jpeg",
+        image: "../assets/images/almacenamiento/sandisk-1tb-extreme-portable-ssd-v2.webp",
         priceOriginal: "$145.00",
         priceDescuento: "$116.00", // -20%
         specs: {
@@ -4760,7 +4760,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 263,
         name: "Western Digital My Passport 5TB (Portable HDD)",
-        image: "../img/almacenamiento/Western Digital 4TB WD My Passport Ultra for Mac Usb-c and USB 3_2 Gen 1, Portable External Hard Drive Hdd, Silver - Wdbpmv0040bsl-wesn.jpeg",
+        image: "../assets/images/almacenamiento/western-digital-4tb-wd-my-passport-ultra-for-mac-usb-c-and.webp",
         priceOriginal: "$150.00",
         priceDescuento: "$135.00", // -10%
         specs: {
@@ -4773,7 +4773,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 264,
         name: "Crucial X8 Portable SSD 1TB (USB 3.2 Gen2)",
-        image: "../img/almacenamiento/Crucial X8 1TB USB 3_2 Gen 2 Portable SSD Review.jpeg",
+        image: "../assets/images/almacenamiento/crucial-x8-1tb-usb-3-2-gen-2-portable-ssd-review.webp",
         priceOriginal: "$115.00",
         priceDescuento: "$86.25", // -25%
         specs: {
@@ -4786,7 +4786,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 265,
         name: "Kingston DataTraveler Exodia USB 3.2 64GB",
-        image: "../img/almacenamiento/Kingston DataTraveler Exodia M USB Flash Drive - 64GB USB 3_2 Gen 1 - with Moving Cap [DTXM_64GB].jpeg",
+        image: "../assets/images/almacenamiento/kingston-datatraveler-exodia-m-usb-flash-drive-64gb-usb-3-2.webp",
         priceOriginal: "$19.99",
         priceDescuento: "$13.99", // -30%
         specs: {
@@ -4799,7 +4799,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 266,
         name: "Seagate Expansion Portable HDD 4TB (USB 3.0)",
-        image: "../img/almacenamiento/Seagate Expansion 4Tb - Hdd _ Hd _ Hardisk _ Harddisk External 2_5_.jpeg",
+        image: "../assets/images/almacenamiento/seagate-expansion-4tb-hdd-hd-hardisk-harddisk-external-2-5.webp",
         priceOriginal: "$119.90",
         priceDescuento: "$107.91", // -10%
         specs: {
@@ -4812,7 +4812,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 267,
         name: "SanDisk Ultra MicroSDXC 128GB (Clase 10/U1)",
-        image: "../img/almacenamiento/SanDisk 128GB U1 microSDXC Memory Card Ultra Class 10 UHS-I with SD Adapter $23_88.jpeg",
+        image: "../assets/images/almacenamiento/sandisk-128gb-u1-microsdxc-memory-card-ultra-class-10-uhs-i.webp",
         priceOriginal: "$24.99",
         priceDescuento: "$21.24", // -15%
         specs: {
@@ -4825,7 +4825,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 268,
         name: "Western Digital Elements Portable HDD 2TB",
-        image: "../img/almacenamiento/Western Digital Elements Portable - Externe harde schijf - 2TB _ bol_com.jpeg",
+        image: "../assets/images/almacenamiento/western-digital-elements-portable-externe-harde-schijf-2tb.webp",
         priceOriginal: "$75.00",
         priceDescuento: "$60.00", // -20%
         specs: {
@@ -4838,7 +4838,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 269,
         name: "Samsung FIT Plus USB 3.1 128GB (Low Profile)",
-        image: "../img/almacenamiento/Samsung Usb 3_1 Memory Stick Flash Drive Plus Muf-128ab_apc With Keyring.jpeg",
+        image: "../assets/images/almacenamiento/samsung-usb-3-1-memory-stick-flash-drive-plus-muf-128ab-apc.webp",
         priceOriginal: "$29.99",
         priceDescuento: "$26.99", // -10%
         specs: {
@@ -4851,7 +4851,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 270,
         name: "Kingston Canvas Go! Plus SD Card 256GB (U3/V30)",
-        image: "../img/almacenamiento/Kingston Technology Canvas Go! Plus UHS-I SDXC Memory Card 256GB.jpeg",
+        image: "../assets/images/almacenamiento/kingston-technology-canvas-go-plus-uhs-i-sdxc-memory-card.webp",
         priceOriginal: "$45.00",
         priceDescuento: "$33.75", // -25%
         specs: {
@@ -4864,7 +4864,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 271,
         name: "SanDisk Ultra Dual Drive Luxe USB-C 64GB",
-        image: "../img/almacenamiento/SanDisk SDDDC4 Ultra Dual Drive Luxe USB 3_2 Flash Drive 64GB Type C 128GB 256GB 512GB Metaal Type A.jpeg",
+        image: "../assets/images/almacenamiento/sandisk-sdddc4-ultra-dual-drive-luxe-usb-3-2-flash-drive.webp",
         priceOriginal: "$19.95",
         priceDescuento: "$15.96", // -20%
         specs: {
@@ -4877,7 +4877,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 272,
         name: "Seagate One Touch Portable SSD 1TB (USB 3.0)",
-        image: "../img/almacenamiento/Seagate One Touch Ssd, 1tb, External Ssd, Usb 3_0, Blue, 1 Year Myliocreate, 4 M.jpeg",
+        image: "../assets/images/almacenamiento/seagate-one-touch-ssd-1tb-external-ssd-usb-3-0-blue-1-year.webp",
         priceOriginal: "$135.00",
         priceDescuento: "$114.75", // -15%
         specs: {
@@ -4890,7 +4890,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 273,
         name: "PNY Attaché 4 USB Flash Drive 128GB (Retráctil)",
-        image: "../img/almacenamiento/Pny _ 128GB Attaché 4 USB 2_0 Type A Flash Drive _ Black _ Best Buy.jpeg",
+        image: "../assets/images/almacenamiento/pny-128gb-attache-4-usb-2-0-type-a-flash-drive-black-best.webp",
         priceOriginal: "$29.99",
         priceDescuento: "$20.99", // -30%
         specs: {
@@ -4916,7 +4916,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 275,
         name: "Samsung EVO Select MicroSDXC 64GB (U3/Clase 10)",
-        image: "../img/almacenamiento/Samsung EVO Select 64 GB micro SDXC Card UHS-I + Adapter (MB-ME64KA_AM).jpeg",
+        image: "../assets/images/almacenamiento/samsung-evo-select-64-gb-micro-sdxc-card-uhs-i-adapter-mb.webp",
         priceOriginal: "$15.99",
         priceDescuento: "$11.99", // -25%
         specs: {
@@ -4929,7 +4929,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 276,
         name: "Lexar JumpDrive S47 USB 3.1 256GB (Ultra Compacto)",
-        image: "../img/almacenamiento/Lexar S80 256GB JumpDrive USB 3_1 Flash Drive, up to 150MB_s read quickly transfer a 3GB 4K movie clip in less than 1 minute, compared to the 4 minu LJDS080256G-BNBNG.jpeg",
+        image: "../assets/images/almacenamiento/lexar-s80-256gb-jumpdrive-usb-3-1-flash-drive-up-to-150mb-s.webp",
         priceOriginal: "$39.00",
         priceDescuento: "$31.20", // -20%
         specs: {
@@ -4942,7 +4942,7 @@ name: "PlayStation 2 (PS2)",
       {
         id: 277,
         name: "Logitech C920s HD Pro Webcam (Full HD)",
-        image: "../img/accesorios/Webcam Logitech C920s.jpeg",
+        image: "../assets/images/accesorios/webcam-logitech-c920s.webp",
         priceOriginal: "$79.99",
         priceDescuento: "$63.99", // -20%
         specs: {
@@ -4955,7 +4955,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 278,
         name: "Trust GXT 830-RW Teclado Gaming (RGB)",
-        image: "../img/accesorios/Teclado Trust gxt 830.jpeg",
+        image: "../assets/images/accesorios/teclado-trust-gxt-830.webp",
         priceOriginal: "$45.00",
         priceDescuento: "$38.25", // -15%
         specs: {
@@ -4968,7 +4968,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 279,
         name: "Logitech G432 Audífonos Gaming (7.1 Surround)",
-        image: "../img/accesorios/💥Logitech G 432💥 auriculares con cable, sonido envolvente 7_1.jpeg",
+        image: "../assets/images/accesorios/logitech-g-432-auriculares-con-cable-sonido-envolvente-7-1.webp",
         priceOriginal: "$65.00",
         priceDescuento: "$48.75", // -25%
         specs: {
@@ -4981,7 +4981,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 280,
         name: "HP G2 Auriculares Estéreo (3.5mm)",
-        image: "../img/accesorios/Diadema Headset GETTTECH GH-3500G Reveal con Micrófono 3_5 mm Gris.jpeg",
+        image: "../assets/images/accesorios/diadema-headset-getttech-gh-3500g-reveal-con-microfono-3-5.webp",
         priceOriginal: "$29.99",
         priceDescuento: "$26.99", // -10%
         specs: {
@@ -4994,7 +4994,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 281,
         name: "Microsoft LifeCam HD-3000 (HD 720p)",
-        image: "../img/accesorios/Microsoft L2 LifeCam HD-3000 Webcam for sale online _ eBay Australia.jpeg",
+        image: "../assets/images/accesorios/microsoft-l2-lifecam-hd-3000-webcam-for-sale-online-ebay.webp",
         priceOriginal: "$35.00",
         priceDescuento: "$24.50", // -30%
         specs: {
@@ -5007,7 +5007,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 282,
         name: "Logitech H390 Audífonos (USB con Micrófono)",
-        image: "../img/accesorios/Logitech H390 Wired Headset for PC_Laptop, Stereo Headphones with Noise Cancelling Microphone, USB-A, in-Line Controls for Video Meetings, Music, Gaming and Beyond - Black.jpeg",
+        image: "../assets/images/accesorios/logitech-h390-wired-headset-for-pc-laptop-stereo-headphones.webp",
         priceOriginal: "$49.99",
         priceDescuento: "$39.99", // -20%
         specs: {
@@ -5020,7 +5020,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 283,
         name: "Dell Premier Mousepad (Tejido Reciclado)",
-        image: "../img/accesorios/Soft Comfort Wrist Gel Rest Support Mat Mouse Mice Pad Computer PC Laptop Black.jpeg",
+        image: "../assets/images/accesorios/soft-comfort-wrist-gel-rest-support-mat-mouse-mice-pad.webp",
         priceOriginal: "$12.50",
         priceDescuento: "$10.62", // -15%
         specs: {
@@ -5033,7 +5033,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 284,
         name: "Trust Boye USB Hub Compacto (4 Puertos)",
-        image: "../img/accesorios/Port Connect 4 Port USB Hub.jpeg",
+        image: "../assets/images/accesorios/port-connect-4-port-usb-hub.webp",
         priceOriginal: "$19.95",
         priceDescuento: "$17.95", // -10%
         specs: {
@@ -5046,7 +5046,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 285,
         name: "HP 65W Adaptador USB-C Slim",
-        image: "../img/accesorios/HP Universal USB-C Multiport Hub - 50H55AA.jpeg",
+        image: "../assets/images/accesorios/hp-universal-usb-c-multiport-hub-50h55aa.webp",
         priceOriginal: "$59.00",
         priceDescuento: "$44.25", // -25%
         specs: {
@@ -5059,7 +5059,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 286,
         name: "Logitech Z150 Parlantes Multimedia",
-        image: "../img/accesorios/Logitech Z207 2_0 Stereo Computer Speakers with Bluetooth.jpeg",
+        image: "../assets/images/accesorios/logitech-z207-2-0-stereo-computer-speakers-with-bluetooth.webp",
         priceOriginal: "$24.99",
         priceDescuento: "$17.49", // -30%
         specs: {
@@ -5072,7 +5072,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 287,
         name: "Amazon Basics Adaptador USB-C a USB-A",
-        image: "../img/accesorios/Amazon Basics USB-C to USB-A 3_1 Gen1 Female Adapter Cable Converter, 5Gbps High-Speed, USB-IF Certified, for Laptops, Tablets, Phones (iPhone 16_15), White.jpeg",
+        image: "../assets/images/accesorios/amazon-basics-usb-c-to-usb-a-3-1-gen1-female-adapter-cable.webp",
         priceOriginal: "$9.99",
         priceDescuento: "$8.99", // -10%
         specs: {
@@ -5085,7 +5085,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 288,
         name: "Razer Gigantus V2 Mouse Mat (Medium)",
-        image: "../img/accesorios/Dks Razer Gigantus V2 Medium - Soft Mouse Mat For Speed And Control.jpeg",
+        image: "../assets/images/accesorios/dks-razer-gigantus-v2-medium-soft-mouse-mat-for-speed-and.webp",
         priceOriginal: "$19.99",
         priceDescuento: "$15.99", // -20%
         specs: {
@@ -5098,7 +5098,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 289,
         name: "Logitech R400 Presentador Inalámbrico",
-        image: "../img/accesorios/Logitech R400 Wireless Presenter Remote Control, Black.jpeg",
+        image: "../assets/images/accesorios/logitech-r400-wireless-presenter-remote-control-black.webp",
         priceOriginal: "$49.99",
         priceDescuento: "$42.49", // -15%
         specs: {
@@ -5111,7 +5111,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 290,
         name: "Belkin Hub USB 3.0 de 4 Puertos",
-        image: "../img/accesorios/Hub USB-C vers HDMI _ USB _ USB-C Belkin.jpeg",
+        image: "../assets/images/accesorios/hub-usb-c-vers-hdmi-usb-usb-c-belkin.webp",
         priceOriginal: "$27.00",
         priceDescuento: "$20.25", // -25%
         specs: {
@@ -5124,7 +5124,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 291,
         name: "Blue Yeti Nano Micrófono USB (Streaming)",
-        image: "../img/accesorios/Microfone Condensador USB Blue Yeti Nano Azul - 988-000089.jpeg",
+        image: "../assets/images/accesorios/microfone-condensador-usb-blue-yeti-nano-azul-988-000089.webp",
         priceOriginal: "$99.99",
         priceDescuento: "$89.99", // -10%
         specs: {
@@ -5137,7 +5137,7 @@ name: "PlayStation 2 (PS2)",
      {
         id: 292,
         name: "Epson EcoTank L3250 (Inalámbrica/Multifuncional)",
-        image: "../img/impresoras/Impressora Multifuncional Epson EcoTank L3250 Wi-fi _ Shopee Brasil.jpeg",
+        image: "../assets/images/impresoras/impressora-multifuncional-epson-ecotank-l3250-wi-fi-shopee.webp",
         priceOriginal: "$199.99",
         priceDescuento: "$169.99", // -15%
         specs: {
@@ -5150,7 +5150,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 293,
         name: "HP Smart Tank 515 (Inalámbrica/Tanque de Tinta)",
-        image: "../img/impresoras/HP PRINTER SMART TANK 515.jpeg",
+        image: "../assets/images/impresoras/hp-printer-smart-tank-515.webp",
         priceOriginal: "$249.00",
         priceDescuento: "$224.10", // -10%
         specs: {
@@ -5163,7 +5163,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 294,
         name: "Canon PIXMA G3110 (WiFi/Tanques Recargables)",
-        image: "../img/impresoras/Impresora multifunción a color Canon Pixma G3110 con wifi.jpeg",
+        image: "../assets/images/impresoras/impresora-multifuncion-a-color-canon-pixma-g3110-con-wifi.webp",
         priceOriginal: "$175.00",
         priceDescuento: "$131.25", // -25%
         specs: {
@@ -5176,7 +5176,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 295,
         name: "Brother HL-L2370DW (Láser Monocromo)",
-        image: "../img/impresoras/Brother HL L2460DW Wireless Black and White Refresh Subscription Eligible Laser Printer, Great for Home Offices Gray HL-L2460DW.jpeg",
+        image: "../assets/images/impresoras/brother-hl-l2460dw-wireless-black-and-white-refresh.webp",
         priceOriginal: "$149.99",
         priceDescuento: "$119.99", // -20%
         specs: {
@@ -5189,7 +5189,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 296,
         name: "HP LaserJet M110w (Láser Monocromo Compacta)",
-        image: "../img/impresoras/HP LaserJet M140we Wireless Laser Multifunction Printer.jpeg",
+        image: "../assets/images/impresoras/hp-laserjet-m140we-wireless-laser-multifunction-printer.webp",
         priceOriginal: "$120.00",
         priceDescuento: "$84.00", // -30%
         specs: {
@@ -5202,7 +5202,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 297,
         name: "Cartucho Original HP 664 Negro",
-        image: "../img/impresoras/Combo Cartucho Hp 664 Original Negro+color 3635 2135 4675.jpeg",
+        image: "../assets/images/impresoras/combo-cartucho-hp-664-original-negro-color-3635-2135-4675.webp",
         priceOriginal: "$15.99",
         priceDescuento: "$13.59", // -15%
         specs: {
@@ -5215,7 +5215,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 298,
         name: "Botella de Tinta Epson T504 (Negro)",
-        image: "../img/impresoras/Tinta Epson 554 Negro.jpeg",
+        image: "../assets/images/impresoras/tinta-epson-554-negro.webp",
         priceOriginal: "$18.50",
         priceDescuento: "$16.65", // -10%
         specs: {
@@ -5228,7 +5228,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 299,
         name: "Cartucho Original Canon CL-211XL (Color)",
-        image: "../img/impresoras/Canon 211XL Single Ink Cartridge - Tri-color (2975B005AA)_ High Yield, 210_211 Series.jpeg",
+        image: "../assets/images/impresoras/canon-211xl-single-ink-cartridge-tri-color-2975b005aa-high.webp",
         priceOriginal: "$35.00",
         priceDescuento: "$28.00", // -20%
         specs: {
@@ -5241,7 +5241,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 300,
         name: "Unidad de Tambor Original Brother DR-2400",
-        image: "../img/impresoras/Skydo DR2400 Tamburo DR-2400 Compatibile per Brother DR 2400 tamburo TN-2420 Compatibile per Brother MFC-L2710DW MFC-L2750DW HL-L2310D HL-L2370DN.jpeg",
+        image: "../assets/images/impresoras/skydo-dr2400-tamburo-dr-2400-compatibile-per-brother-dr.webp",
         priceOriginal: "$59.99",
         priceDescuento: "$44.99", // -25%
         specs: {
@@ -5254,7 +5254,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 301,
         name: "Botella de Tinta Canon GI-190 (Cian)",
-        image: "../img/impresoras/Botella Canon Gi-190 Cyan.jpeg",
+        image: "../assets/images/impresoras/botella-canon-gi-190-cyan.webp",
         priceOriginal: "$12.90",
         priceDescuento: "$11.61", // -10%
         specs: {
@@ -5267,7 +5267,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 302,
         name: "HP DeskJet 2755e (Inalámbrica/Económica)",
-        image: "../img/impresoras/Hp _ DeskJet 2855e Wireless AI-Enabled All-in-One Inkjet Printer with 3 Months of Instant Ink _ White _ Best Buy.jpeg",
+        image: "../assets/images/impresoras/hp-deskjet-2855e-wireless-ai-enabled-all-in-one-inkjet.webp",
         priceOriginal: "$69.99",
         priceDescuento: "$59.49", // -15%
         specs: {
@@ -5280,7 +5280,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 303,
         name: "Botella de Tinta Epson T664 (Magenta)",
-        image: "../img/impresoras/Tinta Epson 664 T664320 T664320AL Magenta Original para Ecotank L310 L365 L375 L110 L355 L606 L1455 Refil de 70ml.jpeg",
+        image: "../assets/images/impresoras/tinta-epson-664-t664320-t664320al-magenta-original-para.webp",
         priceOriginal: "$11.50",
         priceDescuento: "$9.20", // -20%
         specs: {
@@ -5293,7 +5293,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 304,
         name: "Tóner Original HP 105A (Negro)",
-        image: "../img/impresoras/Toner Original Hp 105a W1105a P_ 107a 107w 135a 135w 137fnw.jpeg",
+        image: "../assets/images/impresoras/toner-original-hp-105a-w1105a-p-107a-107w-135a-135w-137fnw.webp",
         priceOriginal: "$55.00",
         priceDescuento: "$41.25", // -25%
         specs: {
@@ -5306,7 +5306,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 305,
         name: "Tóner Original Brother TN-2410 (Negro)",
-        image: "../img/impresoras/GPC Image TN2420 TN-2420 Compatible Toner Cartridges for Brother TN2410 TN-2410 for DCP-L2510D L2530DW L2550DN HL-L2310D L2350DW L2357DW L2370DN.jpeg",
+        image: "../assets/images/impresoras/gpc-image-tn2420-tn-2420-compatible-toner-cartridges-for.webp",
         priceOriginal: "$65.00",
         priceDescuento: "$58.50", // -10%
         specs: {
@@ -5319,7 +5319,7 @@ name: "PlayStation 2 (PS2)",
     {
         id: 306,
         name: "Paquete Papel Fotográfico Brillo (4x6, 100 hojas)",
-        image: "../img/impresoras/Papel Fotografico 200gr A4 100hjs Glossy Brillante Candy Bar.jpeg",
+        image: "../assets/images/impresoras/papel-fotografico-200gr-a4-100hjs-glossy-brillante-candy-bar.webp",
         priceOriginal: "$19.99",
         priceDescuento: "$13.99", // -30%
         specs: {

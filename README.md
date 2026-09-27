@@ -10,7 +10,7 @@
 
 INNOVATECH started as a school project and is now being rebuilt, step by step, into a full-stack e-commerce application. This repository documents the whole process: from the original code to a production-ready store.
 
-**Live demo:** https://YOUR-SITE.netlify.app
+**Live demo:** https://innovatech-sv.netlify.app
 
 ---
 

@@ -280,47 +280,8 @@
 <body>
 
 
-    <div class="top-bar" aria-label="Promotional and banking info">
-        <div class="red-highlight" aria-label="Offer banner"><strong>12 meses</strong> sin intereses</div>
-        <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
-        <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
-        <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
-    </div>
-
-   <header role="banner" aria-label="Encabezado principal">
-        <a href="index.html" class="logo" aria-label="INNOVATECH">
-            <img src="../assets/images/logos/e.webp" alt="Logo INNOVATECH">
-        </a>
-        <div class="header-left" aria-label="Enlaces de sucursal y contacto">
-            <a href="../HTML/sucursal.html"><span class="icon"></span>Sucursales</a>
-            <a href="contactenos.html"><span class="icon"></span>Contáctanos</a>
-            <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
-        </div>
-
-        <div class="search-container" role="search" aria-label="Búsqueda de productos" style="position:relative;">
-            <input type="search" name="search" id="search" placeholder="¿Qué estás buscando?" aria-label="Campo de búsqueda"/>
-            <button aria-label="Buscar" title="Buscar"></button>
-        </div>
-
-        <div class="header-right user-cart" aria-label="Cuenta de usuario y carrito de compras">
-            <a id="btn-cuenta" href="inicio.html" aria-label="Entrar o registrarse en mi cuenta" title="Mi Cuenta">
-                <svg class="icon-user" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="7" r="4"/>
-                    <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
-                </svg>
-                <span>Mi Cuenta</span>
-            </a>
-            <a href="#" aria-label="Ver mi carrito de compras" title="Mi carrito">
-                <svg class="icon-cart" viewBox="0 0 24 24" fill="none">
-                    <circle cx="9" cy="21" r="1"/>
-                    <circle cx="20" cy="21" r="1"/>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                </svg>
-                <span>Mi carrito</span>
-            </a>
-            <span class="cart-count">0</span>
-        </div>
-    </header>
+    <div data-layout="encabezado"></div>
+<script src="../JS/layout.js"></script>
 
 
     <main class="main-content">
@@ -390,59 +351,7 @@
     </main>
 
  
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>Compra segura</h4>
-                <ul>
-                    <li><a href="por-que-es-seguro.html">¿Por qué es seguro?</a></li>
-                    <li><a href="por-que-es-comodo.html">¿Por qué es cómodo?</a></li>
-                </ul>
-                <h4>Eventos</h4>
-                <ul>
-                    <li><a href="exclusivo.html">Exclusivo Innovaparty</a></li>
-                    <li><a href="que-es-el-innovaparty.html">¿Que es el Innovaparty?</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Beneficios</h4>
-                <ul>
-                    <li><a href="beneficios.html">Beneficios Innovatech</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Políticas</h4>
-                <ul>
-                    <li><a href="terminos.html">Términos y condiciones</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Servicios al cliente</h4>
-                <ul>
-                    <li><a href="formulario.html">Contáctenos</a></li>
-                    <li><a href="mailto:innvatech24@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%20INNOVATECH,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." target="_blank">innvatech24@gmail.com</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Redes Sociales</h4>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/profile.php?id=61581077995128" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-                    </a>
-                    <a href="https://www.instagram.com/innovatech234/" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram">
-                    </a>
-                    <a href="https://x.com/INNOVATECH244" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X/Twitter">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div data-layout="pie"></div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script>
         // Data de la sucursal y la galería
@@ -601,5 +510,8 @@
         // small UX touches
         setTimeout(()=>{ marker.openPopup(); },700);
     </script>
+<script src="../JS/catalogo.js"></script>
+<script src="../JS/carrito.js"></script>
+<script src="../JS/buscador.js"></script>
 </body>
 </html>

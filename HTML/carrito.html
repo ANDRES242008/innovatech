@@ -1,126 +1,163 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Carrito</title>
-  <link rel="stylesheet" href="../CSS/carrito.css" />
-   <link rel="shortcut icon" href="../assets/images/logos/in.png" type="image/x-icon">
+  <title>Mi carrito | INNOVATECH</title>
+  <meta name="description" content="Revisa los productos de tu carrito en INNOVATECH." />
+  <link rel="stylesheet" href="../CSS/celulares.css" />
+  <link rel="shortcut icon" href="../assets/images/logos/in.png" type="image/png">
+  <style>
+    .carrito { max-width: 1100px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 340px; gap: 28px; align-items: start; }
+    .carrito h1 { grid-column: 1 / -1; margin: 0; font-size: 2rem; }
+    .carrito-lista { display: flex; flex-direction: column; gap: 16px; }
+    .carrito-item { display: grid; grid-template-columns: 110px 1fr auto; gap: 18px; align-items: center; background: #fff; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,.07); padding: 18px; }
+    .carrito-item img { width: 110px; height: 110px; object-fit: contain; border-radius: 10px; background: #f5f7fa; }
+    .carrito-nombre { font-weight: 700; font-size: 1.1rem; color: #1976d2; text-decoration: none; }
+    .carrito-nombre:hover { text-decoration: underline; }
+    .carrito-precio { color: #e63946; font-weight: 700; margin-top: 6px; }
+    .carrito-cantidad { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+    .carrito-cantidad button { width: 34px; height: 34px; border: none; border-radius: 8px; background: linear-gradient(90deg,#1976d2,#00bfff); color: #fff; font-size: 18px; cursor: pointer; }
+    .carrito-cantidad span { min-width: 24px; text-align: center; font-weight: 600; }
+    .carrito-derecha { text-align: right; }
+    .carrito-subtotal { font-weight: 700; font-size: 1.15rem; }
+    .carrito-quitar { margin-top: 10px; background: none; border: none; color: #d62828; cursor: pointer; font-weight: 600; }
+    .resumen { background: #fff; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,.07); padding: 24px; position: sticky; top: 20px; }
+    .resumen h2 { margin: 0 0 16px; font-size: 1.3rem; }
+    .resumen-fila { display: flex; justify-content: space-between; padding: 8px 0; }
+    .resumen-total { border-top: 1px solid #e5e7eb; margin-top: 8px; padding-top: 14px; font-size: 1.25rem; font-weight: 700; }
+    .resumen-nota { font-size: 13px; color: #666; margin: 6px 0 18px; }
+    .btn-principal, .btn-secundario { display: block; width: 100%; text-align: center; padding: 13px; border-radius: 10px; font-weight: 700; text-decoration: none; cursor: pointer; font-size: 16px; }
+    .btn-principal { background: linear-gradient(90deg,#1976d2,#00bfff); color: #fff; border: none; }
+    .btn-secundario { background: #fff; color: #1976d2; border: 2px solid #1976d2; margin-top: 10px; }
+    .carrito-vacio { grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: #fff; border-radius: 16px; }
+    .carrito-vacio a { display: inline-block; margin-top: 16px; }
+    @media (max-width: 800px) {
+      .carrito { grid-template-columns: 1fr; }
+      .carrito-item { grid-template-columns: 80px 1fr; }
+      .carrito-item img { width: 80px; height: 80px; }
+      .carrito-derecha { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; }
+      .resumen { position: static; }
+    }
+  </style>
 </head>
 <body>
- <div class="top-bar" aria-label="Promotional and banking info">
-    <div class="red-highlight" aria-label="Offer banner">COMPRA HASTA <strong>12 meses</strong> sin intereses</div>
-    <a href="#" class="bank" aria-label="Banco Agrícola">BancoAgrícola</a>
-    <a href="#" class="bank" aria-label="Banco CUSCATLAN">CUSCATLAN</a>
-    <a href="#" class="bank" aria-label="Caja de Crédito">Caja de Crédito</a>
-    <a href="#" class="bank" aria-label="Banco BAC">BAC</a>
-  </div>
+  <div data-layout="encabezado"></div>
+  <script src="../JS/layout.js"></script>
 
-   <header role="banner" aria-label="Encabezado principal">
-    <a href="index.html" class="logo" aria-label="INNOVATECH">
-   <img src="../assets/images/logos/e.webp" alt="Logo INNOVATECH">
-      </a>
-<div class="header-left" aria-label="Enlaces de sucursal y contacto">
-  <a href="sucursal.html"><span class="icon"></span>Sucursales</a>
-  <a href="contactenos.html"><span class="icon"></span>Contáctanos</a>
-  <a href="formulario.html"><span class="icon"></span>¿Problemas?</a>
-</div>
+  <main class="carrito">
+    <h1>Mi carrito</h1>
+    <p id="estado" class="carrito-vacio">Cargando carrito…</p>
+    <section class="carrito-lista" id="lista" aria-label="Productos en el carrito" hidden></section>
+    <aside class="resumen" id="resumen" aria-label="Resumen del pedido" hidden>
+      <h2>Resumen</h2>
+      <div class="resumen-fila"><span>Productos (<span id="resumen-cantidad">0</span>)</span><span id="resumen-subtotal">$0.00</span></div>
+      <div class="resumen-fila"><span>Envío</span><span>Gratis</span></div>
+      <div class="resumen-fila resumen-total"><span>Total</span><span id="resumen-total">$0.00</span></div>
+      <p class="resumen-nota">Precios con IVA incluido.</p>
+      <a href="pagodecuotas.html" class="btn-principal">Proceder al pago</a>
+      <a href="index.html" class="btn-secundario">Seguir comprando</a>
+      <button type="button" class="btn-secundario" id="vaciar">Vaciar carrito</button>
+    </aside>
+  </main>
 
+  <div data-layout="pie"></div>
 
-   
-    <div class="header-right user-cart" aria-label="Cuenta de usuario y carrito de compras">
-  <a id="btn-cuenta" href="inicio.html" aria-label="Entrar o registrarse en mi cuenta" title="Mi Cuenta">
-    <svg class="icon-user" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="7" r="4"/>
-      <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
-    </svg>
-    Mi Cuenta
-  </a>
-    
-
-  </div>
-  </header>
-  <main>
-  <h1>Mi Carrito</h1>
-  <div id="cart-container"></div>
-  <div id="cart-total" style="font-size:1.3rem; font-weight:bold; margin-top:20px;"></div>
-  <div id="cart-actions" style="max-width:420px; margin:32px auto 0; background:#f5f7fa; border-radius:16px; box-shadow:0 2px 12px #1976d211; padding:28px 24px; text-align:center;"></div>
-</main>
-  <script src="../JS/cartgadget.js"></script>
-  <script src="../JS/carttabletas.js"></script>
-  <script src="../JS/cartcelulares.js"></script>
-  <script src="../JS/cartfijos.js"></script>
-  <script src="../JS/mi carrito.js"></script>
+  <script src="../JS/catalogo.js"></script>
+  <script src="../JS/carrito.js"></script>
+  <script src="../JS/buscador.js"></script>
   <script>
-    // Los datos de productos están en JS/mi carrito.js
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      function crearItem(it) {
+        const art = document.createElement('article');
+        art.className = 'carrito-item';
+
+        const img = document.createElement('img');
+        img.src = it.imagen;
+        img.alt = it.producto.nombre;
+
+        const info = document.createElement('div');
+        const nombre = document.createElement('a');
+        nombre.className = 'carrito-nombre';
+        nombre.href = 'producto.html?id=' + it.id;
+        nombre.textContent = it.producto.nombre;
+        const precio = document.createElement('div');
+        precio.className = 'carrito-precio';
+        precio.textContent = Catalogo.dinero(it.producto.precio);
+
+        const cantidad = document.createElement('div');
+        cantidad.className = 'carrito-cantidad';
+        const menos = document.createElement('button');
+        menos.type = 'button';
+        menos.textContent = '−';
+        menos.setAttribute('aria-label', 'Quitar una unidad');
+        menos.addEventListener('click', () => window.cart.cambiarCantidad(it.id, it.cantidad - 1));
+        const numero = document.createElement('span');
+        numero.textContent = it.cantidad;
+        numero.setAttribute('aria-label', 'Cantidad: ' + it.cantidad);
+        const mas = document.createElement('button');
+        mas.type = 'button';
+        mas.textContent = '+';
+        mas.setAttribute('aria-label', 'Agregar una unidad');
+        mas.addEventListener('click', () => window.cart.cambiarCantidad(it.id, it.cantidad + 1));
+        cantidad.append(menos, numero, mas);
+
+        info.append(nombre, precio, cantidad);
+
+        const derecha = document.createElement('div');
+        derecha.className = 'carrito-derecha';
+        const subtotal = document.createElement('div');
+        subtotal.className = 'carrito-subtotal';
+        subtotal.textContent = Catalogo.dinero(it.subtotal);
+        const quitar = document.createElement('button');
+        quitar.type = 'button';
+        quitar.className = 'carrito-quitar';
+        quitar.textContent = 'Eliminar';
+        quitar.addEventListener('click', () => window.cart.quitar(it.id));
+        derecha.append(subtotal, quitar);
+
+        art.append(img, info, derecha);
+        return art;
+      }
+
+      async function pintar() {
+        let items;
+        try {
+          items = await window.cart.detalle();
+        } catch (e) {
+          $('estado').textContent = 'No se pudo cargar el carrito. Abre el sitio con Live Server.';
+          return;
+        }
+
+        if (!items.length) {
+          $('estado').innerHTML = '<strong>Tu carrito está vacío.</strong><br><a href="index.html" class="btn-principal" style="max-width:260px;margin:16px auto 0;">Ver productos</a>';
+          $('estado').hidden = false;
+          $('lista').hidden = true;
+          $('resumen').hidden = true;
+          return;
+        }
+
+        $('lista').replaceChildren(...items.map(crearItem));
+        const total = items.reduce((s, it) => s + it.subtotal, 0);
+        const unidades = items.reduce((s, it) => s + it.cantidad, 0);
+        $('resumen-cantidad').textContent = unidades;
+        $('resumen-subtotal').textContent = Catalogo.dinero(total);
+        $('resumen-total').textContent = Catalogo.dinero(total);
+
+        $('estado').hidden = true;
+        $('lista').hidden = false;
+        $('resumen').hidden = false;
+      }
+
+      $('vaciar').addEventListener('click', () => {
+        if (confirm('¿Vaciar todo el carrito?')) window.cart.vaciar();
+      });
+
+      window.cart.alCambiar(pintar);
+      pintar();
+    })();
   </script>
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>Compra segura</h4>
-        <ul>
-          <li><a href="#">¿Por qué es seguro?</a></li>
-          <li><a href="#">¿Por qué es cómodo?</a></li>
-        </ul>
-        <h4>Eventos</h4>
-        <ul>
-          <li><a href="#">INOVAPARTY</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Beneficios</h4>
-        <ul>
-          <li><a href="#">Beneficios RadioShack</a></li>
-          <li><a href="#">ServiShack</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Políticas</h4>
-        <ul>
-          <li><a href="#">Términos y condiciones</a></li>
-          <li><a href="#">Políticas generales</a></li>
-          <li><a href="#">Política de Privacidad</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Servicios al cliente</h4>
-        <ul>
-          <li><a href="formulario.html">Contáctenos</a></li>
-           <li><a href="formulario.html">+50376482812</a></li>
-            <li><a href="formulario.html">INNOVATECH24@gmail.com</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Redes Sociales</h4>
-        <div class="social-icons">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384012.png" alt="YouTube"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="RSS"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok"></a>
-        </div>
-      </div>
-    </div>
-  </footer>
-   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const nombre = localStorage.getItem('nombreUsuario');
-  if (nombre) {
-    const cuenta = document.getElementById('btn-cuenta');
-    if (cuenta) {
-      cuenta.innerHTML = `<svg class="icon-user" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="7" r="4"/>
-          <path d="M4 21c0-4 8-4 8-4s8 0 8 4" />
-        </svg>
-        ${nombre}`;
-    }
-  }
-});
-</script>
 </body>
 </html>

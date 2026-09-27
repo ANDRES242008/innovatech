@@ -43,7 +43,7 @@ loginForm.addEventListener('submit', (e) => {
 
     if (usuario) {
         // --- 🔑 PASO CLAVE: Limpiar el carrito antes de la nueva sesión ---
-        localStorage.removeItem('shoppingCart'); 
+        localStorage.removeItem('innovatech-carrito'); 
         // ------------------------------------------------------------------
 
         localStorage.setItem('nombreUsuario', usuario.nombre);
@@ -76,7 +76,7 @@ loginForm.addEventListener('submit', (e) => {
 // -------- Funciones de login social (simuladas) --------
 googleBtn.addEventListener('click', () => {
     // --- 🔑 PASO CLAVE: Limpiar el carrito ---
-    localStorage.removeItem('shoppingCart'); 
+    localStorage.removeItem('innovatech-carrito'); 
     // -----------------------------------------
     
     localStorage.setItem('nombreUsuario', 'Daniel'); // O el nombre que corresponda si fuera real
@@ -86,7 +86,7 @@ googleBtn.addEventListener('click', () => {
 
 facebookBtn.addEventListener('click', () => {
     // --- 🔑 PASO CLAVE: Limpiar el carrito ---
-    localStorage.removeItem('shoppingCart'); 
+    localStorage.removeItem('innovatech-carrito'); 
     // -----------------------------------------
 
     localStorage.setItem('nombreUsuario', 'Daniel');
@@ -96,7 +96,7 @@ facebookBtn.addEventListener('click', () => {
 
 githubBtn.addEventListener('click', () => {
     // --- 🔑 PASO CLAVE: Limpiar el carrito ---
-    localStorage.removeItem('shoppingCart'); 
+    localStorage.removeItem('innovatech-carrito'); 
     // -----------------------------------------
 
     localStorage.setItem('nombreUsuario', 'Daniel');

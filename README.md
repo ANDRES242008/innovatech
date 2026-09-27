@@ -10,29 +10,30 @@
 
 INNOVATECH started as a school project and is now being rebuilt, step by step, into a full-stack e-commerce application. This repository documents the whole process: from the original code to a production-ready store.
 
-**Live demo:** coming soon
+**Live demo:** https://YOUR-SITE.netlify.app
 
 ---
 
 ## Features
 
-- Product catalog with **290 products** across **20 categories**
-- Product detail pages with full specifications
-- Real-time search with result highlighting
-- Sort by price, discount and name
-- Shopping cart that persists between visits (`localStorage`)
-- Installment payment simulator
-- Store locations and contact form
+- Product catalog with **290 products** across **19 categories**, served from a single JSON file
+- One dynamic product page (`producto.html?id=`) instead of 20 duplicated pages
+- Global search with autocomplete, accent-insensitive matching and keyboard navigation
+- Shopping cart shared across all pages, synced between browser tabs (`localStorage`)
+- Shared header, menu and footer rendered from one JavaScript module
+- Images optimized to WebP (20.8 MB → 7.4 MB)
+- Demo checkout flow (no real payments or card data)
 
 ## Tech stack
 
 | Layer | Technology |
 | --- | --- |
 | Markup | HTML5 |
-| Styles | CSS3, Bootstrap 5 |
-| Logic | JavaScript (ES6+) |
+| Styles | CSS3 |
+| Logic | Vanilla JavaScript (ES6+ modules pattern) |
+| Data | JSON (`data/productos.json`) |
 | Carousel | Swiper |
-| Data | Local product data (moving to JSON) |
+| Hosting | Netlify |
 
 ## Getting started
 
@@ -43,29 +44,38 @@ git clone https://github.com/ANDRES242008/innovatech.git
 cd innovatech
 ```
 
-Open `HTML/index.html` with the **Live Server** extension in VS Code, or any local web server.
+Open `index.html` with the **Live Server** extension in VS Code, or any local web server.
+The catalog is loaded with `fetch`, so opening the files directly (double click) will not work.
 
 ## Project structure
 
 ```
 innovatech/
-├── HTML/   # Pages: home, categories, product detail, cart, checkout
-├── CSS/    # Stylesheets
-├── JS/     # Search, cart and page logic
-└── img/    # Product images by category
+├── data/
+│   └── productos.json   # Single source of truth: products and categories
+├── assets/images/       # Optimized WebP images by category
+├── HTML/                # Pages (home, categories, product, cart, checkout)
+├── CSS/                 # Stylesheets
+└── JS/
+    ├── catalogo.js      # Loads and caches the catalog
+    ├── carrito.js       # Cart logic and mini-cart UI
+    ├── buscador.js      # Search with autocomplete
+    ├── layout.js        # Shared header, menu and footer
+    ├── categoria.js     # Sorting on category pages
+    └── inicio.js        # Home page carousels
 ```
 
 ## Roadmap
 
 The project is being rebuilt in five phases (~21 days each).
 
-- [ ] **Phase 1 — Cleanup:** fix encoding, broken links and images; single product data source; deploy
+- [x] **Phase 1 — Cleanup:** fix encoding, broken links and images; single product data source; deploy
 - [ ] **Phase 2 — Frontend:** migrate to React + TypeScript, filters, responsive design, accessibility
 - [ ] **Phase 3 — Backend:** Node.js + Express API, PostgreSQL + Prisma, user authentication
 - [ ] **Phase 4 — Commerce:** checkout, Stripe payments (test mode), orders, admin dashboard
 - [ ] **Phase 5 — Quality:** automated tests, CI/CD, performance, security, final release
 
-Version history is tracked with Git tags. `v0-escolar` is the original school version.
+Version history is tracked with Git tags: `v0-escolar` is the original school version, `v1.0` is the cleaned-up vanilla version.
 
 ## Disclaimer
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finalizar compra | INNOVATECH</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" href="../assets/images/logos/in.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logos/in.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/pagodecuotas.css" />
     <style>
         .aviso-demo { background: #fff8e1; border-left: 4px solid #f5a623; padding: 14px 18px; border-radius: 8px; margin: 20px 0; line-height: 1.5; }
@@ -30,39 +30,44 @@
     <button class="btn-accion" id="btn-simular" style="width:100%;">Simular compra</button>
 </main>
 
+<script src="../JS/catalogo.js"></script>
+<script src="../JS/carrito.js"></script>
 <script>
-    (function () {
+    (async function () {
         const lista = document.getElementById('resumen');
         const totalEl = document.getElementById('total');
         const boton = document.getElementById('btn-simular');
 
-        let carrito = [];
-        try { carrito = JSON.parse(localStorage.getItem('shoppingCart')) || []; } catch (e) { carrito = []; }
+        let items = [];
+        try {
+            items = await window.cart.detalle();
+        } catch (e) {
+            lista.innerHTML = '<li>No se pudo cargar el carrito.</li>';
+            boton.disabled = true;
+            return;
+        }
 
-        const precio = (item) => parseFloat(String(item.priceDescuento || item.price || '0').replace(/[^0-9.]/g, '')) || 0;
-
-        if (carrito.length === 0) {
+        if (items.length === 0) {
             lista.innerHTML = '<li>Tu carrito está vacío.</li>';
             boton.disabled = true;
             return;
         }
 
         let total = 0;
-        carrito.forEach((item) => {
-            const subtotal = precio(item) * (item.quantity || 1);
-            total += subtotal;
+        items.forEach((it) => {
+            total += it.subtotal;
             const li = document.createElement('li');
             const nombre = document.createElement('span');
-            nombre.textContent = `${item.quantity || 1} × ${item.name || 'Producto'}`;
+            nombre.textContent = `${it.cantidad} × ${it.producto.nombre}`;
             const monto = document.createElement('span');
-            monto.textContent = `$${subtotal.toFixed(2)}`;
+            monto.textContent = Catalogo.dinero(it.subtotal);
             li.append(nombre, monto);
             lista.appendChild(li);
         });
-        totalEl.textContent = `$${total.toFixed(2)}`;
+        totalEl.textContent = Catalogo.dinero(total);
 
         boton.addEventListener('click', () => {
-            localStorage.removeItem('shoppingCart');
+            window.cart.vaciar();
             document.querySelector('.cuota-pago').innerHTML = `
                 <h2 class="cuota-titulo">¡Compra simulada con éxito!</h2>
                 <p class="cuota-descripcion">No se realizó ningún cargo. Gracias por probar INNOVATECH.</p>

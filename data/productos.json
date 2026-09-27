@@ -4,96 +4,115 @@
     {
       "id": "gadgets",
       "nombre": "Gadgets",
+      "pagina": "gadget.html",
       "total": 15
     },
     {
       "id": "celulares",
       "nombre": "Celulares",
+      "pagina": "celulares.html",
       "total": 15
     },
     {
       "id": "tabletas",
       "nombre": "Tabletas",
+      "pagina": "tabletas.html",
       "total": 15
     },
     {
       "id": "telefonos-fijos",
       "nombre": "Teléfonos fijos",
+      "pagina": "telefonosfijos.html",
       "total": 15
     },
     {
       "id": "exclusivo",
       "nombre": "Exclusivo online",
+      "pagina": "exclusivo.html",
       "total": 24
     },
     {
       "id": "audifonos",
       "nombre": "Audífonos",
+      "pagina": "audifonos.html",
       "total": 12
     },
     {
       "id": "audio-hogar",
       "nombre": "Audio para el hogar",
+      "pagina": "audio-para-el-hogar.html",
       "total": 15
     },
     {
       "id": "audio-personal",
       "nombre": "Audio personal",
+      "pagina": "audio-personal.html",
       "total": 12
     },
     {
       "id": "audio-profesional",
       "nombre": "Audio profesional",
+      "pagina": "audio-profesional.html",
       "total": 15
     },
     {
       "id": "accesorios-gaming",
       "nombre": "Accesorios gaming",
+      "pagina": "accesorios.html",
       "total": 15
     },
     {
       "id": "gaming",
       "nombre": "Sillas y escritorios gaming",
+      "pagina": "gaming.html",
       "total": 15
     },
     {
       "id": "videojuegos",
       "nombre": "Videojuegos",
+      "pagina": "videojuegos.html",
       "total": 15
     },
     {
       "id": "laptops",
       "nombre": "Laptops",
+      "pagina": "laptops.html",
       "total": 15
     },
     {
       "id": "video-tv",
       "nombre": "Video y TV",
+      "pagina": "videos.html",
       "total": 15
     },
     {
       "id": "accesorios-tv",
       "nombre": "Accesorios de TV",
+      "pagina": "accesorios2.html",
       "total": 15
     },
     {
       "id": "mouses",
       "nombre": "Mouses",
+      "pagina": "mouses.html",
       "total": 16
     },
     {
       "id": "almacenamiento",
       "nombre": "Almacenamiento",
+      "pagina": "almacenamiento.html",
       "total": 16
     },
     {
       "id": "accesorios-computacion",
       "nombre": "Accesorios de computación",
+      "pagina": "compusaccesorios.html",
       "total": 15
     },
     {
       "id": "impresoras",
       "nombre": "Impresoras",
+      "pagina": "impre.html",
       "total": 15
     }
   ],

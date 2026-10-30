@@ -14,7 +14,7 @@ function App() {
 
   return (
     <main>
-      <h1>INNOVATECH</h1>
+      <h1 className="titulo">INNOVATECH</h1>
       <p>Productos en carrito: {enCarrito}</p>
       <div className="grid">
         {productos.map((p) => (

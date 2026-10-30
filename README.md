@@ -24,6 +24,15 @@ INNOVATECH started as a school project and is now being rebuilt, step by step, i
 - Images optimized to WebP (20.8 MB → 7.4 MB)
 - Demo checkout flow (no real payments or card data)
 
+
+  ## Design
+
+UI wireframes and design system made in Figma before coding:
+[View Figma file](https://www.figma.com/design/FNCgVHvDRfqQDyVQJFYH2M)
+
+
+
+
 ## Tech stack
 
 | Layer | Technology |

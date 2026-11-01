@@ -1,46 +1,48 @@
-import { useEffect, useState } from 'react';
-import { ProductCard } from './components/ProductCard';
-import type { Catalogo, Producto } from './types';
+import { useState } from 'react';
+import { Layout } from './components/Layout';
+import { ProductGrid } from './components/ProductGrid';
+import { useCatalogo } from './hooks/useCatalogo';
+import type { Producto } from './types';
 import './App.css';
 
-// Rutas del JSON apuntan a la tienda vanilla. Aquí las adaptamos.
-function arreglarImagen(producto: Producto): Producto {
-  const ruta = producto.imagen || Object.values(producto.imagenes)[0] || '';
-  return { ...producto, imagen: ruta.replace('../assets/images/', '/images/') };
-}
+const esOferta = (p: Producto) => p.precioOriginal !== null && p.precioOriginal > p.precio;
 
 function App() {
-  const [productos, setProductos] = useState<Producto[]>([]);
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { productos, cargando, error } = useCatalogo();
   const [enCarrito, setEnCarrito] = useState(0);
+  const [soloOfertas, setSoloOfertas] = useState(false);
+  const [ordenarPrecio, setOrdenarPrecio] = useState(false);
 
-  useEffect(() => {
-    fetch('/data/productos.json')
-      .then((respuesta) => {
-        if (!respuesta.ok) throw new Error('HTTP ' + respuesta.status);
-        return respuesta.json() as Promise<Catalogo>;
-      })
-      .then((datos) => setProductos(datos.productos.map(arreglarImagen)))
-      .catch(() => setError('No se pudo cargar el catálogo.'))
-      .finally(() => setCargando(false));
-  }, []);
-
-  if (cargando) return <p className="estado">Cargando productos…</p>;
-  if (error) return <p className="estado">{error}</p>;
+  let visibles = soloOfertas ? productos.filter(esOferta) : productos;
+  if (ordenarPrecio) {
+    visibles = [...visibles].sort((a, b) => a.precio - b.precio);
+  }
 
   return (
-    <main>
-      <h1 className="titulo">INNOVATECH</h1>
-      <p className="pequeno">
-        {productos.length} productos · En carrito: {enCarrito}
-      </p>
-      <div className="grid">
-        {productos.map((p) => (
-          <ProductCard key={p.id} producto={p} onAgregar={() => setEnCarrito((n) => n + 1)} />
-        ))}
-      </div>
-    </main>
+    <Layout enCarrito={enCarrito}>
+      {cargando && <p className="estado">Cargando productos…</p>}
+      {error && <p className="estado">{error}</p>}
+
+      {!cargando && !error && (
+        <>
+          <h1 className="titulo">Todos los productos</h1>
+          <p className="pequeno">
+            {visibles.length} de {productos.length} productos
+          </p>
+
+          <div className="filtros">
+            <button aria-pressed={soloOfertas} onClick={() => setSoloOfertas(!soloOfertas)}>
+              {soloOfertas ? 'Ver todos' : 'Solo ofertas'}
+            </button>
+            <button aria-pressed={ordenarPrecio} onClick={() => setOrdenarPrecio(!ordenarPrecio)}>
+              {ordenarPrecio ? 'Orden original' : 'Más baratos primero'}
+            </button>
+          </div>
+
+          <ProductGrid productos={visibles} onAgregar={() => setEnCarrito((n) => n + 1)} />
+        </>
+      )}
+    </Layout>
   );
 }
 
